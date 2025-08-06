@@ -1,7 +1,7 @@
 ---
 title: "Portanus: Signore delle Porte"
 date: 2025-08-06
-tags: ["gdr", "horror", "cthulhu", "Not The End", "Portanus"]
+tags: ["gdr", "horror", "cthulhu", "Not The End", "Portanus", "ita"]
 ---
 
 Un'antica divinità pre-romana riscoperta attraverso le Vie Profonde...

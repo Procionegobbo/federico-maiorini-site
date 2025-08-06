@@ -1,7 +1,5 @@
 baseURL = "https://procionegobbo.github.io/federico-maiorini-site/"
 theme = "hugo-theme-stack"
-
-
 defaultContentLanguage = "it"
 defaultContentLanguageInSubdir = false
 
@@ -14,6 +12,9 @@ defaultContentLanguageInSubdir = false
   contentDir = "content/it"
   languageCode = "it-it"
 
+  [languages.it.params]
+  mainSections = ["blog", "gdr", "scrittura"]
+
 [languages.en]
   languageName = "English"
   weight = 2
@@ -21,17 +22,17 @@ defaultContentLanguageInSubdir = false
   contentDir = "content/en"
   languageCode = "en-us"
 
+  [languages.en.params]
+  mainSections = ["blog"]
 
 
-[params]
-mainSections = []
 
 [markup.goldmark.renderer]
-unsafe = true
+  unsafe = true
 
 [params.footer]
-since = 2025
-customText = "Federico Maiorini"
+  since = 2025
+  customText = "Federico Maiorini"
 
 [params.colorScheme]
     # light, dark, auto
@@ -56,3 +57,36 @@ customText = "Federico Maiorini"
   name = "Scrittura"
   url = "/scrittura/"
   weight = 3
+
+[[menu.main]]
+  identifier = "chi-sono"
+  name = "Chi sono"
+  url = "/chi-sono/"
+  weight = 4
+
+# 🔽 RIMUOVI QUESTA RIGA (causa del problema)
+# [languages.en.menu.main]
+
+[[languages.en.menu.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/blog/"
+  weight = 1
+
+[[languages.en.menu.main]]
+  identifier = "gdr"
+  name = "RPG"
+  url = "/gdr/"
+  weight = 2
+
+[[languages.en.menu.main]]
+  identifier = "scrittura"
+  name = "Writing"
+  url = "/scrittura/"
+  weight = 3
+
+[[languages.en.menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/en/about/"
+  weight = 4

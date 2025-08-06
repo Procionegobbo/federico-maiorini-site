@@ -12,17 +12,12 @@ Nel tempo libero sono anche un **game master dal 1985**, scrittore dilettante e 
 
 ### 🚀 Cosa trovi in questo sito
 
-- 🧑‍💻 **Blog tecnico e personale**: articoli su Laravel, best practice backend, strumenti per dev
+- 🧑‍💻 **Blog tecnico e personale**: articoli su Laravel, best practice backend, strumenti per dev  
 - 🧙‍♂️ **Sezioni GDR e scrittura**: racconti brevi, campagne, culti e mondi oscuri
-<!-- - 🧰 **Portfolio**: una selezione di progetti open source e personali -->
 
 ---
 
-### 📫 Contatti
-
-- [GitHub](https://github.com/procionegobbo)
-- [LinkedIn](https://www.linkedin.com/in/federicomaiorini/)
-- Email: federico.maiorini@me.com
+Se vuoi saperne di più su di me e il mio percorso, visita la pagina 👉 [Chi sono](/chi-sono/)
 
 ---
 

@@ -1,0 +1,25 @@
+<h2>📝 Latest blog posts</h2>
+<ul style="list-style: none; padding: 0;">
+  {{ $pages := where site.AllPages "Kind" "page" }}
+  {{ $blogPages := where $pages "Section" "blog" }}
+  {{ $sorted := sort $blogPages "Date" "desc" }}
+  {{ range first 5 $sorted }}
+    {{ $tags := .Params.tags }}
+    {{ $badges := slice }}
+    {{ if in $tags "ita" }}
+      {{ $badges = $badges | append "ITA" }}
+    {{ end }}
+    {{ if in $tags "eng" }}
+      {{ $badges = $badges | append "ENG" }}
+    {{ end }}
+    <li style="margin-bottom: 1em;">
+      <div style="display: flex; align-items: center; gap: 0.5em;">
+        {{ range $badges }}
+          <span style="font-size: 0.75em; background-color: #eee; color: #333; padding: 2px 6px; border-radius: 4px; font-weight: bold;">{{ . }}</span>
+        {{ end }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </div>
+      <small style="margin-left: 0.5em; color: #777;">{{ .Date.Format "2006-01-02" }}</small>
+    </li>
+  {{ end }}
+</ul>
