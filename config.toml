@@ -1,0 +1,14 @@
+baseURL = "https://procionegobbo.github.io/federico-maiorini-site/"
+languageCode = "it-it"
+title = "Federico Maiorini"
+theme = "hugo-theme-stack"
+
+[params]
+mainSections = []
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params.footer]
+since = 2025
+customText = "Federico Maiorini"
