@@ -12,3 +12,9 @@ unsafe = true
 [params.footer]
 since = 2025
 customText = "Federico Maiorini"
+
+[params.colorScheme]
+    # light, dark, auto
+    default = "light"
+    toggle = true
+    auto = false
