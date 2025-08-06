@@ -1,7 +1,27 @@
 baseURL = "https://procionegobbo.github.io/federico-maiorini-site/"
-languageCode = "it-it"
-title = "Federico Maiorini"
 theme = "hugo-theme-stack"
+
+
+defaultContentLanguage = "it"
+defaultContentLanguageInSubdir = false
+
+[languages]
+
+[languages.it]
+  languageName = "Italiano"
+  weight = 1
+  title = "Federico Maiorini"
+  contentDir = "content/it"
+  languageCode = "it-it"
+
+[languages.en]
+  languageName = "English"
+  weight = 2
+  title = "Federico Maiorini"
+  contentDir = "content/en"
+  languageCode = "en-us"
+
+
 
 [params]
 mainSections = []
@@ -16,5 +36,23 @@ customText = "Federico Maiorini"
 [params.colorScheme]
     # light, dark, auto
     default = "light"
-    toggle = true
+    toggle = false
     auto = false
+
+[[menu.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/blog/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "gdr"
+  name = "GDR"
+  url = "/gdr/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "scrittura"
+  name = "Scrittura"
+  url = "/scrittura/"
+  weight = 3
