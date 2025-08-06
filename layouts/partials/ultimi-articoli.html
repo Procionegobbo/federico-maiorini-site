@@ -2,11 +2,8 @@
 <ul>
   {{ $pages := where site.Pages "Kind" "page" }}
   {{ $pages := where $pages "Section" "in" .Site.Params.mainSections }}
+
   {{ range first 5 (where $pages "Section" "in" .Site.Params.mainSections) }}
-    <li>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      <small>({{ .Date.Format "2006-01-02" }})</small>
-      <small>{{ .Kind }} </small>
-    </li>
+  {{ partial "article-list/default" . }}
   {{ end }}
 </ul>

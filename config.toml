@@ -3,6 +3,12 @@ theme = "hugo-theme-stack"
 defaultContentLanguage = "it"
 defaultContentLanguageInSubdir = false
 
+[params.sidebar.avatar]
+enabled = true
+local = false
+src = "https://procionegobbo.github.io/federico-maiorini-site/images/avatar.jpg"
+
+
 [languages]
 
 [languages.it]

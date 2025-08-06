@@ -17,8 +17,6 @@ Nel tempo libero sono anche un **game master dal 1985**, scrittore dilettante e 
 
 ---
 
-Se vuoi saperne di più su di me e il mio percorso, visita la pagina 👉 [Chi sono](/chi-sono/)
-
----
+Se vuoi saperne di più su di me e il mio percorso, visita la pagina 👉 [Chi sono](chi-sono)
 
 Grazie per essere passato! 🎲💻
