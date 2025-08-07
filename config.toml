@@ -1,4 +1,7 @@
 baseURL = "https://procionegobbo.it/"
+canonifyURLs = true
+relativeURLs = false
+
 theme = "hugo-theme-stack"
 defaultContentLanguage = "it"
 defaultContentLanguageInSubdir = false
