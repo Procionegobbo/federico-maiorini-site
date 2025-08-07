@@ -1,2 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cthulhu on Federico Maiorini</title><link>https://procionegobbo.it/tags/cthulhu/</link><description>Recent content in Cthulhu on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/cthulhu/index.xml" rel="self" type="application/rss+xml"/><item><title>Portanus: Signore delle Porte</title><link>https://procionegobbo.it/gdr/portanus/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/gdr/portanus/</guid><description>&lt;p>Un&amp;rsquo;antica divinità pre-romana riscoperta attraverso le Vie Profonde&amp;hellip;
-Qui metterò il materiale usato per un&amp;rsquo;avventura nella Roma moderna, tra antiche divinità, culti oscuri e servizi segreti vaticani.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Cthulhu on Federico Maiorini</title>
+        <link>http://localhost:1313/tags/cthulhu/</link>
+        <description>Recent content in Cthulhu on Federico Maiorini</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>it-it</language>
+        <lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/cthulhu/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Portanus: Signore delle Porte</title>
+        <link>http://localhost:1313/gdr/portanus/</link>
+        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/gdr/portanus/</guid>
+        <description>&lt;p&gt;Un&amp;rsquo;antica divinità pre-romana riscoperta attraverso le Vie Profonde&amp;hellip;
+Qui metterò il materiale usato per un&amp;rsquo;avventura nella Roma moderna, tra antiche divinità, culti oscuri e servizi segreti vaticani.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

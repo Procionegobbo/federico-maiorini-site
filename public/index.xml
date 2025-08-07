@@ -1,65 +1,112 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Federico Maiorini</title><link>https://procionegobbo.it/</link><description>Recent content on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/index.xml" rel="self" type="application/rss+xml"/><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p>Sono passati 11 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p>
-&lt;p>It’s been 11 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p></description></item><item><title>Portanus: Signore delle Porte</title><link>https://procionegobbo.it/gdr/portanus/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/gdr/portanus/</guid><description>&lt;p>Un&amp;rsquo;antica divinità pre-romana riscoperta attraverso le Vie Profonde&amp;hellip;
-Qui metterò il materiale usato per un&amp;rsquo;avventura nella Roma moderna, tra antiche divinità, culti oscuri e servizi segreti vaticani.&lt;/p></description></item><item><title>Storie di Ghainar - Incipit</title><link>https://procionegobbo.it/scrittura/ghainar/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/scrittura/ghainar/</guid><description>&lt;p>Il vento portava sabbia e segreti, e Ghainar non dormiva da tre notti&amp;hellip;
-e qui si materializzerà la nuova incarnazione di Storie di Ghainar, la raccolta dei miei racconti.&lt;/p></description></item><item><title>Chi sono</title><link>https://procionegobbo.it/chi-sono/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/chi-sono/</guid><description>&lt;p>Ciao, mi chiamo &lt;strong>Federico Maiorini&lt;/strong> e sono uno sviluppatore backend con oltre 20 anni di esperienza nel mondo dello sviluppo web e software. In rete mi trovi spesso con il nickname &lt;strong>Procionegobbo&lt;/strong> — una lunga storia che risale ai tempi del mio Master in Videogame Design.&lt;/p>
-&lt;p>Attualmente lavoro come &lt;strong>Senior PHP Developer presso Fitprime Labs&lt;/strong>, dove mi occupo di progettazione e sviluppo di servizi e microservizi in &lt;strong>Laravel&lt;/strong>, con particolare attenzione a performance, architetture scalabili e integrazione di sistemi complessi (SSO, RESTful APIs, sistemi di terze parti come Stripe e Auth0).&lt;/p>
-&lt;p>Nel corso della mia carriera ho:&lt;/p>
-&lt;ul>
-&lt;li>introdotto Laravel in aziende come Mind the Head, migliorando standard e qualità del codice&lt;/li>
-&lt;li>sviluppato soluzioni full-stack per grandi clienti (soprattutto nel settore farmaceutico)&lt;/li>
-&lt;li>lavorato in ambienti corporate e pubblici su architetture LAMP, .NET, SharePoint, C#, Angular, Oracle, e molto altro&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="-competenze-principali">🛠 Competenze principali
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Framework:&lt;/strong> Laravel&lt;/li>
-&lt;li>&lt;strong>Linguaggi:&lt;/strong> PHP 8+, SQL, JavaScript&lt;/li>
-&lt;li>&lt;strong>Basi dati:&lt;/strong> MySQL, PostgreSQL, Oracle, SQL Server&lt;/li>
-&lt;li>&lt;strong>DevOps:&lt;/strong> TDD, GitHub Actions, sistemi di caching (Redis)&lt;/li>
-&lt;li>&lt;strong>Integrazione:&lt;/strong> SSO SAML, OAuth2, API esterne (Stripe, Google, Auth0)&lt;/li>
-&lt;li>&lt;strong>Metodologie:&lt;/strong> Agile (Scrum), Pair Programming, Code Review&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="-strumenti-che-uso-quotidianamente">🧰 Strumenti che uso quotidianamente
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Ambiente di sviluppo:&lt;/strong> Laravel Herd, Docker, Tinkerwell&lt;/li>
-&lt;li>&lt;strong>Debug &amp;amp; diagnostica:&lt;/strong> Spatie Ray, Xdebug&lt;/li>
-&lt;li>&lt;strong>Deployment:&lt;/strong> Laravel Forge, GitHub Actions&lt;/li>
-&lt;li>&lt;strong>Editor e tool:&lt;/strong> VS Code, Warp, TablePlus&lt;/li>
-&lt;li>&lt;strong>Controllo versione:&lt;/strong> Git, GitHub, BitBucket&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="-attualmente-sto-studiando">📚 Attualmente sto studiando
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Design patterns&lt;/strong> applicati a Laravel e PHP moderno&lt;/li>
-&lt;li>Introduzione al mondo &lt;strong>event-driven&lt;/strong> (Laravel events &amp;amp; queues)&lt;/li>
-&lt;li>&lt;strong>Golang&lt;/strong>, come alternativa backend moderna e performante&lt;/li>
-&lt;li>&lt;strong>Scrittura narrativa e worldbuilding&lt;/strong> per i miei progetti personali&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="-game-master-scrittore-e-narratore">🎲 Game Master, scrittore e narratore
-&lt;/h3>&lt;p>Dal &lt;strong>1985&lt;/strong> sono anche un appassionato &lt;strong>game master&lt;/strong>, creatore di mondi e narratore di storie. Ho ideato decine di campagne e ambientazioni originali come il culto del misterioso &lt;strong>Portanus&lt;/strong>, con cui esploro il lato oscuro della mitologia e dell’archeologia immaginaria.&lt;/p>
-&lt;p>Amo usare il gioco di ruolo anche come strumento di team building in ambito lavorativo, per stimolare creatività e collaborazione.&lt;/p>
-&lt;hr>
-&lt;h3 id="-formazione">🎓 Formazione
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>ITIS M. Faraday&lt;/strong> – Perito in informatica&lt;/li>
-&lt;li>&lt;strong>Scuola Omero&lt;/strong> – Scrittura creativa (2012–2016)&lt;/li>
-&lt;li>&lt;strong>Istituto Europeo di Design&lt;/strong> – Master in Videogame Design (2004–2005)&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="-contatti">📫 Contatti
-&lt;/h3>&lt;ul>
-&lt;li>📧 &lt;a class="link" href="mailto:federico.maiorini@me.com" >federico.maiorini@me.com&lt;/a>&lt;/li>
-&lt;li>🔗 &lt;a class="link" href="https://www.linkedin.com/in/federicomaiorini" target="_blank" rel="noopener"
->LinkedIn&lt;/a>&lt;/li>
-&lt;li>💻 &lt;a class="link" href="https://github.com/procionegobbo" target="_blank" rel="noopener"
->GitHub&lt;/a>&lt;/li>
-&lt;li>🌸 &lt;a class="link" href="https://pinkary.com/@procionegobbo" target="_blank" rel="noopener"
->Pinkary&lt;/a>&lt;/li>
-&lt;li>🐘 &lt;a class="link" href="https://livellosegreto.it/@procionegobbo" target="_blank" rel="noopener"
->Mastodon&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;blockquote>
-&lt;p>“Per me scrivere codice è come scrivere storie: ogni funzione ha un ruolo, ogni riga ha uno scopo.”&lt;/p>&lt;/blockquote></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Federico Maiorini</title>
+        <link>http://localhost:1313/</link>
+        <description>Recent content on Federico Maiorini</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>it-it</language>
+        <lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Ciao mondo</title>
+        <link>http://localhost:1313/blog/hello-world/</link>
+        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/hello-world/</guid>
+        <description>&lt;p&gt;Sono passati 11 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;
+&lt;p&gt;It’s been 11 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Portanus: Signore delle Porte</title>
+        <link>http://localhost:1313/gdr/portanus/</link>
+        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/gdr/portanus/</guid>
+        <description>&lt;p&gt;Un&amp;rsquo;antica divinità pre-romana riscoperta attraverso le Vie Profonde&amp;hellip;
+Qui metterò il materiale usato per un&amp;rsquo;avventura nella Roma moderna, tra antiche divinità, culti oscuri e servizi segreti vaticani.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Storie di Ghainar - Incipit</title>
+        <link>http://localhost:1313/scrittura/ghainar/</link>
+        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/scrittura/ghainar/</guid>
+        <description>&lt;p&gt;Il vento portava sabbia e segreti, e la città di Ghainar non dormiva da tre notti&amp;hellip;
+e qui si materializzerà la nuova incarnazione di Storie di Ghainar, una raccolta dei miei racconti.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Chi sono</title>
+        <link>http://localhost:1313/chi-sono/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/chi-sono/</guid>
+        <description>&lt;p&gt;Ciao, mi chiamo &lt;strong&gt;Federico Maiorini&lt;/strong&gt; e sono uno sviluppatore backend con oltre 20 anni di esperienza nel mondo dello sviluppo web e software. In rete mi trovi spesso con il nickname &lt;strong&gt;Procionegobbo&lt;/strong&gt; — una lunga storia che risale ai tempi del mio Master in Videogame Design.&lt;/p&gt;
+&lt;p&gt;Attualmente lavoro come &lt;strong&gt;Senior PHP Developer presso &lt;a class=&#34;link&#34; href=&#34;https://labs.fitprime.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fitprime Labs&lt;/a&gt;&lt;/strong&gt;, dove mi occupo di progettazione e sviluppo di servizi e microservizi in &lt;strong&gt;Laravel&lt;/strong&gt;, con particolare attenzione a performance, architetture scalabili e integrazione di sistemi complessi (SSO, RESTful APIs, sistemi di terze parti come Stripe e Auth0).&lt;/p&gt;
+&lt;p&gt;Nel corso della mia carriera ho:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;introdotto Laravel in aziende come Mind the Head, migliorando standard e qualità del codice&lt;/li&gt;
+&lt;li&gt;sviluppato soluzioni full-stack per grandi clienti (soprattutto nel settore farmaceutico)&lt;/li&gt;
+&lt;li&gt;lavorato in ambienti corporate e pubblici su architetture LAMP, .NET, SharePoint, C#, Angular, Oracle, e molto altro&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;-competenze-principali&#34;&gt;🛠 Competenze principali
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Framework:&lt;/strong&gt; Laravel&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linguaggi:&lt;/strong&gt; PHP 8+, SQL, JavaScript&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Basi dati:&lt;/strong&gt; MySQL, PostgreSQL, Oracle, SQL Server&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DevOps:&lt;/strong&gt; TDD, GitHub Actions, sistemi di caching (Redis)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integrazione:&lt;/strong&gt; SSO SAML, OAuth2, API esterne (Stripe, Google, Auth0)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Metodologie:&lt;/strong&gt; Agile (Scrum), Pair Programming, Code Review&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;-strumenti-che-uso-quotidianamente&#34;&gt;🧰 Strumenti che uso quotidianamente
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ambiente di sviluppo:&lt;/strong&gt; Laravel Herd, Docker, Tinkerwell&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Debug &amp;amp; diagnostica:&lt;/strong&gt; Spatie Ray, Xdebug&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deployment:&lt;/strong&gt; Laravel Forge, GitHub Actions&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Editor e tool:&lt;/strong&gt; VS Code, Warp, TablePlus&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Controllo versione:&lt;/strong&gt; Git, GitHub, BitBucket&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;-attualmente-sto-studiando&#34;&gt;📚 Attualmente sto studiando
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Design patterns&lt;/strong&gt; applicati a Laravel e PHP moderno&lt;/li&gt;
+&lt;li&gt;Introduzione al mondo &lt;strong&gt;event-driven&lt;/strong&gt; (Laravel events &amp;amp; queues)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Golang&lt;/strong&gt;, come alternativa backend moderna e performante&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scrittura narrativa e worldbuilding&lt;/strong&gt; per i miei progetti personali&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;-game-master-scrittore-e-narratore&#34;&gt;🎲 Game Master, scrittore e narratore
+&lt;/h3&gt;&lt;p&gt;Dal &lt;strong&gt;1985&lt;/strong&gt; sono anche un appassionato &lt;strong&gt;game master&lt;/strong&gt;, creatore di mondi e narratore di storie. Ho ideato decine di campagne e ambientazioni originali come il culto del misterioso &lt;strong&gt;Portanus&lt;/strong&gt;, con cui esploro il lato oscuro della mitologia e dell’archeologia immaginaria.&lt;/p&gt;
+&lt;p&gt;Amo usare il gioco di ruolo anche come strumento di team building in ambito lavorativo, per stimolare creatività e collaborazione.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;-formazione&#34;&gt;🎓 Formazione
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ITIS M. Faraday&lt;/strong&gt; – Perito in informatica&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Scuola Omero&lt;/strong&gt; – Scrittura creativa (2012–2016)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Istituto Europeo di Design&lt;/strong&gt; – Master in Videogame Design (2004–2005)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;-contatti&#34;&gt;📫 Contatti
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;📧 &lt;a class=&#34;link&#34; href=&#34;mailto:federico.maiorini@me.com&#34; &gt;federico.maiorini@me.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🔗 &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/federicomaiorini&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💻 &lt;a class=&#34;link&#34; href=&#34;https://github.com/procionegobbo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🌸 &lt;a class=&#34;link&#34; href=&#34;https://pinkary.com/@procionegobbo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pinkary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐘 &lt;a class=&#34;link&#34; href=&#34;https://livellosegreto.it/@procionegobbo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mastodon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Per me scrivere codice è come scrivere storie: ogni funzione ha un ruol&lt;/p&gt;&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

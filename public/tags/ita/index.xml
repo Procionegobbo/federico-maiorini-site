@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ita on Federico Maiorini</title><link>https://procionegobbo.it/tags/ita/</link><description>Recent content in Ita on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/ita/index.xml" rel="self" type="application/rss+xml"/><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p>Sono passati 11 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p>
-&lt;p>It’s been 11 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p></description></item><item><title>Portanus: Signore delle Porte</title><link>https://procionegobbo.it/gdr/portanus/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/gdr/portanus/</guid><description>&lt;p>Un&amp;rsquo;antica divinità pre-romana riscoperta attraverso le Vie Profonde&amp;hellip;
-Qui metterò il materiale usato per un&amp;rsquo;avventura nella Roma moderna, tra antiche divinità, culti oscuri e servizi segreti vaticani.&lt;/p></description></item><item><title>Storie di Ghainar - Incipit</title><link>https://procionegobbo.it/scrittura/ghainar/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/scrittura/ghainar/</guid><description>&lt;p>Il vento portava sabbia e segreti, e Ghainar non dormiva da tre notti&amp;hellip;
-e qui si materializzerà la nuova incarnazione di Storie di Ghainar, la raccolta dei miei racconti.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Ita on Federico Maiorini</title>
+        <link>http://localhost:1313/tags/ita/</link>
+        <description>Recent content in Ita on Federico Maiorini</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>it-it</language>
+        <lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/ita/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Ciao mondo</title>
+        <link>http://localhost:1313/blog/hello-world/</link>
+        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/hello-world/</guid>
+        <description>&lt;p&gt;Sono passati 11 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;
+&lt;p&gt;It’s been 11 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Portanus: Signore delle Porte</title>
+        <link>http://localhost:1313/gdr/portanus/</link>
+        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/gdr/portanus/</guid>
+        <description>&lt;p&gt;Un&amp;rsquo;antica divinità pre-romana riscoperta attraverso le Vie Profonde&amp;hellip;
+Qui metterò il materiale usato per un&amp;rsquo;avventura nella Roma moderna, tra antiche divinità, culti oscuri e servizi segreti vaticani.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Storie di Ghainar - Incipit</title>
+        <link>http://localhost:1313/scrittura/ghainar/</link>
+        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/scrittura/ghainar/</guid>
+        <description>&lt;p&gt;Il vento portava sabbia e segreti, e Ghainar non dormiva da tre notti&amp;hellip;
+e qui si materializzerà la nuova incarnazione di Storie di Ghainar, la raccolta dei miei racconti.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
