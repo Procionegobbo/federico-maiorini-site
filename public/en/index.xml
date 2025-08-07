@@ -1,81 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Federico Maiorini</title>
-        <link>http://localhost:1313/en/</link>
-        <description>Recent content on Federico Maiorini</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language><atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>About me</title>
-        <link>http://localhost:1313/en/about/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/en/about/</guid>
-        <description>&lt;p&gt;Hi, I&amp;rsquo;m &lt;strong&gt;Federico Maiorini&lt;/strong&gt;, a backend developer with over 20 years of experience in web and software development. Online, you’ll often find me under the nickname &lt;strong&gt;Procionegobbo&lt;/strong&gt; — a long story that goes back to my Master’s degree in Videogame Design.&lt;/p&gt;
-&lt;p&gt;I currently work as a &lt;strong&gt;Senior PHP Developer at &lt;a class=&#34;link&#34; href=&#34;https://labs.fitprime.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Fitprime Labs&lt;/a&gt;&lt;/strong&gt;, where I design and build services and microservices in &lt;strong&gt;Laravel&lt;/strong&gt;, focusing on performance, scalable architectures, and integration with third-party systems (SSO, REST APIs, Stripe, Auth0).&lt;/p&gt;
-&lt;p&gt;Over the years, I have:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;introduced Laravel as a framework in companies like Mind the Head, raising code quality and standards&lt;/li&gt;
-&lt;li&gt;built full-stack solutions for large clients, mainly in the pharmaceutical sector&lt;/li&gt;
-&lt;li&gt;worked in both public and corporate environments using LAMP, .NET, SharePoint, C#, Angular, Oracle, and more&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-core-competencies&#34;&gt;🛠 Core competencies
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Framework:&lt;/strong&gt; Laravel&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Languages:&lt;/strong&gt; PHP 8+, SQL, JavaScript&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Databases:&lt;/strong&gt; MySQL, PostgreSQL, Oracle, SQL Server&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;DevOps:&lt;/strong&gt; TDD, GitHub Actions, caching systems (Redis)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integration:&lt;/strong&gt; SSO SAML, OAuth2, external APIs (Stripe, Google, Auth0)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Methodologies:&lt;/strong&gt; Agile (Scrum), Pair Programming, Code Review&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-tools-i-use-daily&#34;&gt;🧰 Tools I use daily
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Dev environment:&lt;/strong&gt; Laravel Herd, Docker, Tinkerwell&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Debug &amp;amp; diagnostics:&lt;/strong&gt; Spatie Ray, Xdebug&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Deployment:&lt;/strong&gt; Laravel Forge, GitHub Actions&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Editor &amp;amp; CLI tools:&lt;/strong&gt; VS Code, Warp, TablePlus&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Version control:&lt;/strong&gt; Git, GitHub, BitBucket&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-currently-learning&#34;&gt;📚 Currently learning
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Design patterns&lt;/strong&gt; applied to modern Laravel and PHP&lt;/li&gt;
-&lt;li&gt;Exploring &lt;strong&gt;event-driven architecture&lt;/strong&gt; (Laravel events &amp;amp; queues)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Golang&lt;/strong&gt;, as a fast and lightweight backend alternative&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Creative writing and worldbuilding&lt;/strong&gt; for personal storytelling projects&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-game-master-writer-worldbuilder&#34;&gt;🎲 Game master, writer, worldbuilder
-&lt;/h3&gt;&lt;p&gt;Since &lt;strong&gt;1985&lt;/strong&gt;, I’ve been a passionate &lt;strong&gt;game master&lt;/strong&gt;, storyteller, and creator of imaginary worlds. I’ve written and run countless campaigns like the mythos surrounding &lt;strong&gt;Portanus&lt;/strong&gt;, a dark and ancient deity born from my love for archaeology, history, and mystery.&lt;/p&gt;
-&lt;p&gt;I also use role-playing as a team-building tool in the workplace — to foster creativity, collaboration, and problem-solving.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-education&#34;&gt;🎓 Education
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;ITIS M. Faraday&lt;/strong&gt; – Diploma in Computer Science&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Scuola Omero&lt;/strong&gt; – Creative Writing (2012–2016)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Istituto Europeo di Design&lt;/strong&gt; – Master’s in Videogame Design (2004–2005)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-contact&#34;&gt;📫 Contact
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;📧 &lt;a class=&#34;link&#34; href=&#34;mailto:federico.maiorini@me.com&#34; &gt;federico.maiorini@me.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🔗 &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/federicomaiorini&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💻 &lt;a class=&#34;link&#34; href=&#34;https://github.com/procionegobbo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🌸 &lt;a class=&#34;link&#34; href=&#34;https://pinkary.com/@procionegobbo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Pinkary&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🐘 &lt;a class=&#34;link&#34; href=&#34;https://livellosegreto.it/@procionegobbo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Mastodon&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“To me, writing code is like writing stories: every function has a role, every line has a purpose.”&lt;/p&gt;&lt;/blockquote&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Federico Maiorini</title><link>https://procionegobbo.it/en/</link><description>Recent content on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://procionegobbo.it/en/index.xml" rel="self" type="application/rss+xml"/><item><title>About me</title><link>https://procionegobbo.it/en/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/en/about/</guid><description>&lt;p>Hi, I&amp;rsquo;m &lt;strong>Federico Maiorini&lt;/strong>, a backend developer with over 20 years of experience in web and software development. Online, you’ll often find me under the nickname &lt;strong>Procionegobbo&lt;/strong> — a long story that goes back to my Master’s degree in Videogame Design.&lt;/p>
+&lt;p>I currently work as a &lt;strong>Senior PHP Developer at &lt;a class="link" href="https://labs.fitprime.com/" target="_blank" rel="noopener"
+>Fitprime Labs&lt;/a>&lt;/strong>, where I design and build services and microservices in &lt;strong>Laravel&lt;/strong>, focusing on performance, scalable architectures, and integration with third-party systems (SSO, REST APIs, Stripe, Auth0).&lt;/p>
+&lt;p>Over the years, I have:&lt;/p>
+&lt;ul>
+&lt;li>introduced Laravel as a framework in companies like Mind the Head, raising code quality and standards&lt;/li>
+&lt;li>built full-stack solutions for large clients, mainly in the pharmaceutical sector&lt;/li>
+&lt;li>worked in both public and corporate environments using LAMP, .NET, SharePoint, C#, Angular, Oracle, and more&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-core-competencies">🛠 Core competencies
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Framework:&lt;/strong> Laravel&lt;/li>
+&lt;li>&lt;strong>Languages:&lt;/strong> PHP 8+, SQL, JavaScript&lt;/li>
+&lt;li>&lt;strong>Databases:&lt;/strong> MySQL, PostgreSQL, Oracle, SQL Server&lt;/li>
+&lt;li>&lt;strong>DevOps:&lt;/strong> TDD, GitHub Actions, caching systems (Redis)&lt;/li>
+&lt;li>&lt;strong>Integration:&lt;/strong> SSO SAML, OAuth2, external APIs (Stripe, Google, Auth0)&lt;/li>
+&lt;li>&lt;strong>Methodologies:&lt;/strong> Agile (Scrum), Pair Programming, Code Review&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-tools-i-use-daily">🧰 Tools I use daily
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Dev environment:&lt;/strong> Laravel Herd, Docker, Tinkerwell&lt;/li>
+&lt;li>&lt;strong>Debug &amp;amp; diagnostics:&lt;/strong> Spatie Ray, Xdebug&lt;/li>
+&lt;li>&lt;strong>Deployment:&lt;/strong> Laravel Forge, GitHub Actions&lt;/li>
+&lt;li>&lt;strong>Editor &amp;amp; CLI tools:&lt;/strong> VS Code, Warp, TablePlus&lt;/li>
+&lt;li>&lt;strong>Version control:&lt;/strong> Git, GitHub, BitBucket&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-currently-learning">📚 Currently learning
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Design patterns&lt;/strong> applied to modern Laravel and PHP&lt;/li>
+&lt;li>Exploring &lt;strong>event-driven architecture&lt;/strong> (Laravel events &amp;amp; queues)&lt;/li>
+&lt;li>&lt;strong>Golang&lt;/strong>, as a fast and lightweight backend alternative&lt;/li>
+&lt;li>&lt;strong>Creative writing and worldbuilding&lt;/strong> for personal storytelling projects&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-game-master-writer-worldbuilder">🎲 Game master, writer, worldbuilder
+&lt;/h3>&lt;p>Since &lt;strong>1985&lt;/strong>, I’ve been a passionate &lt;strong>game master&lt;/strong>, storyteller, and creator of imaginary worlds. I’ve written and run countless campaigns like the mythos surrounding &lt;strong>Portanus&lt;/strong>, a dark and ancient deity born from my love for archaeology, history, and mystery.&lt;/p>
+&lt;p>I also use role-playing as a team-building tool in the workplace — to foster creativity, collaboration, and problem-solving.&lt;/p>
+&lt;hr>
+&lt;h3 id="-education">🎓 Education
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>ITIS M. Faraday&lt;/strong> – Diploma in Computer Science&lt;/li>
+&lt;li>&lt;strong>Scuola Omero&lt;/strong> – Creative Writing (2012–2016)&lt;/li>
+&lt;li>&lt;strong>Istituto Europeo di Design&lt;/strong> – Master’s in Videogame Design (2004–2005)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-contact">📫 Contact
+&lt;/h3>&lt;ul>
+&lt;li>📧 &lt;a class="link" href="mailto:federico.maiorini@me.com" >federico.maiorini@me.com&lt;/a>&lt;/li>
+&lt;li>🔗 &lt;a class="link" href="https://www.linkedin.com/in/federicomaiorini" target="_blank" rel="noopener"
+>LinkedIn&lt;/a>&lt;/li>
+&lt;li>💻 &lt;a class="link" href="https://github.com/procionegobbo" target="_blank" rel="noopener"
+>GitHub&lt;/a>&lt;/li>
+&lt;li>🌸 &lt;a class="link" href="https://pinkary.com/@procionegobbo" target="_blank" rel="noopener"
+>Pinkary&lt;/a>&lt;/li>
+&lt;li>🐘 &lt;a class="link" href="https://livellosegreto.it/@procionegobbo" target="_blank" rel="noopener"
+>Mastodon&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;blockquote>
+&lt;p>“To me, writing code is like writing stories: every function has a role, every line has a purpose.”&lt;/p>&lt;/blockquote></description></item></channel></rss>
