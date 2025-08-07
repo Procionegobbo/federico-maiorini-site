@@ -72,4 +72,4 @@ Amo usare il gioco di ruolo anche come strumento di team building in ambito lavo
 
 ---
 
-> “Scrivo codice come racconto storie: con logica, ritmo e un pizzico di mistero.”
+> “Per me scrivere codice è come scrivere storie: ogni funzione ha un ruolo, ogni riga ha uno scopo.”

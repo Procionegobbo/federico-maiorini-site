@@ -71,4 +71,4 @@ I also use role-playing as a team-building tool in the workplace — to foster c
 
 ---
 
-> “I write code the same way I tell stories: with logic, rhythm, and a touch of mystery.”
+> “To me, writing code is like writing stories: every function has a role, every line has a purpose.”
