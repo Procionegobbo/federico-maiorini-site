@@ -3,7 +3,7 @@ title: "Chi sono"
 description: "Federico Maiorini – Senior Backend Developer & Narratore"
 ---
 
-Ciao, mi chiamo **Federico Maiorini** e sono uno sviluppatore backend con oltre 20 anni di esperienza nel mondo dello sviluppo web e software.
+Ciao, mi chiamo **Federico Maiorini** e sono uno sviluppatore backend con oltre 20 anni di esperienza nel mondo dello sviluppo web e software. In rete mi trovi spesso con il nickname **Procionegobbo** — una lunga storia che risale ai tempi del mio Master in Videogame Design.
 
 Attualmente lavoro come **Senior PHP Developer presso Fitprime Labs**, dove mi occupo di progettazione e sviluppo di servizi e microservizi in **Laravel**, con particolare attenzione a performance, architetture scalabili e integrazione di sistemi complessi (SSO, RESTful APIs, sistemi di terze parti come Stripe e Auth0).
 

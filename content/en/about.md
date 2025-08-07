@@ -3,7 +3,7 @@ title: "About me"
 description: "Federico Maiorini – Senior Backend Developer & Storyteller"
 ---
 
-Hi, I'm **Federico Maiorini**, a backend developer with over 20 years of experience in web and software development.
+Hi, I'm **Federico Maiorini**, a backend developer with over 20 years of experience in web and software development. Online, you’ll often find me under the nickname **Procionegobbo** — a long story that goes back to my Master’s degree in Videogame Design.
 
 I currently work as a **Senior PHP Developer at Fitprime Labs**, where I design and build services and microservices in **Laravel**, focusing on performance, scalable architectures, and integration with third-party systems (SSO, REST APIs, Stripe, Auth0).
 
