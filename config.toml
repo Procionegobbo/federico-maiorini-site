@@ -1,4 +1,4 @@
-baseURL = "https://procionegobbo.github.io/federico-maiorini-site/"
+baseURL = "https://procionegobbo.it/"
 theme = "hugo-theme-stack"
 defaultContentLanguage = "it"
 defaultContentLanguageInSubdir = false
@@ -6,7 +6,7 @@ defaultContentLanguageInSubdir = false
 [params.sidebar.avatar]
 enabled = true
 local = false
-src = "https://procionegobbo.github.io/federico-maiorini-site/images/avatar.jpg"
+src = "https://procionegobbo.it/images/avatar.jpg"
 
 
 [languages]
