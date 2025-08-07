@@ -17,7 +17,7 @@ In my spare time, I’m also a **game master since 1985**, amateur writer, and o
 
 ---
 
-If you’d like to know more about me and my background, visit 👉 [About me]about)
+If you’d like to know more about me and my background, visit 👉 [About me](about)
 
 
 Thanks for stopping by! 🎲💻
