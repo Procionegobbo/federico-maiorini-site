@@ -1,2 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scrittura Creativa on Federico Maiorini</title><link>https://procionegobbo.it/tags/scrittura-creativa/</link><description>Recent content in Scrittura Creativa on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/scrittura-creativa/index.xml" rel="self" type="application/rss+xml"/><item><title>Storie di Ghainar - Incipit</title><link>https://procionegobbo.it/scrittura/ghainar/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/scrittura/ghainar/</guid><description>&lt;p>Il vento portava sabbia e segreti, e la città di Ghainar non dormiva da tre notti&amp;hellip;
-e qui si materializzerà la nuova incarnazione di Storie di Ghainar, una raccolta dei miei racconti.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Scrittura Creativa on Federico Maiorini</title>
+        <link>https://procionegobbo.it/tags/scrittura-creativa/</link>
+        <description>Recent content in Scrittura Creativa on Federico Maiorini</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>it-it</language>
+        <lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/scrittura-creativa/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Storie di Ghainar - Incipit</title>
+        <link>https://procionegobbo.it/scrittura/ghainar/</link>
+        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://procionegobbo.it/scrittura/ghainar/</guid>
+        <description>&lt;p&gt;Il vento portava sabbia e segreti, e la città di Ghainar non dormiva da tre notti&amp;hellip;
+e qui si materializzerà la nuova incarnazione di Storie di Ghainar, una raccolta dei miei racconti.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

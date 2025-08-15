@@ -1,1 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on Federico Maiorini</title><link>https://procionegobbo.it/categories/</link><description>Recent content in Categories on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><atom:link href="https://procionegobbo.it/categories/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on Federico Maiorini</title>
+        <link>https://procionegobbo.it/categories/</link>
+        <description>Recent content in Categories on Federico Maiorini</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>it-it</language>
+        <lastBuildDate>Fri, 15 Aug 2025 16:52:18 +0200</lastBuildDate><atom:link href="https://procionegobbo.it/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>GdR</title>
+        <link>https://procionegobbo.it/categories/gdr/</link>
+        <pubDate>Fri, 15 Aug 2025 16:52:18 +0200</pubDate>
+        
+        <guid>https://procionegobbo.it/categories/gdr/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Worldbuilding</title>
+        <link>https://procionegobbo.it/categories/worldbuilding/</link>
+        <pubDate>Fri, 15 Aug 2025 16:52:18 +0200</pubDate>
+        
+        <guid>https://procionegobbo.it/categories/worldbuilding/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
