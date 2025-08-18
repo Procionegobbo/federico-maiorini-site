@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Golang on Federico Maiorini</title>
-        <link>https://procionegobbo.it/categories/golang/</link>
+        <link>http://localhost:1313/categories/golang/</link>
         <description>Recent content in Golang on Federico Maiorini</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>it-it</language>
-        <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/categories/golang/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/golang/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title>
-        <link>https://procionegobbo.it/blog/read-methods-golang/</link>
+        <link>http://localhost:1313/blog/read-methods-golang/</link>
         <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://procionegobbo.it/blog/read-methods-golang/</guid>
-        <description>&lt;img src="https://procionegobbo.it/blog/read-methods-golang/bufioreader.png" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /&gt;&lt;h1 id=&#34;-confronto-metodi-di-bufioreader-in-go&#34;&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
+        <guid>http://localhost:1313/blog/read-methods-golang/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/read-methods-golang/bufioreader.png" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /&gt;&lt;h1 id=&#34;-confronto-metodi-di-bufioreader-in-go&#34;&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
 &lt;/h1&gt;&lt;h2 id=&#34;introduzione&#34;&gt;Introduzione
 &lt;/h2&gt;&lt;p&gt;Recentemente sto studiando &lt;a class=&#34;link&#34; href=&#34;https://go.dev/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Go&lt;/a&gt;, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
@@ -85,15 +85,15 @@ Ecco una guida rapida per capire le differenze.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     └───────────────┬──────────────┘
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   ┌─────────────────┼─────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                                   │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐             ┌──────────▼───────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Ti serve un []byte? │             │ Ti serve una stringa?│
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └──────────┬──────────┘             └───────────┬──────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                                    │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐             ┌───────────▼───────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Usa ReadBytes()     │             │ Usa ReadString()      │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─────────────────────┘             └───────────────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                 |                 │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐      |      ┌──────────▼───────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Ti serve un []byte? │      |      │ Ti serve una stringa?│
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └──────────┬──────────┘      |      └───────────┬──────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                 |                  │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐      |      ┌───────────▼───────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Usa ReadBytes()     │      |      │ Usa ReadString()      │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─────────────────────┘      |      └───────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     ▼
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     ┌──────────────────────────────┐

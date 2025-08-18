@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Federico Maiorini</title>
-        <link>https://procionegobbo.it/en/</link>
+        <link>http://localhost:1313/en/</link>
         <description>Recent content on Federico Maiorini</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language><atom:link href="https://procionegobbo.it/en/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>en-us</language><atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>About me</title>
-        <link>https://procionegobbo.it/en/about/</link>
+        <link>http://localhost:1313/en/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://procionegobbo.it/en/about/</guid>
+        <guid>http://localhost:1313/en/about/</guid>
         <description>&lt;p&gt;Hi, I&amp;rsquo;m &lt;strong&gt;Federico Maiorini&lt;/strong&gt;, a backend developer with over 20 years of experience in web and software development. Online, you’ll often find me under the nickname &lt;strong&gt;Procionegobbo&lt;/strong&gt; — a long story that goes back to my Master’s degree in Videogame Design.&lt;/p&gt;
 &lt;p&gt;I currently work as a &lt;strong&gt;Senior PHP Developer at &lt;a class=&#34;link&#34; href=&#34;https://labs.fitprime.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Fitprime Labs&lt;/a&gt;&lt;/strong&gt;, where I design and build services and microservices in &lt;strong&gt;Laravel&lt;/strong&gt;, focusing on performance, scalable architectures, and integration with third-party systems (SSO, REST APIs, Stripe, Auth0).&lt;/p&gt;

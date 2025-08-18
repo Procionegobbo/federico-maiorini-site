@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Federico Maiorini</title>
-        <link>https://procionegobbo.it/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on Federico Maiorini</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>it-it</language>
-        <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title>
-        <link>https://procionegobbo.it/blog/read-methods-golang/</link>
+        <link>http://localhost:1313/blog/read-methods-golang/</link>
         <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://procionegobbo.it/blog/read-methods-golang/</guid>
-        <description>&lt;img src="https://procionegobbo.it/blog/read-methods-golang/bufioreader.png" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /&gt;&lt;h1 id=&#34;-confronto-metodi-di-bufioreader-in-go&#34;&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
+        <guid>http://localhost:1313/blog/read-methods-golang/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/read-methods-golang/bufioreader.png" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /&gt;&lt;h1 id=&#34;-confronto-metodi-di-bufioreader-in-go&#34;&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
 &lt;/h1&gt;&lt;h2 id=&#34;introduzione&#34;&gt;Introduzione
 &lt;/h2&gt;&lt;p&gt;Recentemente sto studiando &lt;a class=&#34;link&#34; href=&#34;https://go.dev/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Go&lt;/a&gt;, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
@@ -85,15 +85,15 @@ Ecco una guida rapida per capire le differenze.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     └───────────────┬──────────────┘
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   ┌─────────────────┼─────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                                   │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐             ┌──────────▼───────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Ti serve un []byte? │             │ Ti serve una stringa?│
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └──────────┬──────────┘             └───────────┬──────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                                    │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐             ┌───────────▼───────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Usa ReadBytes()     │             │ Usa ReadString()      │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─────────────────────┘             └───────────────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                 |                 │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐      |      ┌──────────▼───────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Ti serve un []byte? │      |      │ Ti serve una stringa?│
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └──────────┬──────────┘      |      └───────────┬──────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                 |                  │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐      |      ┌───────────▼───────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Usa ReadBytes()     │      |      │ Usa ReadString()      │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─────────────────────┘      |      └───────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     ▼
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     ┌──────────────────────────────┐
@@ -207,11 +207,11 @@ Ecco una guida rapida per capire le differenze.&lt;/p&gt;
         </item>
         <item>
         <title>Cronologia del mondo di Kor</title>
-        <link>https://procionegobbo.it/gdr/cronologia-del-mondo-di-kor/</link>
+        <link>http://localhost:1313/gdr/cronologia-del-mondo-di-kor/</link>
         <pubDate>Fri, 15 Aug 2025 16:52:18 +0200</pubDate>
         
-        <guid>https://procionegobbo.it/gdr/cronologia-del-mondo-di-kor/</guid>
-        <description>&lt;img src="https://procionegobbo.it/gdr/cronologia-del-mondo-di-kor/pf6k3n5xmhrma0crns48ta5e3w.jpg" alt="Featured image of post Cronologia del mondo di Kor" /&gt;&lt;h1 id=&#34;cronologia-del-mondo-di-kor&#34;&gt;Cronologia del mondo di Kor
+        <guid>http://localhost:1313/gdr/cronologia-del-mondo-di-kor/</guid>
+        <description>&lt;img src="http://localhost:1313/gdr/cronologia-del-mondo-di-kor/pf6k3n5xmhrma0crns48ta5e3w.jpg" alt="Featured image of post Cronologia del mondo di Kor" /&gt;&lt;h1 id=&#34;cronologia-del-mondo-di-kor&#34;&gt;Cronologia del mondo di Kor
 &lt;/h1&gt;&lt;h2 id=&#34;era-divina&#34;&gt;Era Divina
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Durante questa era non esiste nulla, tranne gli dei. L’universo è un infinito vuoto e gli dei, entità di puro pensiero, esistono senza percezione di tempo e spazio a malapena consapevoli di esistere.&lt;/li&gt;
@@ -278,10 +278,10 @@ Ecco una guida rapida per capire le differenze.&lt;/p&gt;
         </item>
         <item>
         <title>Portanus: Signore delle Porte</title>
-        <link>https://procionegobbo.it/gdr/portanus/</link>
+        <link>http://localhost:1313/gdr/portanus/</link>
         <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://procionegobbo.it/gdr/portanus/</guid>
+        <guid>http://localhost:1313/gdr/portanus/</guid>
         <description>&lt;h3 id=&#34;portanus-il-signore-delle-porte&#34;&gt;Portanus (Il Signore delle Porte)
 &lt;/h3&gt;&lt;p&gt;&lt;em&gt;Divinità pre-romana delle soglie e dei portali&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -295,10 +295,10 @@ Ecco una guida rapida per capire le differenze.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc.jpg&#34;
 	width=&#34;2048&#34;
 	height=&#34;1871&#34;
-	srcset=&#34;https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc_hu_294f5de51a08ae7c.jpg 480w, https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc_hu_63742599b4083747.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc_hu_294f5de51a08ae7c.jpg 480w, http://localhost:1313/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc_hu_63742599b4083747.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Portanus in veste di divinità celtica&#34;
@@ -344,10 +344,10 @@ Tra i suoi poteri principali:&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Pietre di Confine Sacre:&lt;/strong&gt; Le tribù proto-indoeuropee potrebbero aver eretto &lt;strong&gt;stele votive&lt;/strong&gt; con il simbolo di Portanus in prossimità di passaggi naturali per chiedere il suo favore.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Il Portatore del Fuoco Oscuro:&lt;/strong&gt; Portanus potrebbe essere raffigurato come un essere avvolto da un fuoco che non brucia ma oscura la luce, segno del suo potere di nascondere e rivelare.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://procionegobbo.it/gdr/portanus/Simbolo.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/gdr/portanus/Simbolo.png&#34;
 	width=&#34;1024&#34;
 	height=&#34;1024&#34;
-	srcset=&#34;https://procionegobbo.it/gdr/portanus/Simbolo_hu_11999f0684978b2f.png 480w, https://procionegobbo.it/gdr/portanus/Simbolo_hu_de3e998db77c0532.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/gdr/portanus/Simbolo_hu_11999f0684978b2f.png 480w, http://localhost:1313/gdr/portanus/Simbolo_hu_de3e998db77c0532.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Simbolo di Portanus, rinvenuto in uno scavo archeologico in Khazakistan&#34;
@@ -407,10 +407,10 @@ Si diceva che Portanus fosse colui che raccoglieva il sole morente ogni sera per
 &lt;li&gt;&lt;strong&gt;Dvārapālas&lt;/strong&gt;, i guardiani delle soglie dei templi indù e buddhisti, come un&amp;rsquo;eco degli antichi Custodi della Porta.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Shiva&lt;/strong&gt; nella sua forma di &lt;strong&gt;Kala Bhairava&lt;/strong&gt;, il feroce signore del tempo e delle transizioni, che presiede i luoghi di cremazione e le soglie tra vita e morte, potrebbe aver assorbito il lato più occulto del mito.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://procionegobbo.it/gdr/portanus/dvarapalas.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/gdr/portanus/dvarapalas.jpg&#34;
 	width=&#34;2048&#34;
 	height=&#34;2048&#34;
-	srcset=&#34;https://procionegobbo.it/gdr/portanus/dvarapalas_hu_e0f2a09acb334943.jpg 480w, https://procionegobbo.it/gdr/portanus/dvarapalas_hu_c803c55ff8dc2270.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/gdr/portanus/dvarapalas_hu_e0f2a09acb334943.jpg 480w, http://localhost:1313/gdr/portanus/dvarapalas_hu_c803c55ff8dc2270.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Un Dvārapālas col simbolo di Portanus&#34;
@@ -426,10 +426,10 @@ Si diceva che Portanus fosse colui che raccoglieva il sole morente ogni sera per
 &lt;h3 id=&#34;connessione-tra-le-due-tradizioni&#34;&gt;&lt;strong&gt;Connessione tra le Due Tradizioni&lt;/strong&gt;
 &lt;/h3&gt;&lt;p&gt;Mentre in Occidente Portanus è stato assorbito dalla religione romana e poi dimenticato, in India la sua eredità potrebbe essere sopravvissuta sotto forma di pratiche rituali legate ai passaggi tra mondi, ai portali sacri e ai guardiani delle soglie, influenzando la concezione delle porte sacre nei templi e il simbolismo della liberazione spirituale.&lt;/p&gt;
 &lt;h1 id=&#34;portanus-il-primo-guardiano-dei-confini&#34;&gt;&lt;strong&gt;Portanus: Il Primo Guardiano dei Confini&lt;/strong&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://procionegobbo.it/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm.jpg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm.jpg&#34;
 	width=&#34;2048&#34;
 	height=&#34;2048&#34;
-	srcset=&#34;https://procionegobbo.it/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm_hu_206cb154031fbd46.jpg 480w, https://procionegobbo.it/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm_hu_aa9877bbc9e75c90.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm_hu_206cb154031fbd46.jpg 480w, http://localhost:1313/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm_hu_aa9877bbc9e75c90.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Portanus&#34;
@@ -458,30 +458,30 @@ Si diceva che Portanus fosse colui che raccoglieva il sole morente ogni sera per
         </item>
         <item>
         <title>Ciao mondo</title>
-        <link>https://procionegobbo.it/blog/hello-world/</link>
+        <link>http://localhost:1313/blog/hello-world/</link>
         <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://procionegobbo.it/blog/hello-world/</guid>
+        <guid>http://localhost:1313/blog/hello-world/</guid>
         <description>&lt;p&gt;Sono passati 11 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;
 &lt;p&gt;It’s been 11 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Storie di Ghainar - Incipit</title>
-        <link>https://procionegobbo.it/scrittura/ghainar/</link>
+        <link>http://localhost:1313/scrittura/ghainar/</link>
         <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://procionegobbo.it/scrittura/ghainar/</guid>
+        <guid>http://localhost:1313/scrittura/ghainar/</guid>
         <description>&lt;p&gt;Il vento portava sabbia e segreti, e la città di Ghainar non dormiva da tre notti&amp;hellip;
 e qui si materializzerà la nuova incarnazione di Storie di Ghainar, una raccolta dei miei racconti.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Chi sono</title>
-        <link>https://procionegobbo.it/chi-sono/</link>
+        <link>http://localhost:1313/chi-sono/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://procionegobbo.it/chi-sono/</guid>
+        <guid>http://localhost:1313/chi-sono/</guid>
         <description>&lt;p&gt;Ciao, mi chiamo &lt;strong&gt;Federico Maiorini&lt;/strong&gt; e sono uno sviluppatore backend con oltre 20 anni di esperienza nel mondo dello sviluppo web e software. In rete mi trovi spesso con il nickname &lt;strong&gt;Procionegobbo&lt;/strong&gt; — una lunga storia che risale ai tempi del mio Master in Videogame Design.&lt;/p&gt;
 &lt;p&gt;Attualmente lavoro come &lt;strong&gt;Senior PHP Developer presso &lt;a class=&#34;link&#34; href=&#34;https://labs.fitprime.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Fitprime Labs&lt;/a&gt;&lt;/strong&gt;, dove mi occupo di progettazione e sviluppo di servizi e microservizi in &lt;strong&gt;Laravel&lt;/strong&gt;, con particolare attenzione a performance, architetture scalabili e integrazione di sistemi complessi (SSO, RESTful APIs, sistemi di terze parti come Stripe e Auth0).&lt;/p&gt;

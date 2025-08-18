@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="it-it" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Tabella comparativa e diagramma di flusso per scegliere il metodo corretto di bufio.Reader in Go, con esempio pratico">
 <title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title>
 
-<link rel='canonical' href='https://procionegobbo.it/blog/read-methods-golang/'>
+<link rel='canonical' href='http://localhost:1313/blog/read-methods-golang/'>
 
-<link rel="stylesheet" href="https://procionegobbo.it/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go">
+<link rel="stylesheet" href="http://localhost:1313/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go">
 <meta property='og:description' content="Tabella comparativa e diagramma di flusso per scegliere il metodo corretto di bufio.Reader in Go, con esempio pratico">
-<meta property='og:url' content='https://procionegobbo.it/blog/read-methods-golang/'>
+<meta property='og:url' content='http://localhost:1313/blog/read-methods-golang/'>
 <meta property='og:site_name' content='Federico Maiorini'>
-<meta property='og:type' content='article'><meta property='article:section' content='Blog' /><meta property='article:tag' content='golang' /><meta property='article:tag' content='bufio' /><meta property='article:tag' content='io' /><meta property='article:tag' content='guide tecniche' /><meta property='article:published_time' content='2025-08-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-18T00:00:00&#43;00:00'/><meta property='og:image' content='https://procionegobbo.it/blog/read-methods-golang/bufioreader.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Blog' /><meta property='article:tag' content='golang' /><meta property='article:tag' content='bufio' /><meta property='article:tag' content='io' /><meta property='article:tag' content='guide tecniche' /><meta property='article:published_time' content='2025-08-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-18T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/blog/read-methods-golang/bufioreader.png' />
 <meta name="twitter:title" content="Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go">
 <meta name="twitter:description" content="Tabella comparativa e diagramma di flusso per scegliere il metodo corretto di bufio.Reader in Go, con esempio pratico"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://procionegobbo.it/blog/read-methods-golang/bufioreader.png' /><link rel="icon" type="image/png" href="https://procionegobbo.it/favicon.png">
+    <meta name="twitter:image" content='http://localhost:1313/blog/read-methods-golang/bufioreader.png' /><link rel="icon" type="image/png" href="http://localhost:1313/favicon.png">
     </head>
     <body class="
     article-page
@@ -49,7 +49,7 @@
         
             
             <figure class="site-avatar">
-                <a href="https://procionegobbo.it/">
+                <a href="http://localhost:1313/">
                 
                     <img src="https://procionegobbo.it/images/avatar.jpg" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
                 
@@ -60,7 +60,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="https://procionegobbo.it/">Federico Maiorini</a></h1>
+            <h1 class="site-name"><a href="http://localhost:1313/">Federico Maiorini</a></h1>
             <h2 class="site-description"></h2>
         </div>
     </header><ol class="menu" id="main-menu">
@@ -68,7 +68,7 @@
         
         
         <li >
-            <a href='https://procionegobbo.it/blog/' >
+            <a href='http://localhost:1313/blog/' >
                 
                 
                 
@@ -78,7 +78,7 @@
         
         
         <li >
-            <a href='https://procionegobbo.it/gdr/' >
+            <a href='http://localhost:1313/gdr/' >
                 
                 
                 
@@ -88,7 +88,7 @@
         
         
         <li >
-            <a href='https://procionegobbo.it/scrittura/' >
+            <a href='http://localhost:1313/scrittura/' >
                 
                 
                 
@@ -98,7 +98,7 @@
         
         
         <li >
-            <a href='https://procionegobbo.it/chi-sono/' >
+            <a href='http://localhost:1313/chi-sono/' >
                 
                 
                 
@@ -123,9 +123,9 @@
 
                             <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                                 
-                                    <option value="https://procionegobbo.it/" selected>Italiano</option>
+                                    <option value="http://localhost:1313/" selected>Italiano</option>
                                 
-                                    <option value="https://procionegobbo.it/en/" >English</option>
+                                    <option value="http://localhost:1313/en/" >English</option>
                                 
                             </select>
                         </li>
@@ -144,9 +144,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="https://procionegobbo.it/blog/read-methods-golang/">
-                <img src="https://procionegobbo.it/blog/read-methods-golang/bufioreader_hu_1f93ec4a267cde0b.png"
-                        srcset="https://procionegobbo.it/blog/read-methods-golang/bufioreader_hu_1f93ec4a267cde0b.png 800w, https://procionegobbo.it/blog/read-methods-golang/bufioreader_hu_9dd02a4d391f0599.png 1600w"
+            <a href="http://localhost:1313/blog/read-methods-golang/">
+                <img src="http://localhost:1313/blog/read-methods-golang/bufioreader_hu_1f93ec4a267cde0b.png"
+                        srcset="http://localhost:1313/blog/read-methods-golang/bufioreader_hu_1f93ec4a267cde0b.png 800w, http://localhost:1313/blog/read-methods-golang/bufioreader_hu_9dd02a4d391f0599.png 1600w"
                         width="800" 
                         height="533" 
                         loading="lazy"
@@ -160,11 +160,11 @@
     
     <header class="article-category">
         
-            <a href="https://procionegobbo.it/categories/programmazione/" >
+            <a href="http://localhost:1313/categories/programmazione/" >
                 Programmazione
             </a>
         
-            <a href="https://procionegobbo.it/categories/golang/" >
+            <a href="http://localhost:1313/categories/golang/" >
                 Golang
             </a>
         
@@ -173,7 +173,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="https://procionegobbo.it/blog/read-methods-golang/">Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</a>
+            <a href="http://localhost:1313/blog/read-methods-golang/">Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</a>
         </h2>
     
         
@@ -302,15 +302,15 @@ Ecco una guida rapida per capire le differenze.</p>
 </span></span><span style="display:flex;"><span>                     └───────────────┬──────────────┘
 </span></span><span style="display:flex;"><span>                                     │
 </span></span><span style="display:flex;"><span>                   ┌─────────────────┼─────────────────┐
-</span></span><span style="display:flex;"><span>                   │                                   │
-</span></span><span style="display:flex;"><span>        ┌──────────▼──────────┐             ┌──────────▼───────────┐
-</span></span><span style="display:flex;"><span>        │ Ti serve un []byte? │             │ Ti serve una stringa?│
-</span></span><span style="display:flex;"><span>        └──────────┬──────────┘             └───────────┬──────────┘
-</span></span><span style="display:flex;"><span>                   │                                    │
-</span></span><span style="display:flex;"><span>        ┌──────────▼──────────┐             ┌───────────▼───────────┐
-</span></span><span style="display:flex;"><span>        │ Usa ReadBytes()     │             │ Usa ReadString()      │
-</span></span><span style="display:flex;"><span>        └─────────────────────┘             └───────────────────────┘
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                   │                 |                 │
+</span></span><span style="display:flex;"><span>        ┌──────────▼──────────┐      |      ┌──────────▼───────────┐
+</span></span><span style="display:flex;"><span>        │ Ti serve un []byte? │      |      │ Ti serve una stringa?│
+</span></span><span style="display:flex;"><span>        └──────────┬──────────┘      |      └───────────┬──────────┘
+</span></span><span style="display:flex;"><span>                   │                 |                  │
+</span></span><span style="display:flex;"><span>        ┌──────────▼──────────┐      |      ┌───────────▼───────────┐
+</span></span><span style="display:flex;"><span>        │ Usa ReadBytes()     │      |      │ Usa ReadString()      │
+</span></span><span style="display:flex;"><span>        └─────────────────────┘      |      └───────────────────────┘
+</span></span><span style="display:flex;"><span>                                     │
 </span></span><span style="display:flex;"><span>                                     │
 </span></span><span style="display:flex;"><span>                                     ▼
 </span></span><span style="display:flex;"><span>                     ┌──────────────────────────────┐
@@ -428,13 +428,13 @@ Ecco una guida rapida per capire le differenze.</p>
     
     <section class="article-tags">
         
-            <a href="https://procionegobbo.it/tags/golang/">Golang</a>
+            <a href="http://localhost:1313/tags/golang/">Golang</a>
         
-            <a href="https://procionegobbo.it/tags/bufio/">Bufio</a>
+            <a href="http://localhost:1313/tags/bufio/">Bufio</a>
         
-            <a href="https://procionegobbo.it/tags/io/">Io</a>
+            <a href="http://localhost:1313/tags/io/">Io</a>
         
-            <a href="https://procionegobbo.it/tags/guide-tecniche/">Guide Tecniche</a>
+            <a href="http://localhost:1313/tags/guide-tecniche/">Guide Tecniche</a>
         
     </section>
 
@@ -554,7 +554,7 @@ Ecco una guida rapida per capire le differenze.</p>
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="https://procionegobbo.it/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="http://localhost:1313/ts/main.e88a451fe10c06e4a19c65e3b4b16a56c8804838548425b721e3c234f1d1de83.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
