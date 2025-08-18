@@ -12,8 +12,8 @@ Nel tempo libero sono anche un **game master dal 1985**, scrittore dilettante e 
 
 ### 🚀 Cosa trovi in questo sito
 
-- 🧑‍💻 **Blog tecnico e personale**: articoli su Laravel, best practice backend, strumenti per dev  
-- 🧙‍♂️ **Sezioni GDR e scrittura**: racconti brevi, campagne, culti e mondi oscuri
+- 🧑‍💻 **[Blog tecnico e personale](/blog)**: articoli su Laravel, best practice backend, strumenti per dev  
+- 🧙‍♂️ **Sezioni [GDR](/gdr) e [Scrittura](/scrittura)**: racconti brevi, campagne, culti e mondi oscuri
 
 ---
 

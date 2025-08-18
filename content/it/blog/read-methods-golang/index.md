@@ -5,6 +5,7 @@ tags: ["golang", "bufio", "io", "guide tecniche"]
 categories: ["programmazione", "golang"]
 description: "Tabella comparativa e diagramma di flusso per scegliere il metodo corretto di bufio.Reader in Go, con esempio pratico"
 draft: false
+image: bufioreader.png
 toc: true
 ---
 
@@ -13,7 +14,7 @@ toc: true
 
 ## Introduzione
 
-Recentemente sto studiando Go, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
+Recentemente sto studiando [Go](https://go.dev/), linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
 Una delle cose che mi interessano è come leggere e scrivere da uno stream quindi, con l'aiuto di una IA mi sono fatto un veloce riepilogo delle differenze tra alcuni metodi della libreria `bufio`.
 
 I metodi **`ReadRune`**, **`ReadBytes`**, **`ReadString`** e **`ReadLine`** sono molto simili ma solo in apparenza. 

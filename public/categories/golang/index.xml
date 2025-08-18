@@ -12,9 +12,10 @@
         <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
         
         <guid>https://procionegobbo.it/blog/read-methods-golang/</guid>
-        <description>&lt;h1 id=&#34;-confronto-metodi-di-bufioreader-in-go&#34;&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
+        <description>&lt;img src="https://procionegobbo.it/blog/read-methods-golang/bufioreader.png" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /&gt;&lt;h1 id=&#34;-confronto-metodi-di-bufioreader-in-go&#34;&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
 &lt;/h1&gt;&lt;h2 id=&#34;introduzione&#34;&gt;Introduzione
-&lt;/h2&gt;&lt;p&gt;Recentemente sto studiando Go, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
+&lt;/h2&gt;&lt;p&gt;Recentemente sto studiando &lt;a class=&#34;link&#34; href=&#34;https://go.dev/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Go&lt;/a&gt;, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
 Una delle cose che mi interessano è come leggere e scrivere da uno stream quindi, con l&amp;rsquo;aiuto di una IA mi sono fatto un veloce riepilogo delle differenze tra alcuni metodi della libreria &lt;code&gt;bufio&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;I metodi &lt;strong&gt;&lt;code&gt;ReadRune&lt;/code&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;ReadBytes&lt;/code&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;ReadString&lt;/code&gt;&lt;/strong&gt; e &lt;strong&gt;&lt;code&gt;ReadLine&lt;/code&gt;&lt;/strong&gt; sono molto simili ma solo in apparenza.
 Ecco una guida rapida per capire le differenze.&lt;/p&gt;
