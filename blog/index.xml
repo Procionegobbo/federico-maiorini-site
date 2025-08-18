@@ -1,2 +1,191 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on Federico Maiorini</title><link>https://procionegobbo.it/blog/</link><description>Recent content in Blogs on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p>Sono passati 11 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on Federico Maiorini</title><link>https://procionegobbo.it/blog/</link><description>Recent content in Blogs on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title><link>https://procionegobbo.it/blog/read-methods-golang/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/read-methods-golang/</guid><description>&lt;h1 id="-confronto-metodi-di-bufioreader-in-go">📚 Confronto metodi di &lt;code>bufio.Reader&lt;/code> in Go
+&lt;/h1>&lt;h2 id="introduzione">Introduzione
+&lt;/h2>&lt;p>Recentemente sto studiando Go, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
+Una delle cose che mi interessano è come leggere e scrivere da uno stream quindi, con l&amp;rsquo;aiuto di una IA mi sono fatto un veloce riepilogo delle differenze tra alcuni metodi della libreria &lt;code>bufio&lt;/code>.&lt;/p>
+&lt;p>I metodi &lt;strong>&lt;code>ReadRune&lt;/code>&lt;/strong>, &lt;strong>&lt;code>ReadBytes&lt;/code>&lt;/strong>, &lt;strong>&lt;code>ReadString&lt;/code>&lt;/strong> e &lt;strong>&lt;code>ReadLine&lt;/code>&lt;/strong> sono molto simili ma solo in apparenza.
+Ecco una guida rapida per capire le differenze.&lt;/p>
+&lt;hr>
+&lt;h2 id="tabella-comparativa">Tabella comparativa
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Metodo&lt;/th>
+&lt;th>Firma&lt;/th>
+&lt;th>Cosa legge&lt;/th>
+&lt;th>Tipo restituito&lt;/th>
+&lt;th>Include &lt;code>\n&lt;/code>?&lt;/th>
+&lt;th>Note pratiche&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>ReadRune()&lt;/strong>&lt;/td>
+&lt;td>&lt;code>(r rune, size int, err error)&lt;/code>&lt;/td>
+&lt;td>&lt;strong>Un singolo carattere Unicode&lt;/strong> (1 rune)&lt;/td>
+&lt;td>&lt;code>rune&lt;/code> (+size+err)&lt;/td>
+&lt;td>N/A (legge solo 1 carattere)&lt;/td>
+&lt;td>Utile per analizzare caratteri uno alla volta (UTF-8 safe).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>ReadBytes(delim byte)&lt;/strong>&lt;/td>
+&lt;td>&lt;code>([]byte, error)&lt;/code>&lt;/td>
+&lt;td>Fino a &lt;code>delim&lt;/code> incluso&lt;/td>
+&lt;td>&lt;code>[]byte&lt;/code>&lt;/td>
+&lt;td>✅ sì&lt;/td>
+&lt;td>Restituisce slice di byte, ottimo per parsing binario o testo grezzo.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>ReadString(delim byte)&lt;/strong>&lt;/td>
+&lt;td>&lt;code>(string, error)&lt;/code>&lt;/td>
+&lt;td>Fino a &lt;code>delim&lt;/code> incluso&lt;/td>
+&lt;td>&lt;code>string&lt;/code>&lt;/td>
+&lt;td>✅ sì&lt;/td>
+&lt;td>Comodo se sai di leggere testo, meno efficiente di &lt;code>ReadBytes&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>ReadLine()&lt;/strong>&lt;/td>
+&lt;td>&lt;code>([]byte, isPrefix bool, error)&lt;/code>&lt;/td>
+&lt;td>Una riga (senza &lt;code>\n&lt;/code>)&lt;/td>
+&lt;td>&lt;code>[]byte&lt;/code> + &lt;code>isPrefix&lt;/code> + &lt;code>err&lt;/code>&lt;/td>
+&lt;td>❌ no&lt;/td>
+&lt;td>Se la riga è troppo lunga, la restituisce a pezzi (&lt;code>isPrefix = true&lt;/code>). Serve loop per ricomporla. Più basso livello.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-diagramma-di-flusso-decisionale">🔀 Diagramma di flusso decisionale
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ┌──────────────────────────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Vuoi leggere 1 carattere? │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └───────────────┬──────────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌─────────▼─────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Usa ReadRune() │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └───────────────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ▼
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌──────────────────────────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Vuoi leggere fino a un │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ delimitatore (es. &amp;#39;\n&amp;#39;)? │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └───────────────┬──────────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌─────────────────┼─────────────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌──────────▼──────────┐ ┌──────────▼───────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Ti serve un []byte? │ │ Ti serve una stringa?│
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └──────────┬──────────┘ └───────────┬──────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌──────────▼──────────┐ ┌───────────▼───────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Usa ReadBytes() │ │ Usa ReadString() │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └─────────────────────┘ └───────────────────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ▼
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌──────────────────────────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Devi gestire linee molto │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ lunghe (buffer a pezzi)? │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └───────────────┬──────────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌─────────▼─────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Usa ReadLine() │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └───────────────────┘
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="esempio-pratico">Esempio pratico
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;bufio&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;bytes&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;strings&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">text&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;café\nseconda linea\nterza linea senza newline finale&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// --- ReadRune(): legge un singolo carattere Unicode alla volta ---
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;== ReadRune() ==&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">r&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">bufio&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">strings&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">text&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &amp;lt; &lt;span style="color:#ae81ff">4&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span> { &lt;span style="color:#75715e">// leggo le prime 4 rune: c, a, f, é
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">ru&lt;/span>, &lt;span style="color:#a6e22e">size&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">r&lt;/span>.&lt;span style="color:#a6e22e">ReadRune&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Errore ReadRune:&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;rune=%q size=%d\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">ru&lt;/span>, &lt;span style="color:#a6e22e">size&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// --- ReadBytes(&amp;#39;\n&amp;#39;): legge fino al delimitatore incluso e restituisce []byte ---
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;== ReadBytes(&amp;#39;\\n&amp;#39;) ==&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">r&lt;/span> = &lt;span style="color:#a6e22e">bufio&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">strings&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">text&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">b&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">r&lt;/span>.&lt;span style="color:#a6e22e">ReadBytes&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;\n&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Errore ReadBytes:&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;ReadBytes: %q (len=%d)\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">b&lt;/span>, len(&lt;span style="color:#a6e22e">b&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// --- ReadString(&amp;#39;\n&amp;#39;): stesso comportamento ma restituisce string ---
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;== ReadString(&amp;#39;\\n&amp;#39;) ==&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">r&lt;/span> = &lt;span style="color:#a6e22e">bufio&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">strings&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">text&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">s&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">r&lt;/span>.&lt;span style="color:#a6e22e">ReadString&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;\n&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Errore ReadString:&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;ReadString: %q (len=%d)\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">s&lt;/span>, len(&lt;span style="color:#a6e22e">s&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// --- ReadLine(): NON include &amp;#39;\n&amp;#39; e può restituire porzioni (isPrefix=true) ---
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// Forziamo una linea più lunga del buffer per vedere isPrefix=true.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;== ReadLine() con buffer piccolo e isPrefix ==&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">longLine&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;abcdefghij\n&amp;#34;&lt;/span> &lt;span style="color:#75715e">// 10 caratteri + &amp;#39;\n&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">smallBuf&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">bufio&lt;/span>.&lt;span style="color:#a6e22e">NewReaderSize&lt;/span>(&lt;span style="color:#a6e22e">strings&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">longLine&lt;/span>), &lt;span style="color:#ae81ff">8&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">parts&lt;/span> [][]&lt;span style="color:#66d9ef">byte&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">line&lt;/span>, &lt;span style="color:#a6e22e">isPrefix&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">smallBuf&lt;/span>.&lt;span style="color:#a6e22e">ReadLine&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// fine input o errore
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// Copia difensiva del frammento letto
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">parts&lt;/span> = append(&lt;span style="color:#a6e22e">parts&lt;/span>, append([]byte(&lt;span style="color:#66d9ef">nil&lt;/span>), &lt;span style="color:#a6e22e">line&lt;/span>&lt;span style="color:#f92672">...&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;chunk=%q isPrefix=%v\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">line&lt;/span>, &lt;span style="color:#a6e22e">isPrefix&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> !&lt;span style="color:#a6e22e">isPrefix&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">recombined&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">bytes&lt;/span>.&lt;span style="color:#a6e22e">Join&lt;/span>(&lt;span style="color:#a6e22e">parts&lt;/span>, &lt;span style="color:#66d9ef">nil&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Ricomposta: %q (pezzi=%d)\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">recombined&lt;/span>, len(&lt;span style="color:#a6e22e">parts&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// --- Esempio classico di ReadLine su testo normale (senza superare il buffer) ---
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;== ReadLine() normale ==&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">r&lt;/span> = &lt;span style="color:#a6e22e">bufio&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">strings&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">text&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">line&lt;/span>, &lt;span style="color:#a6e22e">isPrefix&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">r&lt;/span>.&lt;span style="color:#a6e22e">ReadLine&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;line=%q isPrefix=%v (niente &amp;#39;\\n&amp;#39;)\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">line&lt;/span>, &lt;span style="color:#a6e22e">isPrefix&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="conclusioni">Conclusioni
+&lt;/h2>&lt;h3 id="in-sintesi-veloce">In sintesi veloce:
+&lt;/h3>&lt;ul>
+&lt;li>&lt;code>ReadRune&lt;/code> → analisi carattere-per-carattere, sicuro su UTF-8.&lt;/li>
+&lt;li>&lt;code>ReadBytes&lt;/code> → legge fino al delimitatore e restituisce &lt;code>[]byte&lt;/code> (ottimo per parsing binario/grezzo).&lt;/li>
+&lt;li>&lt;code>ReadString&lt;/code> → come sopra ma restituisce string (più comodo, più allocazioni).&lt;/li>
+&lt;li>&lt;code>ReadLine&lt;/code> → non include &lt;code>\n&lt;/code>, gestisce linee molto lunghe a pezzi con &lt;code>isPrefix&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="insidie-comuni-da-ricordare">Insidie comuni da ricordare:
+&lt;/h3>&lt;ul>
+&lt;li>Fine riga su Windows è &lt;code>\r\n&lt;/code>: rimuovi il &lt;code>\r&lt;/code> finale se leggi fino a &lt;code>\n&lt;/code>.&lt;/li>
+&lt;li>&lt;code>bufio.Scanner&lt;/code> ha un limite di token (≈64 KB) che va aumentato per righe grandi.&lt;/li>
+&lt;li>Le allocazioni: &lt;code>ReadString&lt;/code> crea sempre una nuova stringa; con &lt;code>ReadBytes&lt;/code> puoi restare su &lt;code>[]byte&lt;/code> finché serve.&lt;/li>
+&lt;/ul>
+&lt;h3 id="cosa-usare-quando">Cosa usare quando:
+&lt;/h3>&lt;ul>
+&lt;li>Parsing binario o attenzione alle allocazioni → &lt;code>ReadBytes&lt;/code>.&lt;/li>
+&lt;li>Input testuale “line-oriented” → &lt;code>ReadString&lt;/code> (oppure Scanner).&lt;/li>
+&lt;li>Analisi fine di rune (accenti/emoji) → &lt;code>ReadRune&lt;/code>.&lt;/li>
+&lt;li>Log/file con righe enormi → &lt;code>ReadLine&lt;/code> (ricomponi quando &lt;code>isPrefix&lt;/code> == true).&lt;/li>
+&lt;/ul></description></item><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p>Sono passati 11 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p>
 &lt;p>It’s been 11 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p></description></item></channel></rss>
