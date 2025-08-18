@@ -6,6 +6,13 @@ theme = "hugo-theme-stack"
 defaultContentLanguage = "it"
 defaultContentLanguageInSubdir = false
 
+[params]
+  # Abilita Table of Contents in tutti i post
+  toc = true
+  # Abilita callout shortcode
+  enableCallout = true
+
+
 [params.sidebar.avatar]
 enabled = true
 local = false
