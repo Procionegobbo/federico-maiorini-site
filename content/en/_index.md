@@ -12,8 +12,8 @@ In my spare time, I’m also a **game master since 1985**, amateur writer, and o
 
 ### 🚀 What you'll find here
 
-- 🧑‍💻 **Tech and personal blog**: articles about Laravel, backend best practices, tools  
-- 🧙‍♂️ **RPG and writing sections**: short stories, campaigns, worlds and dark cults
+- 🧑‍💻 **Tech and personal blog**: personal posts, articles about Laravel, backend best practices, tools  (sometimes in italian, sometimes in english)
+- 🧙‍♂️ **RPG and writing sections**: short stories, campaigns, worlds and dark cults (in italian)
 
 ---
 

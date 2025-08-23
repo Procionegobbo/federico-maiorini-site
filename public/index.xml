@@ -1,552 +1,597 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Federico Maiorini</title>
-        <link>http://localhost:1313/</link>
-        <description>Recent content on Federico Maiorini</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>it-it</language>
-        <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title>
-        <link>http://localhost:1313/blog/read-methods-golang/</link>
-        <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/blog/read-methods-golang/</guid>
-        <description>&lt;img src="http://localhost:1313/blog/read-methods-golang/bufioreader.png" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /&gt;&lt;h1 id=&#34;-confronto-metodi-di-bufioreader-in-go&#34;&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
-&lt;/h1&gt;&lt;h2 id=&#34;introduzione&#34;&gt;Introduzione
-&lt;/h2&gt;&lt;p&gt;Recentemente sto studiando &lt;a class=&#34;link&#34; href=&#34;https://go.dev/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Go&lt;/a&gt;, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
-Una delle cose che mi interessano è come leggere e scrivere da uno stream quindi, con l&amp;rsquo;aiuto di una IA mi sono fatto un veloce riepilogo delle differenze tra alcuni metodi della libreria &lt;code&gt;bufio&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;I metodi &lt;strong&gt;&lt;code&gt;ReadRune&lt;/code&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;ReadBytes&lt;/code&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;ReadString&lt;/code&gt;&lt;/strong&gt; e &lt;strong&gt;&lt;code&gt;ReadLine&lt;/code&gt;&lt;/strong&gt; sono molto simili ma solo in apparenza.
-Ecco una guida rapida per capire le differenze.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;tabella-comparativa&#34;&gt;Tabella comparativa
-&lt;/h2&gt;&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Metodo&lt;/th&gt;
-          &lt;th&gt;Firma&lt;/th&gt;
-          &lt;th&gt;Cosa legge&lt;/th&gt;
-          &lt;th&gt;Tipo restituito&lt;/th&gt;
-          &lt;th&gt;Include &lt;code&gt;\n&lt;/code&gt;?&lt;/th&gt;
-          &lt;th&gt;Note pratiche&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;ReadRune()&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;(r rune, size int, err error)&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;strong&gt;Un singolo carattere Unicode&lt;/strong&gt; (1 rune)&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;rune&lt;/code&gt; (+size+err)&lt;/td&gt;
-          &lt;td&gt;N/A (legge solo 1 carattere)&lt;/td&gt;
-          &lt;td&gt;Utile per analizzare caratteri uno alla volta (UTF-8 safe).&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;ReadBytes(delim byte)&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;([]byte, error)&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;Fino a &lt;code&gt;delim&lt;/code&gt; incluso&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;[]byte&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;✅ sì&lt;/td&gt;
-          &lt;td&gt;Restituisce slice di byte, ottimo per parsing binario o testo grezzo.&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;ReadString(delim byte)&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;(string, error)&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;Fino a &lt;code&gt;delim&lt;/code&gt; incluso&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;✅ sì&lt;/td&gt;
-          &lt;td&gt;Comodo se sai di leggere testo, meno efficiente di &lt;code&gt;ReadBytes&lt;/code&gt;.&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;ReadLine()&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;([]byte, isPrefix bool, error)&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;Una riga (senza &lt;code&gt;\n&lt;/code&gt;)&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;[]byte&lt;/code&gt; + &lt;code&gt;isPrefix&lt;/code&gt; + &lt;code&gt;err&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;❌ no&lt;/td&gt;
-          &lt;td&gt;Se la riga è troppo lunga, la restituisce a pezzi (&lt;code&gt;isPrefix = true&lt;/code&gt;). Serve loop per ricomporla. Più basso livello.&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-diagramma-di-flusso-decisionale&#34;&gt;🔀 Diagramma di flusso decisionale
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     ┌──────────────────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     │ Vuoi leggere 1 carattere?    │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     └───────────────┬──────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           ┌─────────▼─────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           │ Usa ReadRune()    │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           └───────────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     ▼
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     ┌──────────────────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     │ Vuoi leggere fino a un       │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     │ delimitatore (es. &amp;#39;\n&amp;#39;)?     │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     └───────────────┬──────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   ┌─────────────────┼─────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                 |                 │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐      |      ┌──────────▼───────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Ti serve un []byte? │      |      │ Ti serve una stringa?│
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └──────────┬──────────┘      |      └───────────┬──────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                 |                  │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐      |      ┌───────────▼───────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Usa ReadBytes()     │      |      │ Usa ReadString()      │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─────────────────────┘      |      └───────────────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     ▼
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     ┌──────────────────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     │ Devi gestire linee molto     │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     │ lunghe (buffer a pezzi)?     │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     └───────────────┬──────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           ┌─────────▼─────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           │ Usa ReadLine()    │
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           └───────────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;esempio-pratico&#34;&gt;Esempio pratico
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; (
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bufio&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bytes&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;strings&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;café\nseconda linea\nterza linea senza newline finale&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// --- ReadRune(): legge un singolo carattere Unicode alla volta ---&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;== ReadRune() ==&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bufio&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; { &lt;span style=&#34;color:#75715e&#34;&gt;// leggo le prime 4 rune: c, a, f, é&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;ru&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadRune&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Errore ReadRune:&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rune=%q size=%d\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ru&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// --- ReadBytes(&amp;#39;\n&amp;#39;): legge fino al delimitatore incluso e restituisce []byte ---&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;== ReadBytes(&amp;#39;\\n&amp;#39;) ==&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;bufio&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadBytes&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Errore ReadBytes:&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ReadBytes: %q (len=%d)\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// --- ReadString(&amp;#39;\n&amp;#39;): stesso comportamento ma restituisce string ---&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;== ReadString(&amp;#39;\\n&amp;#39;) ==&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;bufio&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadString&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Errore ReadString:&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ReadString: %q (len=%d)\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// --- ReadLine(): NON include &amp;#39;\n&amp;#39; e può restituire porzioni (isPrefix=true) ---&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// Forziamo una linea più lunga del buffer per vedere isPrefix=true.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;== ReadLine() con buffer piccolo e isPrefix ==&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;longLine&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;abcdefghij\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 10 caratteri + &amp;#39;\n&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;smallBuf&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bufio&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReaderSize&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;longLine&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;parts&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;isPrefix&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;smallBuf&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadLine&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#75715e&#34;&gt;// fine input o errore&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#75715e&#34;&gt;// Copia difensiva del frammento letto&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;parts&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;parts&lt;/span&gt;, append([]byte(&lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;), &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;chunk=%q isPrefix=%v\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;isPrefix&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;isPrefix&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;recombined&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bytes&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Join&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;parts&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Ricomposta: %q (pezzi=%d)\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;recombined&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;parts&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// --- Esempio classico di ReadLine su testo normale (senza superare il buffer) ---&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;== ReadLine() normale ==&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;bufio&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;isPrefix&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadLine&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;line=%q isPrefix=%v (niente &amp;#39;\\n&amp;#39;)\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;isPrefix&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;conclusioni&#34;&gt;Conclusioni
-&lt;/h2&gt;&lt;h3 id=&#34;in-sintesi-veloce&#34;&gt;In sintesi veloce:
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ReadRune&lt;/code&gt; → analisi carattere-per-carattere, sicuro su UTF-8.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ReadBytes&lt;/code&gt; → legge fino al delimitatore e restituisce &lt;code&gt;[]byte&lt;/code&gt; (ottimo per parsing binario/grezzo).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ReadString&lt;/code&gt; → come sopra ma restituisce string (più comodo, più allocazioni).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ReadLine&lt;/code&gt; → non include &lt;code&gt;\n&lt;/code&gt;, gestisce linee molto lunghe a pezzi con &lt;code&gt;isPrefix&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;insidie-comuni-da-ricordare&#34;&gt;Insidie comuni da ricordare:
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Fine riga su Windows è &lt;code&gt;\r\n&lt;/code&gt;: rimuovi il &lt;code&gt;\r&lt;/code&gt; finale se leggi fino a &lt;code&gt;\n&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;bufio.Scanner&lt;/code&gt; ha un limite di token (≈64 KB) che va aumentato per righe grandi.&lt;/li&gt;
-&lt;li&gt;Le allocazioni: &lt;code&gt;ReadString&lt;/code&gt; crea sempre una nuova stringa; con &lt;code&gt;ReadBytes&lt;/code&gt; puoi restare su &lt;code&gt;[]byte&lt;/code&gt; finché serve.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;cosa-usare-quando&#34;&gt;Cosa usare quando:
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Parsing binario o attenzione alle allocazioni → &lt;code&gt;ReadBytes&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Input testuale “line-oriented” → &lt;code&gt;ReadString&lt;/code&gt; (oppure Scanner).&lt;/li&gt;
-&lt;li&gt;Analisi fine di rune (accenti/emoji) → &lt;code&gt;ReadRune&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Log/file con righe enormi → &lt;code&gt;ReadLine&lt;/code&gt; (ricomponi quando &lt;code&gt;isPrefix&lt;/code&gt; == true).&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>Cronologia del mondo di Kor</title>
-        <link>http://localhost:1313/gdr/cronologia-del-mondo-di-kor/</link>
-        <pubDate>Fri, 15 Aug 2025 16:52:18 +0200</pubDate>
-        
-        <guid>http://localhost:1313/gdr/cronologia-del-mondo-di-kor/</guid>
-        <description>&lt;img src="http://localhost:1313/gdr/cronologia-del-mondo-di-kor/pf6k3n5xmhrma0crns48ta5e3w.jpg" alt="Featured image of post Cronologia del mondo di Kor" /&gt;&lt;h1 id=&#34;cronologia-del-mondo-di-kor&#34;&gt;Cronologia del mondo di Kor
-&lt;/h1&gt;&lt;h2 id=&#34;era-divina&#34;&gt;Era Divina
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Durante questa era non esiste nulla, tranne gli dei. L’universo è un infinito vuoto e gli dei, entità di puro pensiero, esistono senza percezione di tempo e spazio a malapena consapevoli di esistere.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;arrivo-di-kor&#34;&gt;Arrivo di Kor
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Inizia con l’arrivo di Kor e Ae-thou da un altro universo. Fluttuazioni energetiche squassano il nulla cosmico, provocate dai nuovi dei, parte pensiero e parte materia.&lt;/li&gt;
-&lt;li&gt;Per la prima volta gli antichi dei percepiscono lo scorrere del tempo.&lt;/li&gt;
-&lt;li&gt;Kor attiva il seme dei mondi, artefatto di un altro universo, dando inizio all’era della Creazione.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;era-di-kor-o-era-della-creazione&#34;&gt;Era di Kor (o Era della Creazione)
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Il mondo viene creato: da un atollo circondato dal mare si espande fino a diventare un continente.&lt;/li&gt;
-&lt;li&gt;Gli dei si dividono in due fazioni: Creatori (guidati da Kor) e Distruttori.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;eventi-principali&#34;&gt;Eventi principali
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Anno 0&lt;/strong&gt;: Kor crea gli Gnoll (la Razza). Aso-Daira pianta il primo albero-mondo Drayssyl. Divinità minori creano animali e piante.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 3&lt;/strong&gt;: Ae-thou crea Skim (uomini lucertola), Khasser (uomini tigre, Rakhasta) e Aroth (umanoidi mutanti).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 500&lt;/strong&gt;: Aso-Daira crea umani ed elfi. Elfi nelle foreste intorno a Drayssyl, umani nelle pianure costiere.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 1000&lt;/strong&gt;: Ae-thou semina la giungla di Demenia. Skim e Khasser migrano e fondano una civiltà meccanico-magica.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 2500&lt;/strong&gt;: Interferenze dei Distruttori, eruzioni vulcaniche e demoni infestano la zona centrale. Drayssyl raggiunge 1 km di altezza.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 10.000&lt;/strong&gt;: Demoni distruttori attaccano umani ed elfi. Gnoll si spostano ai confini delle terre di fuoco. Appaiono i Guardiani del Creato (12 draghi purpurei). Drayssyl raggiunge 4 km.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 15.000&lt;/strong&gt;: Elfi si trasferiscono su Drayssyl (9 km). Incursioni demoni nella giungla, respinte. Influenza Distruttori bilancia Creatori, il mondo smette di crescere.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 16.000&lt;/strong&gt;: Nasce l’Impero umano sotto Sanda. Clan umani ostili migrano a sud delle terre gnoll. Apice civiltà Skim, costruzione dei Guardiani.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 17.000&lt;/strong&gt;: Dagto corrompe gli Aroth, che migrano nel sottosuolo. Ae-thou crea i Miksos (coboldi), sconfitti dagli Aroth. Ae-thou non riesce a contrastare Dagto.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 18.000&lt;/strong&gt;: Modifiche a Drayssyl, cresce smisuratamente. Declino civiltà Skim.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 20.000&lt;/strong&gt;: Distruttori lavorano contro il creato. Aroth e demoni raggiungono le radici di Drayssyl, che si ammala.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;guerra-divina&#34;&gt;Guerra divina
-&lt;/h2&gt;&lt;h3 id=&#34;eventi-principali-1&#34;&gt;Eventi principali
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Anno 0&lt;/strong&gt;: Gnoll non fermano esercito demoniaco, terre umane invase.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 2&lt;/strong&gt;: L’impero umano cade.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 3&lt;/strong&gt;: Capitale umana distrutta dai demoni. Guardiani proteggono Demenia.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 4&lt;/strong&gt;: Demoni decimano popolazione umana, incursioni nelle foreste elfiche.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 5&lt;/strong&gt;: Marciume uccide Drayssyl, che si inclina. Creatori rallentano la caduta.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 6&lt;/strong&gt;: Gnoll attaccano demoni alle spalle, vittorie devastanti. Alleanza elfi-umani, esercito demoniaco circondato.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 7&lt;/strong&gt;: Drayssyl si deposita tra terre gnoll e umani/elfi, isolandole. Terre gnoll diventano aride.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 34&lt;/strong&gt;: Grande battaglia, esercito demoniaco sconfitto. Perdite immense, draghi purpurei scomparsi.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 90&lt;/strong&gt;: Ultimi demoni eliminati. Civiltà umana collassata, elfi si isolano.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 100&lt;/strong&gt;: Eruzioni vulcaniche rendono le terre gnoll desertiche.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 250&lt;/strong&gt;: Ae-thou e divinità trasformano Drayssyl in una catena montuosa (Muro del Deserto). Dagto uccide Ae-thou, generando un cratere e terremoti devastanti.&lt;/li&gt;
-&lt;li&gt;Senza Ae-thou, civiltà Skim collassa, superstiti regrediscono. Alcuni Guardiani rimangono attivi, eliminando ogni creatura non nativa della giungla.&lt;/li&gt;
-&lt;li&gt;Morte di Ae-thou scuote Creatori e Distruttori, tregua spontanea pone fine alla guerra divina.&lt;/li&gt;
-&lt;li&gt;Il ricordo di Ae-thou svanisce, tranne che per Kor.&lt;/li&gt;
-&lt;li&gt;Centinaia di anni di declino: umani divisi in regni, elfi isolati, gnoll vagano nel deserto.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;era-moderna&#34;&gt;Era moderna
-&lt;/h2&gt;&lt;p&gt;&lt;em&gt;Gli anni vengono contati dalla fondazione dell’Accademia dei magi a Ghainar.&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;eventi-principali-2&#34;&gt;Eventi principali
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Anno 0&lt;/strong&gt;: Fondazione dell’Accademia dei magi a Ghainar da parte di cinque maghi. Inizio espansione del villaggio.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 25&lt;/strong&gt;: Accademia completata, decine di apprendisti. Ghainar diventa cittadina, commercianti inviano carovane.&lt;/li&gt;
-&lt;li&gt;…&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anno 714&lt;/strong&gt;: Ghainar è una città immensa, palude bonificata. Dai suoi cento moli partono navi per il continente. Governata dal Consiglio dei Mercanti (centuno membri), consulto dalla Stella (i cinque maghi).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;Questa cronologia potrebbe essere aggiornata in qualunque momento&lt;/em&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Portanus: Signore delle Porte</title>
-        <link>http://localhost:1313/gdr/portanus/</link>
-        <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/gdr/portanus/</guid>
-        <description>&lt;h3 id=&#34;portanus-il-signore-delle-porte&#34;&gt;Portanus (Il Signore delle Porte)
-&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Divinità pre-romana delle soglie e dei portali&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Nome Proto-Indoeuropeo:&lt;/strong&gt; &lt;em&gt;Prtónos&lt;/em&gt; (ricostruito da &lt;em&gt;prtu-&lt;/em&gt; &amp;ldquo;passaggio, guado&amp;rdquo; e il suffisso divino &lt;em&gt;-nos&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Titoli:&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Il Custode delle Soglie&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Signore dei Guadi e delle Porte&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;L’Oscuro Viandante&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Colui che Sta tra i Mondi&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc.jpg&#34;
-	width=&#34;2048&#34;
-	height=&#34;1871&#34;
-	srcset=&#34;http://localhost:1313/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc_hu_294f5de51a08ae7c.jpg 480w, http://localhost:1313/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc_hu_63742599b4083747.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Portanus in veste di divinità celtica&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;109&#34;
-		data-flex-basis=&#34;262px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Portanus&lt;/strong&gt; è una figura mitologica appartenente al pantheon delle divinità pre-romane, venerata come il &lt;em&gt;Signore delle Porte&lt;/em&gt; e dei passaggi tra i mondi. Considerato una delle entità più enigmatiche del periodo italico arcaico, Portanus rappresenta il dominio delle soglie fisiche e metafisiche, fungendo da guardiano tra il mondo dei vivi e quello dei morti, tra il terreno e il divino, e tra dimensioni parallele.&lt;/p&gt;
-&lt;h4 id=&#34;etimologia-e-origine&#34;&gt;&lt;strong&gt;Etimologia e origine&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;Il nome &amp;ldquo;Portanus&amp;rdquo; deriva dal latino &lt;em&gt;porta&lt;/em&gt;, che significa &amp;ldquo;porta&amp;rdquo; o &amp;ldquo;passaggio,&amp;rdquo; e richiama il suo ruolo di custode. Alcuni studiosi lo considerano una figura ancestrale da cui potrebbe aver tratto ispirazione il più noto Giano (&lt;em&gt;Ianus&lt;/em&gt;), sebbene Portanus possieda una connotazione più oscura e misteriosa.&lt;/p&gt;
-&lt;h4 id=&#34;iconografia-e-simboli&#34;&gt;&lt;strong&gt;Iconografia e simboli&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;Portanus è spesso descritto come una figura incappucciata, avvolta da un mantello scuro che sembra fondersi con le ombre circostanti. Nei rari artefatti attribuiti al suo culto, la sua immagine appare priva di volto, con una chiave in una mano e un&amp;rsquo;antica lanterna nell&amp;rsquo;altra, simboli del potere di aprire e chiudere le soglie.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Federico Maiorini</title><link>https://procionegobbo.it/</link><description>Recent content on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Sat, 23 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/index.xml" rel="self" type="application/rss+xml"/><item><title>Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa</title><link>https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/</link><pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/</guid><description>&lt;img src="https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/cover.png" alt="Featured image of post Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa" />&lt;h2 id="lidea-iniziale">L’idea iniziale
+&lt;/h2>&lt;p>Tutto è nato per caso, durante una serata in cui avremmo dovuto uscire tra amici. Uno di loro, per tirarsi fuori con una battuta, se ne uscì con:&lt;br>
+&lt;strong>&amp;ldquo;Non posso, devo andare al concerto di Tony Loffa.&amp;rdquo;&lt;/strong>&lt;/p>
+&lt;p>Quel nome — &lt;em>Tony Loffa&lt;/em> — mi ha fulminato.&lt;br>
+Non so spiegare bene cosa sia scattato, ma nel giro di pochi minuti il mio cervello aveva già dato forma al personaggio: un rapper assurdo, grottesco, con un’identità fortissima. Una parodia vivente, eppure dotata di coerenza interna, di un mondo suo.&lt;/p>
+&lt;p>Tony Loffa &lt;strong>non è ispirato a nessuno di reale&lt;/strong>, non è la caricatura di una persona esistente. È piuttosto una &lt;strong>satira dell’intera scena trap&lt;/strong>, dei suoi eccessi, dei suoi cliché. Ma non è nemmeno una critica amara o moralista: è solo satira, fatta con ironia e creatività, come un esperimento di intelligenza artificiale e immaginazione combinati.&lt;/p>
+&lt;hr>
+&lt;h2 id="il-concept-del-personaggio">Il concept del personaggio
+&lt;/h2>&lt;p>Tony Loffa è nato per caso e anche per scherzo. Da una battuta tra amici è emersa l’idea di un personaggio che &lt;strong>doveva&lt;/strong> esistere: un rapper surreale, sopra le righe, con un’identità precisa e un mondo tutto suo.&lt;/p>
+&lt;p>Tony non rappresenta nessuno in particolare, non è la caricatura di un artista reale: è la &lt;strong>parodia di un’intera scena musicale&lt;/strong>. Un concentrato di cliché portati all’estremo — ostentazione, soldi, gang, catene d’oro — ma rielaborati con un tono volutamente grottesco e ironico. È la satira di un certo modo di “fare trap”, di quell’immaginario spinto all’eccesso, in cui tutto è più grande, più rumoroso, più “gasato”.&lt;/p>
+&lt;p>Eppure, dietro il nonsense, ho cercato di dare &lt;strong>coerenza&lt;/strong>. Tony Loffa ha una voce, uno stile, un’estetica ben definiti: la &lt;strong>Gang Gassosa&lt;/strong>, i beat sporchi e martellanti, i testi che oscillano tra l’assurdo e il dissacrante. L’ho creato per ridere della trap, ma finisce per sembrare quasi reale: ho usato l&amp;rsquo;IA per raccogliere le idee e distillare una biografia che unisse l’assurdità di un rapper fatto di gas pestilenziale all’estetica della periferia romana.&lt;/p>
+&lt;hr>
+&lt;h2 id="la-voce-e-lo-stile">La voce e lo stile
+&lt;/h2>&lt;p>La voce di Tony Loffa è &lt;strong>profonda, sporca, piena di aria e di strada&lt;/strong>.&lt;br>
+Non punta alla perfezione, non cerca l’autotune impeccabile: è &lt;strong>grezza per scelta&lt;/strong>, volutamente imperfetta, come se portasse addosso l’odore delle periferie che racconta.&lt;/p>
+&lt;p>Tony non canta: &lt;strong>sputa parole&lt;/strong>.&lt;br>
+Ogni verso è corto, secco, diretto, come un colpo di beat. Alterna parlato e cantato, si ferma e riparte, creando un caos controllato che rende ogni traccia imprevedibile.&lt;/p>
+&lt;p>Lo stile mescola slang romano, inglese maccheronico e termini inventati, costruendo un linguaggio &lt;strong>ibrido, gassoso, immediatamente riconoscibile&lt;/strong>. Nei testi non importa solo cosa viene detto, ma &lt;strong>come&lt;/strong> viene detto: tronfio, sicuro di sé, mistico quando parla della &lt;strong>Gang Gassosa&lt;/strong>, ironico e autocelebrativo subito dopo.&lt;/p>
+&lt;hr>
+&lt;h2 id="il-processo-creativo">Il processo creativo
+&lt;/h2>&lt;p>Per scrivere i testi di Tony Loffa ho deciso di sperimentare con le &lt;strong>IA generative&lt;/strong>, trattandole come strumenti creativi e non come autori. Io ho definito l’identità di Tony, il suo stile, i temi di ogni brano e buona parte dei contenuti, ma ho delegato la &lt;strong>composizione finale&lt;/strong> a un modello di intelligenza artificiale.&lt;/p>
+&lt;p>Il mio lavoro è stato quello di &lt;strong>costruire prompt estremamente dettagliati&lt;/strong>: ogni richiesta includeva il tono, il ritmo, la voce, la struttura di strofa e ritornello, i riferimenti stilistici, perfino l’uso degli intercalari e delle onomatopee tipiche del personaggio.&lt;br>
+L’obiettivo era generare testi &lt;strong>“digeribili”&lt;/strong> per l’IA successiva, &lt;a class="link" href="https://suno.com" target="_blank" rel="noopener"
+>&lt;strong>Suno AI&lt;/strong>&lt;/a>, che si sarebbe occupata della &lt;strong>generazione musicale vera e propria&lt;/strong>.&lt;/p>
+&lt;p>Con Suno, ogni prompt definiva voce, beat e mood complessivo: funk sporco, trap grottesca, atmosfera urbana, toni ironici e aggressivi. Io ho controllato e rifinito ogni brano, adattando i testi per mantenere la coerenza del personaggio e la credibilità del risultato.&lt;/p>
+&lt;p>Tony Loffa è nato da una &lt;strong>scrittura a quattro mani&lt;/strong>: da un lato la mia visione creativa, dall’altro la capacità combinata di IA testuale e musicale di trasformare quelle idee in un progetto sonoro completo. Questo approccio mi ha permesso di sperimentare uno stile ibrido: satirico, sporco, ma con un flow che &lt;strong>suona&lt;/strong> autentico.&lt;/p>
+&lt;hr>
+&lt;h2 id="il-risultato-un-rapper-coerente-una-critica-inattesa">Il risultato: un rapper coerente, una critica inattesa
+&lt;/h2>&lt;p>Quello che era nato come un esperimento è diventato qualcosa di più.&lt;br>
+Doveva essere solo una battuta, ma Tony Loffa &lt;strong>ha un’identità, una voce, una discografia, una gang immaginaria e un mondo narrativo coerente&lt;/strong>, con brani come &lt;em>Aria Condizionata&lt;/em>, &lt;em>Puzza di Soldi&lt;/em> e &lt;em>Gang Gassosa&lt;/em>.&lt;/p>
+&lt;p>Ed è qui che l’esperimento è diventato interessante: senza volerlo, &lt;strong>Tony Loffa è anche una critica al culto dell’effimero&lt;/strong>.&lt;br>
+La trap che parodizza vive di icone usa-e-getta, di personaggi costruiti più sull’immagine che sulla sostanza, e l’IA amplifica questa dinamica: un personaggio totalmente inventato diventa immediatamente &lt;strong>plausibile&lt;/strong>. Tony è un’illusione… che funziona proprio perché il mondo che rappresenta &lt;strong>è già un po’ un’illusione&lt;/strong>.&lt;/p>
+&lt;p>In questo senso, Tony Loffa è sia &lt;strong>gioco narrativo&lt;/strong> che &lt;strong>commento sociale&lt;/strong>:&lt;br>
+un personaggio nato per ridere della scena musicale, ma che finisce per far riflettere su come oggi costruiamo identità, su quanto crediamo a quello che vediamo, e su come il confine tra realtà e finzione sia sempre più sottile.&lt;/p>
+&lt;hr>
+&lt;h2 id="il-prompt">Il prompt
+&lt;/h2>&lt;p>Scrivere una canzone per Tony Loffa non significava solo inventare dei testi: dovevo creare prompt dettagliati che catturassero tono, ritmo, linguaggio e atmosfera.
+Ho trattato l’IA come un collaboratore, dandole tutte le informazioni necessarie per entrare nella testa di Tony: struttura della canzone, tipo di beat, temi da affrontare, slang da usare e perfino le interiezioni tipiche del personaggio.
+Ogni prompt è stato pensato per essere digeribile da Suno AI, in modo che la generazione musicale fosse il più possibile coerente con lo stile del personaggio.&lt;/p>
+&lt;p>Questo è un esempio
+di prompt che ho usato per generare il testo di &lt;em>Puzza di Soldi&lt;/em>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>Agisci come un esperto compositore di musica e canzoni. Ti fornirò le informazioni sulle quali basarti e tu creerai una canzone.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Usa la lingua italiana per le interazioni con me.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Mi chiederai le informazioni necessarie alla creazione della canzone:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Di cosa parla
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Se c&amp;#39;è uno stile particolare da seguire (es. epico orchestrale, rock elettronico, ballata da taverna, ecc.)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> In che lingua deve essere scritto il testo della canzone
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Se ci sono ruoli di voce specifici o strutture particolari (es. call-and-response, dialoghi tra personaggi)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Qualsiasi altro dettaglio utile (ambientazione, epoca storica, atmosfera, strumenti preferiti, tono emotivo)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Il pezzo musicale deve avere i titoli delle sezioni in inglese tra parentesi quadre.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>I titoli delle sezioni fanno riferimento al tipo di sezione del pezzo musicale (es. [Chorus], [Verse 1], [Verse 2], [Bridge], ecc.).
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Puoi indicare anche il ruolo o il tipo di voce che canta ogni parte, sempre in inglese, all’inizio della riga:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Esempio: [Bard], [Chorus - Drunks], [Whispered Voices], [Narrator], ecc.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Eventuali informazioni aggiuntive (voce maschile o femminile, crescendo di violini, rap veloce, cori epici, ecc.) vanno inserite in una riga diversa dal titolo della sezione, sempre tra parentesi quadre.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Specifica sempre una sezione finale [Style] in inglese che descriva:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Strumenti
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Atmosfera
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Intensità
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Tipo di voce
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Eventuali effetti sonori di contorno (taverna rumorosa, tempesta, folla, ecc.)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Il testo della canzone può essere in qualsiasi lingua scelta dall’utente, ma:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Le indicazioni tecniche (ruoli, strumenti, stile, descrizioni) devono essere sempre in inglese.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Per creare il testo, chiedi:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">1.&lt;/span> Tema e contenuto della canzone
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">2.&lt;/span> Stile musicale
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">3.&lt;/span> Lingua del testo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">4.&lt;/span> Tono e atmosfera (eroico, drammatico, ironico, burlesco, ecc.)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">5.&lt;/span> Ambientazione (se rilevante)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">6.&lt;/span> Eventuali ruoli di voce e struttura (es. call-and-response)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ovviamente il prompt da solo non basta e a seguito di quello, per ogni pezzo, ci sono state innumerevoli interazioni con l&amp;rsquo;IA per raffinare, correggere, inserire nuove parti e tagliarne di altre.
+L&amp;rsquo;IA è uno strumento ma senza creatività il risultato è piatto e io volevo che i pezzi avessero un minimo di personalità.
+Ci è voluto un po&amp;rsquo; e si vede, anzi si sente, perché la prima traccia &amp;ldquo;Loffa e Nanna&amp;rdquo; è la meno riuscita.&lt;/p>
+&lt;p>Per ogni traccia poi c&amp;rsquo;è stato anche un processo di raffinamento: generavo la canzone su Suno, ascoltavo e puntualmente c&amp;rsquo;erano delle modifiche da fare per ritmo, rime sghembe, oppure frasi che semplicemente non &amp;ldquo;suonavano&amp;rdquo;. Quindi dopo una serie di rimbalzi tra IA, correzioni, Suno, altre correzioni finalmente avevo una versione che potevo considerare definitiva.&lt;/p>
+&lt;hr>
+&lt;h2 id="la-distribuzione">La distribuzione
+&lt;/h2>&lt;p>Una volta completato Aria Pesante, non potevo fermarmi lì.
+Ho deciso di caricare l’album su &lt;a class="link" href="https://www.routenote.com" target="_blank" rel="noopener"
+>RouteNote&lt;/a> per distribuirlo sulle principali piattaforme di streaming: Spotify, Apple Music, Amazon Music e molte altre.&lt;/p>
+&lt;p>Non l’ho fatto per soldi — so perfettamente che non diventerò ricco con la Gang Gassosa — ma per sfizio personale.
+L’idea che Tony Loffa, nato da una battuta, possa comparire accanto ad artisti veri in playlist reali mi diverte e mi affascina allo stesso tempo. È un po’ come completare il cerchio: un personaggio immaginario che invade il mondo reale.&lt;/p>
+&lt;p>Se vi venisse la curiosità di ascoltarlo trovate qui i riferimenti &lt;a class="link" href="https://push.fm/fl/lbewxjfs" target="_blank" rel="noopener"
+>https://push.fm/fl/lbewxjfs&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h2 id="conclusione">Conclusione
+&lt;/h2>&lt;p>La parte più ironica? &lt;strong>A me la trap nemmeno piace&lt;/strong>.&lt;br>
+Tony Loffa è nato per scherzo, ma è diventato un progetto coerente, credibile e satirico.&lt;br>
+Forse, in un mondo dove l’immagine conta più della sostanza, &lt;strong>basta un nome e una buona storia per sembrare reali&lt;/strong>.&lt;/p>
+&lt;hr>
+&lt;div class="tony-card" style="
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #1e1e1e;
+border-radius: 16px;
+padding: 20px;
+max-width: 450px;
+margin: 2rem auto;
+box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+">
+&lt;img src="https://procionegobbo.it/blog/tony-loffa-card.jpg" alt="Tony Loffa" style="
+border-radius: 12px;
+width: 100%;
+object-fit: cover;
+margin-bottom: 15px;
+">
+&lt;h2 style="color: #fff; margin: 0;">Tony Loffa&lt;/h2>
+&lt;p style="color: #aaa; font-style: italic; margin: 4px 0 12px;">
+“Zero compromessi, zero filtri, solo essenza gassosa.”
+&lt;/p>
+&lt;ul style="list-style: none; padding: 0; margin: 0; color: #ddd; font-size: 14px;">
+&lt;li>&lt;strong>📍 Nato a:&lt;/strong> Centocelle, Roma&lt;/li>
+&lt;li>&lt;strong>📅 Anno di nascita:&lt;/strong> 1995 (forse)&lt;/li>
+&lt;li>&lt;strong>🎤 Genere:&lt;/strong> Trap gassosa, funk sporco, beat corrosivi&lt;/li>
+&lt;li>&lt;strong>💨 Filosofia:&lt;/strong> Purismo gassoso — niente featuring, niente festival, niente compromessi&lt;/li>
+&lt;li>&lt;strong>📀 Album:&lt;/strong> &lt;a href="https://push.fm/fl/lbewxjfs">&lt;em>Aria Pesante&lt;/em> (2025)&lt;/a>&lt;/li>
+&lt;li>&lt;strong>👑 Crew:&lt;/strong> Gang Gassosa&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title><link>https://procionegobbo.it/blog/read-methods-golang/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/read-methods-golang/</guid><description>&lt;img src="https://procionegobbo.it/blog/read-methods-golang/bufioreader.png" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" />&lt;h1 id="-confronto-metodi-di-bufioreader-in-go">📚 Confronto metodi di &lt;code>bufio.Reader&lt;/code> in Go
+&lt;/h1>&lt;h2 id="introduzione">Introduzione
+&lt;/h2>&lt;p>Recentemente sto studiando &lt;a class="link" href="https://go.dev/" target="_blank" rel="noopener"
+>Go&lt;/a>, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
+Una delle cose che mi interessano è come leggere e scrivere da uno stream quindi, con l&amp;rsquo;aiuto di una IA mi sono fatto un veloce riepilogo delle differenze tra alcuni metodi della libreria &lt;code>bufio&lt;/code>.&lt;/p>
+&lt;p>I metodi &lt;strong>&lt;code>ReadRune&lt;/code>&lt;/strong>, &lt;strong>&lt;code>ReadBytes&lt;/code>&lt;/strong>, &lt;strong>&lt;code>ReadString&lt;/code>&lt;/strong> e &lt;strong>&lt;code>ReadLine&lt;/code>&lt;/strong> sono molto simili ma solo in apparenza.
+Ecco una guida rapida per capire le differenze.&lt;/p>
+&lt;hr>
+&lt;h2 id="tabella-comparativa">Tabella comparativa
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Metodo&lt;/th>
+&lt;th>Firma&lt;/th>
+&lt;th>Cosa legge&lt;/th>
+&lt;th>Tipo restituito&lt;/th>
+&lt;th>Include &lt;code>\n&lt;/code>?&lt;/th>
+&lt;th>Note pratiche&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>ReadRune()&lt;/strong>&lt;/td>
+&lt;td>&lt;code>(r rune, size int, err error)&lt;/code>&lt;/td>
+&lt;td>&lt;strong>Un singolo carattere Unicode&lt;/strong> (1 rune)&lt;/td>
+&lt;td>&lt;code>rune&lt;/code> (+size+err)&lt;/td>
+&lt;td>N/A (legge solo 1 carattere)&lt;/td>
+&lt;td>Utile per analizzare caratteri uno alla volta (UTF-8 safe).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>ReadBytes(delim byte)&lt;/strong>&lt;/td>
+&lt;td>&lt;code>([]byte, error)&lt;/code>&lt;/td>
+&lt;td>Fino a &lt;code>delim&lt;/code> incluso&lt;/td>
+&lt;td>&lt;code>[]byte&lt;/code>&lt;/td>
+&lt;td>✅ sì&lt;/td>
+&lt;td>Restituisce slice di byte, ottimo per parsing binario o testo grezzo.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>ReadString(delim byte)&lt;/strong>&lt;/td>
+&lt;td>&lt;code>(string, error)&lt;/code>&lt;/td>
+&lt;td>Fino a &lt;code>delim&lt;/code> incluso&lt;/td>
+&lt;td>&lt;code>string&lt;/code>&lt;/td>
+&lt;td>✅ sì&lt;/td>
+&lt;td>Comodo se sai di leggere testo, meno efficiente di &lt;code>ReadBytes&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>ReadLine()&lt;/strong>&lt;/td>
+&lt;td>&lt;code>([]byte, isPrefix bool, error)&lt;/code>&lt;/td>
+&lt;td>Una riga (senza &lt;code>\n&lt;/code>)&lt;/td>
+&lt;td>&lt;code>[]byte&lt;/code> + &lt;code>isPrefix&lt;/code> + &lt;code>err&lt;/code>&lt;/td>
+&lt;td>❌ no&lt;/td>
+&lt;td>Se la riga è troppo lunga, la restituisce a pezzi (&lt;code>isPrefix = true&lt;/code>). Serve loop per ricomporla. Più basso livello.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-diagramma-di-flusso-decisionale">🔀 Diagramma di flusso decisionale
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span> ┌──────────────────────────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Vuoi leggere 1 carattere? │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └───────────────┬──────────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌─────────▼─────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Usa ReadRune() │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └───────────────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ▼
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌──────────────────────────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Vuoi leggere fino a un │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ delimitatore (es. &amp;#39;\n&amp;#39;)? │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └───────────────┬──────────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌─────────────────┼─────────────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ | │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌──────────▼──────────┐ | ┌──────────▼───────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Ti serve un []byte? │ | │ Ti serve una stringa?│
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └──────────┬──────────┘ | └───────────┬──────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ | │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌──────────▼──────────┐ | ┌───────────▼───────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Usa ReadBytes() │ | │ Usa ReadString() │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └─────────────────────┘ | └───────────────────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ▼
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌──────────────────────────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Devi gestire linee molto │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ lunghe (buffer a pezzi)? │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └───────────────┬──────────────┘
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ┌─────────▼─────────┐
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> │ Usa ReadLine() │
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └───────────────────┘
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="esempio-pratico">Esempio pratico
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;bufio&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;bytes&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;strings&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">text&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;café\nseconda linea\nterza linea senza newline finale&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// --- ReadRune(): legge un singolo carattere Unicode alla volta ---&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;== ReadRune() ==&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">r&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">bufio&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">strings&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">text&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &amp;lt; &lt;span style="color:#ae81ff">4&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span> { &lt;span style="color:#75715e">// leggo le prime 4 rune: c, a, f, é&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">ru&lt;/span>, &lt;span style="color:#a6e22e">size&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">r&lt;/span>.&lt;span style="color:#a6e22e">ReadRune&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Errore ReadRune:&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;rune=%q size=%d\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">ru&lt;/span>, &lt;span style="color:#a6e22e">size&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// --- ReadBytes(&amp;#39;\n&amp;#39;): legge fino al delimitatore incluso e restituisce []byte ---&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;== ReadBytes(&amp;#39;\\n&amp;#39;) ==&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">r&lt;/span> = &lt;span style="color:#a6e22e">bufio&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">strings&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">text&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">b&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">r&lt;/span>.&lt;span style="color:#a6e22e">ReadBytes&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;\n&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Errore ReadBytes:&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;ReadBytes: %q (len=%d)\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">b&lt;/span>, len(&lt;span style="color:#a6e22e">b&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// --- ReadString(&amp;#39;\n&amp;#39;): stesso comportamento ma restituisce string ---&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;== ReadString(&amp;#39;\\n&amp;#39;) ==&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">r&lt;/span> = &lt;span style="color:#a6e22e">bufio&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">strings&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">text&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">s&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">r&lt;/span>.&lt;span style="color:#a6e22e">ReadString&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;\n&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Errore ReadString:&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;ReadString: %q (len=%d)\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">s&lt;/span>, len(&lt;span style="color:#a6e22e">s&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// --- ReadLine(): NON include &amp;#39;\n&amp;#39; e può restituire porzioni (isPrefix=true) ---&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// Forziamo una linea più lunga del buffer per vedere isPrefix=true.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;== ReadLine() con buffer piccolo e isPrefix ==&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">longLine&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;abcdefghij\n&amp;#34;&lt;/span> &lt;span style="color:#75715e">// 10 caratteri + &amp;#39;\n&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">smallBuf&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">bufio&lt;/span>.&lt;span style="color:#a6e22e">NewReaderSize&lt;/span>(&lt;span style="color:#a6e22e">strings&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">longLine&lt;/span>), &lt;span style="color:#ae81ff">8&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">parts&lt;/span> [][]&lt;span style="color:#66d9ef">byte&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">line&lt;/span>, &lt;span style="color:#a6e22e">isPrefix&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">smallBuf&lt;/span>.&lt;span style="color:#a6e22e">ReadLine&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// fine input o errore&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// Copia difensiva del frammento letto&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">parts&lt;/span> = append(&lt;span style="color:#a6e22e">parts&lt;/span>, append([]byte(&lt;span style="color:#66d9ef">nil&lt;/span>), &lt;span style="color:#a6e22e">line&lt;/span>&lt;span style="color:#f92672">...&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;chunk=%q isPrefix=%v\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">line&lt;/span>, &lt;span style="color:#a6e22e">isPrefix&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> !&lt;span style="color:#a6e22e">isPrefix&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">recombined&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">bytes&lt;/span>.&lt;span style="color:#a6e22e">Join&lt;/span>(&lt;span style="color:#a6e22e">parts&lt;/span>, &lt;span style="color:#66d9ef">nil&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Ricomposta: %q (pezzi=%d)\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">recombined&lt;/span>, len(&lt;span style="color:#a6e22e">parts&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// --- Esempio classico di ReadLine su testo normale (senza superare il buffer) ---&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;== ReadLine() normale ==&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">r&lt;/span> = &lt;span style="color:#a6e22e">bufio&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">strings&lt;/span>.&lt;span style="color:#a6e22e">NewReader&lt;/span>(&lt;span style="color:#a6e22e">text&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">line&lt;/span>, &lt;span style="color:#a6e22e">isPrefix&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">r&lt;/span>.&lt;span style="color:#a6e22e">ReadLine&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;line=%q isPrefix=%v (niente &amp;#39;\\n&amp;#39;)\n&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">line&lt;/span>, &lt;span style="color:#a6e22e">isPrefix&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="conclusioni">Conclusioni
+&lt;/h2>&lt;h3 id="in-sintesi-veloce">In sintesi veloce:
+&lt;/h3>&lt;ul>
+&lt;li>&lt;code>ReadRune&lt;/code> → analisi carattere-per-carattere, sicuro su UTF-8.&lt;/li>
+&lt;li>&lt;code>ReadBytes&lt;/code> → legge fino al delimitatore e restituisce &lt;code>[]byte&lt;/code> (ottimo per parsing binario/grezzo).&lt;/li>
+&lt;li>&lt;code>ReadString&lt;/code> → come sopra ma restituisce string (più comodo, più allocazioni).&lt;/li>
+&lt;li>&lt;code>ReadLine&lt;/code> → non include &lt;code>\n&lt;/code>, gestisce linee molto lunghe a pezzi con &lt;code>isPrefix&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="insidie-comuni-da-ricordare">Insidie comuni da ricordare:
+&lt;/h3>&lt;ul>
+&lt;li>Fine riga su Windows è &lt;code>\r\n&lt;/code>: rimuovi il &lt;code>\r&lt;/code> finale se leggi fino a &lt;code>\n&lt;/code>.&lt;/li>
+&lt;li>&lt;code>bufio.Scanner&lt;/code> ha un limite di token (≈64 KB) che va aumentato per righe grandi.&lt;/li>
+&lt;li>Le allocazioni: &lt;code>ReadString&lt;/code> crea sempre una nuova stringa; con &lt;code>ReadBytes&lt;/code> puoi restare su &lt;code>[]byte&lt;/code> finché serve.&lt;/li>
+&lt;/ul>
+&lt;h3 id="cosa-usare-quando">Cosa usare quando:
+&lt;/h3>&lt;ul>
+&lt;li>Parsing binario o attenzione alle allocazioni → &lt;code>ReadBytes&lt;/code>.&lt;/li>
+&lt;li>Input testuale “line-oriented” → &lt;code>ReadString&lt;/code> (oppure Scanner).&lt;/li>
+&lt;li>Analisi fine di rune (accenti/emoji) → &lt;code>ReadRune&lt;/code>.&lt;/li>
+&lt;li>Log/file con righe enormi → &lt;code>ReadLine&lt;/code> (ricomponi quando &lt;code>isPrefix&lt;/code> == true).&lt;/li>
+&lt;/ul></description></item><item><title>Cronologia del mondo di Kor</title><link>https://procionegobbo.it/gdr/cronologia-del-mondo-di-kor/</link><pubDate>Fri, 15 Aug 2025 16:52:18 +0200</pubDate><guid>https://procionegobbo.it/gdr/cronologia-del-mondo-di-kor/</guid><description>&lt;img src="https://procionegobbo.it/gdr/cronologia-del-mondo-di-kor/pf6k3n5xmhrma0crns48ta5e3w.jpg" alt="Featured image of post Cronologia del mondo di Kor" />&lt;h1 id="cronologia-del-mondo-di-kor">Cronologia del mondo di Kor
+&lt;/h1>&lt;h2 id="era-divina">Era Divina
+&lt;/h2>&lt;ul>
+&lt;li>Durante questa era non esiste nulla, tranne gli dei. L’universo è un infinito vuoto e gli dei, entità di puro pensiero, esistono senza percezione di tempo e spazio a malapena consapevoli di esistere.&lt;/li>
+&lt;/ul>
+&lt;h3 id="arrivo-di-kor">Arrivo di Kor
+&lt;/h3>&lt;ul>
+&lt;li>Inizia con l’arrivo di Kor e Ae-thou da un altro universo. Fluttuazioni energetiche squassano il nulla cosmico, provocate dai nuovi dei, parte pensiero e parte materia.&lt;/li>
+&lt;li>Per la prima volta gli antichi dei percepiscono lo scorrere del tempo.&lt;/li>
+&lt;li>Kor attiva il seme dei mondi, artefatto di un altro universo, dando inizio all’era della Creazione.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="era-di-kor-o-era-della-creazione">Era di Kor (o Era della Creazione)
+&lt;/h2>&lt;ul>
+&lt;li>Il mondo viene creato: da un atollo circondato dal mare si espande fino a diventare un continente.&lt;/li>
+&lt;li>Gli dei si dividono in due fazioni: Creatori (guidati da Kor) e Distruttori.&lt;/li>
+&lt;/ul>
+&lt;h3 id="eventi-principali">Eventi principali
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Anno 0&lt;/strong>: Kor crea gli Gnoll (la Razza). Aso-Daira pianta il primo albero-mondo Drayssyl. Divinità minori creano animali e piante.&lt;/li>
+&lt;li>&lt;strong>Anno 3&lt;/strong>: Ae-thou crea Skim (uomini lucertola), Khasser (uomini tigre, Rakhasta) e Aroth (umanoidi mutanti).&lt;/li>
+&lt;li>&lt;strong>Anno 500&lt;/strong>: Aso-Daira crea umani ed elfi. Elfi nelle foreste intorno a Drayssyl, umani nelle pianure costiere.&lt;/li>
+&lt;li>&lt;strong>Anno 1000&lt;/strong>: Ae-thou semina la giungla di Demenia. Skim e Khasser migrano e fondano una civiltà meccanico-magica.&lt;/li>
+&lt;li>&lt;strong>Anno 2500&lt;/strong>: Interferenze dei Distruttori, eruzioni vulcaniche e demoni infestano la zona centrale. Drayssyl raggiunge 1 km di altezza.&lt;/li>
+&lt;li>&lt;strong>Anno 10.000&lt;/strong>: Demoni distruttori attaccano umani ed elfi. Gnoll si spostano ai confini delle terre di fuoco. Appaiono i Guardiani del Creato (12 draghi purpurei). Drayssyl raggiunge 4 km.&lt;/li>
+&lt;li>&lt;strong>Anno 15.000&lt;/strong>: Elfi si trasferiscono su Drayssyl (9 km). Incursioni demoni nella giungla, respinte. Influenza Distruttori bilancia Creatori, il mondo smette di crescere.&lt;/li>
+&lt;li>&lt;strong>Anno 16.000&lt;/strong>: Nasce l’Impero umano sotto Sanda. Clan umani ostili migrano a sud delle terre gnoll. Apice civiltà Skim, costruzione dei Guardiani.&lt;/li>
+&lt;li>&lt;strong>Anno 17.000&lt;/strong>: Dagto corrompe gli Aroth, che migrano nel sottosuolo. Ae-thou crea i Miksos (coboldi), sconfitti dagli Aroth. Ae-thou non riesce a contrastare Dagto.&lt;/li>
+&lt;li>&lt;strong>Anno 18.000&lt;/strong>: Modifiche a Drayssyl, cresce smisuratamente. Declino civiltà Skim.&lt;/li>
+&lt;li>&lt;strong>Anno 20.000&lt;/strong>: Distruttori lavorano contro il creato. Aroth e demoni raggiungono le radici di Drayssyl, che si ammala.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="guerra-divina">Guerra divina
+&lt;/h2>&lt;h3 id="eventi-principali-1">Eventi principali
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Anno 0&lt;/strong>: Gnoll non fermano esercito demoniaco, terre umane invase.&lt;/li>
+&lt;li>&lt;strong>Anno 2&lt;/strong>: L’impero umano cade.&lt;/li>
+&lt;li>&lt;strong>Anno 3&lt;/strong>: Capitale umana distrutta dai demoni. Guardiani proteggono Demenia.&lt;/li>
+&lt;li>&lt;strong>Anno 4&lt;/strong>: Demoni decimano popolazione umana, incursioni nelle foreste elfiche.&lt;/li>
+&lt;li>&lt;strong>Anno 5&lt;/strong>: Marciume uccide Drayssyl, che si inclina. Creatori rallentano la caduta.&lt;/li>
+&lt;li>&lt;strong>Anno 6&lt;/strong>: Gnoll attaccano demoni alle spalle, vittorie devastanti. Alleanza elfi-umani, esercito demoniaco circondato.&lt;/li>
+&lt;li>&lt;strong>Anno 7&lt;/strong>: Drayssyl si deposita tra terre gnoll e umani/elfi, isolandole. Terre gnoll diventano aride.&lt;/li>
+&lt;li>&lt;strong>Anno 34&lt;/strong>: Grande battaglia, esercito demoniaco sconfitto. Perdite immense, draghi purpurei scomparsi.&lt;/li>
+&lt;li>&lt;strong>Anno 90&lt;/strong>: Ultimi demoni eliminati. Civiltà umana collassata, elfi si isolano.&lt;/li>
+&lt;li>&lt;strong>Anno 100&lt;/strong>: Eruzioni vulcaniche rendono le terre gnoll desertiche.&lt;/li>
+&lt;li>&lt;strong>Anno 250&lt;/strong>: Ae-thou e divinità trasformano Drayssyl in una catena montuosa (Muro del Deserto). Dagto uccide Ae-thou, generando un cratere e terremoti devastanti.&lt;/li>
+&lt;li>Senza Ae-thou, civiltà Skim collassa, superstiti regrediscono. Alcuni Guardiani rimangono attivi, eliminando ogni creatura non nativa della giungla.&lt;/li>
+&lt;li>Morte di Ae-thou scuote Creatori e Distruttori, tregua spontanea pone fine alla guerra divina.&lt;/li>
+&lt;li>Il ricordo di Ae-thou svanisce, tranne che per Kor.&lt;/li>
+&lt;li>Centinaia di anni di declino: umani divisi in regni, elfi isolati, gnoll vagano nel deserto.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="era-moderna">Era moderna
+&lt;/h2>&lt;p>&lt;em>Gli anni vengono contati dalla fondazione dell’Accademia dei magi a Ghainar.&lt;/em>&lt;/p>
+&lt;h3 id="eventi-principali-2">Eventi principali
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Anno 0&lt;/strong>: Fondazione dell’Accademia dei magi a Ghainar da parte di cinque maghi. Inizio espansione del villaggio.&lt;/li>
+&lt;li>&lt;strong>Anno 25&lt;/strong>: Accademia completata, decine di apprendisti. Ghainar diventa cittadina, commercianti inviano carovane.&lt;/li>
+&lt;li>…&lt;/li>
+&lt;li>&lt;strong>Anno 714&lt;/strong>: Ghainar è una città immensa, palude bonificata. Dai suoi cento moli partono navi per il continente. Governata dal Consiglio dei Mercanti (centuno membri), consulto dalla Stella (i cinque maghi).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>&lt;em>Questa cronologia potrebbe essere aggiornata in qualunque momento&lt;/em>&lt;/p></description></item><item><title>Portanus: Signore delle Porte</title><link>https://procionegobbo.it/gdr/portanus/</link><pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/gdr/portanus/</guid><description>&lt;h3 id="portanus-il-signore-delle-porte">Portanus (Il Signore delle Porte)
+&lt;/h3>&lt;p>&lt;em>Divinità pre-romana delle soglie e dei portali&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Nome Proto-Indoeuropeo:&lt;/strong> &lt;em>Prtónos&lt;/em> (ricostruito da &lt;em>prtu-&lt;/em> &amp;ldquo;passaggio, guado&amp;rdquo; e il suffisso divino &lt;em>-nos&lt;/em>)&lt;/li>
+&lt;li>&lt;strong>Titoli:&lt;/strong>
+&lt;ul>
+&lt;li>&lt;em>Il Custode delle Soglie&lt;/em>&lt;/li>
+&lt;li>&lt;em>Signore dei Guadi e delle Porte&lt;/em>&lt;/li>
+&lt;li>&lt;em>L’Oscuro Viandante&lt;/em>&lt;/li>
+&lt;li>&lt;em>Colui che Sta tra i Mondi&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc.jpg"
+width="2048"
+height="1871"
+srcset="https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc_hu_294f5de51a08ae7c.jpg 480w, https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc_hu_63742599b4083747.jpg 1024w"
+loading="lazy"
+alt="Portanus in veste di divinità celtica"
+class="gallery-image"
+data-flex-grow="109"
+data-flex-basis="262px"
+>&lt;/p>
+&lt;p>&lt;strong>Portanus&lt;/strong> è una figura mitologica appartenente al pantheon delle divinità pre-romane, venerata come il &lt;em>Signore delle Porte&lt;/em> e dei passaggi tra i mondi. Considerato una delle entità più enigmatiche del periodo italico arcaico, Portanus rappresenta il dominio delle soglie fisiche e metafisiche, fungendo da guardiano tra il mondo dei vivi e quello dei morti, tra il terreno e il divino, e tra dimensioni parallele.&lt;/p>
+&lt;h4 id="etimologia-e-origine">&lt;strong>Etimologia e origine&lt;/strong>
+&lt;/h4>&lt;p>Il nome &amp;ldquo;Portanus&amp;rdquo; deriva dal latino &lt;em>porta&lt;/em>, che significa &amp;ldquo;porta&amp;rdquo; o &amp;ldquo;passaggio,&amp;rdquo; e richiama il suo ruolo di custode. Alcuni studiosi lo considerano una figura ancestrale da cui potrebbe aver tratto ispirazione il più noto Giano (&lt;em>Ianus&lt;/em>), sebbene Portanus possieda una connotazione più oscura e misteriosa.&lt;/p>
+&lt;h4 id="iconografia-e-simboli">&lt;strong>Iconografia e simboli&lt;/strong>
+&lt;/h4>&lt;p>Portanus è spesso descritto come una figura incappucciata, avvolta da un mantello scuro che sembra fondersi con le ombre circostanti. Nei rari artefatti attribuiti al suo culto, la sua immagine appare priva di volto, con una chiave in una mano e un&amp;rsquo;antica lanterna nell&amp;rsquo;altra, simboli del potere di aprire e chiudere le soglie.
 Il suo simbolo è una stella a cinque punte, da ognuna delle punte si diramano tre raggi.
-Le cinque punte rappresentano i cinque reami dell&amp;rsquo;esistenza mentre i tre raggi il passato, il presente e il futuro.&lt;/p&gt;
-&lt;h4 id=&#34;poteri-e-dominio&#34;&gt;&lt;strong&gt;Poteri e dominio&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;Portanus esercita un controllo assoluto sulle porte e sui passaggi, non solo in senso fisico ma anche simbolico.&lt;br&gt;
-Tra i suoi poteri principali:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Concedere servitori d&amp;rsquo;ombra&lt;/strong&gt;: Spiriti senzienti o creature fatte d&amp;rsquo;ombra, spesso utilizzate dai suoi adepti più fedeli come guardiani o emissari.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Aprire varchi dimensionali&lt;/strong&gt;: È in grado di creare passaggi tra mondi o realtà diverse, un&amp;rsquo;abilità che i suoi cultisti sfruttano per scopi misteriosi.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;La manipolazione del tempo e dello spazio&lt;/strong&gt;: Nelle sue soglie, le leggi naturali sembrano piegarsi, con il tempo che rallenta, accelera, o si annulla.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;culto-e-adorazione&#34;&gt;&lt;strong&gt;Culto e adorazione&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;Il culto di Portanus era praticato in segretezza, spesso nelle profondità di grotte, antiche cripte, o luoghi liminali come ponti e porte abbandonate. Gli adepti veneravano Portanus attraverso rituali complessi che includevano l’uso di simboli circolari e chiavi cerimoniali. Si credeva che ogni porta fosse un potenziale altare al dio, e i cultisti si rivolgevano a lui per protezione, per viaggiare oltre i confini naturali, o per evocare i suoi servitori d’ombra.&lt;/p&gt;
-&lt;h4 id=&#34;impatto-culturale&#34;&gt;&lt;strong&gt;Impatto culturale&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;Portanus è una divinità che rimane poco documentata, ma il suo culto ha lasciato tracce nelle superstizioni romane e medievali. La sua immagine è stata reinterpretata in chiave negativa con l’avvento del Cristianesimo, trasformandolo in un simbolo di pericolo associato ai varchi verso l’ignoto e il proibito.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;dominio-e-ruolo-nella-mitologia&#34;&gt;&lt;strong&gt;Dominio e Ruolo nella Mitologia&lt;/strong&gt;
-&lt;/h3&gt;&lt;p&gt;Portanus non era una divinità della creazione o della guerra, ma un’entità legata ai &lt;strong&gt;confini e ai passaggi&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Governava i &lt;strong&gt;guadi dei fiumi, le gole montane e le caverne&lt;/strong&gt;, che erano visti come porte verso l’ignoto.&lt;/li&gt;
-&lt;li&gt;Era il &lt;strong&gt;signore delle soglie tra la vita e la morte&lt;/strong&gt;, una guida per le anime dei defunti nel loro cammino verso l’aldilà.&lt;/li&gt;
-&lt;li&gt;Controllava il &lt;strong&gt;tempo liminale&lt;/strong&gt;, cioè i momenti di transizione tra stagioni, età della vita e stati della coscienza (come sogno e veglia).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Nel culto proto-indoeuropeo, vi era una credenza secondo cui chiunque attraversasse certi luoghi sacri senza il favore di Portanus rischiava di &amp;ldquo;perdersi&amp;rdquo; e non ritrovare mai più la strada.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;iconografia-e-simbolismo&#34;&gt;&lt;strong&gt;Iconografia e Simbolismo&lt;/strong&gt;
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;La Stella a Cinque Punte con Tre Raggi per Punta:&lt;/strong&gt; Questo simbolo potrebbe derivare da antiche incisioni rupestri, rappresentando l&amp;rsquo;unione tra il mondo dei vivi, il mondo dei morti e un terzo dominio ignoto.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Pietre di Confine Sacre:&lt;/strong&gt; Le tribù proto-indoeuropee potrebbero aver eretto &lt;strong&gt;stele votive&lt;/strong&gt; con il simbolo di Portanus in prossimità di passaggi naturali per chiedere il suo favore.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Il Portatore del Fuoco Oscuro:&lt;/strong&gt; Portanus potrebbe essere raffigurato come un essere avvolto da un fuoco che non brucia ma oscura la luce, segno del suo potere di nascondere e rivelare.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/gdr/portanus/Simbolo.png&#34;
-	width=&#34;1024&#34;
-	height=&#34;1024&#34;
-	srcset=&#34;http://localhost:1313/gdr/portanus/Simbolo_hu_11999f0684978b2f.png 480w, http://localhost:1313/gdr/portanus/Simbolo_hu_de3e998db77c0532.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Simbolo di Portanus, rinvenuto in uno scavo archeologico in Khazakistan&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;100&#34;
-		data-flex-basis=&#34;240px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;miti-e-leggende&#34;&gt;&lt;strong&gt;Miti e Leggende&lt;/strong&gt;
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Il Viaggio della Prima Tribù&lt;/strong&gt;&lt;br&gt;
-Si raccontava che la prima tribù degli uomini, nel loro esodo verso nuove terre, si trovò bloccata davanti a un fiume impetuoso. Portanus apparve come un uomo avvolto nell&amp;rsquo;ombra, indicando un guado nascosto. In cambio, pretese che il primo nato dopo il passaggio fosse a lui consacrato. La tribù accettò e attraversò il fiume, ma al ritorno scoprì che il bambino era sparito senza lasciare traccia.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Le Porte Invisibili&lt;/strong&gt;&lt;br&gt;
-Alcuni miti narravano dell’esistenza di porte invisibili, accessibili solo in certi momenti (come l’alba e il tramonto). Chi passava per errore attraverso una di queste porte si trovava in un mondo senza tempo, popolato da ombre che parlavano con voci dimenticate. Solo chi conosceva il vero nome di Portanus poteva tornare indietro.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Il Custode del Sole Morente&lt;/strong&gt;&lt;br&gt;
-Si diceva che Portanus fosse colui che raccoglieva il sole morente ogni sera per portarlo nell&amp;rsquo;aldilà e riconsegnarlo all’alba. In certe notti d’inverno, però, Portanus si rifiutava di restituire il sole, costringendo gli uomini a bruciare fuochi rituali per convincerlo a riaprire la porta del giorno.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;culto-e-rituali&#34;&gt;&lt;strong&gt;Culto e Rituali&lt;/strong&gt;
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Sacrifici di Ombra:&lt;/strong&gt; Alcuni rituali prevedevano di bruciare oggetti personali in luoghi sacri affinché l’ombra di quegli oggetti passasse nel regno di Portanus.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Pellegrinaggi Notturni:&lt;/strong&gt; Alcune tribù compivano viaggi notturni attraverso gole e caverne, credendo che camminare al buio con il favore di Portanus li avrebbe resi invisibili agli spiriti maligni.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Il Rito del Passaggio:&lt;/strong&gt; I giovani che diventavano adulti dovevano attraversare un guado o una caverna al tramonto, lasciando dietro di sé un’offerta affinché Portanus li riconoscesse come nuovi viaggiatori tra i mondi.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;declino-del-culto&#34;&gt;&lt;strong&gt;Declino del Culto&lt;/strong&gt;
-&lt;/h3&gt;&lt;p&gt;Col passare dei secoli, mentre le popolazioni proto-indoeuropee si frammentavano e le religioni si evolvevano, Portanus fu assorbito o dimenticato:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;In alcune culture diventò una divinità minore legata ai confini e ai crocevia.&lt;/li&gt;
-&lt;li&gt;In altre fu demonizzato come un&amp;rsquo;entità oscura che tentava i viaggiatori a perdersi nel mondo dei morti.&lt;/li&gt;
-&lt;li&gt;Solo il culto sotterraneo dei &lt;strong&gt;Custodes Occultorum Transituum&lt;/strong&gt; mantenne viva la sua adorazione segreta.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;conclusione&#34;&gt;&lt;strong&gt;Conclusione&lt;/strong&gt;
-&lt;/h3&gt;&lt;p&gt;Il culto di Portanus si sarebbe diffuso tra le popolazioni migratorie, plasmando i primi concetti religiosi di &lt;strong&gt;soglia, confine e transizione&lt;/strong&gt;. Forse il motivo per cui il suo nome è quasi scomparso è proprio perché i suoi fedeli non volevano che fosse ricordato dagli estranei.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;evoluzione-del-mito-di-portanus-in-india&#34;&gt;&lt;strong&gt;Evoluzione del Mito di Portanus in India&lt;/strong&gt;
-&lt;/h3&gt;&lt;h4 id=&#34;periodo-vedico-circa-1500-500-ac&#34;&gt;&lt;strong&gt;Periodo Vedico (circa 1500-500 a.C.)&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;Nella fase più antica della religione vedica, la figura di Portanus si è trasformata in una divinità legata ai passaggi tra i mondi e alla transizione tra vita e morte, concetti che troviamo già in alcune divinità vediche. Due sono stati gli adattamenti:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Pūṣan&lt;/strong&gt;, il dio vedico dei viandanti e delle strade, guida le anime nell&amp;rsquo;aldilà e protegge chi attraversa territori pericolosi ha assorbito parte del mito di &lt;strong&gt;Portanus&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Yama&lt;/strong&gt;, il dio della morte e primo mortale a raggiungere il regno dei defunti, ha acquisito tratti della divinità legata alle soglie e ai confini.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;periodo-brahmanico-e-sviluppo-dell&#34;&gt;&lt;strong&gt;Periodo Brahmanico e Sviluppo dell&amp;rsquo;Induismo&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;Con il tempo, la figura di Portanus è stata assimilata a concetti più complessi, come quelli di &lt;strong&gt;tirtha&lt;/strong&gt;, i luoghi di passaggio sacri tra il mondo umano e quello divino, e il concetto di &lt;strong&gt;moksha&lt;/strong&gt;, la liberazione dal ciclo delle rinascite (saṃsāra), che è in sé una sorta di &amp;ldquo;ultima soglia&amp;rdquo; da attraversare.&lt;/p&gt;
-&lt;p&gt;In questo periodo, la sua figura si è frammentata in diverse divinità o aspetti di divinità già esistenti:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Dvārapālas&lt;/strong&gt;, i guardiani delle soglie dei templi indù e buddhisti, come un&amp;rsquo;eco degli antichi Custodi della Porta.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Shiva&lt;/strong&gt; nella sua forma di &lt;strong&gt;Kala Bhairava&lt;/strong&gt;, il feroce signore del tempo e delle transizioni, che presiede i luoghi di cremazione e le soglie tra vita e morte, potrebbe aver assorbito il lato più occulto del mito.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/gdr/portanus/dvarapalas.jpg&#34;
-	width=&#34;2048&#34;
-	height=&#34;2048&#34;
-	srcset=&#34;http://localhost:1313/gdr/portanus/dvarapalas_hu_e0f2a09acb334943.jpg 480w, http://localhost:1313/gdr/portanus/dvarapalas_hu_c803c55ff8dc2270.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Un Dvārapālas col simbolo di Portanus&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;100&#34;
-		data-flex-basis=&#34;240px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h4 id=&#34;persistenza-nei-testi-e-nei-culti-esoterici&#34;&gt;&lt;strong&gt;Persistenza nei Testi e nei Culti Esoterici&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;Alcune tradizioni tantriche o ascetiche hanno potuto mantenere il culto in forme più segrete, attribuendo a Portanus un aspetto legato ai passaggi mistici e ai poteri che derivano dall&amp;rsquo;attraversamento di stati alterati di coscienza. In alcune scuole tantriche, la meditazione su porte e soglie è un simbolo del passaggio tra realtà differenti, concetto che rispecchia il mito originale.&lt;/p&gt;
-&lt;h3 id=&#34;connessione-tra-le-due-tradizioni&#34;&gt;&lt;strong&gt;Connessione tra le Due Tradizioni&lt;/strong&gt;
-&lt;/h3&gt;&lt;p&gt;Mentre in Occidente Portanus è stato assorbito dalla religione romana e poi dimenticato, in India la sua eredità potrebbe essere sopravvissuta sotto forma di pratiche rituali legate ai passaggi tra mondi, ai portali sacri e ai guardiani delle soglie, influenzando la concezione delle porte sacre nei templi e il simbolismo della liberazione spirituale.&lt;/p&gt;
-&lt;h1 id=&#34;portanus-il-primo-guardiano-dei-confini&#34;&gt;&lt;strong&gt;Portanus: Il Primo Guardiano dei Confini&lt;/strong&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm.jpg&#34;
-	width=&#34;2048&#34;
-	height=&#34;2048&#34;
-	srcset=&#34;http://localhost:1313/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm_hu_206cb154031fbd46.jpg 480w, http://localhost:1313/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm_hu_aa9877bbc9e75c90.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Portanus&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;100&#34;
-		data-flex-basis=&#34;240px&#34;
-	
-&gt; Nei tempi in cui &lt;strong&gt;gli antenati dell’uomo sedevano attorno ai fuochi&lt;/strong&gt;, guardando con sospetto l’oscurità della notte, vi era già &lt;strong&gt;qualcosa che stava nell&amp;rsquo;ombra&lt;/strong&gt;, osservando. &lt;strong&gt;Le caverne erano portali, le gole oscure segreti proibiti, le grandi rocce erette sentinelle di un potere ignoto&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;I primi umani parlavano a gesti, poi con suoni appena articolati. &lt;strong&gt;Ma alcuni suoni erano proibiti&lt;/strong&gt;. Alcune parole non dovevano essere pronunciate, perché &lt;strong&gt;aprivano le Vie Profonde&lt;/strong&gt;. La leggenda narra che &lt;strong&gt;fu il primo sciamano&lt;/strong&gt;—colui che sapeva leggere i segni degli antenati e comunicare con il mondo invisibile—a &lt;strong&gt;incontrarlo per la prima volta&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Non aveva ancora un nome, ma &lt;strong&gt;già esisteva prima delle parole&lt;/strong&gt;. Lo sciamano lo vide mentre attraversava la fenditura tra due rocce sacre, quando la luna era nuova. &lt;strong&gt;Era alto, più alto di qualsiasi uomo, e la sua ombra si contorceva come se fosse viva&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Egli sussurrò &lt;strong&gt;parole sconosciute&lt;/strong&gt;, e il suolo si aprì sotto di lui, rivelando un luogo che non apparteneva a questo mondo. Il primo sciamano tentò di fuggire, ma &lt;strong&gt;la creatura lo marchiò&lt;/strong&gt;, imprimendogli sul petto il segno della &lt;strong&gt;stella a cinque punte&lt;/strong&gt;, simbolo del passaggio eterno. &lt;strong&gt;Da quel giorno, coloro che sognavano il simbolo sapevano che erano destinati a viaggiare tra i mondi&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Il culto di Portanus nacque &lt;strong&gt;prima delle civiltà, prima della scrittura&lt;/strong&gt;, tramandato da racconti sussurrati tra i fuochi notturni. I primi uomini scolpirono &lt;strong&gt;segni sulle pietre&lt;/strong&gt;, credendo che potessero tenerlo lontano, ma le &lt;strong&gt;porte si aprivano comunque&lt;/strong&gt;, nei momenti in cui la realtà si assottigliava.&lt;/p&gt;
-&lt;p&gt;Con il tempo, gli uomini impararono a chiamarlo &lt;strong&gt;Signore delle Fenditure, Guardiano delle Pietre Erette, il Senza-Volto che Veglia sui Confini&lt;/strong&gt;. I suoi fedeli lo cercavano, &lt;strong&gt;sperando di attraversare le soglie verso i regni sconosciuti&lt;/strong&gt;, mentre altri lo temevano, pregando di non udire &lt;strong&gt;il suo sussurro nel vento tra le rocce&lt;/strong&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;simbolismo-e-tradizione&#34;&gt;&lt;strong&gt;Simbolismo e Tradizione&lt;/strong&gt;
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Le &lt;strong&gt;gole e le caverne profonde&lt;/strong&gt; erano considerate sue dimore.&lt;/li&gt;
-&lt;li&gt;I &lt;strong&gt;cerchi di pietre&lt;/strong&gt;—precursori dei dolmen e dei menhir—erano tentativi di chiudere i passaggi che conducevano alle Vie Profonde.&lt;/li&gt;
-&lt;li&gt;Il &lt;strong&gt;segno della stella a cinque punte&lt;/strong&gt; compare tra le incisioni più antiche, legato ai primi riti tribali.&lt;/li&gt;
-&lt;li&gt;Gli &lt;strong&gt;sciamani portavano amuleti di ossa e pietra&lt;/strong&gt;, credendo che potessero placare Portanus o permettere di attraversare le soglie in sicurezza.&lt;/li&gt;
-&lt;li&gt;Durante &lt;strong&gt;eclissi e lune nuove&lt;/strong&gt;, si raccontava che i più sensibili potessero udire il suo richiamo.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-</description>
-        </item>
-        <item>
-        <title>Ciao mondo</title>
-        <link>http://localhost:1313/blog/hello-world/</link>
-        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/blog/hello-world/</guid>
-        <description>&lt;p&gt;Sono passati 11 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;
-&lt;p&gt;It’s been 11 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Storie di Ghainar - Incipit</title>
-        <link>http://localhost:1313/scrittura/ghainar/</link>
-        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/scrittura/ghainar/</guid>
-        <description>&lt;p&gt;Il vento portava sabbia e segreti, e la città di Ghainar non dormiva da tre notti&amp;hellip;
-e qui si materializzerà la nuova incarnazione di Storie di Ghainar, una raccolta dei miei racconti.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Chi sono</title>
-        <link>http://localhost:1313/chi-sono/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/chi-sono/</guid>
-        <description>&lt;p&gt;Ciao, mi chiamo &lt;strong&gt;Federico Maiorini&lt;/strong&gt; e sono uno sviluppatore backend con oltre 20 anni di esperienza nel mondo dello sviluppo web e software. In rete mi trovi spesso con il nickname &lt;strong&gt;Procionegobbo&lt;/strong&gt; — una lunga storia che risale ai tempi del mio Master in Videogame Design.&lt;/p&gt;
-&lt;p&gt;Attualmente lavoro come &lt;strong&gt;Senior PHP Developer presso &lt;a class=&#34;link&#34; href=&#34;https://labs.fitprime.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Fitprime Labs&lt;/a&gt;&lt;/strong&gt;, dove mi occupo di progettazione e sviluppo di servizi e microservizi in &lt;strong&gt;Laravel&lt;/strong&gt;, con particolare attenzione a performance, architetture scalabili e integrazione di sistemi complessi (SSO, RESTful APIs, sistemi di terze parti come Stripe e Auth0).&lt;/p&gt;
-&lt;p&gt;Nel corso della mia carriera ho:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;introdotto Laravel in aziende come Mind the Head, migliorando standard e qualità del codice&lt;/li&gt;
-&lt;li&gt;sviluppato soluzioni full-stack per grandi clienti (soprattutto nel settore farmaceutico)&lt;/li&gt;
-&lt;li&gt;lavorato in ambienti corporate e pubblici su architetture LAMP, .NET, SharePoint, C#, Angular, Oracle, e molto altro&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-competenze-principali&#34;&gt;🛠 Competenze principali
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Framework:&lt;/strong&gt; Laravel&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Linguaggi:&lt;/strong&gt; PHP 8+, SQL, JavaScript&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Basi dati:&lt;/strong&gt; MySQL, PostgreSQL, Oracle, SQL Server&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;DevOps:&lt;/strong&gt; TDD, GitHub Actions, sistemi di caching (Redis)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integrazione:&lt;/strong&gt; SSO SAML, OAuth2, API esterne (Stripe, Google, Auth0)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Metodologie:&lt;/strong&gt; Agile (Scrum), Pair Programming, Code Review&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-strumenti-che-uso-quotidianamente&#34;&gt;🧰 Strumenti che uso quotidianamente
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Ambiente di sviluppo:&lt;/strong&gt; Laravel Herd, Docker, Tinkerwell&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Debug &amp;amp; diagnostica:&lt;/strong&gt; Spatie Ray, Xdebug&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Deployment:&lt;/strong&gt; Laravel Forge, GitHub Actions&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Editor e tool:&lt;/strong&gt; VS Code, Warp, TablePlus&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Controllo versione:&lt;/strong&gt; Git, GitHub, BitBucket&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-attualmente-sto-studiando&#34;&gt;📚 Attualmente sto studiando
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Design patterns&lt;/strong&gt; applicati a Laravel e PHP moderno&lt;/li&gt;
-&lt;li&gt;Introduzione al mondo &lt;strong&gt;event-driven&lt;/strong&gt; (Laravel events &amp;amp; queues)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Golang&lt;/strong&gt;, come alternativa backend moderna e performante&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Scrittura narrativa e worldbuilding&lt;/strong&gt; per i miei progetti personali&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-game-master-scrittore-e-narratore&#34;&gt;🎲 Game Master, scrittore e narratore
-&lt;/h3&gt;&lt;p&gt;Dal &lt;strong&gt;1985&lt;/strong&gt; sono anche un appassionato &lt;strong&gt;game master&lt;/strong&gt;, creatore di mondi e narratore di storie. Ho ideato decine di campagne e ambientazioni originali come il culto del misterioso &lt;strong&gt;Portanus&lt;/strong&gt;, con cui esploro il lato oscuro della mitologia e dell’archeologia immaginaria.&lt;/p&gt;
-&lt;p&gt;Amo usare il gioco di ruolo anche come strumento di team building in ambito lavorativo, per stimolare creatività e collaborazione.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-formazione&#34;&gt;🎓 Formazione
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;ITIS M. Faraday&lt;/strong&gt; – Perito in informatica&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Scuola Omero&lt;/strong&gt; – Scrittura creativa (2012–2016)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Istituto Europeo di Design&lt;/strong&gt; – Master in Videogame Design (2004–2005)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;-contatti&#34;&gt;📫 Contatti
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;📧 &lt;a class=&#34;link&#34; href=&#34;mailto:federico.maiorini@me.com&#34; &gt;federico.maiorini@me.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🔗 &lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/federicomaiorini&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💻 &lt;a class=&#34;link&#34; href=&#34;https://github.com/procionegobbo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🌸 &lt;a class=&#34;link&#34; href=&#34;https://pinkary.com/@procionegobbo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Pinkary&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🐘 &lt;a class=&#34;link&#34; href=&#34;https://livellosegreto.it/@procionegobbo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Mastodon&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“Per me scrivere codice è come scrivere storie: ogni funzione ha un ruolo, ogni riga ha uno scopo.”&lt;/p&gt;&lt;/blockquote&gt;
-</description>
-        </item>
-        
-    </channel>
-</rss>
+Le cinque punte rappresentano i cinque reami dell&amp;rsquo;esistenza mentre i tre raggi il passato, il presente e il futuro.&lt;/p>
+&lt;h4 id="poteri-e-dominio">&lt;strong>Poteri e dominio&lt;/strong>
+&lt;/h4>&lt;p>Portanus esercita un controllo assoluto sulle porte e sui passaggi, non solo in senso fisico ma anche simbolico.&lt;br>
+Tra i suoi poteri principali:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Concedere servitori d&amp;rsquo;ombra&lt;/strong>: Spiriti senzienti o creature fatte d&amp;rsquo;ombra, spesso utilizzate dai suoi adepti più fedeli come guardiani o emissari.&lt;/li>
+&lt;li>&lt;strong>Aprire varchi dimensionali&lt;/strong>: È in grado di creare passaggi tra mondi o realtà diverse, un&amp;rsquo;abilità che i suoi cultisti sfruttano per scopi misteriosi.&lt;/li>
+&lt;li>&lt;strong>La manipolazione del tempo e dello spazio&lt;/strong>: Nelle sue soglie, le leggi naturali sembrano piegarsi, con il tempo che rallenta, accelera, o si annulla.&lt;/li>
+&lt;/ul>
+&lt;h4 id="culto-e-adorazione">&lt;strong>Culto e adorazione&lt;/strong>
+&lt;/h4>&lt;p>Il culto di Portanus era praticato in segretezza, spesso nelle profondità di grotte, antiche cripte, o luoghi liminali come ponti e porte abbandonate. Gli adepti veneravano Portanus attraverso rituali complessi che includevano l’uso di simboli circolari e chiavi cerimoniali. Si credeva che ogni porta fosse un potenziale altare al dio, e i cultisti si rivolgevano a lui per protezione, per viaggiare oltre i confini naturali, o per evocare i suoi servitori d’ombra.&lt;/p>
+&lt;h4 id="impatto-culturale">&lt;strong>Impatto culturale&lt;/strong>
+&lt;/h4>&lt;p>Portanus è una divinità che rimane poco documentata, ma il suo culto ha lasciato tracce nelle superstizioni romane e medievali. La sua immagine è stata reinterpretata in chiave negativa con l’avvento del Cristianesimo, trasformandolo in un simbolo di pericolo associato ai varchi verso l’ignoto e il proibito.&lt;/p>
+&lt;hr>
+&lt;h3 id="dominio-e-ruolo-nella-mitologia">&lt;strong>Dominio e Ruolo nella Mitologia&lt;/strong>
+&lt;/h3>&lt;p>Portanus non era una divinità della creazione o della guerra, ma un’entità legata ai &lt;strong>confini e ai passaggi&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Governava i &lt;strong>guadi dei fiumi, le gole montane e le caverne&lt;/strong>, che erano visti come porte verso l’ignoto.&lt;/li>
+&lt;li>Era il &lt;strong>signore delle soglie tra la vita e la morte&lt;/strong>, una guida per le anime dei defunti nel loro cammino verso l’aldilà.&lt;/li>
+&lt;li>Controllava il &lt;strong>tempo liminale&lt;/strong>, cioè i momenti di transizione tra stagioni, età della vita e stati della coscienza (come sogno e veglia).&lt;/li>
+&lt;/ul>
+&lt;p>Nel culto proto-indoeuropeo, vi era una credenza secondo cui chiunque attraversasse certi luoghi sacri senza il favore di Portanus rischiava di &amp;ldquo;perdersi&amp;rdquo; e non ritrovare mai più la strada.&lt;/p>
+&lt;hr>
+&lt;h3 id="iconografia-e-simbolismo">&lt;strong>Iconografia e Simbolismo&lt;/strong>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>La Stella a Cinque Punte con Tre Raggi per Punta:&lt;/strong> Questo simbolo potrebbe derivare da antiche incisioni rupestri, rappresentando l&amp;rsquo;unione tra il mondo dei vivi, il mondo dei morti e un terzo dominio ignoto.&lt;/li>
+&lt;li>&lt;strong>Pietre di Confine Sacre:&lt;/strong> Le tribù proto-indoeuropee potrebbero aver eretto &lt;strong>stele votive&lt;/strong> con il simbolo di Portanus in prossimità di passaggi naturali per chiedere il suo favore.&lt;/li>
+&lt;li>&lt;strong>Il Portatore del Fuoco Oscuro:&lt;/strong> Portanus potrebbe essere raffigurato come un essere avvolto da un fuoco che non brucia ma oscura la luce, segno del suo potere di nascondere e rivelare.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://procionegobbo.it/gdr/portanus/Simbolo.png"
+width="1024"
+height="1024"
+srcset="https://procionegobbo.it/gdr/portanus/Simbolo_hu_11999f0684978b2f.png 480w, https://procionegobbo.it/gdr/portanus/Simbolo_hu_de3e998db77c0532.png 1024w"
+loading="lazy"
+alt="Simbolo di Portanus, rinvenuto in uno scavo archeologico in Khazakistan"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+>&lt;/p>
+&lt;hr>
+&lt;h3 id="miti-e-leggende">&lt;strong>Miti e Leggende&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Il Viaggio della Prima Tribù&lt;/strong>&lt;br>
+Si raccontava che la prima tribù degli uomini, nel loro esodo verso nuove terre, si trovò bloccata davanti a un fiume impetuoso. Portanus apparve come un uomo avvolto nell&amp;rsquo;ombra, indicando un guado nascosto. In cambio, pretese che il primo nato dopo il passaggio fosse a lui consacrato. La tribù accettò e attraversò il fiume, ma al ritorno scoprì che il bambino era sparito senza lasciare traccia.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Le Porte Invisibili&lt;/strong>&lt;br>
+Alcuni miti narravano dell’esistenza di porte invisibili, accessibili solo in certi momenti (come l’alba e il tramonto). Chi passava per errore attraverso una di queste porte si trovava in un mondo senza tempo, popolato da ombre che parlavano con voci dimenticate. Solo chi conosceva il vero nome di Portanus poteva tornare indietro.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Il Custode del Sole Morente&lt;/strong>&lt;br>
+Si diceva che Portanus fosse colui che raccoglieva il sole morente ogni sera per portarlo nell&amp;rsquo;aldilà e riconsegnarlo all’alba. In certe notti d’inverno, però, Portanus si rifiutava di restituire il sole, costringendo gli uomini a bruciare fuochi rituali per convincerlo a riaprire la porta del giorno.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="culto-e-rituali">&lt;strong>Culto e Rituali&lt;/strong>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Sacrifici di Ombra:&lt;/strong> Alcuni rituali prevedevano di bruciare oggetti personali in luoghi sacri affinché l’ombra di quegli oggetti passasse nel regno di Portanus.&lt;/li>
+&lt;li>&lt;strong>Pellegrinaggi Notturni:&lt;/strong> Alcune tribù compivano viaggi notturni attraverso gole e caverne, credendo che camminare al buio con il favore di Portanus li avrebbe resi invisibili agli spiriti maligni.&lt;/li>
+&lt;li>&lt;strong>Il Rito del Passaggio:&lt;/strong> I giovani che diventavano adulti dovevano attraversare un guado o una caverna al tramonto, lasciando dietro di sé un’offerta affinché Portanus li riconoscesse come nuovi viaggiatori tra i mondi.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="declino-del-culto">&lt;strong>Declino del Culto&lt;/strong>
+&lt;/h3>&lt;p>Col passare dei secoli, mentre le popolazioni proto-indoeuropee si frammentavano e le religioni si evolvevano, Portanus fu assorbito o dimenticato:&lt;/p>
+&lt;ul>
+&lt;li>In alcune culture diventò una divinità minore legata ai confini e ai crocevia.&lt;/li>
+&lt;li>In altre fu demonizzato come un&amp;rsquo;entità oscura che tentava i viaggiatori a perdersi nel mondo dei morti.&lt;/li>
+&lt;li>Solo il culto sotterraneo dei &lt;strong>Custodes Occultorum Transituum&lt;/strong> mantenne viva la sua adorazione segreta.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="conclusione">&lt;strong>Conclusione&lt;/strong>
+&lt;/h3>&lt;p>Il culto di Portanus si sarebbe diffuso tra le popolazioni migratorie, plasmando i primi concetti religiosi di &lt;strong>soglia, confine e transizione&lt;/strong>. Forse il motivo per cui il suo nome è quasi scomparso è proprio perché i suoi fedeli non volevano che fosse ricordato dagli estranei.&lt;/p>
+&lt;hr>
+&lt;h3 id="evoluzione-del-mito-di-portanus-in-india">&lt;strong>Evoluzione del Mito di Portanus in India&lt;/strong>
+&lt;/h3>&lt;h4 id="periodo-vedico-circa-1500-500-ac">&lt;strong>Periodo Vedico (circa 1500-500 a.C.)&lt;/strong>
+&lt;/h4>&lt;p>Nella fase più antica della religione vedica, la figura di Portanus si è trasformata in una divinità legata ai passaggi tra i mondi e alla transizione tra vita e morte, concetti che troviamo già in alcune divinità vediche. Due sono stati gli adattamenti:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Pūṣan&lt;/strong>, il dio vedico dei viandanti e delle strade, guida le anime nell&amp;rsquo;aldilà e protegge chi attraversa territori pericolosi ha assorbito parte del mito di &lt;strong>Portanus&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>Yama&lt;/strong>, il dio della morte e primo mortale a raggiungere il regno dei defunti, ha acquisito tratti della divinità legata alle soglie e ai confini.&lt;/li>
+&lt;/ul>
+&lt;h4 id="periodo-brahmanico-e-sviluppo-dell">&lt;strong>Periodo Brahmanico e Sviluppo dell&amp;rsquo;Induismo&lt;/strong>
+&lt;/h4>&lt;p>Con il tempo, la figura di Portanus è stata assimilata a concetti più complessi, come quelli di &lt;strong>tirtha&lt;/strong>, i luoghi di passaggio sacri tra il mondo umano e quello divino, e il concetto di &lt;strong>moksha&lt;/strong>, la liberazione dal ciclo delle rinascite (saṃsāra), che è in sé una sorta di &amp;ldquo;ultima soglia&amp;rdquo; da attraversare.&lt;/p>
+&lt;p>In questo periodo, la sua figura si è frammentata in diverse divinità o aspetti di divinità già esistenti:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Dvārapālas&lt;/strong>, i guardiani delle soglie dei templi indù e buddhisti, come un&amp;rsquo;eco degli antichi Custodi della Porta.&lt;/li>
+&lt;li>&lt;strong>Shiva&lt;/strong> nella sua forma di &lt;strong>Kala Bhairava&lt;/strong>, il feroce signore del tempo e delle transizioni, che presiede i luoghi di cremazione e le soglie tra vita e morte, potrebbe aver assorbito il lato più occulto del mito.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://procionegobbo.it/gdr/portanus/dvarapalas.jpg"
+width="2048"
+height="2048"
+srcset="https://procionegobbo.it/gdr/portanus/dvarapalas_hu_e0f2a09acb334943.jpg 480w, https://procionegobbo.it/gdr/portanus/dvarapalas_hu_c803c55ff8dc2270.jpg 1024w"
+loading="lazy"
+alt="Un Dvārapālas col simbolo di Portanus"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+>&lt;/p>
+&lt;h4 id="persistenza-nei-testi-e-nei-culti-esoterici">&lt;strong>Persistenza nei Testi e nei Culti Esoterici&lt;/strong>
+&lt;/h4>&lt;p>Alcune tradizioni tantriche o ascetiche hanno potuto mantenere il culto in forme più segrete, attribuendo a Portanus un aspetto legato ai passaggi mistici e ai poteri che derivano dall&amp;rsquo;attraversamento di stati alterati di coscienza. In alcune scuole tantriche, la meditazione su porte e soglie è un simbolo del passaggio tra realtà differenti, concetto che rispecchia il mito originale.&lt;/p>
+&lt;h3 id="connessione-tra-le-due-tradizioni">&lt;strong>Connessione tra le Due Tradizioni&lt;/strong>
+&lt;/h3>&lt;p>Mentre in Occidente Portanus è stato assorbito dalla religione romana e poi dimenticato, in India la sua eredità potrebbe essere sopravvissuta sotto forma di pratiche rituali legate ai passaggi tra mondi, ai portali sacri e ai guardiani delle soglie, influenzando la concezione delle porte sacre nei templi e il simbolismo della liberazione spirituale.&lt;/p>
+&lt;h1 id="portanus-il-primo-guardiano-dei-confini">&lt;strong>Portanus: Il Primo Guardiano dei Confini&lt;/strong>
+&lt;/h1>&lt;p>&lt;img src="https://procionegobbo.it/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm.jpg"
+width="2048"
+height="2048"
+srcset="https://procionegobbo.it/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm_hu_206cb154031fbd46.jpg 480w, https://procionegobbo.it/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm_hu_aa9877bbc9e75c90.jpg 1024w"
+loading="lazy"
+alt="Portanus"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+> Nei tempi in cui &lt;strong>gli antenati dell’uomo sedevano attorno ai fuochi&lt;/strong>, guardando con sospetto l’oscurità della notte, vi era già &lt;strong>qualcosa che stava nell&amp;rsquo;ombra&lt;/strong>, osservando. &lt;strong>Le caverne erano portali, le gole oscure segreti proibiti, le grandi rocce erette sentinelle di un potere ignoto&lt;/strong>.&lt;/p>
+&lt;p>I primi umani parlavano a gesti, poi con suoni appena articolati. &lt;strong>Ma alcuni suoni erano proibiti&lt;/strong>. Alcune parole non dovevano essere pronunciate, perché &lt;strong>aprivano le Vie Profonde&lt;/strong>. La leggenda narra che &lt;strong>fu il primo sciamano&lt;/strong>—colui che sapeva leggere i segni degli antenati e comunicare con il mondo invisibile—a &lt;strong>incontrarlo per la prima volta&lt;/strong>.&lt;/p>
+&lt;p>Non aveva ancora un nome, ma &lt;strong>già esisteva prima delle parole&lt;/strong>. Lo sciamano lo vide mentre attraversava la fenditura tra due rocce sacre, quando la luna era nuova. &lt;strong>Era alto, più alto di qualsiasi uomo, e la sua ombra si contorceva come se fosse viva&lt;/strong>.&lt;/p>
+&lt;p>Egli sussurrò &lt;strong>parole sconosciute&lt;/strong>, e il suolo si aprì sotto di lui, rivelando un luogo che non apparteneva a questo mondo. Il primo sciamano tentò di fuggire, ma &lt;strong>la creatura lo marchiò&lt;/strong>, imprimendogli sul petto il segno della &lt;strong>stella a cinque punte&lt;/strong>, simbolo del passaggio eterno. &lt;strong>Da quel giorno, coloro che sognavano il simbolo sapevano che erano destinati a viaggiare tra i mondi&lt;/strong>.&lt;/p>
+&lt;p>Il culto di Portanus nacque &lt;strong>prima delle civiltà, prima della scrittura&lt;/strong>, tramandato da racconti sussurrati tra i fuochi notturni. I primi uomini scolpirono &lt;strong>segni sulle pietre&lt;/strong>, credendo che potessero tenerlo lontano, ma le &lt;strong>porte si aprivano comunque&lt;/strong>, nei momenti in cui la realtà si assottigliava.&lt;/p>
+&lt;p>Con il tempo, gli uomini impararono a chiamarlo &lt;strong>Signore delle Fenditure, Guardiano delle Pietre Erette, il Senza-Volto che Veglia sui Confini&lt;/strong>. I suoi fedeli lo cercavano, &lt;strong>sperando di attraversare le soglie verso i regni sconosciuti&lt;/strong>, mentre altri lo temevano, pregando di non udire &lt;strong>il suo sussurro nel vento tra le rocce&lt;/strong>.&lt;/p>
+&lt;h3 id="simbolismo-e-tradizione">&lt;strong>Simbolismo e Tradizione&lt;/strong>
+&lt;/h3>&lt;ul>
+&lt;li>Le &lt;strong>gole e le caverne profonde&lt;/strong> erano considerate sue dimore.&lt;/li>
+&lt;li>I &lt;strong>cerchi di pietre&lt;/strong>—precursori dei dolmen e dei menhir—erano tentativi di chiudere i passaggi che conducevano alle Vie Profonde.&lt;/li>
+&lt;li>Il &lt;strong>segno della stella a cinque punte&lt;/strong> compare tra le incisioni più antiche, legato ai primi riti tribali.&lt;/li>
+&lt;li>Gli &lt;strong>sciamani portavano amuleti di ossa e pietra&lt;/strong>, credendo che potessero placare Portanus o permettere di attraversare le soglie in sicurezza.&lt;/li>
+&lt;li>Durante &lt;strong>eclissi e lune nuove&lt;/strong>, si raccontava che i più sensibili potessero udire il suo richiamo.&lt;/li>
+&lt;/ul>
+&lt;hr></description></item><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p>Sono passati 11 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p>
+&lt;p>It’s been 11 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p></description></item><item><title>Storie di Ghainar - Incipit</title><link>https://procionegobbo.it/scrittura/ghainar/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/scrittura/ghainar/</guid><description>&lt;p>Il vento portava sabbia e segreti, e la città di Ghainar non dormiva da tre notti&amp;hellip;
+e qui si materializzerà la nuova incarnazione di Storie di Ghainar, una raccolta dei miei racconti.&lt;/p></description></item><item><title>Chi sono</title><link>https://procionegobbo.it/chi-sono/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/chi-sono/</guid><description>&lt;p>Ciao, mi chiamo &lt;strong>Federico Maiorini&lt;/strong> e sono uno sviluppatore backend con oltre 20 anni di esperienza nel mondo dello sviluppo web e software. In rete mi trovi spesso con il nickname &lt;strong>Procionegobbo&lt;/strong> — una lunga storia che risale ai tempi del mio Master in Videogame Design.&lt;/p>
+&lt;p>Attualmente lavoro come &lt;strong>Senior PHP Developer presso &lt;a class="link" href="https://labs.fitprime.com/" target="_blank" rel="noopener"
+>Fitprime Labs&lt;/a>&lt;/strong>, dove mi occupo di progettazione e sviluppo di servizi e microservizi in &lt;strong>Laravel&lt;/strong>, con particolare attenzione a performance, architetture scalabili e integrazione di sistemi complessi (SSO, RESTful APIs, sistemi di terze parti come Stripe e Auth0).&lt;/p>
+&lt;p>Nel corso della mia carriera ho:&lt;/p>
+&lt;ul>
+&lt;li>introdotto Laravel in aziende come Mind the Head, migliorando standard e qualità del codice&lt;/li>
+&lt;li>sviluppato soluzioni full-stack per grandi clienti (soprattutto nel settore farmaceutico)&lt;/li>
+&lt;li>lavorato in ambienti corporate e pubblici su architetture LAMP, .NET, SharePoint, C#, Angular, Oracle, e molto altro&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-competenze-principali">🛠 Competenze principali
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Framework:&lt;/strong> Laravel&lt;/li>
+&lt;li>&lt;strong>Linguaggi:&lt;/strong> PHP 8+, SQL, JavaScript&lt;/li>
+&lt;li>&lt;strong>Basi dati:&lt;/strong> MySQL, PostgreSQL, Oracle, SQL Server&lt;/li>
+&lt;li>&lt;strong>DevOps:&lt;/strong> TDD, GitHub Actions, sistemi di caching (Redis)&lt;/li>
+&lt;li>&lt;strong>Integrazione:&lt;/strong> SSO SAML, OAuth2, API esterne (Stripe, Google, Auth0)&lt;/li>
+&lt;li>&lt;strong>Metodologie:&lt;/strong> Agile (Scrum), Pair Programming, Code Review&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-strumenti-che-uso-quotidianamente">🧰 Strumenti che uso quotidianamente
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Ambiente di sviluppo:&lt;/strong> Laravel Herd, Docker, Tinkerwell&lt;/li>
+&lt;li>&lt;strong>Debug &amp;amp; diagnostica:&lt;/strong> Spatie Ray, Xdebug&lt;/li>
+&lt;li>&lt;strong>Deployment:&lt;/strong> Laravel Forge, GitHub Actions&lt;/li>
+&lt;li>&lt;strong>Editor e tool:&lt;/strong> VS Code, Warp, TablePlus&lt;/li>
+&lt;li>&lt;strong>Controllo versione:&lt;/strong> Git, GitHub, BitBucket&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-attualmente-sto-studiando">📚 Attualmente sto studiando
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Design patterns&lt;/strong> applicati a Laravel e PHP moderno&lt;/li>
+&lt;li>Introduzione al mondo &lt;strong>event-driven&lt;/strong> (Laravel events &amp;amp; queues)&lt;/li>
+&lt;li>&lt;strong>Golang&lt;/strong>, come alternativa backend moderna e performante&lt;/li>
+&lt;li>&lt;strong>Scrittura narrativa e worldbuilding&lt;/strong> per i miei progetti personali&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-game-master-scrittore-e-narratore">🎲 Game Master, scrittore e narratore
+&lt;/h3>&lt;p>Dal &lt;strong>1985&lt;/strong> sono anche un appassionato &lt;strong>game master&lt;/strong>, creatore di mondi e narratore di storie. Ho ideato decine di campagne e ambientazioni originali come il culto del misterioso &lt;strong>Portanus&lt;/strong>, con cui esploro il lato oscuro della mitologia e dell’archeologia immaginaria.&lt;/p>
+&lt;p>Amo usare il gioco di ruolo anche come strumento di team building in ambito lavorativo, per stimolare creatività e collaborazione.&lt;/p>
+&lt;hr>
+&lt;h3 id="-formazione">🎓 Formazione
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>ITIS M. Faraday&lt;/strong> – Perito in informatica&lt;/li>
+&lt;li>&lt;strong>Scuola Omero&lt;/strong> – Scrittura creativa (2012–2016)&lt;/li>
+&lt;li>&lt;strong>Istituto Europeo di Design&lt;/strong> – Master in Videogame Design (2004–2005)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="-contatti">📫 Contatti
+&lt;/h3>&lt;ul>
+&lt;li>📧 &lt;a class="link" href="mailto:federico.maiorini@me.com" >federico.maiorini@me.com&lt;/a>&lt;/li>
+&lt;li>🔗 &lt;a class="link" href="https://www.linkedin.com/in/federicomaiorini" target="_blank" rel="noopener"
+>LinkedIn&lt;/a>&lt;/li>
+&lt;li>💻 &lt;a class="link" href="https://github.com/procionegobbo" target="_blank" rel="noopener"
+>GitHub&lt;/a>&lt;/li>
+&lt;li>🌸 &lt;a class="link" href="https://pinkary.com/@procionegobbo" target="_blank" rel="noopener"
+>Pinkary&lt;/a>&lt;/li>
+&lt;li>🐘 &lt;a class="link" href="https://livellosegreto.it/@procionegobbo" target="_blank" rel="noopener"
+>Mastodon&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;blockquote>
+&lt;p>“Per me scrivere codice è come scrivere storie: ogni funzione ha un ruolo, ogni riga ha uno scopo.”&lt;/p>&lt;/blockquote></description></item></channel></rss>
