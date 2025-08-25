@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><link rel="icon" href="/favicon_main.svg"><meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" /><meta property="og:url"  content="http://localhost:1313/it/blog/read-methods-golang/" />
+    <meta property="og:type" content="article" /><meta property="og:title" content="Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /><meta property="og:description" content="" /><meta property="og:image:width"  content="375" />
+        <meta property="og:image:height" content="250" /><meta property="og:image" content="http://localhost:1313/images/default_summary_hu_db641d301474d13d.jpg" /><title>Personal website and blog - Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title>
+
+    <link href="/fonts/Open%20Sans.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open&#43;Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open&#43;Sans" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/css/style.732db4933aea2ec452f6119c31df24cda1dba6d9eb6c70704860309ff4c61758.css" integrity="sha256-cy20kzrqLsRS9hGcMd8kzaHbptnrbHBwSGAwn/TGF1g=">
+<link rel="stylesheet" type="text/css" href="/css/monokai-sublime-11.10.0.30ff521da3af6682c1bb9309c4ec5f2ac470d8fd7a4c0ab3eae61ad0ee821c00.css" integrity="sha256-MP9SHaOvZoLBu5MJxOxfKsRw2P16TAqz6uYa0O6CHAA=">
+<link rel="stylesheet" type="text/css" href="/css/all-6.6.0.92597940bbf017fa3805f3761ad9e8faee5f537d48fb50d97ff96bef70586f64.css" integrity="sha256-kll5QLvwF/o4BfN2Gtno&#43;u5fU31I&#43;1DZf/lr73BYb2Q=">
+<link rel="stylesheet" type="text/css" href="/css/refresh.ccfd23f8053a1571a3e474a6877f42a6a1924c6bbf1b64c7704b49a0353b4650.css" integrity="sha256-zP0j&#43;AU6FXGj5HSmh39CpqGSTGu/G2THcEtJoDU7RlA=">
+<link rel="stylesheet" type="text/css" href="/css/devicon.min-2.16.0.a21b16d4a90fe917c27b6e2aae8f8a746aed2784feb2ff19aef5591091f3e64d.css" integrity="sha256-ohsW1KkP6RfCe24qro&#43;KdGrtJ4T&#43;sv8ZrvVZEJHz5k0=">
+    
+
+  </head>
+  <body>
+     
+
+    <div id="preloader">
+      <div id="status"></div>
+    </div><nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+
+      
+      
+      
+      <a class="navbar-item">
+        <div class="menu-icon-wrapper left-menu-icon-wrapper" style="visibility: visible;">
+          <svg width="1000px" height="1000px">
+            <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+            <path class="path2" d="M 300 500 L 700 500"></path>
+            <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+          </svg>
+          <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+        </div>
+        <div class="navbar-item left-menu-icon-wrapper">
+          Tags
+        </div>
+      </a>
+
+      <div class="navbar-item is-expanded"></div>
+      <a class="navbar-item is-hidden-desktop">  
+        <div data-target="navbar-menu" class="navbar-item right-menu-icon-wrapper is-hidden-desktop">
+          Menu
+        </div>
+        <div data-target="navbar-menu" class="menu-icon-wrapper right-menu-icon-wrapper" style="visibility: visible;">
+          <svg width="1000px" height="1000px">
+            <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+            <path class="path2" d="M 300 500 L 700 500"></path>
+            <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+          </svg>
+          <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+        </div>
+      </a>
+    </div><div id="navbar-menu" class="navbar-menu is-static">
+      
+      <div class="navbar-end">
+        
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a href="/it/" class="navbar-link">Federico Maiorini</a>
+              <div class="navbar-dropdown">
+                <a href="/it/gdr/" class="navbar-item">Giochi di Ruolo</a><a href="/it/scrittura/" class="navbar-item">Scrittura</a></div>
+            </div><a href="/en/" class="navbar-item is-secondary">Federico Maiorini</a>
+        
+          
+            
+          
+        
+          
+            
+          
+        
+        
+        
+        
+        
+        
+        
+        <div class="navbar-item">
+          <div class="dropdown is-hoverable is-centered" >
+            <div class="dropdown-trigger" >
+              <button class="button is-active" 
+              style="color:#999;  
+                    border-color:#F39200; 
+                    box-shadow: none ;
+                    padding-right: 0.625em ; 
+                    padding-left: 0.625em  ;
+                    ">
+
+                <span>IT</span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu" style="min-width: 0em;">
+              <div class="dropdown-content" style="padding: 0rem;">
+                
+                
+                
+                  
+                
+                  
+                
+                
+                
+                  
+                    
+                    <a href="http://localhost:1313/en/" class="dropdown-item" 
+                        style="text-align: center; color:#999; padding-right: 0.82em !important ; padding-left: 0.82em !important;">
+                        EN
+                    </a>
+                    
+                  
+                
+                  
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+<nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+      <div class="navbar-brand">
+  
+        
+        
+        
+        <a class="navbar-item">
+          <div class="menu-icon-wrapper left-menu-icon-wrapper" style="visibility: visible;">
+            <svg width="1000px" height="1000px">
+              <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+              <path class="path2" d="M 300 500 L 700 500"></path>
+              <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+            </svg>
+            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+          </div>
+          <div class="navbar-item left-menu-icon-wrapper">
+            Tags
+          </div>
+        </a>
+  
+        <div class="navbar-item is-expanded"></div>
+        <a class="navbar-item is-hidden-desktop">  
+          <div data-target="cloned-navbar-menu" class="navbar-item right-menu-icon-wrapper is-hidden-desktop">
+            Menu
+          </div>
+          <div data-target="cloned-navbar-menu" class="menu-icon-wrapper right-menu-icon-wrapper" style="visibility: visible;">
+            <svg width="1000px" height="1000px">
+              <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+              <path class="path2" d="M 300 500 L 700 500"></path>
+              <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+            </svg>
+            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+          </div>
+        </a>
+      </div><div id="cloned-navbar-menu" class="navbar-menu is-static">
+        <div class="navbar-end"><div class="navbar-item has-dropdown is-hoverable">
+                <a href="/it/" class="navbar-link">Federico Maiorini</a>
+                <div class="navbar-dropdown">
+                  <a href="/it/gdr/" class="navbar-item">Giochi di Ruolo</a><a href="/it/scrittura/" class="navbar-item">Scrittura</a></div>
+              </div><a href="/en/" class="navbar-item is-secondary">Federico Maiorini</a>
+          
+            
+              
+            
+          
+            
+              
+            
+          
+          
+          
+
+          
+          
+          
+          <div class="navbar-item">
+            <div class="dropdown is-hoverable is-centered" >
+              <div class="dropdown-trigger" >
+                <button class="button is-active" 
+                style="color:#999;  
+                      border-color:#F39200; 
+                      box-shadow: none ;
+                      padding-right: 0.625em ; 
+                      padding-left: 0.625em  ;
+                      ">
+  
+                  <span>IT</span>
+                </button>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu" role="menu" style="min-width: 0em;">
+                <div class="dropdown-content" style="padding: 0rem;">
+                  
+                  
+                  
+                    
+                  
+                    
+                  
+                  
+                  
+                    
+                      
+                      <a href="http://localhost:1313/en/" class="dropdown-item" 
+                          style="text-align: center; color:#999; padding-right: 0.82em !important ; padding-left: 0.82em !important;">
+                          EN
+                      </a>
+                      
+                    
+                  
+                    
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        
+        </div>
+      </div>
+    </div>
+  </nav>
+<section class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-centered-tablet-portrait">
+        <h1 class="title is-2 section-title">Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</h1>
+        <h5 class="subtitle is-5 is-muted"></h5>
+        <div class="divider"></div>
+        
+        <section class="section content has-text-justified">
+          <h1 id="-confronto-metodi-di-bufioreader-in-go">📚 Confronto metodi di <code>bufio.Reader</code> in Go</h1>
+<h2 id="introduzione">Introduzione</h2>
+<p>Recentemente sto studiando <a href="https://go.dev/">Go</a>, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
+Una delle cose che mi interessano è come leggere e scrivere da uno stream quindi, con l&rsquo;aiuto di una IA mi sono fatto un veloce riepilogo delle differenze tra alcuni metodi della libreria <code>bufio</code>.</p>
+<p>I metodi <strong><code>ReadRune</code></strong>, <strong><code>ReadBytes</code></strong>, <strong><code>ReadString</code></strong> e <strong><code>ReadLine</code></strong> sono molto simili ma solo in apparenza.
+Ecco una guida rapida per capire le differenze.</p>
+<hr>
+<h2 id="tabella-comparativa">Tabella comparativa</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Metodo</th>
+          <th>Firma</th>
+          <th>Cosa legge</th>
+          <th>Tipo restituito</th>
+          <th>Include <code>\n</code>?</th>
+          <th>Note pratiche</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>ReadRune()</strong></td>
+          <td><code>(r rune, size int, err error)</code></td>
+          <td><strong>Un singolo carattere Unicode</strong> (1 rune)</td>
+          <td><code>rune</code> (+size+err)</td>
+          <td>N/A (legge solo 1 carattere)</td>
+          <td>Utile per analizzare caratteri uno alla volta (UTF-8 safe).</td>
+      </tr>
+      <tr>
+          <td><strong>ReadBytes(delim byte)</strong></td>
+          <td><code>([]byte, error)</code></td>
+          <td>Fino a <code>delim</code> incluso</td>
+          <td><code>[]byte</code></td>
+          <td>✅ sì</td>
+          <td>Restituisce slice di byte, ottimo per parsing binario o testo grezzo.</td>
+      </tr>
+      <tr>
+          <td><strong>ReadString(delim byte)</strong></td>
+          <td><code>(string, error)</code></td>
+          <td>Fino a <code>delim</code> incluso</td>
+          <td><code>string</code></td>
+          <td>✅ sì</td>
+          <td>Comodo se sai di leggere testo, meno efficiente di <code>ReadBytes</code>.</td>
+      </tr>
+      <tr>
+          <td><strong>ReadLine()</strong></td>
+          <td><code>([]byte, isPrefix bool, error)</code></td>
+          <td>Una riga (senza <code>\n</code>)</td>
+          <td><code>[]byte</code> + <code>isPrefix</code> + <code>err</code></td>
+          <td>❌ no</td>
+          <td>Se la riga è troppo lunga, la restituisce a pezzi (<code>isPrefix = true</code>). Serve loop per ricomporla. Più basso livello.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-diagramma-di-flusso-decisionale">🔀 Diagramma di flusso decisionale</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                     ┌──────────────────────────────┐
+</span></span><span style="display:flex;"><span>                     │ Vuoi leggere 1 carattere?    │
+</span></span><span style="display:flex;"><span>                     └───────────────┬──────────────┘
+</span></span><span style="display:flex;"><span>                                     │
+</span></span><span style="display:flex;"><span>                           ┌─────────▼─────────┐
+</span></span><span style="display:flex;"><span>                           │ Usa ReadRune()    │
+</span></span><span style="display:flex;"><span>                           └───────────────────┘
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                                     │
+</span></span><span style="display:flex;"><span>                                     ▼
+</span></span><span style="display:flex;"><span>                     ┌──────────────────────────────┐
+</span></span><span style="display:flex;"><span>                     │ Vuoi leggere fino a un       │
+</span></span><span style="display:flex;"><span>                     │ delimitatore (es. &#39;\n&#39;)?     │
+</span></span><span style="display:flex;"><span>                     └───────────────┬──────────────┘
+</span></span><span style="display:flex;"><span>                                     │
+</span></span><span style="display:flex;"><span>                   ┌─────────────────┼─────────────────┐
+</span></span><span style="display:flex;"><span>                   │                 |                 │
+</span></span><span style="display:flex;"><span>        ┌──────────▼──────────┐      |      ┌──────────▼───────────┐
+</span></span><span style="display:flex;"><span>        │ Ti serve un []byte? │      |      │ Ti serve una stringa?│
+</span></span><span style="display:flex;"><span>        └──────────┬──────────┘      |      └───────────┬──────────┘
+</span></span><span style="display:flex;"><span>                   │                 |                  │
+</span></span><span style="display:flex;"><span>        ┌──────────▼──────────┐      |      ┌───────────▼───────────┐
+</span></span><span style="display:flex;"><span>        │ Usa ReadBytes()     │      |      │ Usa ReadString()      │
+</span></span><span style="display:flex;"><span>        └─────────────────────┘      |      └───────────────────────┘
+</span></span><span style="display:flex;"><span>                                     │
+</span></span><span style="display:flex;"><span>                                     │
+</span></span><span style="display:flex;"><span>                                     ▼
+</span></span><span style="display:flex;"><span>                     ┌──────────────────────────────┐
+</span></span><span style="display:flex;"><span>                     │ Devi gestire linee molto     │
+</span></span><span style="display:flex;"><span>                     │ lunghe (buffer a pezzi)?     │
+</span></span><span style="display:flex;"><span>                     └───────────────┬──────────────┘
+</span></span><span style="display:flex;"><span>                                     │
+</span></span><span style="display:flex;"><span>                           ┌─────────▼─────────┐
+</span></span><span style="display:flex;"><span>                           │ Usa ReadLine()    │
+</span></span><span style="display:flex;"><span>                           └───────────────────┘
+</span></span></code></pre></div><h2 id="esempio-pratico">Esempio pratico</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;bufio&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;bytes&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">text</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;café\nseconda linea\nterza linea senza newline finale&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// --- ReadRune(): legge un singolo carattere Unicode alla volta ---</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;== ReadRune() ==&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">bufio</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">text</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">4</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> { <span style="color:#75715e">// leggo le prime 4 rune: c, a, f, é</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">ru</span>, <span style="color:#a6e22e">size</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ReadRune</span>()
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Errore ReadRune:&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;rune=%q size=%d\n&#34;</span>, <span style="color:#a6e22e">ru</span>, <span style="color:#a6e22e">size</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// --- ReadBytes(&#39;\n&#39;): legge fino al delimitatore incluso e restituisce []byte ---</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;== ReadBytes(&#39;\\n&#39;) ==&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">bufio</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">text</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ReadBytes</span>(<span style="color:#e6db74">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Errore ReadBytes:&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;ReadBytes: %q (len=%d)\n&#34;</span>, <span style="color:#a6e22e">b</span>, len(<span style="color:#a6e22e">b</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// --- ReadString(&#39;\n&#39;): stesso comportamento ma restituisce string ---</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;== ReadString(&#39;\\n&#39;) ==&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">bufio</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">text</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ReadString</span>(<span style="color:#e6db74">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Errore ReadString:&#34;</span>, <span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;ReadString: %q (len=%d)\n&#34;</span>, <span style="color:#a6e22e">s</span>, len(<span style="color:#a6e22e">s</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// --- ReadLine(): NON include &#39;\n&#39; e può restituire porzioni (isPrefix=true) ---</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Forziamo una linea più lunga del buffer per vedere isPrefix=true.</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;== ReadLine() con buffer piccolo e isPrefix ==&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">longLine</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;abcdefghij\n&#34;</span> <span style="color:#75715e">// 10 caratteri + &#39;\n&#39;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">smallBuf</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">bufio</span>.<span style="color:#a6e22e">NewReaderSize</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">longLine</span>), <span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">parts</span> [][]<span style="color:#66d9ef">byte</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">isPrefix</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">smallBuf</span>.<span style="color:#a6e22e">ReadLine</span>()
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">// fine input o errore</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Copia difensiva del frammento letto</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">parts</span> = append(<span style="color:#a6e22e">parts</span>, append([]byte(<span style="color:#66d9ef">nil</span>), <span style="color:#a6e22e">line</span><span style="color:#f92672">...</span>))
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;chunk=%q isPrefix=%v\n&#34;</span>, <span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">isPrefix</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isPrefix</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">recombined</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">Join</span>(<span style="color:#a6e22e">parts</span>, <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Ricomposta: %q (pezzi=%d)\n&#34;</span>, <span style="color:#a6e22e">recombined</span>, len(<span style="color:#a6e22e">parts</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// --- Esempio classico di ReadLine su testo normale (senza superare il buffer) ---</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;== ReadLine() normale ==&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">r</span> = <span style="color:#a6e22e">bufio</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">text</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">isPrefix</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">ReadLine</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;line=%q isPrefix=%v (niente &#39;\\n&#39;)\n&#34;</span>, <span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">isPrefix</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="conclusioni">Conclusioni</h2>
+<h3 id="in-sintesi-veloce">In sintesi veloce:</h3>
+<ul>
+<li><code>ReadRune</code> → analisi carattere-per-carattere, sicuro su UTF-8.</li>
+<li><code>ReadBytes</code> → legge fino al delimitatore e restituisce <code>[]byte</code> (ottimo per parsing binario/grezzo).</li>
+<li><code>ReadString</code> → come sopra ma restituisce string (più comodo, più allocazioni).</li>
+<li><code>ReadLine</code> → non include <code>\n</code>, gestisce linee molto lunghe a pezzi con <code>isPrefix</code>.</li>
+</ul>
+<h3 id="insidie-comuni-da-ricordare">Insidie comuni da ricordare:</h3>
+<ul>
+<li>Fine riga su Windows è <code>\r\n</code>: rimuovi il <code>\r</code> finale se leggi fino a <code>\n</code>.</li>
+<li><code>bufio.Scanner</code> ha un limite di token (≈64 KB) che va aumentato per righe grandi.</li>
+<li>Le allocazioni: <code>ReadString</code> crea sempre una nuova stringa; con <code>ReadBytes</code> puoi restare su <code>[]byte</code> finché serve.</li>
+</ul>
+<h3 id="cosa-usare-quando">Cosa usare quando:</h3>
+<ul>
+<li>Parsing binario o attenzione alle allocazioni → <code>ReadBytes</code>.</li>
+<li>Input testuale “line-oriented” → <code>ReadString</code> (oppure Scanner).</li>
+<li>Analisi fine di rune (accenti/emoji) → <code>ReadRune</code>.</li>
+<li>Log/file con righe enormi → <code>ReadLine</code> (ricomponi quando <code>isPrefix</code> == true).</li>
+</ul>
+
+        </section>
+      </div>
+    </div>
+  </div>  
+  <div class="container">
+    <div class="columns">
+      <div class="column has-text-right is-family-monospace is-centered-tablet-portrait">
+        Ultima modifica:&nbsp;18 August 2025</div>
+    </div>
+  </div></section>
+<footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <img src="/footer.svg" alt="">
+        
+      </div>
+      
+    <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+              <h3>Website</h3>
+          </div>
+          <ul class="link-list"><li></li>
+            <li><a href="/tags/">
+                <span class="icon"><i class="fa fa-tag"></i></span> 
+                Tutti i tags
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    
+      
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+              <h3>Contatti</h3>
+          </div>
+          <ul class="link-list">
+            
+            <li>
+              <a href="https://www.linkedin.com/tuo_profilo_linkedin" target="_blank">
+                <span class="icon"><i class="fab fa-linkedin"></i></span>
+                
+                  My LinkedIn
+                
+              </a>
+            </li>
+            
+                         
+            
+            <li>
+              <a href="mailto:federico.maiorini@me.com" target="_blank">
+                <span class="icon"><i class="fa fa-envelope"></i></span>
+                
+                  My Email
+                
+              </a>
+            </li>
+            
+                   
+                   
+            
+            
+                         
+       
+          </ul>
+        </div>
+      </div>
+      
+
+      
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+              <h3>Copyright</h3>
+          </div>
+          <ul class="link-list">
+            <li>
+              <a>
+                <span class="icon"><i class="fa fa-copyright"></i></span>
+                Federico Maiorini - 2025
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</footer>
+    <div id="backtotop"><a href="#"></a></div><div class="sidebar scroll">
+  <div class="sidebar-header"><img src="/sidebar.svg" alt="">
+    
+    <a class="sidebar-close" href="javascript:void(0);">
+      <i data-feather="x"></i>
+    </a>
+  </div>
+  <div class="inner">
+    <ul class="sidebar-menu">
+      <li class="no-children"><a href="/tags/"><div class="columns">
+              <table width="100%">  
+                <tr>
+                  <td class="">
+                    <span class="icon"><i class="fa fa-cubes"></i></span>
+                    Tutti i tags
+                  </td>
+                  <td class="has-text-right" >
+                      
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </a>
+      <li class="no-children">
+          <a href="/tags/ita">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Ita</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">4</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/ai">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Ai</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/bufio">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Bufio</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/cronologia">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Cronologia</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/eng">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Eng</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/fantasy">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Fantasy</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/gdr">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Gdr</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/ghainar">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Ghainar</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/golang">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Golang</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/guide%20tecniche">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Guide Tecniche</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/horror">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Horror</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/io">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Io</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/kor">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Kor</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/musica">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Musica</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/musica%20brutta">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Musica Brutta</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/personal">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Personal</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/portanus">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Portanus</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/satira">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Satira</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/scrittura%20creativa">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Scrittura Creativa</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/storytelling">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Storytelling</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li>
+      <li class="no-children">
+          <a href="/tags/tony-loffa">
+            <div class="columns">
+              
+              <table width="100%">  
+                  <tr>
+                    <td class=""><span class="icon"><i class="fa fa-cube"></i></span>Tony-Loffa</td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">1</div>
+                      
+                    </td>
+                    
+                  </tr>
+              </table>
+              
+            </div>
+          </a>
+      </li></ul>
+  </div>
+</div>
+<script src="/js/jquery-3.7.1.78a85aca2f0b110c29e0d2b137e09f0a1fb7a8e554b499f740d6744dc8962cfe.js" integrity="sha256-eKhayi8LEQwp4NKxN&#43;CfCh&#43;3qOVUtJn3QNZ0TciWLP4="></script>
+  
+  
+  <script src="/js/refresh.f1a74ace8453db163c5f19d1966c564c1a6fc43cc266c1df5f710374bfcbd587.js" integrity="sha256-8adKzoRT2xY8XxnRlmxWTBpvxDzCZsHfX3EDdL/L1Yc="></script><script>
+  window.MathJax = {
+    loader: {
+      load: ['core', 'input/tex-base', 'output/chtml'],  
+      source: {
+        'core': '\/js\/mathjax\/core.d48fedf25c74c54fa6bf79646de92b02155872bdc4f5f7d0bbfc662523d8b4f5.js',
+        'input/tex-base': '\/js\/mathjax\/tex-base.1b68b8741dfc54e8f7222f88bea8ffcfc57ac54b2a2d8f4edf6800aa44d49441.js',
+        'output/chtml': '\/js\/mathjax\/chtml.926cd166e0f8c1f8a566a718d60c9c58a2b7142b156d30d5f02cec7c3b0ad60a.js',
+        'output/chtml/fonts/tex': '\/js\/mathjax\/tex_out.b8b2bb939c0dae84bf1390bfe6d32af13e83f647cdac01d544d2a7a517477e9d.js'
+      },
+    },
+    chtml: {
+      fontURL: '/fonts' 
+    },
+  };
+</script><script src="/js/mathjax/startup.234a2513e6bdbc1eee06ca19abceca30fe4034e82afb373c08274c1ba2feb1a6.js" integrity="sha256-I0olE&#43;a9vB7uBsoZq87KMP5ANOgq&#43;zc8CCdMG6L&#43;saY="></script>
+  <script src="/js/highlight-11.10.0.692e67e8bafe5f3bd18f8e49148f7b8b8fc71c231a3389a6502bd59e718c8e00.js" integrity="sha256-aS5n6Lr&#43;XzvRj45JFI97i4/HHCMaM4mmUCvVnnGMjgA="></script>
+  <script src="/js/highlightjs-line-numbers-2.8.0.1b36d98c62cb9f88ab73b1b24041fe3ba7331949ff54dd3737d99f5e362a8abb.js" integrity="sha256-GzbZjGLLn4irc7GyQEH&#43;O6czGUn/VN03N9mfXjYqirs="></script><script>
+  hljs.highlightAll();
+  hljs.initLineNumbersOnLoad();
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('.codeinline').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  });
+</script>
+
+</body>
+</html>
