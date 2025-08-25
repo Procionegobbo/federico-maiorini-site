@@ -313,5 +313,5 @@ Ecco una guida rapida per capire le differenze.&lt;/p>
 &lt;li>Input testuale “line-oriented” → &lt;code>ReadString&lt;/code> (oppure Scanner).&lt;/li>
 &lt;li>Analisi fine di rune (accenti/emoji) → &lt;code>ReadRune&lt;/code>.&lt;/li>
 &lt;li>Log/file con righe enormi → &lt;code>ReadLine&lt;/code> (ricomponi quando &lt;code>isPrefix&lt;/code> == true).&lt;/li>
-&lt;/ul></description></item><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p>Sono passati 11 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p>
-&lt;p>It’s been 11 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p>Sono passati 21 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p>
+&lt;p>It’s been 21 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p></description></item></channel></rss>
