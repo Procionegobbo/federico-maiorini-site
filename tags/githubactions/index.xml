@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GitHubActions on Federico Maiorini</title><link>https://procionegobbo.it/tags/githubactions/</link><description>Recent content in GitHubActions on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/githubactions/index.xml" rel="self" type="application/rss+xml"/><item><title>Testare le GitHub Actions in locale con act</title><link>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</guid><description>&lt;img src="https://procionegobbo.it/blog/testare-github-actions-in-locale-act/act.jpg" alt="Featured image of post Testare le GitHub Actions in locale con act" />&lt;p>Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&amp;rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.&lt;/p>
+&lt;p>Di base sarebbe banale, in rete ci sono gazilioni di esempi, template, guide e perfino wizard che, in teoria, ti forniscono gli script già pronti.&lt;/p>
+&lt;p>Migrando uno degli ultimi repo però mi è successa una cosa particolare. Stavo usando per il workflow da eseguire sulle pull-request lo stesso script usato con successo in altri repo (sono tutti sistemi basati su Laravel). Questa volta però non andava, errori di connessione al db, test che fallivano in maniera inaspettata.&lt;/p>
+&lt;p>Tentavo le correzioni, push su GitHub, interminabile attesa che il workflow girasse per esaminare gli errori.&lt;/p>
+&lt;p>Un modo mooolto lento di procedere.&lt;/p>
+&lt;h2 id="installare-e-usare-act-per-testare-le-github-actions">Installare e usare act per testare le GitHub Actions
+&lt;/h2>&lt;p>Per fortuna c&amp;rsquo;è un&amp;rsquo;alternativa: &lt;a class="link" href="https://nektosact.com/" target="_blank" rel="noopener"
+>&lt;strong>act&lt;/strong> - https://nektosact.com/&lt;/a>
+questa fantastica utility scritta in Go permette di eseguire le actions di GitHub in locale grazie alla creazione al volo di una serie di container (nel mio caso uso &lt;a class="link" href="https://podman.io/" target="_blank" rel="noopener"
+>Podman&lt;/a> invece di Docker).&lt;/p>
+&lt;p>L&amp;rsquo;installazione è banale, nel mio caso su Mac&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew install act
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Dopodiché basta avere il servizio Docker (o Podman) attivo e lanciare l&amp;rsquo;utility.&lt;/p>
+&lt;p>Ecco un esempio completo di comando, con tutti i parametri che uso nel mio ambiente:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>act &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --workflows &lt;span style="color:#e6db74">&amp;#34;.github/workflows/main.yml&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --secret-file .secrets &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --var-file .vars &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --pull&lt;span style="color:#f92672">=&lt;/span>false &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --container-architecture linux/arm64 &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -P ubuntu-latest&lt;span style="color:#f92672">=&lt;/span>catthehacker/ubuntu:act-latest &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -P self-hosted&lt;span style="color:#f92672">=&lt;/span>catthehacker/ubuntu:act-latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configurare-act-i-parametri-principali">Configurare act: i parametri principali
+&lt;/h2>&lt;p>Vi spiego i vari parametri:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parametro&lt;/th>
+&lt;th>Descrizione&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>--workflows&lt;/code>&lt;/td>
+&lt;td>Path del file &lt;code>.yml&lt;/code> del workflow da eseguire&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--secret-file&lt;/code>&lt;/td>
+&lt;td>Variabili &lt;strong>SECRET&lt;/strong> in formato &lt;code>NOME=valore&lt;/code> (una per riga)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--var-file&lt;/code>&lt;/td>
+&lt;td>Variabili &lt;strong>VARIABLE&lt;/strong> in formato &lt;code>NOME=valore&lt;/code> (una per riga)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--pull&lt;/code>&lt;/td>
+&lt;td>Se &lt;code>false&lt;/code>, evita di scaricare ogni volta l’immagine del container&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--container-architecture&lt;/code>&lt;/td>
+&lt;td>Architettura da usare per i container (es. &lt;code>linux/arm64&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-P&lt;/code>&lt;/td>
+&lt;td>Specifica l’immagine da usare per il container che eseguirà il workflow&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Nel mio caso per il container ho scelto &lt;code>catthehacker/ubuntu:act-latest&lt;/code> rispetto a &lt;code>catthehacker/ubuntu:full-latest&lt;/code> perché quest&amp;rsquo;ultima, anche se ha la massima compatibilità integrando praticamente tutti i tool necessari, è enorme (60Gb una volta estratta) e non era necessaria.&lt;/p>
+&lt;h2 id="conclusioni-perché-usare-act">Conclusioni: perché usare act
+&lt;/h2>&lt;p>Utilizzare &lt;code>act&lt;/code> mi ha permesso di testare molto più velocemente il workflow, individuare i problemi e correggerlo in una frazione del tempo rispetto al classico
+&lt;code>edit-&amp;gt;commit-&amp;gt;push-&amp;gt;execute action-&amp;gt;repeat&lt;/code>&lt;/p>
+&lt;p>Un&amp;rsquo;ultima cosa. Una volta messo a punto il workflow, girava perfettamente su act, è successo che alcuni test fallissero una volta che il workflow veniva eseguito su GitHub. La spiegazione è tanto banale quanto insidiosa: &lt;code>act&lt;/code>, ma anche un banale &lt;code>php artisan test&lt;/code> useranno il vostro file &lt;code>.env&lt;/code> se presente. Tenetene conto quando scrivete il workflow.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Nota importante ⚠️&lt;/strong>&lt;br>
+&lt;code>act&lt;/code> utilizza il file &lt;code>.env&lt;/code> locale per eseguire i test, mentre GitHub Actions potrebbe avere un contesto diverso.&lt;br>
+Assicurati di configurare correttamente le variabili d’ambiente nel workflow per evitare comportamenti inattesi.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="link-utili">Link utili
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://nektosact.com/" target="_blank" rel="noopener"
+>Documentazione ufficiale di act&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.github.com/en/actions" target="_blank" rel="noopener"
+>Documentazione ufficiale GitHub Actions&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
