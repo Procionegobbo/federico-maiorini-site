@@ -16,7 +16,7 @@ defaultContentLanguageInSubdir = false
 [params.sidebar.avatar]
 enabled = true
 local = false
-src = "https://procionegobbo.it/images/avatar.jpg"
+src = "/images/Procionegobbo.png"
 
 
 [languages]
