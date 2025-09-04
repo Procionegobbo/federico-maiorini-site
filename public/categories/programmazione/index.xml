@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programmazione on Federico Maiorini</title><link>https://procionegobbo.it/categories/programmazione/</link><description>Recent content in Programmazione on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/categories/programmazione/index.xml" rel="self" type="application/rss+xml"/><item><title>Testare le GitHub Actions in locale con act</title><link>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</guid><description>&lt;img src="https://procionegobbo.it/blog/testare-github-actions-in-locale-act/act.jpg" alt="Featured image of post Testare le GitHub Actions in locale con act" /&gt;&lt;p&gt;Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&amp;rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programmazione on Federico Maiorini</title><link>https://procionegobbo.it/categories/programmazione/</link><description>Recent content in Programmazione on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/categories/programmazione/index.xml" rel="self" type="application/rss+xml"/><item><title>Developer's daemons</title><link>https://procionegobbo.it/blog/developers-daemons/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/developers-daemons/</guid><description>&lt;img src="https://procionegobbo.it/blog/developers-daemons/developer-daemons.jpeg" alt="Featured image of post Developer's daemons" /&gt;&lt;p&gt;&lt;em&gt;(The English version of this article is provided after the Italian one. / La versione inglese di questo articolo si trova dopo quella in italiano)&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id="i-due-demoni-dello-sviluppatore"&gt;I due demoni dello sviluppatore
+&lt;/h1&gt;&lt;p&gt;Ogni sviluppatore convive con due &lt;strong&gt;demoni interiori&lt;/strong&gt;.&lt;br&gt;
+E se cogliete il gioco di parole, siete probabilmente sviluppatori o almeno un po’ nerd: nei sistemi operativi i processi che lavorano silenziosi in background, invisibili ma indispensabili, si chiamano infatti &lt;em&gt;daemon&lt;/em&gt; (o &lt;em&gt;demoni&lt;/em&gt; in italiano).&lt;/p&gt;
+&lt;h2 id="il-demone-della-superbia"&gt;Il demone della superbia
+&lt;/h2&gt;&lt;p&gt;Il primo demone nasce nel momento in cui scriviamo il nostro &lt;strong&gt;primo programma funzionante&lt;/strong&gt;.&lt;br&gt;
+Un “Hello World”, un disegno a schermo, un piccolo script che semplifica un compito noioso.&lt;br&gt;
+In quell’istante compare una sensazione potente: &lt;em&gt;“Posso dare ordini a una macchina, e lei li eseguirà”&lt;/em&gt;. È un piccolo &lt;strong&gt;delirio di onnipotenza&lt;/strong&gt; che accompagna quasi tutti gli sviluppatori per il resto della carriera.&lt;/p&gt;
+&lt;p&gt;Da quel momento in poi, la tentazione di piegare la realtà al proprio codice rimane sempre attiva, come un processo in background difficile da spegnere.&lt;/p&gt;
+&lt;h2 id="il-demone-della-pigrizia"&gt;Il demone della pigrizia
+&lt;/h2&gt;&lt;p&gt;Il secondo demone è la &lt;strong&gt;pigrizia&lt;/strong&gt;, che in questo contesto assume un valore positivo.&lt;br&gt;
+Non parliamo della pigrizia sterile, ma di quella che si trasforma in creatività: la spinta a trovare soluzioni per lavorare di meno ottenendo di più.&lt;/p&gt;
+&lt;p&gt;Immaginiamoci in un &lt;strong&gt;minuscolo clan di cacciatori&lt;/strong&gt; qualche decina di migliaia di anni fa.&lt;br&gt;
+Nel nostro clan ci sono tre cacciatori:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Urok&lt;/strong&gt; non caccia, non fa nulla e muore di fame.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Grag&lt;/strong&gt; affronta i cinghiali a mani nude e prima o poi soccombe.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lem&lt;/strong&gt;, poco amante della caccia, costruisce arco e frecce per ridurre la fatica.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Chi sopravvive e prospera? Lem, perché trasforma la pigrizia in ingegno.&lt;br&gt;
+Lo stesso principio, migliaia di anni dopo, ha portato alla nascita dei computer: qualcuno non voleva più fare calcoli a mano e ha inventato macchine che li facessero al suo posto.&lt;/p&gt;
+&lt;h2 id="pigrizia-produttiva-e-superbia-creativa"&gt;Pigrizia produttiva e superbia creativa
+&lt;/h2&gt;&lt;p&gt;Per uno sviluppatore, la pigrizia non è mai fine a sé stessa. È un modo diverso di guardare al lavoro: invece di pensare &lt;em&gt;“come faccio a portarlo a termine subito?”&lt;/em&gt;, lo sviluppatore si chiede &lt;em&gt;“come faccio a non doverlo mai più ripetere?”&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;È da qui che nascono strumenti e pratiche che cambiano il modo di scrivere codice:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;un &lt;strong&gt;tool&lt;/strong&gt; che automatizza operazioni ripetitive;&lt;/li&gt;
+&lt;li&gt;una &lt;strong&gt;libreria&lt;/strong&gt; che potrà essere riutilizzata in decine di progetti;&lt;/li&gt;
+&lt;li&gt;un &lt;strong&gt;sistema configurabile&lt;/strong&gt; che si adatta da solo invece di costringere a continue modifiche manuali.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tutto questo richiede spesso &lt;strong&gt;più fatica iniziale&lt;/strong&gt; rispetto a fare la stessa operazione un paio di volte a mano. Ma a lungo termine significa risparmiare ore, giorni, persino mesi di lavoro. È la pigrizia che diventa investimento.&lt;/p&gt;
+&lt;p&gt;La superbia, a sua volta, non è un vizio sterile: è la convinzione che si possa sempre fare meglio, che valga la pena cercare soluzioni eleganti, potenti, durature. È quella voce che spinge lo sviluppatore a non accontentarsi di “codice che funziona”, ma a costruire qualcosa che possa resistere al tempo, crescere ed essere usato da altri.&lt;/p&gt;
+&lt;p&gt;Quando questi due demoni si parlano, accade la magia: la pigrizia spinge a ridurre gli sprechi, la superbia a puntare in alto. Il risultato è software più solido, più utile e – paradossalmente – frutto di meno lavoro ripetitivo.&lt;/p&gt;
+&lt;h2 id="due-daemon-sempre-attivi"&gt;Due daemon sempre attivi
+&lt;/h2&gt;&lt;p&gt;Questi due demoni non si spengono mai. Sono come &lt;em&gt;daemon&lt;/em&gt; in un sistema operativo: girano in background senza farsi notare, consumano energia, ma senza di loro il sistema non avrebbe senso di esistere.&lt;/p&gt;
+&lt;p&gt;Lo sviluppatore vive continuamente questa tensione:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;la &lt;strong&gt;pigrizia&lt;/strong&gt; che suggerisce “trova un modo per liberarti di questa noiosa ripetizione”;&lt;/li&gt;
+&lt;li&gt;la &lt;strong&gt;superbia&lt;/strong&gt; che sussurra “puoi fare qualcosa di più grande, di più elegante, di più potente”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Quando l’equilibrio è spezzato, i risultati sono deludenti:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;troppa superbia porta a progetti mastodontici e irrealizzabili, pieni di ambizione ma inutilizzabili;&lt;/li&gt;
+&lt;li&gt;troppa pigrizia genera scorciatoie e soluzioni fragili, che crollano al primo utilizzo serio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ma quando i due demoni restano in armonia, lo sviluppatore raggiunge il suo stato migliore:&lt;br&gt;
+un ozio &lt;strong&gt;produttivo&lt;/strong&gt;, in cui non si cerca di evitare il lavoro, ma di renderlo più intelligente, più umano, persino più divertente.&lt;/p&gt;
+&lt;p&gt;È in quell’equilibrio che fiorisce la vera arte dello sviluppo.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="the-two-daemons-of-the-developer"&gt;The Two Daemons of the Developer
+&lt;/h1&gt;&lt;p&gt;Every developer lives with two inner &lt;strong&gt;daemons&lt;/strong&gt;.&lt;br&gt;
+And if you catch the pun, you’re probably a developer or at least a bit of a nerd: in operating systems, those invisible background processes that keep everything running are called &lt;em&gt;daemons&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id="the-daemon-of-pride"&gt;The Daemon of Pride
+&lt;/h2&gt;&lt;p&gt;The first daemon shows up the moment we write our &lt;strong&gt;first working program&lt;/strong&gt;.&lt;br&gt;
+A “Hello World”, a shape on the screen, or maybe a tiny script that makes a boring task easier.&lt;br&gt;
+That’s when it hits us: &lt;em&gt;“I can give orders to a machine, and it will actually do what I say”&lt;/em&gt;.&lt;br&gt;
+It’s a small &lt;strong&gt;rush of power&lt;/strong&gt; that stays with most developers for the rest of their career.&lt;/p&gt;
+&lt;p&gt;From then on, the urge to bend reality with code never really goes away. It just keeps running in the background like a daemon you can’t kill.&lt;/p&gt;
+&lt;h2 id="the-daemon-of-laziness"&gt;The Daemon of Laziness
+&lt;/h2&gt;&lt;p&gt;The second daemon is &lt;strong&gt;laziness&lt;/strong&gt;, and here it’s not a bad thing.&lt;br&gt;
+We’re not talking about doing nothing, but about finding smarter ways to avoid doing the same thing twice. It’s laziness turned into creativity.&lt;/p&gt;
+&lt;p&gt;Picture a &lt;strong&gt;tiny hunter clan&lt;/strong&gt; tens of thousands of years ago.&lt;br&gt;
+In our clan, there are three hunters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Urok&lt;/strong&gt; doesn’t hunt, does nothing, and starves.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Grag&lt;/strong&gt; wrestles wild boars with his bare hands and eventually gets killed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lem&lt;/strong&gt;, not a big fan of hunting, builds a bow and arrows to make life easier.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Who survives and thrives? Lem, because he turns laziness into ingenuity.&lt;br&gt;
+Fast forward a few millennia, and the same principle gave us computers: someone was tired of doing math by hand and built machines to do it instead.&lt;/p&gt;
+&lt;h2 id="productive-laziness-and-creative-pride"&gt;Productive Laziness and Creative Pride
+&lt;/h2&gt;&lt;p&gt;For a developer, laziness is never the goal. It’s more of a mindset: instead of asking &lt;em&gt;“how do I get this done quickly?”&lt;/em&gt;, the real question is &lt;em&gt;“how do I make sure I never have to do this again?”&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;That’s how tools and best practices are born:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;script&lt;/strong&gt; that takes care of repetitive work;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;library&lt;/strong&gt; you can reuse in project after project;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;configurable system&lt;/strong&gt; that adapts itself instead of needing endless tweaks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sure, it usually takes &lt;strong&gt;more effort up front&lt;/strong&gt; than just doing the task a couple of times by hand. But in the long run, it saves hours, days, even months of work. That’s laziness as an investment.&lt;/p&gt;
+&lt;p&gt;Pride plays its part too: it’s the belief that things can always be improved, that “good enough” isn’t actually good enough. It’s the little voice that pushes you to make your code cleaner, more elegant, and more useful to others.&lt;/p&gt;
+&lt;p&gt;When these two daemons work together, the result is magic: laziness keeps waste in check, pride pushes for quality. The outcome is stronger, more reliable software – and ironically, less repetitive effort.&lt;/p&gt;
+&lt;h2 id="two-daemons-always-running"&gt;Two Daemons Always Running
+&lt;/h2&gt;&lt;p&gt;These two daemons never really stop. They’re like system daemons: always running, using up a bit of energy, but without them nothing would work.&lt;/p&gt;
+&lt;p&gt;Every developer feels this tension:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;laziness&lt;/strong&gt; whispering “find a way to stop doing this boring thing over and over”;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;pride&lt;/strong&gt; saying “you can build something better, bigger, smarter”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When the balance tips too far, the results aren’t great:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;too much pride leads to over-engineered monsters that no one can use;&lt;/li&gt;
+&lt;li&gt;too much laziness creates flimsy shortcuts that fall apart under real use.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But when the two daemons are in sync, that’s when developers do their best work:&lt;br&gt;
+a kind of &lt;strong&gt;productive idleness&lt;/strong&gt;, where the point isn’t to dodge work but to make it smarter, more human, maybe even more fun.&lt;/p&gt;
+&lt;p&gt;It is in that balance that the true art of development flourishes.&lt;/p&gt;</description></item><item><title>Testare le GitHub Actions in locale con act</title><link>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</guid><description>&lt;img src="https://procionegobbo.it/blog/testare-github-actions-in-locale-act/act.jpg" alt="Featured image of post Testare le GitHub Actions in locale con act" /&gt;&lt;p&gt;Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&amp;rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.&lt;/p&gt;
 &lt;p&gt;Di base sarebbe banale, in rete ci sono gazilioni di esempi, template, guide e perfino wizard che, in teoria, ti forniscono gli script già pronti.&lt;/p&gt;
 &lt;p&gt;Migrando uno degli ultimi repo però mi è successa una cosa particolare. Stavo usando per il workflow da eseguire sulle pull-request lo stesso script usato con successo in altri repo (sono tutti sistemi basati su Laravel). Questa volta però non andava, errori di connessione al db, test che fallivano in maniera inaspettata.&lt;/p&gt;
 &lt;p&gt;Tentavo le correzioni, push su GitHub, interminabile attesa che il workflow girasse per esaminare gli errori.&lt;/p&gt;
@@ -71,7 +165,7 @@ Assicurati di configurare correttamente le variabili d’ambiente nel workflow p
 &gt;Documentazione ufficiale di act&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="link" href="https://docs.github.com/en/actions" target="_blank" rel="noopener"
 &gt;Documentazione ufficiale GitHub Actions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title><link>https://procionegobbo.it/blog/read-methods-golang/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/read-methods-golang/</guid><description>&lt;img src="https://procionegobbo.it/blog/read-methods-golang/bufioreader.png" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /&gt;&lt;h1 id="-confronto-metodi-di-bufioreader-in-go"&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
+&lt;/ul&gt;</description></item><item><title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title><link>https://procionegobbo.it/blog/read-methods-golang/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/read-methods-golang/</guid><description>&lt;img src="https://procionegobbo.it/blog/read-methods-golang/bufioreader.jpeg" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /&gt;&lt;h1 id="-confronto-metodi-di-bufioreader-in-go"&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
 &lt;/h1&gt;&lt;h2 id="introduzione"&gt;Introduzione
 &lt;/h2&gt;&lt;p&gt;Recentemente sto studiando &lt;a class="link" href="https://go.dev/" target="_blank" rel="noopener"
 &gt;Go&lt;/a&gt;, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.

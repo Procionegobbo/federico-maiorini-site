@@ -5,7 +5,7 @@ tags: ["golang", "bufio", "io", "guide tecniche"]
 categories: ["programmazione", "golang"]
 description: "Tabella comparativa e diagramma di flusso per scegliere il metodo corretto di bufio.Reader in Go, con esempio pratico"
 draft: false
-image: bufioreader.png
+image: bufioreader.jpeg
 toc: true
 ---
 

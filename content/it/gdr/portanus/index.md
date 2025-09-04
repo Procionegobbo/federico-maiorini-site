@@ -66,7 +66,7 @@ Nel culto proto-indoeuropeo, vi era una credenza secondo cui chiunque attraversa
 - **Pietre di Confine Sacre:** Le tribù proto-indoeuropee potrebbero aver eretto **stele votive** con il simbolo di Portanus in prossimità di passaggi naturali per chiedere il suo favore.
 - **Il Portatore del Fuoco Oscuro:** Portanus potrebbe essere raffigurato come un essere avvolto da un fuoco che non brucia ma oscura la luce, segno del suo potere di nascondere e rivelare.
 
-![Simbolo di Portanus, rinvenuto in uno scavo archeologico in Khazakistan](Simbolo.png)
+![Simbolo di Portanus, rinvenuto in uno scavo archeologico in Khazakistan](Simbolo.jpeg)
 
 ---
 

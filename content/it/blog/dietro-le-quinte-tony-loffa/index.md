@@ -5,7 +5,7 @@ tags: ["tony-loffa", "storytelling", "musica", "musica brutta", "satira", "ai","
 categories: ["blog"]
 description: "Come è nato Tony Loffa e perché"
 slug: "dietro-le-quinte-tony-loffa"
-image: "cover.png"
+image: "cover.jpeg"
 draft: false
 toc: true
 ---
