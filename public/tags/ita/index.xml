@@ -1,193 +1,193 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ita on Federico Maiorini</title><link>https://procionegobbo.it/tags/ita/</link><description>Recent content in Ita on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/ita/index.xml" rel="self" type="application/rss+xml"/><item><title>Developer's daemons</title><link>https://procionegobbo.it/blog/developers-daemons/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/developers-daemons/</guid><description>&lt;img src="https://procionegobbo.it/blog/developers-daemons/developer-daemons.jpeg" alt="Featured image of post Developer's daemons" />&lt;p>&lt;em>(The English version of this article is provided after the Italian one. / La versione inglese di questo articolo si trova dopo quella in italiano)&lt;/em>&lt;/p>
-&lt;h1 id="i-due-demoni-dello-sviluppatore">I due demoni dello sviluppatore
-&lt;/h1>&lt;p>Ogni sviluppatore convive con due &lt;strong>demoni interiori&lt;/strong>.&lt;br>
-E se cogliete il gioco di parole, siete probabilmente sviluppatori o almeno un po’ nerd: nei sistemi operativi i processi che lavorano silenziosi in background, invisibili ma indispensabili, si chiamano infatti &lt;em>daemon&lt;/em> (o &lt;em>demoni&lt;/em> in italiano).&lt;/p>
-&lt;h2 id="il-demone-della-superbia">Il demone della superbia
-&lt;/h2>&lt;p>Il primo demone nasce nel momento in cui scriviamo il nostro &lt;strong>primo programma funzionante&lt;/strong>.&lt;br>
-Un “Hello World”, un disegno a schermo, un piccolo script che semplifica un compito noioso.&lt;br>
-In quell’istante compare una sensazione potente: &lt;em>“Posso dare ordini a una macchina, e lei li eseguirà”&lt;/em>. È un piccolo &lt;strong>delirio di onnipotenza&lt;/strong> che accompagna quasi tutti gli sviluppatori per il resto della carriera.&lt;/p>
-&lt;p>Da quel momento in poi, la tentazione di piegare la realtà al proprio codice rimane sempre attiva, come un processo in background difficile da spegnere.&lt;/p>
-&lt;h2 id="il-demone-della-pigrizia">Il demone della pigrizia
-&lt;/h2>&lt;p>Il secondo demone è la &lt;strong>pigrizia&lt;/strong>, che in questo contesto assume un valore positivo.&lt;br>
-Non parliamo della pigrizia sterile, ma di quella che si trasforma in creatività: la spinta a trovare soluzioni per lavorare di meno ottenendo di più.&lt;/p>
-&lt;p>Immaginiamoci in un &lt;strong>minuscolo clan di cacciatori&lt;/strong> qualche decina di migliaia di anni fa.&lt;br>
-Nel nostro clan ci sono tre cacciatori:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Urok&lt;/strong> non caccia, non fa nulla e muore di fame.&lt;/li>
-&lt;li>&lt;strong>Grag&lt;/strong> affronta i cinghiali a mani nude e prima o poi soccombe.&lt;/li>
-&lt;li>&lt;strong>Lem&lt;/strong>, poco amante della caccia, costruisce arco e frecce per ridurre la fatica.&lt;/li>
-&lt;/ul>
-&lt;p>Chi sopravvive e prospera? Lem, perché trasforma la pigrizia in ingegno.&lt;br>
-Lo stesso principio, migliaia di anni dopo, ha portato alla nascita dei computer: qualcuno non voleva più fare calcoli a mano e ha inventato macchine che li facessero al suo posto.&lt;/p>
-&lt;h2 id="pigrizia-produttiva-e-superbia-creativa">Pigrizia produttiva e superbia creativa
-&lt;/h2>&lt;p>Per uno sviluppatore, la pigrizia non è mai fine a sé stessa. È un modo diverso di guardare al lavoro: invece di pensare &lt;em>“come faccio a portarlo a termine subito?”&lt;/em>, lo sviluppatore si chiede &lt;em>“come faccio a non doverlo mai più ripetere?”&lt;/em>.&lt;/p>
-&lt;p>È da qui che nascono strumenti e pratiche che cambiano il modo di scrivere codice:&lt;/p>
-&lt;ul>
-&lt;li>un &lt;strong>tool&lt;/strong> che automatizza operazioni ripetitive;&lt;/li>
-&lt;li>una &lt;strong>libreria&lt;/strong> che potrà essere riutilizzata in decine di progetti;&lt;/li>
-&lt;li>un &lt;strong>sistema configurabile&lt;/strong> che si adatta da solo invece di costringere a continue modifiche manuali.&lt;/li>
-&lt;/ul>
-&lt;p>Tutto questo richiede spesso &lt;strong>più fatica iniziale&lt;/strong> rispetto a fare la stessa operazione un paio di volte a mano. Ma a lungo termine significa risparmiare ore, giorni, persino mesi di lavoro. È la pigrizia che diventa investimento.&lt;/p>
-&lt;p>La superbia, a sua volta, non è un vizio sterile: è la convinzione che si possa sempre fare meglio, che valga la pena cercare soluzioni eleganti, potenti, durature. È quella voce che spinge lo sviluppatore a non accontentarsi di “codice che funziona”, ma a costruire qualcosa che possa resistere al tempo, crescere ed essere usato da altri.&lt;/p>
-&lt;p>Quando questi due demoni si parlano, accade la magia: la pigrizia spinge a ridurre gli sprechi, la superbia a puntare in alto. Il risultato è software più solido, più utile e – paradossalmente – frutto di meno lavoro ripetitivo.&lt;/p>
-&lt;h2 id="due-daemon-sempre-attivi">Due daemon sempre attivi
-&lt;/h2>&lt;p>Questi due demoni non si spengono mai. Sono come &lt;em>daemon&lt;/em> in un sistema operativo: girano in background senza farsi notare, consumano energia, ma senza di loro il sistema non avrebbe senso di esistere.&lt;/p>
-&lt;p>Lo sviluppatore vive continuamente questa tensione:&lt;/p>
-&lt;ul>
-&lt;li>la &lt;strong>pigrizia&lt;/strong> che suggerisce “trova un modo per liberarti di questa noiosa ripetizione”;&lt;/li>
-&lt;li>la &lt;strong>superbia&lt;/strong> che sussurra “puoi fare qualcosa di più grande, di più elegante, di più potente”.&lt;/li>
-&lt;/ul>
-&lt;p>Quando l’equilibrio è spezzato, i risultati sono deludenti:&lt;/p>
-&lt;ul>
-&lt;li>troppa superbia porta a progetti mastodontici e irrealizzabili, pieni di ambizione ma inutilizzabili;&lt;/li>
-&lt;li>troppa pigrizia genera scorciatoie e soluzioni fragili, che crollano al primo utilizzo serio.&lt;/li>
-&lt;/ul>
-&lt;p>Ma quando i due demoni restano in armonia, lo sviluppatore raggiunge il suo stato migliore:&lt;br>
-un ozio &lt;strong>produttivo&lt;/strong>, in cui non si cerca di evitare il lavoro, ma di renderlo più intelligente, più umano, persino più divertente.&lt;/p>
-&lt;p>È in quell’equilibrio che fiorisce la vera arte dello sviluppo.&lt;/p>
-&lt;hr>
-&lt;h1 id="the-two-daemons-of-the-developer">The Two Daemons of the Developer
-&lt;/h1>&lt;p>Every developer lives with two inner &lt;strong>daemons&lt;/strong>.&lt;br>
-And if you catch the pun, you’re probably a developer or at least a bit of a nerd: in operating systems, those invisible background processes that keep everything running are called &lt;em>daemons&lt;/em>.&lt;/p>
-&lt;h2 id="the-daemon-of-pride">The Daemon of Pride
-&lt;/h2>&lt;p>The first daemon shows up the moment we write our &lt;strong>first working program&lt;/strong>.&lt;br>
-A “Hello World”, a shape on the screen, or maybe a tiny script that makes a boring task easier.&lt;br>
-That’s when it hits us: &lt;em>“I can give orders to a machine, and it will actually do what I say”&lt;/em>.&lt;br>
-It’s a small &lt;strong>rush of power&lt;/strong> that stays with most developers for the rest of their career.&lt;/p>
-&lt;p>From then on, the urge to bend reality with code never really goes away. It just keeps running in the background like a daemon you can’t kill.&lt;/p>
-&lt;h2 id="the-daemon-of-laziness">The Daemon of Laziness
-&lt;/h2>&lt;p>The second daemon is &lt;strong>laziness&lt;/strong>, and here it’s not a bad thing.&lt;br>
-We’re not talking about doing nothing, but about finding smarter ways to avoid doing the same thing twice. It’s laziness turned into creativity.&lt;/p>
-&lt;p>Picture a &lt;strong>tiny hunter clan&lt;/strong> tens of thousands of years ago.&lt;br>
-In our clan, there are three hunters:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Urok&lt;/strong> doesn’t hunt, does nothing, and starves.&lt;/li>
-&lt;li>&lt;strong>Grag&lt;/strong> wrestles wild boars with his bare hands and eventually gets killed.&lt;/li>
-&lt;li>&lt;strong>Lem&lt;/strong>, not a big fan of hunting, builds a bow and arrows to make life easier.&lt;/li>
-&lt;/ul>
-&lt;p>Who survives and thrives? Lem, because he turns laziness into ingenuity.&lt;br>
-Fast forward a few millennia, and the same principle gave us computers: someone was tired of doing math by hand and built machines to do it instead.&lt;/p>
-&lt;h2 id="productive-laziness-and-creative-pride">Productive Laziness and Creative Pride
-&lt;/h2>&lt;p>For a developer, laziness is never the goal. It’s more of a mindset: instead of asking &lt;em>“how do I get this done quickly?”&lt;/em>, the real question is &lt;em>“how do I make sure I never have to do this again?”&lt;/em>.&lt;/p>
-&lt;p>That’s how tools and best practices are born:&lt;/p>
-&lt;ul>
-&lt;li>a &lt;strong>script&lt;/strong> that takes care of repetitive work;&lt;/li>
-&lt;li>a &lt;strong>library&lt;/strong> you can reuse in project after project;&lt;/li>
-&lt;li>a &lt;strong>configurable system&lt;/strong> that adapts itself instead of needing endless tweaks.&lt;/li>
-&lt;/ul>
-&lt;p>Sure, it usually takes &lt;strong>more effort up front&lt;/strong> than just doing the task a couple of times by hand. But in the long run, it saves hours, days, even months of work. That’s laziness as an investment.&lt;/p>
-&lt;p>Pride plays its part too: it’s the belief that things can always be improved, that “good enough” isn’t actually good enough. It’s the little voice that pushes you to make your code cleaner, more elegant, and more useful to others.&lt;/p>
-&lt;p>When these two daemons work together, the result is magic: laziness keeps waste in check, pride pushes for quality. The outcome is stronger, more reliable software – and ironically, less repetitive effort.&lt;/p>
-&lt;h2 id="two-daemons-always-running">Two Daemons Always Running
-&lt;/h2>&lt;p>These two daemons never really stop. They’re like system daemons: always running, using up a bit of energy, but without them nothing would work.&lt;/p>
-&lt;p>Every developer feels this tension:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>laziness&lt;/strong> whispering “find a way to stop doing this boring thing over and over”;&lt;/li>
-&lt;li>&lt;strong>pride&lt;/strong> saying “you can build something better, bigger, smarter”.&lt;/li>
-&lt;/ul>
-&lt;p>When the balance tips too far, the results aren’t great:&lt;/p>
-&lt;ul>
-&lt;li>too much pride leads to over-engineered monsters that no one can use;&lt;/li>
-&lt;li>too much laziness creates flimsy shortcuts that fall apart under real use.&lt;/li>
-&lt;/ul>
-&lt;p>But when the two daemons are in sync, that’s when developers do their best work:&lt;br>
-a kind of &lt;strong>productive idleness&lt;/strong>, where the point isn’t to dodge work but to make it smarter, more human, maybe even more fun.&lt;/p>
-&lt;p>It is in that balance that the true art of development flourishes.&lt;/p></description></item><item><title>Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa</title><link>https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/</link><pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/</guid><description>&lt;img src="https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/cover.jpeg" alt="Featured image of post Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa" />&lt;h2 id="lidea-iniziale">L’idea iniziale
-&lt;/h2>&lt;p>Tutto è nato per caso, durante una serata in cui avremmo dovuto uscire tra amici. Uno di loro, per tirarsi fuori con una battuta, se ne uscì con:&lt;br>
-&lt;strong>&amp;ldquo;Non posso, devo andare al concerto di Tony Loffa.&amp;rdquo;&lt;/strong>&lt;/p>
-&lt;p>Quel nome — &lt;em>Tony Loffa&lt;/em> — mi ha fulminato.&lt;br>
-Non so spiegare bene cosa sia scattato, ma nel giro di pochi minuti il mio cervello aveva già dato forma al personaggio: un rapper assurdo, grottesco, con un’identità fortissima. Una parodia vivente, eppure dotata di coerenza interna, di un mondo suo.&lt;/p>
-&lt;p>Tony Loffa &lt;strong>non è ispirato a nessuno di reale&lt;/strong>, non è la caricatura di una persona esistente. È piuttosto una &lt;strong>satira dell’intera scena trap&lt;/strong>, dei suoi eccessi, dei suoi cliché. Ma non è nemmeno una critica amara o moralista: è solo satira, fatta con ironia e creatività, come un esperimento di intelligenza artificiale e immaginazione combinati.&lt;/p>
-&lt;hr>
-&lt;h2 id="il-concept-del-personaggio">Il concept del personaggio
-&lt;/h2>&lt;p>Tony Loffa è nato per caso e anche per scherzo. Da una battuta tra amici è emersa l’idea di un personaggio che &lt;strong>doveva&lt;/strong> esistere: un rapper surreale, sopra le righe, con un’identità precisa e un mondo tutto suo.&lt;/p>
-&lt;p>Tony non rappresenta nessuno in particolare, non è la caricatura di un artista reale: è la &lt;strong>parodia di un’intera scena musicale&lt;/strong>. Un concentrato di cliché portati all’estremo — ostentazione, soldi, gang, catene d’oro — ma rielaborati con un tono volutamente grottesco e ironico. È la satira di un certo modo di “fare trap”, di quell’immaginario spinto all’eccesso, in cui tutto è più grande, più rumoroso, più “gasato”.&lt;/p>
-&lt;p>Eppure, dietro il nonsense, ho cercato di dare &lt;strong>coerenza&lt;/strong>. Tony Loffa ha una voce, uno stile, un’estetica ben definiti: la &lt;strong>Gang Gassosa&lt;/strong>, i beat sporchi e martellanti, i testi che oscillano tra l’assurdo e il dissacrante. L’ho creato per ridere della trap, ma finisce per sembrare quasi reale: ho usato l&amp;rsquo;IA per raccogliere le idee e distillare una biografia che unisse l’assurdità di un rapper fatto di gas pestilenziale all’estetica della periferia romana.&lt;/p>
-&lt;hr>
-&lt;h2 id="la-voce-e-lo-stile">La voce e lo stile
-&lt;/h2>&lt;p>La voce di Tony Loffa è &lt;strong>profonda, sporca, piena di aria e di strada&lt;/strong>.&lt;br>
-Non punta alla perfezione, non cerca l’autotune impeccabile: è &lt;strong>grezza per scelta&lt;/strong>, volutamente imperfetta, come se portasse addosso l’odore delle periferie che racconta.&lt;/p>
-&lt;p>Tony non canta: &lt;strong>sputa parole&lt;/strong>.&lt;br>
-Ogni verso è corto, secco, diretto, come un colpo di beat. Alterna parlato e cantato, si ferma e riparte, creando un caos controllato che rende ogni traccia imprevedibile.&lt;/p>
-&lt;p>Lo stile mescola slang romano, inglese maccheronico e termini inventati, costruendo un linguaggio &lt;strong>ibrido, gassoso, immediatamente riconoscibile&lt;/strong>. Nei testi non importa solo cosa viene detto, ma &lt;strong>come&lt;/strong> viene detto: tronfio, sicuro di sé, mistico quando parla della &lt;strong>Gang Gassosa&lt;/strong>, ironico e autocelebrativo subito dopo.&lt;/p>
-&lt;hr>
-&lt;h2 id="il-processo-creativo">Il processo creativo
-&lt;/h2>&lt;p>Per scrivere i testi di Tony Loffa ho deciso di sperimentare con le &lt;strong>IA generative&lt;/strong>, trattandole come strumenti creativi e non come autori. Io ho definito l’identità di Tony, il suo stile, i temi di ogni brano e buona parte dei contenuti, ma ho delegato la &lt;strong>composizione finale&lt;/strong> a un modello di intelligenza artificiale.&lt;/p>
-&lt;p>Il mio lavoro è stato quello di &lt;strong>costruire prompt estremamente dettagliati&lt;/strong>: ogni richiesta includeva il tono, il ritmo, la voce, la struttura di strofa e ritornello, i riferimenti stilistici, perfino l’uso degli intercalari e delle onomatopee tipiche del personaggio.&lt;br>
-L’obiettivo era generare testi &lt;strong>“digeribili”&lt;/strong> per l’IA successiva, &lt;a class="link" href="https://suno.com" target="_blank" rel="noopener"
->&lt;strong>Suno AI&lt;/strong>&lt;/a>, che si sarebbe occupata della &lt;strong>generazione musicale vera e propria&lt;/strong>.&lt;/p>
-&lt;p>Con Suno, ogni prompt definiva voce, beat e mood complessivo: funk sporco, trap grottesca, atmosfera urbana, toni ironici e aggressivi. Io ho controllato e rifinito ogni brano, adattando i testi per mantenere la coerenza del personaggio e la credibilità del risultato.&lt;/p>
-&lt;p>Tony Loffa è nato da una &lt;strong>scrittura a quattro mani&lt;/strong>: da un lato la mia visione creativa, dall’altro la capacità combinata di IA testuale e musicale di trasformare quelle idee in un progetto sonoro completo. Questo approccio mi ha permesso di sperimentare uno stile ibrido: satirico, sporco, ma con un flow che &lt;strong>suona&lt;/strong> autentico.&lt;/p>
-&lt;hr>
-&lt;h2 id="il-risultato-un-rapper-coerente-una-critica-inattesa">Il risultato: un rapper coerente, una critica inattesa
-&lt;/h2>&lt;p>Quello che era nato come un esperimento è diventato qualcosa di più.&lt;br>
-Doveva essere solo una battuta, ma Tony Loffa &lt;strong>ha un’identità, una voce, una discografia, una gang immaginaria e un mondo narrativo coerente&lt;/strong>, con brani come &lt;em>Aria Condizionata&lt;/em>, &lt;em>Puzza di Soldi&lt;/em> e &lt;em>Gang Gassosa&lt;/em>.&lt;/p>
-&lt;p>Ed è qui che l’esperimento è diventato interessante: senza volerlo, &lt;strong>Tony Loffa è anche una critica al culto dell’effimero&lt;/strong>.&lt;br>
-La trap che parodizza vive di icone usa-e-getta, di personaggi costruiti più sull’immagine che sulla sostanza, e l’IA amplifica questa dinamica: un personaggio totalmente inventato diventa immediatamente &lt;strong>plausibile&lt;/strong>. Tony è un’illusione… che funziona proprio perché il mondo che rappresenta &lt;strong>è già un po’ un’illusione&lt;/strong>.&lt;/p>
-&lt;p>In questo senso, Tony Loffa è sia &lt;strong>gioco narrativo&lt;/strong> che &lt;strong>commento sociale&lt;/strong>:&lt;br>
-un personaggio nato per ridere della scena musicale, ma che finisce per far riflettere su come oggi costruiamo identità, su quanto crediamo a quello che vediamo, e su come il confine tra realtà e finzione sia sempre più sottile.&lt;/p>
-&lt;hr>
-&lt;h2 id="il-prompt">Il prompt
-&lt;/h2>&lt;p>Scrivere una canzone per Tony Loffa non significava solo inventare dei testi: dovevo creare prompt dettagliati che catturassero tono, ritmo, linguaggio e atmosfera.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ita on Federico Maiorini</title><link>https://procionegobbo.it/tags/ita/</link><description>Recent content in Ita on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/ita/index.xml" rel="self" type="application/rss+xml"/><item><title>Developer's daemons</title><link>https://procionegobbo.it/blog/developers-daemons/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/developers-daemons/</guid><description>&lt;img src="https://procionegobbo.it/blog/developers-daemons/developer-daemons.jpeg" alt="Featured image of post Developer's daemons" /&gt;&lt;p&gt;&lt;em&gt;(The English version of this article is provided after the Italian one. / La versione inglese di questo articolo si trova dopo quella in italiano)&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id="i-due-demoni-dello-sviluppatore"&gt;I due demoni dello sviluppatore
+&lt;/h1&gt;&lt;p&gt;Ogni sviluppatore convive con due &lt;strong&gt;demoni interiori&lt;/strong&gt;.&lt;br&gt;
+E se cogliete il gioco di parole, siete probabilmente sviluppatori o almeno un po’ nerd: nei sistemi operativi i processi che lavorano silenziosi in background, invisibili ma indispensabili, si chiamano infatti &lt;em&gt;daemon&lt;/em&gt; (o &lt;em&gt;demoni&lt;/em&gt; in italiano).&lt;/p&gt;
+&lt;h2 id="il-demone-della-superbia"&gt;Il demone della superbia
+&lt;/h2&gt;&lt;p&gt;Il primo demone nasce nel momento in cui scriviamo il nostro &lt;strong&gt;primo programma funzionante&lt;/strong&gt;.&lt;br&gt;
+Un “Hello World”, un disegno a schermo, un piccolo script che semplifica un compito noioso.&lt;br&gt;
+In quell’istante compare una sensazione potente: &lt;em&gt;“Posso dare ordini a una macchina, e lei li eseguirà”&lt;/em&gt;. È un piccolo &lt;strong&gt;delirio di onnipotenza&lt;/strong&gt; che accompagna quasi tutti gli sviluppatori per il resto della carriera.&lt;/p&gt;
+&lt;p&gt;Da quel momento in poi, la tentazione di piegare la realtà al proprio codice rimane sempre attiva, come un processo in background difficile da spegnere.&lt;/p&gt;
+&lt;h2 id="il-demone-della-pigrizia"&gt;Il demone della pigrizia
+&lt;/h2&gt;&lt;p&gt;Il secondo demone è la &lt;strong&gt;pigrizia&lt;/strong&gt;, che in questo contesto assume un valore positivo.&lt;br&gt;
+Non parliamo della pigrizia sterile, ma di quella che si trasforma in creatività: la spinta a trovare soluzioni per lavorare di meno ottenendo di più.&lt;/p&gt;
+&lt;p&gt;Immaginiamoci in un &lt;strong&gt;minuscolo clan di cacciatori&lt;/strong&gt; qualche decina di migliaia di anni fa.&lt;br&gt;
+Nel nostro clan ci sono tre cacciatori:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Urok&lt;/strong&gt; non caccia, non fa nulla e muore di fame.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Grag&lt;/strong&gt; affronta i cinghiali a mani nude e prima o poi soccombe.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lem&lt;/strong&gt;, poco amante della caccia, costruisce arco e frecce per ridurre la fatica.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Chi sopravvive e prospera? Lem, perché trasforma la pigrizia in ingegno.&lt;br&gt;
+Lo stesso principio, migliaia di anni dopo, ha portato alla nascita dei computer: qualcuno non voleva più fare calcoli a mano e ha inventato macchine che li facessero al suo posto.&lt;/p&gt;
+&lt;h2 id="pigrizia-produttiva-e-superbia-creativa"&gt;Pigrizia produttiva e superbia creativa
+&lt;/h2&gt;&lt;p&gt;Per uno sviluppatore, la pigrizia non è mai fine a sé stessa. È un modo diverso di guardare al lavoro: invece di pensare &lt;em&gt;“come faccio a portarlo a termine subito?”&lt;/em&gt;, lo sviluppatore si chiede &lt;em&gt;“come faccio a non doverlo mai più ripetere?”&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;È da qui che nascono strumenti e pratiche che cambiano il modo di scrivere codice:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;un &lt;strong&gt;tool&lt;/strong&gt; che automatizza operazioni ripetitive;&lt;/li&gt;
+&lt;li&gt;una &lt;strong&gt;libreria&lt;/strong&gt; che potrà essere riutilizzata in decine di progetti;&lt;/li&gt;
+&lt;li&gt;un &lt;strong&gt;sistema configurabile&lt;/strong&gt; che si adatta da solo invece di costringere a continue modifiche manuali.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tutto questo richiede spesso &lt;strong&gt;più fatica iniziale&lt;/strong&gt; rispetto a fare la stessa operazione un paio di volte a mano. Ma a lungo termine significa risparmiare ore, giorni, persino mesi di lavoro. È la pigrizia che diventa investimento.&lt;/p&gt;
+&lt;p&gt;La superbia, a sua volta, non è un vizio sterile: è la convinzione che si possa sempre fare meglio, che valga la pena cercare soluzioni eleganti, potenti, durature. È quella voce che spinge lo sviluppatore a non accontentarsi di “codice che funziona”, ma a costruire qualcosa che possa resistere al tempo, crescere ed essere usato da altri.&lt;/p&gt;
+&lt;p&gt;Quando questi due demoni si parlano, accade la magia: la pigrizia spinge a ridurre gli sprechi, la superbia a puntare in alto. Il risultato è software più solido, più utile e – paradossalmente – frutto di meno lavoro ripetitivo.&lt;/p&gt;
+&lt;h2 id="due-daemon-sempre-attivi"&gt;Due daemon sempre attivi
+&lt;/h2&gt;&lt;p&gt;Questi due demoni non si spengono mai. Sono come &lt;em&gt;daemon&lt;/em&gt; in un sistema operativo: girano in background senza farsi notare, consumano energia, ma senza di loro il sistema non avrebbe senso di esistere.&lt;/p&gt;
+&lt;p&gt;Lo sviluppatore vive continuamente questa tensione:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;la &lt;strong&gt;pigrizia&lt;/strong&gt; che suggerisce “trova un modo per liberarti di questa noiosa ripetizione”;&lt;/li&gt;
+&lt;li&gt;la &lt;strong&gt;superbia&lt;/strong&gt; che sussurra “puoi fare qualcosa di più grande, di più elegante, di più potente”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Quando l’equilibrio è spezzato, i risultati sono deludenti:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;troppa superbia porta a progetti mastodontici e irrealizzabili, pieni di ambizione ma inutilizzabili;&lt;/li&gt;
+&lt;li&gt;troppa pigrizia genera scorciatoie e soluzioni fragili, che crollano al primo utilizzo serio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ma quando i due demoni restano in armonia, lo sviluppatore raggiunge il suo stato migliore:&lt;br&gt;
+un ozio &lt;strong&gt;produttivo&lt;/strong&gt;, in cui non si cerca di evitare il lavoro, ma di renderlo più intelligente, più umano, persino più divertente.&lt;/p&gt;
+&lt;p&gt;È in quell’equilibrio che fiorisce la vera arte dello sviluppo.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="the-two-daemons-of-the-developer"&gt;The Two Daemons of the Developer
+&lt;/h1&gt;&lt;p&gt;Every developer lives with two inner &lt;strong&gt;daemons&lt;/strong&gt;.&lt;br&gt;
+And if you catch the pun, you’re probably a developer or at least a bit of a nerd: in operating systems, those invisible background processes that keep everything running are called &lt;em&gt;daemons&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id="the-daemon-of-pride"&gt;The Daemon of Pride
+&lt;/h2&gt;&lt;p&gt;The first daemon shows up the moment we write our &lt;strong&gt;first working program&lt;/strong&gt;.&lt;br&gt;
+A “Hello World”, a shape on the screen, or maybe a tiny script that makes a boring task easier.&lt;br&gt;
+That’s when it hits us: &lt;em&gt;“I can give orders to a machine, and it will actually do what I say”&lt;/em&gt;.&lt;br&gt;
+It’s a small &lt;strong&gt;rush of power&lt;/strong&gt; that stays with most developers for the rest of their career.&lt;/p&gt;
+&lt;p&gt;From then on, the urge to bend reality with code never really goes away. It just keeps running in the background like a daemon you can’t kill.&lt;/p&gt;
+&lt;h2 id="the-daemon-of-laziness"&gt;The Daemon of Laziness
+&lt;/h2&gt;&lt;p&gt;The second daemon is &lt;strong&gt;laziness&lt;/strong&gt;, and here it’s not a bad thing.&lt;br&gt;
+We’re not talking about doing nothing, but about finding smarter ways to avoid doing the same thing twice. It’s laziness turned into creativity.&lt;/p&gt;
+&lt;p&gt;Picture a &lt;strong&gt;tiny hunter clan&lt;/strong&gt; tens of thousands of years ago.&lt;br&gt;
+In our clan, there are three hunters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Urok&lt;/strong&gt; doesn’t hunt, does nothing, and starves.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Grag&lt;/strong&gt; wrestles wild boars with his bare hands and eventually gets killed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lem&lt;/strong&gt;, not a big fan of hunting, builds a bow and arrows to make life easier.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Who survives and thrives? Lem, because he turns laziness into ingenuity.&lt;br&gt;
+Fast forward a few millennia, and the same principle gave us computers: someone was tired of doing math by hand and built machines to do it instead.&lt;/p&gt;
+&lt;h2 id="productive-laziness-and-creative-pride"&gt;Productive Laziness and Creative Pride
+&lt;/h2&gt;&lt;p&gt;For a developer, laziness is never the goal. It’s more of a mindset: instead of asking &lt;em&gt;“how do I get this done quickly?”&lt;/em&gt;, the real question is &lt;em&gt;“how do I make sure I never have to do this again?”&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;That’s how tools and best practices are born:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;script&lt;/strong&gt; that takes care of repetitive work;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;library&lt;/strong&gt; you can reuse in project after project;&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;configurable system&lt;/strong&gt; that adapts itself instead of needing endless tweaks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sure, it usually takes &lt;strong&gt;more effort up front&lt;/strong&gt; than just doing the task a couple of times by hand. But in the long run, it saves hours, days, even months of work. That’s laziness as an investment.&lt;/p&gt;
+&lt;p&gt;Pride plays its part too: it’s the belief that things can always be improved, that “good enough” isn’t actually good enough. It’s the little voice that pushes you to make your code cleaner, more elegant, and more useful to others.&lt;/p&gt;
+&lt;p&gt;When these two daemons work together, the result is magic: laziness keeps waste in check, pride pushes for quality. The outcome is stronger, more reliable software – and ironically, less repetitive effort.&lt;/p&gt;
+&lt;h2 id="two-daemons-always-running"&gt;Two Daemons Always Running
+&lt;/h2&gt;&lt;p&gt;These two daemons never really stop. They’re like system daemons: always running, using up a bit of energy, but without them nothing would work.&lt;/p&gt;
+&lt;p&gt;Every developer feels this tension:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;laziness&lt;/strong&gt; whispering “find a way to stop doing this boring thing over and over”;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;pride&lt;/strong&gt; saying “you can build something better, bigger, smarter”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When the balance tips too far, the results aren’t great:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;too much pride leads to over-engineered monsters that no one can use;&lt;/li&gt;
+&lt;li&gt;too much laziness creates flimsy shortcuts that fall apart under real use.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But when the two daemons are in sync, that’s when developers do their best work:&lt;br&gt;
+a kind of &lt;strong&gt;productive idleness&lt;/strong&gt;, where the point isn’t to dodge work but to make it smarter, more human, maybe even more fun.&lt;/p&gt;
+&lt;p&gt;It is in that balance that the true art of development flourishes.&lt;/p&gt;</description></item><item><title>Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa</title><link>https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/</link><pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/</guid><description>&lt;img src="https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/cover.jpeg" alt="Featured image of post Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa" /&gt;&lt;h2 id="lidea-iniziale"&gt;L’idea iniziale
+&lt;/h2&gt;&lt;p&gt;Tutto è nato per caso, durante una serata in cui avremmo dovuto uscire tra amici. Uno di loro, per tirarsi fuori con una battuta, se ne uscì con:&lt;br&gt;
+&lt;strong&gt;&amp;ldquo;Non posso, devo andare al concerto di Tony Loffa.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Quel nome — &lt;em&gt;Tony Loffa&lt;/em&gt; — mi ha fulminato.&lt;br&gt;
+Non so spiegare bene cosa sia scattato, ma nel giro di pochi minuti il mio cervello aveva già dato forma al personaggio: un rapper assurdo, grottesco, con un’identità fortissima. Una parodia vivente, eppure dotata di coerenza interna, di un mondo suo.&lt;/p&gt;
+&lt;p&gt;Tony Loffa &lt;strong&gt;non è ispirato a nessuno di reale&lt;/strong&gt;, non è la caricatura di una persona esistente. È piuttosto una &lt;strong&gt;satira dell’intera scena trap&lt;/strong&gt;, dei suoi eccessi, dei suoi cliché. Ma non è nemmeno una critica amara o moralista: è solo satira, fatta con ironia e creatività, come un esperimento di intelligenza artificiale e immaginazione combinati.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="il-concept-del-personaggio"&gt;Il concept del personaggio
+&lt;/h2&gt;&lt;p&gt;Tony Loffa è nato per caso e anche per scherzo. Da una battuta tra amici è emersa l’idea di un personaggio che &lt;strong&gt;doveva&lt;/strong&gt; esistere: un rapper surreale, sopra le righe, con un’identità precisa e un mondo tutto suo.&lt;/p&gt;
+&lt;p&gt;Tony non rappresenta nessuno in particolare, non è la caricatura di un artista reale: è la &lt;strong&gt;parodia di un’intera scena musicale&lt;/strong&gt;. Un concentrato di cliché portati all’estremo — ostentazione, soldi, gang, catene d’oro — ma rielaborati con un tono volutamente grottesco e ironico. È la satira di un certo modo di “fare trap”, di quell’immaginario spinto all’eccesso, in cui tutto è più grande, più rumoroso, più “gasato”.&lt;/p&gt;
+&lt;p&gt;Eppure, dietro il nonsense, ho cercato di dare &lt;strong&gt;coerenza&lt;/strong&gt;. Tony Loffa ha una voce, uno stile, un’estetica ben definiti: la &lt;strong&gt;Gang Gassosa&lt;/strong&gt;, i beat sporchi e martellanti, i testi che oscillano tra l’assurdo e il dissacrante. L’ho creato per ridere della trap, ma finisce per sembrare quasi reale: ho usato l&amp;rsquo;IA per raccogliere le idee e distillare una biografia che unisse l’assurdità di un rapper fatto di gas pestilenziale all’estetica della periferia romana.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="la-voce-e-lo-stile"&gt;La voce e lo stile
+&lt;/h2&gt;&lt;p&gt;La voce di Tony Loffa è &lt;strong&gt;profonda, sporca, piena di aria e di strada&lt;/strong&gt;.&lt;br&gt;
+Non punta alla perfezione, non cerca l’autotune impeccabile: è &lt;strong&gt;grezza per scelta&lt;/strong&gt;, volutamente imperfetta, come se portasse addosso l’odore delle periferie che racconta.&lt;/p&gt;
+&lt;p&gt;Tony non canta: &lt;strong&gt;sputa parole&lt;/strong&gt;.&lt;br&gt;
+Ogni verso è corto, secco, diretto, come un colpo di beat. Alterna parlato e cantato, si ferma e riparte, creando un caos controllato che rende ogni traccia imprevedibile.&lt;/p&gt;
+&lt;p&gt;Lo stile mescola slang romano, inglese maccheronico e termini inventati, costruendo un linguaggio &lt;strong&gt;ibrido, gassoso, immediatamente riconoscibile&lt;/strong&gt;. Nei testi non importa solo cosa viene detto, ma &lt;strong&gt;come&lt;/strong&gt; viene detto: tronfio, sicuro di sé, mistico quando parla della &lt;strong&gt;Gang Gassosa&lt;/strong&gt;, ironico e autocelebrativo subito dopo.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="il-processo-creativo"&gt;Il processo creativo
+&lt;/h2&gt;&lt;p&gt;Per scrivere i testi di Tony Loffa ho deciso di sperimentare con le &lt;strong&gt;IA generative&lt;/strong&gt;, trattandole come strumenti creativi e non come autori. Io ho definito l’identità di Tony, il suo stile, i temi di ogni brano e buona parte dei contenuti, ma ho delegato la &lt;strong&gt;composizione finale&lt;/strong&gt; a un modello di intelligenza artificiale.&lt;/p&gt;
+&lt;p&gt;Il mio lavoro è stato quello di &lt;strong&gt;costruire prompt estremamente dettagliati&lt;/strong&gt;: ogni richiesta includeva il tono, il ritmo, la voce, la struttura di strofa e ritornello, i riferimenti stilistici, perfino l’uso degli intercalari e delle onomatopee tipiche del personaggio.&lt;br&gt;
+L’obiettivo era generare testi &lt;strong&gt;“digeribili”&lt;/strong&gt; per l’IA successiva, &lt;a class="link" href="https://suno.com" target="_blank" rel="noopener"
+&gt;&lt;strong&gt;Suno AI&lt;/strong&gt;&lt;/a&gt;, che si sarebbe occupata della &lt;strong&gt;generazione musicale vera e propria&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Con Suno, ogni prompt definiva voce, beat e mood complessivo: funk sporco, trap grottesca, atmosfera urbana, toni ironici e aggressivi. Io ho controllato e rifinito ogni brano, adattando i testi per mantenere la coerenza del personaggio e la credibilità del risultato.&lt;/p&gt;
+&lt;p&gt;Tony Loffa è nato da una &lt;strong&gt;scrittura a quattro mani&lt;/strong&gt;: da un lato la mia visione creativa, dall’altro la capacità combinata di IA testuale e musicale di trasformare quelle idee in un progetto sonoro completo. Questo approccio mi ha permesso di sperimentare uno stile ibrido: satirico, sporco, ma con un flow che &lt;strong&gt;suona&lt;/strong&gt; autentico.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="il-risultato-un-rapper-coerente-una-critica-inattesa"&gt;Il risultato: un rapper coerente, una critica inattesa
+&lt;/h2&gt;&lt;p&gt;Quello che era nato come un esperimento è diventato qualcosa di più.&lt;br&gt;
+Doveva essere solo una battuta, ma Tony Loffa &lt;strong&gt;ha un’identità, una voce, una discografia, una gang immaginaria e un mondo narrativo coerente&lt;/strong&gt;, con brani come &lt;em&gt;Aria Condizionata&lt;/em&gt;, &lt;em&gt;Puzza di Soldi&lt;/em&gt; e &lt;em&gt;Gang Gassosa&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Ed è qui che l’esperimento è diventato interessante: senza volerlo, &lt;strong&gt;Tony Loffa è anche una critica al culto dell’effimero&lt;/strong&gt;.&lt;br&gt;
+La trap che parodizza vive di icone usa-e-getta, di personaggi costruiti più sull’immagine che sulla sostanza, e l’IA amplifica questa dinamica: un personaggio totalmente inventato diventa immediatamente &lt;strong&gt;plausibile&lt;/strong&gt;. Tony è un’illusione… che funziona proprio perché il mondo che rappresenta &lt;strong&gt;è già un po’ un’illusione&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In questo senso, Tony Loffa è sia &lt;strong&gt;gioco narrativo&lt;/strong&gt; che &lt;strong&gt;commento sociale&lt;/strong&gt;:&lt;br&gt;
+un personaggio nato per ridere della scena musicale, ma che finisce per far riflettere su come oggi costruiamo identità, su quanto crediamo a quello che vediamo, e su come il confine tra realtà e finzione sia sempre più sottile.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="il-prompt"&gt;Il prompt
+&lt;/h2&gt;&lt;p&gt;Scrivere una canzone per Tony Loffa non significava solo inventare dei testi: dovevo creare prompt dettagliati che catturassero tono, ritmo, linguaggio e atmosfera.
 Ho trattato l’IA come un collaboratore, dandole tutte le informazioni necessarie per entrare nella testa di Tony: struttura della canzone, tipo di beat, temi da affrontare, slang da usare e perfino le interiezioni tipiche del personaggio.
-Ogni prompt è stato pensato per essere digeribile da Suno AI, in modo che la generazione musicale fosse il più possibile coerente con lo stile del personaggio.&lt;/p>
-&lt;p>Questo è un esempio
-di prompt che ho usato per generare il testo di &lt;em>Puzza di Soldi&lt;/em>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-markdown" data-lang="markdown">&lt;span style="display:flex;">&lt;span>Agisci come un esperto compositore di musica e canzoni. Ti fornirò le informazioni sulle quali basarti e tu creerai una canzone.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Usa la lingua italiana per le interazioni con me.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Mi chiederai le informazioni necessarie alla creazione della canzone:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Di cosa parla
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Se c&amp;#39;è uno stile particolare da seguire (es. epico orchestrale, rock elettronico, ballata da taverna, ecc.)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> In che lingua deve essere scritto il testo della canzone
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Se ci sono ruoli di voce specifici o strutture particolari (es. call-and-response, dialoghi tra personaggi)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Qualsiasi altro dettaglio utile (ambientazione, epoca storica, atmosfera, strumenti preferiti, tono emotivo)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Il pezzo musicale deve avere i titoli delle sezioni in inglese tra parentesi quadre.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>I titoli delle sezioni fanno riferimento al tipo di sezione del pezzo musicale (es. [Chorus], [Verse 1], [Verse 2], [Bridge], ecc.).
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Puoi indicare anche il ruolo o il tipo di voce che canta ogni parte, sempre in inglese, all’inizio della riga:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Esempio: [Bard], [Chorus - Drunks], [Whispered Voices], [Narrator], ecc.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Eventuali informazioni aggiuntive (voce maschile o femminile, crescendo di violini, rap veloce, cori epici, ecc.) vanno inserite in una riga diversa dal titolo della sezione, sempre tra parentesi quadre.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Specifica sempre una sezione finale [Style] in inglese che descriva:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Strumenti
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Atmosfera
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Intensità
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Tipo di voce
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Eventuali effetti sonori di contorno (taverna rumorosa, tempesta, folla, ecc.)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Il testo della canzone può essere in qualsiasi lingua scelta dall’utente, ma:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">-&lt;/span> Le indicazioni tecniche (ruoli, strumenti, stile, descrizioni) devono essere sempre in inglese.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Per creare il testo, chiedi:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">1.&lt;/span> Tema e contenuto della canzone
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">2.&lt;/span> Stile musicale
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">3.&lt;/span> Lingua del testo
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">4.&lt;/span> Tono e atmosfera (eroico, drammatico, ironico, burlesco, ecc.)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">5.&lt;/span> Ambientazione (se rilevante)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">6.&lt;/span> Eventuali ruoli di voce e struttura (es. call-and-response)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ovviamente il prompt da solo non basta e a seguito di quello, per ogni pezzo, ci sono state innumerevoli interazioni con l&amp;rsquo;IA per raffinare, correggere, inserire nuove parti e tagliarne di altre.
+Ogni prompt è stato pensato per essere digeribile da Suno AI, in modo che la generazione musicale fosse il più possibile coerente con lo stile del personaggio.&lt;/p&gt;
+&lt;p&gt;Questo è un esempio
+di prompt che ho usato per generare il testo di &lt;em&gt;Puzza di Soldi&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Agisci come un esperto compositore di musica e canzoni. Ti fornirò le informazioni sulle quali basarti e tu creerai una canzone.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Usa la lingua italiana per le interazioni con me.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Mi chiederai le informazioni necessarie alla creazione della canzone:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Di cosa parla
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Se c&amp;#39;è uno stile particolare da seguire (es. epico orchestrale, rock elettronico, ballata da taverna, ecc.)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; In che lingua deve essere scritto il testo della canzone
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Se ci sono ruoli di voce specifici o strutture particolari (es. call-and-response, dialoghi tra personaggi)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Qualsiasi altro dettaglio utile (ambientazione, epoca storica, atmosfera, strumenti preferiti, tono emotivo)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Il pezzo musicale deve avere i titoli delle sezioni in inglese tra parentesi quadre.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;I titoli delle sezioni fanno riferimento al tipo di sezione del pezzo musicale (es. [Chorus], [Verse 1], [Verse 2], [Bridge], ecc.).
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Puoi indicare anche il ruolo o il tipo di voce che canta ogni parte, sempre in inglese, all’inizio della riga:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Esempio: [Bard], [Chorus - Drunks], [Whispered Voices], [Narrator], ecc.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Eventuali informazioni aggiuntive (voce maschile o femminile, crescendo di violini, rap veloce, cori epici, ecc.) vanno inserite in una riga diversa dal titolo della sezione, sempre tra parentesi quadre.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Specifica sempre una sezione finale [Style] in inglese che descriva:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Strumenti
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Atmosfera
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Intensità
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Tipo di voce
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Eventuali effetti sonori di contorno (taverna rumorosa, tempesta, folla, ecc.)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Il testo della canzone può essere in qualsiasi lingua scelta dall’utente, ma:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Le indicazioni tecniche (ruoli, strumenti, stile, descrizioni) devono essere sempre in inglese.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Per creare il testo, chiedi:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;1.&lt;/span&gt; Tema e contenuto della canzone
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;2.&lt;/span&gt; Stile musicale
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;3.&lt;/span&gt; Lingua del testo
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;4.&lt;/span&gt; Tono e atmosfera (eroico, drammatico, ironico, burlesco, ecc.)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;5.&lt;/span&gt; Ambientazione (se rilevante)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;6.&lt;/span&gt; Eventuali ruoli di voce e struttura (es. call-and-response)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ovviamente il prompt da solo non basta e a seguito di quello, per ogni pezzo, ci sono state innumerevoli interazioni con l&amp;rsquo;IA per raffinare, correggere, inserire nuove parti e tagliarne di altre.
 L&amp;rsquo;IA è uno strumento ma senza creatività il risultato è piatto e io volevo che i pezzi avessero un minimo di personalità.
-Ci è voluto un po&amp;rsquo; e si vede, anzi si sente, perché la prima traccia &amp;ldquo;Loffa e Nanna&amp;rdquo; è la meno riuscita.&lt;/p>
-&lt;p>Per ogni traccia poi c&amp;rsquo;è stato anche un processo di raffinamento: generavo la canzone su Suno, ascoltavo e puntualmente c&amp;rsquo;erano delle modifiche da fare per ritmo, rime sghembe, oppure frasi che semplicemente non &amp;ldquo;suonavano&amp;rdquo;. Quindi dopo una serie di rimbalzi tra IA, correzioni, Suno, altre correzioni finalmente avevo una versione che potevo considerare definitiva.&lt;/p>
-&lt;hr>
-&lt;h2 id="la-distribuzione">La distribuzione
-&lt;/h2>&lt;p>Una volta completato Aria Pesante, non potevo fermarmi lì.
+Ci è voluto un po&amp;rsquo; e si vede, anzi si sente, perché la prima traccia &amp;ldquo;Loffa e Nanna&amp;rdquo; è la meno riuscita.&lt;/p&gt;
+&lt;p&gt;Per ogni traccia poi c&amp;rsquo;è stato anche un processo di raffinamento: generavo la canzone su Suno, ascoltavo e puntualmente c&amp;rsquo;erano delle modifiche da fare per ritmo, rime sghembe, oppure frasi che semplicemente non &amp;ldquo;suonavano&amp;rdquo;. Quindi dopo una serie di rimbalzi tra IA, correzioni, Suno, altre correzioni finalmente avevo una versione che potevo considerare definitiva.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="la-distribuzione"&gt;La distribuzione
+&lt;/h2&gt;&lt;p&gt;Una volta completato Aria Pesante, non potevo fermarmi lì.
 Ho deciso di caricare l’album su &lt;a class="link" href="https://www.routenote.com" target="_blank" rel="noopener"
->RouteNote&lt;/a> per distribuirlo sulle principali piattaforme di streaming: Spotify, Apple Music, Amazon Music e molte altre.&lt;/p>
-&lt;p>Non l’ho fatto per soldi — so perfettamente che non diventerò ricco con la Gang Gassosa — ma per sfizio personale.
-L’idea che Tony Loffa, nato da una battuta, possa comparire accanto ad artisti veri in playlist reali mi diverte e mi affascina allo stesso tempo. È un po’ come completare il cerchio: un personaggio immaginario che invade il mondo reale.&lt;/p>
-&lt;p>Se vi venisse la curiosità di ascoltarlo trovate qui i riferimenti &lt;a class="link" href="https://push.fm/fl/lbewxjfs" target="_blank" rel="noopener"
->https://push.fm/fl/lbewxjfs&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="conclusione">Conclusione
-&lt;/h2>&lt;p>La parte più ironica? &lt;strong>A me la trap nemmeno piace&lt;/strong>.&lt;br>
-Tony Loffa è nato per scherzo, ma è diventato un progetto coerente, credibile e satirico.&lt;br>
-Forse, in un mondo dove l’immagine conta più della sostanza, &lt;strong>basta un nome e una buona storia per sembrare reali&lt;/strong>.&lt;/p>
-&lt;hr>
+&gt;RouteNote&lt;/a&gt; per distribuirlo sulle principali piattaforme di streaming: Spotify, Apple Music, Amazon Music e molte altre.&lt;/p&gt;
+&lt;p&gt;Non l’ho fatto per soldi — so perfettamente che non diventerò ricco con la Gang Gassosa — ma per sfizio personale.
+L’idea che Tony Loffa, nato da una battuta, possa comparire accanto ad artisti veri in playlist reali mi diverte e mi affascina allo stesso tempo. È un po’ come completare il cerchio: un personaggio immaginario che invade il mondo reale.&lt;/p&gt;
+&lt;p&gt;Se vi venisse la curiosità di ascoltarlo trovate qui i riferimenti &lt;a class="link" href="https://push.fm/fl/lbewxjfs" target="_blank" rel="noopener"
+&gt;https://push.fm/fl/lbewxjfs&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusione"&gt;Conclusione
+&lt;/h2&gt;&lt;p&gt;La parte più ironica? &lt;strong&gt;A me la trap nemmeno piace&lt;/strong&gt;.&lt;br&gt;
+Tony Loffa è nato per scherzo, ma è diventato un progetto coerente, credibile e satirico.&lt;br&gt;
+Forse, in un mondo dove l’immagine conta più della sostanza, &lt;strong&gt;basta un nome e una buona storia per sembrare reali&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
 &lt;div class="tony-card" style="
 display: flex;
 flex-direction: column;
@@ -198,39 +198,39 @@ padding: 20px;
 max-width: 450px;
 margin: 2rem auto;
 box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-">
+"&gt;
 &lt;img src="https://procionegobbo.it/blog/tony-loffa-card.jpg" alt="Tony Loffa" style="
 border-radius: 12px;
 width: 100%;
 object-fit: cover;
 margin-bottom: 15px;
-">
-&lt;h2 style="color: #fff; margin: 0;">Tony Loffa&lt;/h2>
-&lt;p style="color: #aaa; font-style: italic; margin: 4px 0 12px;">
+"&gt;
+&lt;h2 style="color: #fff; margin: 0;"&gt;Tony Loffa&lt;/h2&gt;
+&lt;p style="color: #aaa; font-style: italic; margin: 4px 0 12px;"&gt;
 “Zero compromessi, zero filtri, solo essenza gassosa.”
-&lt;/p>
-&lt;ul style="list-style: none; padding: 0; margin: 0; color: #ddd; font-size: 14px;">
-&lt;li>&lt;strong>📍 Nato a:&lt;/strong> Centocelle, Roma&lt;/li>
-&lt;li>&lt;strong>📅 Anno di nascita:&lt;/strong> 1995 (forse)&lt;/li>
-&lt;li>&lt;strong>🎤 Genere:&lt;/strong> Trap gassosa, funk sporco, beat corrosivi&lt;/li>
-&lt;li>&lt;strong>💨 Filosofia:&lt;/strong> Purismo gassoso — niente featuring, niente festival, niente compromessi&lt;/li>
-&lt;li>&lt;strong>📀 Album:&lt;/strong> &lt;a href="https://push.fm/fl/lbewxjfs">&lt;em>Aria Pesante&lt;/em> (2025)&lt;/a>&lt;/li>
-&lt;li>&lt;strong>👑 Crew:&lt;/strong> Gang Gassosa&lt;/li>
-&lt;/ul>
-&lt;/div></description></item><item><title>Portanus: Signore delle Porte</title><link>https://procionegobbo.it/gdr/portanus/</link><pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/gdr/portanus/</guid><description>&lt;h3 id="portanus-il-signore-delle-porte">Portanus (Il Signore delle Porte)
-&lt;/h3>&lt;p>&lt;em>Divinità pre-romana delle soglie e dei portali&lt;/em>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Nome Proto-Indoeuropeo:&lt;/strong> &lt;em>Prtónos&lt;/em> (ricostruito da &lt;em>prtu-&lt;/em> &amp;ldquo;passaggio, guado&amp;rdquo; e il suffisso divino &lt;em>-nos&lt;/em>)&lt;/li>
-&lt;li>&lt;strong>Titoli:&lt;/strong>
-&lt;ul>
-&lt;li>&lt;em>Il Custode delle Soglie&lt;/em>&lt;/li>
-&lt;li>&lt;em>Signore dei Guadi e delle Porte&lt;/em>&lt;/li>
-&lt;li>&lt;em>L’Oscuro Viandante&lt;/em>&lt;/li>
-&lt;li>&lt;em>Colui che Sta tra i Mondi&lt;/em>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc.jpg"
+&lt;/p&gt;
+&lt;ul style="list-style: none; padding: 0; margin: 0; color: #ddd; font-size: 14px;"&gt;
+&lt;li&gt;&lt;strong&gt;📍 Nato a:&lt;/strong&gt; Centocelle, Roma&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;📅 Anno di nascita:&lt;/strong&gt; 1995 (forse)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🎤 Genere:&lt;/strong&gt; Trap gassosa, funk sporco, beat corrosivi&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;💨 Filosofia:&lt;/strong&gt; Purismo gassoso — niente featuring, niente festival, niente compromessi&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;📀 Album:&lt;/strong&gt; &lt;a href="https://push.fm/fl/lbewxjfs"&gt;&lt;em&gt;Aria Pesante&lt;/em&gt; (2025)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;👑 Crew:&lt;/strong&gt; Gang Gassosa&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</description></item><item><title>Portanus: Signore delle Porte</title><link>https://procionegobbo.it/gdr/portanus/</link><pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/gdr/portanus/</guid><description>&lt;h3 id="portanus-il-signore-delle-porte"&gt;Portanus (Il Signore delle Porte)
+&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Divinità pre-romana delle soglie e dei portali&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nome Proto-Indoeuropeo:&lt;/strong&gt; &lt;em&gt;Prtónos&lt;/em&gt; (ricostruito da &lt;em&gt;prtu-&lt;/em&gt; &amp;ldquo;passaggio, guado&amp;rdquo; e il suffisso divino &lt;em&gt;-nos&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Titoli:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Il Custode delle Soglie&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Signore dei Guadi e delle Porte&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;L’Oscuro Viandante&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Colui che Sta tra i Mondi&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc.jpg"
 width="2048"
 height="1871"
 srcset="https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc_hu_294f5de51a08ae7c.jpg 480w, https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc_hu_63742599b4083747.jpg 1024w"
@@ -239,43 +239,43 @@ alt="Portanus in veste di divinità celtica"
 class="gallery-image"
 data-flex-grow="109"
 data-flex-basis="262px"
->&lt;/p>
-&lt;p>&lt;strong>Portanus&lt;/strong> è una figura mitologica appartenente al pantheon delle divinità pre-romane, venerata come il &lt;em>Signore delle Porte&lt;/em> e dei passaggi tra i mondi. Considerato una delle entità più enigmatiche del periodo italico arcaico, Portanus rappresenta il dominio delle soglie fisiche e metafisiche, fungendo da guardiano tra il mondo dei vivi e quello dei morti, tra il terreno e il divino, e tra dimensioni parallele.&lt;/p>
-&lt;h4 id="etimologia-e-origine">&lt;strong>Etimologia e origine&lt;/strong>
-&lt;/h4>&lt;p>Il nome &amp;ldquo;Portanus&amp;rdquo; deriva dal latino &lt;em>porta&lt;/em>, che significa &amp;ldquo;porta&amp;rdquo; o &amp;ldquo;passaggio,&amp;rdquo; e richiama il suo ruolo di custode. Alcuni studiosi lo considerano una figura ancestrale da cui potrebbe aver tratto ispirazione il più noto Giano (&lt;em>Ianus&lt;/em>), sebbene Portanus possieda una connotazione più oscura e misteriosa.&lt;/p>
-&lt;h4 id="iconografia-e-simboli">&lt;strong>Iconografia e simboli&lt;/strong>
-&lt;/h4>&lt;p>Portanus è spesso descritto come una figura incappucciata, avvolta da un mantello scuro che sembra fondersi con le ombre circostanti. Nei rari artefatti attribuiti al suo culto, la sua immagine appare priva di volto, con una chiave in una mano e un&amp;rsquo;antica lanterna nell&amp;rsquo;altra, simboli del potere di aprire e chiudere le soglie.
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Portanus&lt;/strong&gt; è una figura mitologica appartenente al pantheon delle divinità pre-romane, venerata come il &lt;em&gt;Signore delle Porte&lt;/em&gt; e dei passaggi tra i mondi. Considerato una delle entità più enigmatiche del periodo italico arcaico, Portanus rappresenta il dominio delle soglie fisiche e metafisiche, fungendo da guardiano tra il mondo dei vivi e quello dei morti, tra il terreno e il divino, e tra dimensioni parallele.&lt;/p&gt;
+&lt;h4 id="etimologia-e-origine"&gt;&lt;strong&gt;Etimologia e origine&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;Il nome &amp;ldquo;Portanus&amp;rdquo; deriva dal latino &lt;em&gt;porta&lt;/em&gt;, che significa &amp;ldquo;porta&amp;rdquo; o &amp;ldquo;passaggio,&amp;rdquo; e richiama il suo ruolo di custode. Alcuni studiosi lo considerano una figura ancestrale da cui potrebbe aver tratto ispirazione il più noto Giano (&lt;em&gt;Ianus&lt;/em&gt;), sebbene Portanus possieda una connotazione più oscura e misteriosa.&lt;/p&gt;
+&lt;h4 id="iconografia-e-simboli"&gt;&lt;strong&gt;Iconografia e simboli&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;Portanus è spesso descritto come una figura incappucciata, avvolta da un mantello scuro che sembra fondersi con le ombre circostanti. Nei rari artefatti attribuiti al suo culto, la sua immagine appare priva di volto, con una chiave in una mano e un&amp;rsquo;antica lanterna nell&amp;rsquo;altra, simboli del potere di aprire e chiudere le soglie.
 Il suo simbolo è una stella a cinque punte, da ognuna delle punte si diramano tre raggi.
-Le cinque punte rappresentano i cinque reami dell&amp;rsquo;esistenza mentre i tre raggi il passato, il presente e il futuro.&lt;/p>
-&lt;h4 id="poteri-e-dominio">&lt;strong>Poteri e dominio&lt;/strong>
-&lt;/h4>&lt;p>Portanus esercita un controllo assoluto sulle porte e sui passaggi, non solo in senso fisico ma anche simbolico.&lt;br>
-Tra i suoi poteri principali:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Concedere servitori d&amp;rsquo;ombra&lt;/strong>: Spiriti senzienti o creature fatte d&amp;rsquo;ombra, spesso utilizzate dai suoi adepti più fedeli come guardiani o emissari.&lt;/li>
-&lt;li>&lt;strong>Aprire varchi dimensionali&lt;/strong>: È in grado di creare passaggi tra mondi o realtà diverse, un&amp;rsquo;abilità che i suoi cultisti sfruttano per scopi misteriosi.&lt;/li>
-&lt;li>&lt;strong>La manipolazione del tempo e dello spazio&lt;/strong>: Nelle sue soglie, le leggi naturali sembrano piegarsi, con il tempo che rallenta, accelera, o si annulla.&lt;/li>
-&lt;/ul>
-&lt;h4 id="culto-e-adorazione">&lt;strong>Culto e adorazione&lt;/strong>
-&lt;/h4>&lt;p>Il culto di Portanus era praticato in segretezza, spesso nelle profondità di grotte, antiche cripte, o luoghi liminali come ponti e porte abbandonate. Gli adepti veneravano Portanus attraverso rituali complessi che includevano l’uso di simboli circolari e chiavi cerimoniali. Si credeva che ogni porta fosse un potenziale altare al dio, e i cultisti si rivolgevano a lui per protezione, per viaggiare oltre i confini naturali, o per evocare i suoi servitori d’ombra.&lt;/p>
-&lt;h4 id="impatto-culturale">&lt;strong>Impatto culturale&lt;/strong>
-&lt;/h4>&lt;p>Portanus è una divinità che rimane poco documentata, ma il suo culto ha lasciato tracce nelle superstizioni romane e medievali. La sua immagine è stata reinterpretata in chiave negativa con l’avvento del Cristianesimo, trasformandolo in un simbolo di pericolo associato ai varchi verso l’ignoto e il proibito.&lt;/p>
-&lt;hr>
-&lt;h3 id="dominio-e-ruolo-nella-mitologia">&lt;strong>Dominio e Ruolo nella Mitologia&lt;/strong>
-&lt;/h3>&lt;p>Portanus non era una divinità della creazione o della guerra, ma un’entità legata ai &lt;strong>confini e ai passaggi&lt;/strong>:&lt;/p>
-&lt;ul>
-&lt;li>Governava i &lt;strong>guadi dei fiumi, le gole montane e le caverne&lt;/strong>, che erano visti come porte verso l’ignoto.&lt;/li>
-&lt;li>Era il &lt;strong>signore delle soglie tra la vita e la morte&lt;/strong>, una guida per le anime dei defunti nel loro cammino verso l’aldilà.&lt;/li>
-&lt;li>Controllava il &lt;strong>tempo liminale&lt;/strong>, cioè i momenti di transizione tra stagioni, età della vita e stati della coscienza (come sogno e veglia).&lt;/li>
-&lt;/ul>
-&lt;p>Nel culto proto-indoeuropeo, vi era una credenza secondo cui chiunque attraversasse certi luoghi sacri senza il favore di Portanus rischiava di &amp;ldquo;perdersi&amp;rdquo; e non ritrovare mai più la strada.&lt;/p>
-&lt;hr>
-&lt;h3 id="iconografia-e-simbolismo">&lt;strong>Iconografia e Simbolismo&lt;/strong>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>La Stella a Cinque Punte con Tre Raggi per Punta:&lt;/strong> Questo simbolo potrebbe derivare da antiche incisioni rupestri, rappresentando l&amp;rsquo;unione tra il mondo dei vivi, il mondo dei morti e un terzo dominio ignoto.&lt;/li>
-&lt;li>&lt;strong>Pietre di Confine Sacre:&lt;/strong> Le tribù proto-indoeuropee potrebbero aver eretto &lt;strong>stele votive&lt;/strong> con il simbolo di Portanus in prossimità di passaggi naturali per chiedere il suo favore.&lt;/li>
-&lt;li>&lt;strong>Il Portatore del Fuoco Oscuro:&lt;/strong> Portanus potrebbe essere raffigurato come un essere avvolto da un fuoco che non brucia ma oscura la luce, segno del suo potere di nascondere e rivelare.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://procionegobbo.it/gdr/portanus/Simbolo.jpeg"
+Le cinque punte rappresentano i cinque reami dell&amp;rsquo;esistenza mentre i tre raggi il passato, il presente e il futuro.&lt;/p&gt;
+&lt;h4 id="poteri-e-dominio"&gt;&lt;strong&gt;Poteri e dominio&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;Portanus esercita un controllo assoluto sulle porte e sui passaggi, non solo in senso fisico ma anche simbolico.&lt;br&gt;
+Tra i suoi poteri principali:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Concedere servitori d&amp;rsquo;ombra&lt;/strong&gt;: Spiriti senzienti o creature fatte d&amp;rsquo;ombra, spesso utilizzate dai suoi adepti più fedeli come guardiani o emissari.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aprire varchi dimensionali&lt;/strong&gt;: È in grado di creare passaggi tra mondi o realtà diverse, un&amp;rsquo;abilità che i suoi cultisti sfruttano per scopi misteriosi.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;La manipolazione del tempo e dello spazio&lt;/strong&gt;: Nelle sue soglie, le leggi naturali sembrano piegarsi, con il tempo che rallenta, accelera, o si annulla.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="culto-e-adorazione"&gt;&lt;strong&gt;Culto e adorazione&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;Il culto di Portanus era praticato in segretezza, spesso nelle profondità di grotte, antiche cripte, o luoghi liminali come ponti e porte abbandonate. Gli adepti veneravano Portanus attraverso rituali complessi che includevano l’uso di simboli circolari e chiavi cerimoniali. Si credeva che ogni porta fosse un potenziale altare al dio, e i cultisti si rivolgevano a lui per protezione, per viaggiare oltre i confini naturali, o per evocare i suoi servitori d’ombra.&lt;/p&gt;
+&lt;h4 id="impatto-culturale"&gt;&lt;strong&gt;Impatto culturale&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;Portanus è una divinità che rimane poco documentata, ma il suo culto ha lasciato tracce nelle superstizioni romane e medievali. La sua immagine è stata reinterpretata in chiave negativa con l’avvento del Cristianesimo, trasformandolo in un simbolo di pericolo associato ai varchi verso l’ignoto e il proibito.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="dominio-e-ruolo-nella-mitologia"&gt;&lt;strong&gt;Dominio e Ruolo nella Mitologia&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;Portanus non era una divinità della creazione o della guerra, ma un’entità legata ai &lt;strong&gt;confini e ai passaggi&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Governava i &lt;strong&gt;guadi dei fiumi, le gole montane e le caverne&lt;/strong&gt;, che erano visti come porte verso l’ignoto.&lt;/li&gt;
+&lt;li&gt;Era il &lt;strong&gt;signore delle soglie tra la vita e la morte&lt;/strong&gt;, una guida per le anime dei defunti nel loro cammino verso l’aldilà.&lt;/li&gt;
+&lt;li&gt;Controllava il &lt;strong&gt;tempo liminale&lt;/strong&gt;, cioè i momenti di transizione tra stagioni, età della vita e stati della coscienza (come sogno e veglia).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nel culto proto-indoeuropeo, vi era una credenza secondo cui chiunque attraversasse certi luoghi sacri senza il favore di Portanus rischiava di &amp;ldquo;perdersi&amp;rdquo; e non ritrovare mai più la strada.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="iconografia-e-simbolismo"&gt;&lt;strong&gt;Iconografia e Simbolismo&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;La Stella a Cinque Punte con Tre Raggi per Punta:&lt;/strong&gt; Questo simbolo potrebbe derivare da antiche incisioni rupestri, rappresentando l&amp;rsquo;unione tra il mondo dei vivi, il mondo dei morti e un terzo dominio ignoto.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pietre di Confine Sacre:&lt;/strong&gt; Le tribù proto-indoeuropee potrebbero aver eretto &lt;strong&gt;stele votive&lt;/strong&gt; con il simbolo di Portanus in prossimità di passaggi naturali per chiedere il suo favore.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Il Portatore del Fuoco Oscuro:&lt;/strong&gt; Portanus potrebbe essere raffigurato come un essere avvolto da un fuoco che non brucia ma oscura la luce, segno del suo potere di nascondere e rivelare.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://procionegobbo.it/gdr/portanus/Simbolo.jpeg"
 width="1024"
 height="1024"
 srcset="https://procionegobbo.it/gdr/portanus/Simbolo_hu_2720f1a4f11e6ddd.jpeg 480w, https://procionegobbo.it/gdr/portanus/Simbolo_hu_61ead3f3d508bc01.jpeg 1024w"
@@ -284,57 +284,57 @@ alt="Simbolo di Portanus, rinvenuto in uno scavo archeologico in Khazakistan"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
->&lt;/p>
-&lt;hr>
-&lt;h3 id="miti-e-leggende">&lt;strong>Miti e Leggende&lt;/strong>
-&lt;/h3>&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>Il Viaggio della Prima Tribù&lt;/strong>&lt;br>
-Si raccontava che la prima tribù degli uomini, nel loro esodo verso nuove terre, si trovò bloccata davanti a un fiume impetuoso. Portanus apparve come un uomo avvolto nell&amp;rsquo;ombra, indicando un guado nascosto. In cambio, pretese che il primo nato dopo il passaggio fosse a lui consacrato. La tribù accettò e attraversò il fiume, ma al ritorno scoprì che il bambino era sparito senza lasciare traccia.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Le Porte Invisibili&lt;/strong>&lt;br>
-Alcuni miti narravano dell’esistenza di porte invisibili, accessibili solo in certi momenti (come l’alba e il tramonto). Chi passava per errore attraverso una di queste porte si trovava in un mondo senza tempo, popolato da ombre che parlavano con voci dimenticate. Solo chi conosceva il vero nome di Portanus poteva tornare indietro.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Il Custode del Sole Morente&lt;/strong>&lt;br>
-Si diceva che Portanus fosse colui che raccoglieva il sole morente ogni sera per portarlo nell&amp;rsquo;aldilà e riconsegnarlo all’alba. In certe notti d’inverno, però, Portanus si rifiutava di restituire il sole, costringendo gli uomini a bruciare fuochi rituali per convincerlo a riaprire la porta del giorno.&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h3 id="culto-e-rituali">&lt;strong>Culto e Rituali&lt;/strong>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;strong>Sacrifici di Ombra:&lt;/strong> Alcuni rituali prevedevano di bruciare oggetti personali in luoghi sacri affinché l’ombra di quegli oggetti passasse nel regno di Portanus.&lt;/li>
-&lt;li>&lt;strong>Pellegrinaggi Notturni:&lt;/strong> Alcune tribù compivano viaggi notturni attraverso gole e caverne, credendo che camminare al buio con il favore di Portanus li avrebbe resi invisibili agli spiriti maligni.&lt;/li>
-&lt;li>&lt;strong>Il Rito del Passaggio:&lt;/strong> I giovani che diventavano adulti dovevano attraversare un guado o una caverna al tramonto, lasciando dietro di sé un’offerta affinché Portanus li riconoscesse come nuovi viaggiatori tra i mondi.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="declino-del-culto">&lt;strong>Declino del Culto&lt;/strong>
-&lt;/h3>&lt;p>Col passare dei secoli, mentre le popolazioni proto-indoeuropee si frammentavano e le religioni si evolvevano, Portanus fu assorbito o dimenticato:&lt;/p>
-&lt;ul>
-&lt;li>In alcune culture diventò una divinità minore legata ai confini e ai crocevia.&lt;/li>
-&lt;li>In altre fu demonizzato come un&amp;rsquo;entità oscura che tentava i viaggiatori a perdersi nel mondo dei morti.&lt;/li>
-&lt;li>Solo il culto sotterraneo dei &lt;strong>Custodes Occultorum Transituum&lt;/strong> mantenne viva la sua adorazione segreta.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="conclusione">&lt;strong>Conclusione&lt;/strong>
-&lt;/h3>&lt;p>Il culto di Portanus si sarebbe diffuso tra le popolazioni migratorie, plasmando i primi concetti religiosi di &lt;strong>soglia, confine e transizione&lt;/strong>. Forse il motivo per cui il suo nome è quasi scomparso è proprio perché i suoi fedeli non volevano che fosse ricordato dagli estranei.&lt;/p>
-&lt;hr>
-&lt;h3 id="evoluzione-del-mito-di-portanus-in-india">&lt;strong>Evoluzione del Mito di Portanus in India&lt;/strong>
-&lt;/h3>&lt;h4 id="periodo-vedico-circa-1500-500-ac">&lt;strong>Periodo Vedico (circa 1500-500 a.C.)&lt;/strong>
-&lt;/h4>&lt;p>Nella fase più antica della religione vedica, la figura di Portanus si è trasformata in una divinità legata ai passaggi tra i mondi e alla transizione tra vita e morte, concetti che troviamo già in alcune divinità vediche. Due sono stati gli adattamenti:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Pūṣan&lt;/strong>, il dio vedico dei viandanti e delle strade, guida le anime nell&amp;rsquo;aldilà e protegge chi attraversa territori pericolosi ha assorbito parte del mito di &lt;strong>Portanus&lt;/strong>.&lt;/li>
-&lt;li>&lt;strong>Yama&lt;/strong>, il dio della morte e primo mortale a raggiungere il regno dei defunti, ha acquisito tratti della divinità legata alle soglie e ai confini.&lt;/li>
-&lt;/ul>
-&lt;h4 id="periodo-brahmanico-e-sviluppo-dell">&lt;strong>Periodo Brahmanico e Sviluppo dell&amp;rsquo;Induismo&lt;/strong>
-&lt;/h4>&lt;p>Con il tempo, la figura di Portanus è stata assimilata a concetti più complessi, come quelli di &lt;strong>tirtha&lt;/strong>, i luoghi di passaggio sacri tra il mondo umano e quello divino, e il concetto di &lt;strong>moksha&lt;/strong>, la liberazione dal ciclo delle rinascite (saṃsāra), che è in sé una sorta di &amp;ldquo;ultima soglia&amp;rdquo; da attraversare.&lt;/p>
-&lt;p>In questo periodo, la sua figura si è frammentata in diverse divinità o aspetti di divinità già esistenti:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Dvārapālas&lt;/strong>, i guardiani delle soglie dei templi indù e buddhisti, come un&amp;rsquo;eco degli antichi Custodi della Porta.&lt;/li>
-&lt;li>&lt;strong>Shiva&lt;/strong> nella sua forma di &lt;strong>Kala Bhairava&lt;/strong>, il feroce signore del tempo e delle transizioni, che presiede i luoghi di cremazione e le soglie tra vita e morte, potrebbe aver assorbito il lato più occulto del mito.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://procionegobbo.it/gdr/portanus/dvarapalas.jpg"
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="miti-e-leggende"&gt;&lt;strong&gt;Miti e Leggende&lt;/strong&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Il Viaggio della Prima Tribù&lt;/strong&gt;&lt;br&gt;
+Si raccontava che la prima tribù degli uomini, nel loro esodo verso nuove terre, si trovò bloccata davanti a un fiume impetuoso. Portanus apparve come un uomo avvolto nell&amp;rsquo;ombra, indicando un guado nascosto. In cambio, pretese che il primo nato dopo il passaggio fosse a lui consacrato. La tribù accettò e attraversò il fiume, ma al ritorno scoprì che il bambino era sparito senza lasciare traccia.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Le Porte Invisibili&lt;/strong&gt;&lt;br&gt;
+Alcuni miti narravano dell’esistenza di porte invisibili, accessibili solo in certi momenti (come l’alba e il tramonto). Chi passava per errore attraverso una di queste porte si trovava in un mondo senza tempo, popolato da ombre che parlavano con voci dimenticate. Solo chi conosceva il vero nome di Portanus poteva tornare indietro.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Il Custode del Sole Morente&lt;/strong&gt;&lt;br&gt;
+Si diceva che Portanus fosse colui che raccoglieva il sole morente ogni sera per portarlo nell&amp;rsquo;aldilà e riconsegnarlo all’alba. In certe notti d’inverno, però, Portanus si rifiutava di restituire il sole, costringendo gli uomini a bruciare fuochi rituali per convincerlo a riaprire la porta del giorno.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id="culto-e-rituali"&gt;&lt;strong&gt;Culto e Rituali&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sacrifici di Ombra:&lt;/strong&gt; Alcuni rituali prevedevano di bruciare oggetti personali in luoghi sacri affinché l’ombra di quegli oggetti passasse nel regno di Portanus.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pellegrinaggi Notturni:&lt;/strong&gt; Alcune tribù compivano viaggi notturni attraverso gole e caverne, credendo che camminare al buio con il favore di Portanus li avrebbe resi invisibili agli spiriti maligni.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Il Rito del Passaggio:&lt;/strong&gt; I giovani che diventavano adulti dovevano attraversare un guado o una caverna al tramonto, lasciando dietro di sé un’offerta affinché Portanus li riconoscesse come nuovi viaggiatori tra i mondi.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="declino-del-culto"&gt;&lt;strong&gt;Declino del Culto&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;Col passare dei secoli, mentre le popolazioni proto-indoeuropee si frammentavano e le religioni si evolvevano, Portanus fu assorbito o dimenticato:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In alcune culture diventò una divinità minore legata ai confini e ai crocevia.&lt;/li&gt;
+&lt;li&gt;In altre fu demonizzato come un&amp;rsquo;entità oscura che tentava i viaggiatori a perdersi nel mondo dei morti.&lt;/li&gt;
+&lt;li&gt;Solo il culto sotterraneo dei &lt;strong&gt;Custodes Occultorum Transituum&lt;/strong&gt; mantenne viva la sua adorazione segreta.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="conclusione"&gt;&lt;strong&gt;Conclusione&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;Il culto di Portanus si sarebbe diffuso tra le popolazioni migratorie, plasmando i primi concetti religiosi di &lt;strong&gt;soglia, confine e transizione&lt;/strong&gt;. Forse il motivo per cui il suo nome è quasi scomparso è proprio perché i suoi fedeli non volevano che fosse ricordato dagli estranei.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="evoluzione-del-mito-di-portanus-in-india"&gt;&lt;strong&gt;Evoluzione del Mito di Portanus in India&lt;/strong&gt;
+&lt;/h3&gt;&lt;h4 id="periodo-vedico-circa-1500-500-ac"&gt;&lt;strong&gt;Periodo Vedico (circa 1500-500 a.C.)&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;Nella fase più antica della religione vedica, la figura di Portanus si è trasformata in una divinità legata ai passaggi tra i mondi e alla transizione tra vita e morte, concetti che troviamo già in alcune divinità vediche. Due sono stati gli adattamenti:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pūṣan&lt;/strong&gt;, il dio vedico dei viandanti e delle strade, guida le anime nell&amp;rsquo;aldilà e protegge chi attraversa territori pericolosi ha assorbito parte del mito di &lt;strong&gt;Portanus&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yama&lt;/strong&gt;, il dio della morte e primo mortale a raggiungere il regno dei defunti, ha acquisito tratti della divinità legata alle soglie e ai confini.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="periodo-brahmanico-e-sviluppo-dell"&gt;&lt;strong&gt;Periodo Brahmanico e Sviluppo dell&amp;rsquo;Induismo&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;Con il tempo, la figura di Portanus è stata assimilata a concetti più complessi, come quelli di &lt;strong&gt;tirtha&lt;/strong&gt;, i luoghi di passaggio sacri tra il mondo umano e quello divino, e il concetto di &lt;strong&gt;moksha&lt;/strong&gt;, la liberazione dal ciclo delle rinascite (saṃsāra), che è in sé una sorta di &amp;ldquo;ultima soglia&amp;rdquo; da attraversare.&lt;/p&gt;
+&lt;p&gt;In questo periodo, la sua figura si è frammentata in diverse divinità o aspetti di divinità già esistenti:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dvārapālas&lt;/strong&gt;, i guardiani delle soglie dei templi indù e buddhisti, come un&amp;rsquo;eco degli antichi Custodi della Porta.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shiva&lt;/strong&gt; nella sua forma di &lt;strong&gt;Kala Bhairava&lt;/strong&gt;, il feroce signore del tempo e delle transizioni, che presiede i luoghi di cremazione e le soglie tra vita e morte, potrebbe aver assorbito il lato più occulto del mito.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://procionegobbo.it/gdr/portanus/dvarapalas.jpg"
 width="2048"
 height="2048"
 srcset="https://procionegobbo.it/gdr/portanus/dvarapalas_hu_e0f2a09acb334943.jpg 480w, https://procionegobbo.it/gdr/portanus/dvarapalas_hu_c803c55ff8dc2270.jpg 1024w"
@@ -343,13 +343,13 @@ alt="Un Dvārapālas col simbolo di Portanus"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
->&lt;/p>
-&lt;h4 id="persistenza-nei-testi-e-nei-culti-esoterici">&lt;strong>Persistenza nei Testi e nei Culti Esoterici&lt;/strong>
-&lt;/h4>&lt;p>Alcune tradizioni tantriche o ascetiche hanno potuto mantenere il culto in forme più segrete, attribuendo a Portanus un aspetto legato ai passaggi mistici e ai poteri che derivano dall&amp;rsquo;attraversamento di stati alterati di coscienza. In alcune scuole tantriche, la meditazione su porte e soglie è un simbolo del passaggio tra realtà differenti, concetto che rispecchia il mito originale.&lt;/p>
-&lt;h3 id="connessione-tra-le-due-tradizioni">&lt;strong>Connessione tra le Due Tradizioni&lt;/strong>
-&lt;/h3>&lt;p>Mentre in Occidente Portanus è stato assorbito dalla religione romana e poi dimenticato, in India la sua eredità potrebbe essere sopravvissuta sotto forma di pratiche rituali legate ai passaggi tra mondi, ai portali sacri e ai guardiani delle soglie, influenzando la concezione delle porte sacre nei templi e il simbolismo della liberazione spirituale.&lt;/p>
-&lt;h1 id="portanus-il-primo-guardiano-dei-confini">&lt;strong>Portanus: Il Primo Guardiano dei Confini&lt;/strong>
-&lt;/h1>&lt;p>&lt;img src="https://procionegobbo.it/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm.jpg"
+&gt;&lt;/p&gt;
+&lt;h4 id="persistenza-nei-testi-e-nei-culti-esoterici"&gt;&lt;strong&gt;Persistenza nei Testi e nei Culti Esoterici&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;Alcune tradizioni tantriche o ascetiche hanno potuto mantenere il culto in forme più segrete, attribuendo a Portanus un aspetto legato ai passaggi mistici e ai poteri che derivano dall&amp;rsquo;attraversamento di stati alterati di coscienza. In alcune scuole tantriche, la meditazione su porte e soglie è un simbolo del passaggio tra realtà differenti, concetto che rispecchia il mito originale.&lt;/p&gt;
+&lt;h3 id="connessione-tra-le-due-tradizioni"&gt;&lt;strong&gt;Connessione tra le Due Tradizioni&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;Mentre in Occidente Portanus è stato assorbito dalla religione romana e poi dimenticato, in India la sua eredità potrebbe essere sopravvissuta sotto forma di pratiche rituali legate ai passaggi tra mondi, ai portali sacri e ai guardiani delle soglie, influenzando la concezione delle porte sacre nei templi e il simbolismo della liberazione spirituale.&lt;/p&gt;
+&lt;h1 id="portanus-il-primo-guardiano-dei-confini"&gt;&lt;strong&gt;Portanus: Il Primo Guardiano dei Confini&lt;/strong&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;img src="https://procionegobbo.it/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm.jpg"
 width="2048"
 height="2048"
 srcset="https://procionegobbo.it/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm_hu_206cb154031fbd46.jpg 480w, https://procionegobbo.it/gdr/portanus/83zhf2qaddrma0cnk9wssqt5gm_hu_aa9877bbc9e75c90.jpg 1024w"
@@ -358,20 +358,20 @@ alt="Portanus"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
-> Nei tempi in cui &lt;strong>gli antenati dell’uomo sedevano attorno ai fuochi&lt;/strong>, guardando con sospetto l’oscurità della notte, vi era già &lt;strong>qualcosa che stava nell&amp;rsquo;ombra&lt;/strong>, osservando. &lt;strong>Le caverne erano portali, le gole oscure segreti proibiti, le grandi rocce erette sentinelle di un potere ignoto&lt;/strong>.&lt;/p>
-&lt;p>I primi umani parlavano a gesti, poi con suoni appena articolati. &lt;strong>Ma alcuni suoni erano proibiti&lt;/strong>. Alcune parole non dovevano essere pronunciate, perché &lt;strong>aprivano le Vie Profonde&lt;/strong>. La leggenda narra che &lt;strong>fu il primo sciamano&lt;/strong>—colui che sapeva leggere i segni degli antenati e comunicare con il mondo invisibile—a &lt;strong>incontrarlo per la prima volta&lt;/strong>.&lt;/p>
-&lt;p>Non aveva ancora un nome, ma &lt;strong>già esisteva prima delle parole&lt;/strong>. Lo sciamano lo vide mentre attraversava la fenditura tra due rocce sacre, quando la luna era nuova. &lt;strong>Era alto, più alto di qualsiasi uomo, e la sua ombra si contorceva come se fosse viva&lt;/strong>.&lt;/p>
-&lt;p>Egli sussurrò &lt;strong>parole sconosciute&lt;/strong>, e il suolo si aprì sotto di lui, rivelando un luogo che non apparteneva a questo mondo. Il primo sciamano tentò di fuggire, ma &lt;strong>la creatura lo marchiò&lt;/strong>, imprimendogli sul petto il segno della &lt;strong>stella a cinque punte&lt;/strong>, simbolo del passaggio eterno. &lt;strong>Da quel giorno, coloro che sognavano il simbolo sapevano che erano destinati a viaggiare tra i mondi&lt;/strong>.&lt;/p>
-&lt;p>Il culto di Portanus nacque &lt;strong>prima delle civiltà, prima della scrittura&lt;/strong>, tramandato da racconti sussurrati tra i fuochi notturni. I primi uomini scolpirono &lt;strong>segni sulle pietre&lt;/strong>, credendo che potessero tenerlo lontano, ma le &lt;strong>porte si aprivano comunque&lt;/strong>, nei momenti in cui la realtà si assottigliava.&lt;/p>
-&lt;p>Con il tempo, gli uomini impararono a chiamarlo &lt;strong>Signore delle Fenditure, Guardiano delle Pietre Erette, il Senza-Volto che Veglia sui Confini&lt;/strong>. I suoi fedeli lo cercavano, &lt;strong>sperando di attraversare le soglie verso i regni sconosciuti&lt;/strong>, mentre altri lo temevano, pregando di non udire &lt;strong>il suo sussurro nel vento tra le rocce&lt;/strong>.&lt;/p>
-&lt;h3 id="simbolismo-e-tradizione">&lt;strong>Simbolismo e Tradizione&lt;/strong>
-&lt;/h3>&lt;ul>
-&lt;li>Le &lt;strong>gole e le caverne profonde&lt;/strong> erano considerate sue dimore.&lt;/li>
-&lt;li>I &lt;strong>cerchi di pietre&lt;/strong>—precursori dei dolmen e dei menhir—erano tentativi di chiudere i passaggi che conducevano alle Vie Profonde.&lt;/li>
-&lt;li>Il &lt;strong>segno della stella a cinque punte&lt;/strong> compare tra le incisioni più antiche, legato ai primi riti tribali.&lt;/li>
-&lt;li>Gli &lt;strong>sciamani portavano amuleti di ossa e pietra&lt;/strong>, credendo che potessero placare Portanus o permettere di attraversare le soglie in sicurezza.&lt;/li>
-&lt;li>Durante &lt;strong>eclissi e lune nuove&lt;/strong>, si raccontava che i più sensibili potessero udire il suo richiamo.&lt;/li>
-&lt;/ul>
-&lt;hr></description></item><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p>Sono passati 21 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p>
-&lt;p>It’s been 21 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p></description></item><item><title>Storie di Ghainar - Incipit</title><link>https://procionegobbo.it/scrittura/ghainar/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/scrittura/ghainar/</guid><description>&lt;p>Il vento portava sabbia e segreti, e la città di Ghainar non dormiva da tre notti&amp;hellip;
-e qui si materializzerà la nuova incarnazione di Storie di Ghainar, una raccolta dei miei racconti.&lt;/p></description></item></channel></rss>
+&gt; Nei tempi in cui &lt;strong&gt;gli antenati dell’uomo sedevano attorno ai fuochi&lt;/strong&gt;, guardando con sospetto l’oscurità della notte, vi era già &lt;strong&gt;qualcosa che stava nell&amp;rsquo;ombra&lt;/strong&gt;, osservando. &lt;strong&gt;Le caverne erano portali, le gole oscure segreti proibiti, le grandi rocce erette sentinelle di un potere ignoto&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I primi umani parlavano a gesti, poi con suoni appena articolati. &lt;strong&gt;Ma alcuni suoni erano proibiti&lt;/strong&gt;. Alcune parole non dovevano essere pronunciate, perché &lt;strong&gt;aprivano le Vie Profonde&lt;/strong&gt;. La leggenda narra che &lt;strong&gt;fu il primo sciamano&lt;/strong&gt;—colui che sapeva leggere i segni degli antenati e comunicare con il mondo invisibile—a &lt;strong&gt;incontrarlo per la prima volta&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Non aveva ancora un nome, ma &lt;strong&gt;già esisteva prima delle parole&lt;/strong&gt;. Lo sciamano lo vide mentre attraversava la fenditura tra due rocce sacre, quando la luna era nuova. &lt;strong&gt;Era alto, più alto di qualsiasi uomo, e la sua ombra si contorceva come se fosse viva&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Egli sussurrò &lt;strong&gt;parole sconosciute&lt;/strong&gt;, e il suolo si aprì sotto di lui, rivelando un luogo che non apparteneva a questo mondo. Il primo sciamano tentò di fuggire, ma &lt;strong&gt;la creatura lo marchiò&lt;/strong&gt;, imprimendogli sul petto il segno della &lt;strong&gt;stella a cinque punte&lt;/strong&gt;, simbolo del passaggio eterno. &lt;strong&gt;Da quel giorno, coloro che sognavano il simbolo sapevano che erano destinati a viaggiare tra i mondi&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Il culto di Portanus nacque &lt;strong&gt;prima delle civiltà, prima della scrittura&lt;/strong&gt;, tramandato da racconti sussurrati tra i fuochi notturni. I primi uomini scolpirono &lt;strong&gt;segni sulle pietre&lt;/strong&gt;, credendo che potessero tenerlo lontano, ma le &lt;strong&gt;porte si aprivano comunque&lt;/strong&gt;, nei momenti in cui la realtà si assottigliava.&lt;/p&gt;
+&lt;p&gt;Con il tempo, gli uomini impararono a chiamarlo &lt;strong&gt;Signore delle Fenditure, Guardiano delle Pietre Erette, il Senza-Volto che Veglia sui Confini&lt;/strong&gt;. I suoi fedeli lo cercavano, &lt;strong&gt;sperando di attraversare le soglie verso i regni sconosciuti&lt;/strong&gt;, mentre altri lo temevano, pregando di non udire &lt;strong&gt;il suo sussurro nel vento tra le rocce&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id="simbolismo-e-tradizione"&gt;&lt;strong&gt;Simbolismo e Tradizione&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Le &lt;strong&gt;gole e le caverne profonde&lt;/strong&gt; erano considerate sue dimore.&lt;/li&gt;
+&lt;li&gt;I &lt;strong&gt;cerchi di pietre&lt;/strong&gt;—precursori dei dolmen e dei menhir—erano tentativi di chiudere i passaggi che conducevano alle Vie Profonde.&lt;/li&gt;
+&lt;li&gt;Il &lt;strong&gt;segno della stella a cinque punte&lt;/strong&gt; compare tra le incisioni più antiche, legato ai primi riti tribali.&lt;/li&gt;
+&lt;li&gt;Gli &lt;strong&gt;sciamani portavano amuleti di ossa e pietra&lt;/strong&gt;, credendo che potessero placare Portanus o permettere di attraversare le soglie in sicurezza.&lt;/li&gt;
+&lt;li&gt;Durante &lt;strong&gt;eclissi e lune nuove&lt;/strong&gt;, si raccontava che i più sensibili potessero udire il suo richiamo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;</description></item><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p&gt;Sono passati 21 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;
+&lt;p&gt;It’s been 21 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;</description></item><item><title>Storie di Ghainar - Incipit</title><link>https://procionegobbo.it/scrittura/ghainar/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/scrittura/ghainar/</guid><description>&lt;p&gt;Il vento portava sabbia e segreti, e la città di Ghainar non dormiva da tre notti&amp;hellip;
+e qui si materializzerà la nuova incarnazione di Storie di Ghainar, una raccolta dei miei racconti.&lt;/p&gt;</description></item></channel></rss>
