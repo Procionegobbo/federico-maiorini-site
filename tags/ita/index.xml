@@ -7,7 +7,7 @@ width="300"
 height="300"
 srcset="https://procionegobbo.it/blog/ops-i-dit-it-again/ariafritta_hu1df290961245a86464e07fb732affb03_48158_480x0_resize_q75_box.jpg 480w, https://procionegobbo.it/blog/ops-i-dit-it-again/ariafritta_hu1df290961245a86464e07fb732affb03_48158_1024x0_resize_q75_box.jpg 1024w"
 loading="lazy"
-alt="alt text"
+alt="cover del singolo Aria Fritta"
 class="gallery-image"
 data-flex-grow="100"
 data-flex-basis="240px"
@@ -20,13 +20,23 @@ No. Ingiusto e sessista. Anche per un personaggio immaginario.&lt;/p>
 Doveva essere qualcosa di più. Le serviva un riscatto, una dichiarazione di indipendenza e, perché no, di superiorità rispetto ai due idioti (così li ho voluti) dei suoi ex.
 Lo strappo doveva essere deciso e importante. Intanto lo stile, lontano dalla trap e dall&amp;rsquo;hip-hop. Ho deciso di andare verso l&amp;rsquo;&lt;em>hyperpop&lt;/em> con una dose di &lt;em>k-pop&lt;/em>.&lt;/p>
 &lt;p>Territorio inesplorato per me. Per fortuna oggi con lo streaming è possibile farsi una cultura minima di qualsiasi genere musicale in un tempo relativamente breve. Non sarò un esperto e mai lo diventerò ma ho comunque cominciato a capire un minimo stili e temi.&lt;/p>
-&lt;p>&lt;em>(Ethereal)[https://push.fm/fl/b3pnl9oc]&lt;/em> non pensato per essere solo un album, rappresenta una trasformazione.
+&lt;p>(&lt;strong>Ethereal&lt;/strong>)[https://push.fm/fl/b3pnl9oc] non pensato per essere solo un album, rappresenta una trasformazione.
 Attraverso dieci brani nei quali ho provato a fondere &lt;strong>dream pop, hyperpop e accenti K-pop&lt;/strong>, Nuvola racconta la propria rinascita: da corpo sfruttato e immagine filtrata a &lt;strong>divinità digitale indipendente&lt;/strong>, simbolo di libertà e autoaffermazione.
 Non so se ci sono riuscito in pieno, ma il risultato mi piace. I testi non sono male, il sound è piacevole e mi sembra di aver rispettato anche i vari canoni degli stili coinvolti.
 Anzi alcuni dei pezzi ritengo siano venuti particolarmente bene, parlo di &lt;strong>Digital Mirror&lt;/strong> e della versione in coreano di &lt;strong>Beyond Your Chains&lt;/strong>, che mi sembrano i più riusciti.
 Per chiarezza, io non so il coreano e ho fatto controllare a due IA diverse il testo di &lt;strong>Beyond Your Chains&lt;/strong> sia per quanto riguarda la traduzione che l&amp;rsquo;aderenza ai canoni del k-pop.&lt;/p>
 &lt;p>Come per il precedente non c&amp;rsquo;è alcuna pretesa di voler essere preso sul serio. È stato divertente, tutto qui.
-Come per il precedente ho usato (Suno)[https://suno.com/] per produrre la musica e (RouteNote)[https://www.routenote.com/] per la distribuzione.&lt;/p></description></item><item><title>Developer's daemons</title><link>https://procionegobbo.it/blog/developers-daemons/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/developers-daemons/</guid><description>&lt;img src="https://procionegobbo.it/blog/developers-daemons/developer-daemons.jpeg" alt="Featured image of post Developer's daemons" />&lt;p>&lt;em>(The English version of this article is provided after the Italian one. / La versione inglese di questo articolo si trova dopo quella in italiano)&lt;/em>&lt;/p>
+Come per il precedente ho usato (Suno)[https://suno.com/] per produrre la musica e (RouteNote)[https://www.routenote.com/] per la distribuzione.&lt;/p>
+&lt;p>&lt;img src="https://procionegobbo.it/blog/ops-i-dit-it-again/cover.jpg"
+width="3000"
+height="3000"
+srcset="https://procionegobbo.it/blog/ops-i-dit-it-again/cover_hu879da08802b406c5f486cb2fd7b28d53_1471327_480x0_resize_q75_box.jpg 480w, https://procionegobbo.it/blog/ops-i-dit-it-again/cover_hu879da08802b406c5f486cb2fd7b28d53_1471327_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Cover dell&amp;rsquo;album Ethereal"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+>&lt;/p></description></item><item><title>Developer's daemons</title><link>https://procionegobbo.it/blog/developers-daemons/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/developers-daemons/</guid><description>&lt;img src="https://procionegobbo.it/blog/developers-daemons/developer-daemons.jpeg" alt="Featured image of post Developer's daemons" />&lt;p>&lt;em>(The English version of this article is provided after the Italian one. / La versione inglese di questo articolo si trova dopo quella in italiano)&lt;/em>&lt;/p>
 &lt;h1 id="i-due-demoni-dello-sviluppatore">I due demoni dello sviluppatore
 &lt;/h1>&lt;p>Ogni sviluppatore convive con due &lt;strong>demoni interiori&lt;/strong>.&lt;br>
 E se cogliete il gioco di parole, siete probabilmente sviluppatori o almeno un po’ nerd: nei sistemi operativi i processi che lavorano silenziosi in background, invisibili ma indispensabili, si chiamano infatti &lt;em>daemon&lt;/em> (o &lt;em>demoni&lt;/em> in italiano).&lt;/p>
