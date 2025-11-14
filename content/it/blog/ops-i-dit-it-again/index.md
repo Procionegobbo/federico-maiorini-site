@@ -16,7 +16,7 @@ Lo ammetto, ci ho un po' preso gusto. Nell'album di Tony Loffa c'era una canzone
 Non mi piace lasciare le cose in sospeso quindi ho immaginato che, in pieno stile rivalità trap/rap, DJ Budello facesse un pezzo dissing contro Tony.
 Ed è nato [Aria Fritta](https://push.fm/fl/emluffhw)
 
-![alt text](ariafritta.jpg).
+![cover del singolo Aria Fritta](ariafritta.jpg).
 
 ---
 
@@ -30,7 +30,7 @@ Lo strappo doveva essere deciso e importante. Intanto lo stile, lontano dalla tr
 
 Territorio inesplorato per me. Per fortuna oggi con lo streaming è possibile farsi una cultura minima di qualsiasi genere musicale in un tempo relativamente breve. Non sarò un esperto e mai lo diventerò ma ho comunque cominciato a capire un minimo stili e temi.
 
-_(Ethereal)[https://push.fm/fl/b3pnl9oc]_ non pensato per essere solo un album, rappresenta una trasformazione.
+(**Ethereal**)[https://push.fm/fl/b3pnl9oc] non pensato per essere solo un album, rappresenta una trasformazione.
 Attraverso dieci brani nei quali ho provato a fondere **dream pop, hyperpop e accenti K-pop**, Nuvola racconta la propria rinascita: da corpo sfruttato e immagine filtrata a **divinità digitale indipendente**, simbolo di libertà e autoaffermazione.
 Non so se ci sono riuscito in pieno, ma il risultato mi piace. I testi non sono male, il sound è piacevole e mi sembra di aver rispettato anche i vari canoni degli stili coinvolti.
 Anzi alcuni dei pezzi ritengo siano venuti particolarmente bene, parlo di **Digital Mirror** e della versione in coreano di **Beyond Your Chains**, che mi sembrano i più riusciti.
@@ -38,4 +38,6 @@ Per chiarezza, io non so il coreano e ho fatto controllare a due IA diverse il t
 
 Come per il precedente non c'è alcuna pretesa di voler essere preso sul serio. È stato divertente, tutto qui.
 Come per il precedente ho usato (Suno)[https://suno.com/] per produrre la musica e (RouteNote)[https://www.routenote.com/] per la distribuzione.
+
+![Cover dell'album Ethereal](cover.jpg)
 
