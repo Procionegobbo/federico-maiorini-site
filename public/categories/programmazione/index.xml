@@ -158,7 +158,8 @@ questa fantastica utility scritta in Go permette di eseguire le actions di GitHu
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Nota importante ⚠️&lt;/strong&gt;&lt;br&gt;
 &lt;code&gt;act&lt;/code&gt; utilizza il file &lt;code&gt;.env&lt;/code&gt; locale per eseguire i test, mentre GitHub Actions potrebbe avere un contesto diverso.&lt;br&gt;
-Assicurati di configurare correttamente le variabili d’ambiente nel workflow per evitare comportamenti inattesi.&lt;/p&gt;&lt;/blockquote&gt;
+Assicurati di configurare correttamente le variabili d’ambiente nel workflow per evitare comportamenti inattesi.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id="link-utili"&gt;Link utili
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class="link" href="https://nektosact.com/" target="_blank" rel="noopener"
