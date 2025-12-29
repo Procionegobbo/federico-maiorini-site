@@ -106,3 +106,7 @@ src = "/images/ProcionegobboSmall.png"
   name = "About"
   url = "/en/about/"
   weight = 4
+
+[services]
+  [services.googleAnalytics]
+    ID = 'G-7T0LHSKHVD'
