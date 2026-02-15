@@ -1,1 +1,123 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on Federico Maiorini</title><link>https://procionegobbo.it/categories/</link><description>Recent content in Categories on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0200</lastBuildDate><atom:link href="https://procionegobbo.it/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Scrittura</title><link>https://procionegobbo.it/categories/scrittura/</link><pubDate>Mon, 29 Dec 2025 00:00:00 +0200</pubDate><guid>https://procionegobbo.it/categories/scrittura/</guid><description/></item><item><title>Blog</title><link>https://procionegobbo.it/categories/blog/</link><pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/categories/blog/</guid><description/></item><item><title>Community</title><link>https://procionegobbo.it/categories/community/</link><pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/categories/community/</guid><description/></item><item><title>Conferenze</title><link>https://procionegobbo.it/categories/conferenze/</link><pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/categories/conferenze/</guid><description/></item><item><title>Esperienze</title><link>https://procionegobbo.it/categories/esperienze/</link><pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/categories/esperienze/</guid><description/></item><item><title>Ita/Eng</title><link>https://procionegobbo.it/categories/ita/eng/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/categories/ita/eng/</guid><description/></item><item><title>Programmazione</title><link>https://procionegobbo.it/categories/programmazione/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/categories/programmazione/</guid><description/></item><item><title>Riflessioni</title><link>https://procionegobbo.it/categories/riflessioni/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/categories/riflessioni/</guid><description/></item><item><title>Devops</title><link>https://procionegobbo.it/categories/devops/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/categories/devops/</guid><description/></item><item><title>Golang</title><link>https://procionegobbo.it/categories/golang/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/categories/golang/</guid><description/></item><item><title>GdR</title><link>https://procionegobbo.it/categories/gdr/</link><pubDate>Fri, 15 Aug 2025 16:52:18 +0200</pubDate><guid>https://procionegobbo.it/categories/gdr/</guid><description/></item><item><title>Worldbuilding</title><link>https://procionegobbo.it/categories/worldbuilding/</link><pubDate>Fri, 15 Aug 2025 16:52:18 +0200</pubDate><guid>https://procionegobbo.it/categories/worldbuilding/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on Federico Maiorini</title>
+        <link>http://localhost:1313/categories/</link>
+        <description>Recent content in Categories on Federico Maiorini</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>it-it</language>
+        <lastBuildDate>Sun, 15 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI</title>
+        <link>http://localhost:1313/categories/ai/</link>
+        <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/ai/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Progetti Personali</title>
+        <link>http://localhost:1313/categories/progetti-personali/</link>
+        <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/progetti-personali/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Programmazione</title>
+        <link>http://localhost:1313/categories/programmazione/</link>
+        <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/programmazione/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Scrittura</title>
+        <link>http://localhost:1313/categories/scrittura/</link>
+        <pubDate>Mon, 29 Dec 2025 00:00:00 +0200</pubDate>
+        
+        <guid>http://localhost:1313/categories/scrittura/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Blog</title>
+        <link>http://localhost:1313/categories/blog/</link>
+        <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/blog/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Community</title>
+        <link>http://localhost:1313/categories/community/</link>
+        <pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/community/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Conferenze</title>
+        <link>http://localhost:1313/categories/conferenze/</link>
+        <pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/conferenze/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Esperienze</title>
+        <link>http://localhost:1313/categories/esperienze/</link>
+        <pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/esperienze/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Ita/Eng</title>
+        <link>http://localhost:1313/categories/ita/eng/</link>
+        <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/ita/eng/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Riflessioni</title>
+        <link>http://localhost:1313/categories/riflessioni/</link>
+        <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/riflessioni/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Devops</title>
+        <link>http://localhost:1313/categories/devops/</link>
+        <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/devops/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Golang</title>
+        <link>http://localhost:1313/categories/golang/</link>
+        <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/golang/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>GdR</title>
+        <link>http://localhost:1313/categories/gdr/</link>
+        <pubDate>Fri, 15 Aug 2025 16:52:18 +0200</pubDate>
+        
+        <guid>http://localhost:1313/categories/gdr/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Worldbuilding</title>
+        <link>http://localhost:1313/categories/worldbuilding/</link>
+        <pubDate>Fri, 15 Aug 2025 16:52:18 +0200</pubDate>
+        
+        <guid>http://localhost:1313/categories/worldbuilding/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

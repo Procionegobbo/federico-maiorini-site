@@ -1,16 +1,96 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on Federico Maiorini</title><link>https://procionegobbo.it/blog/</link><description>Recent content in Blogs on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Fri, 14 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Ops I did it again</title><link>https://procionegobbo.it/blog/ops-i-dit-it-again/</link><pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/ops-i-dit-it-again/</guid><description>&lt;img src="https://procionegobbo.it/blog/ops-i-dit-it-again/cover.jpg" alt="Featured image of post Ops I did it again" /&gt;&lt;p&gt;Lo ammetto, ci ho un po&amp;rsquo; preso gusto. Nell&amp;rsquo;album di Tony Loffa c&amp;rsquo;era una canzone in cui l&amp;rsquo;immaginario rapper flatulente nominava due altri personaggi: il suo rivale DJ Budello e il suo amore perduto Nuvola.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Blogs on Federico Maiorini</title>
+        <link>http://localhost:1313/blog/</link>
+        <description>Recent content in Blogs on Federico Maiorini</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>it-it</language>
+        <lastBuildDate>Sun, 15 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Universe Generator: trent&#39;anni di codice che rinasce</title>
+        <link>http://localhost:1313/blog/universe-generator-trentanni-codice-rinasce/</link>
+        <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/universe-generator-trentanni-codice-rinasce/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/universe-generator-trentanni-codice-rinasce/universe-generator.jpg" alt="Featured image of post Universe Generator: trent&#39;anni di codice che rinasce" /&gt;&lt;h2 id=&#34;1996-access-basic-e-dadi-virtuali&#34;&gt;1996: Access Basic e dadi virtuali
+&lt;/h2&gt;&lt;p&gt;C&amp;rsquo;è un pezzo di codice che mi porto dietro da trent&amp;rsquo;anni. Sì, trent&amp;rsquo;anni. Dal 1996.
+Era parte di un mio progetto personale legato ai giochi di ruolo, lo realizzai su Microsoft Access 2.0, preistoria. In Access Basic, il linguaggio di scripting che precedette VBA. Per l&amp;rsquo;epoca era una roba avanzatissima.&lt;/p&gt;
+&lt;p&gt;Il sistema consisteva in un generatore, semplice, di settori spaziali basato su tabelle di probabilità. Le tabelle le trovai su internet ed erano state pensate come ausilio per giochi di ruolo a tema spaziale. In pratica con l&amp;rsquo;uso di dadi da 6 e da 100 permetteva di creare sistemi stellari, le loro stelle e i loro pianeti. Era molto semplice, non c&amp;rsquo;erano molti dettagli (classe stellare, tipo di pianeta e diametro e numero di lune) e nessuna pretesa di realismo. A me bastava per far volare la fantasia nello spazio siderale.&lt;/p&gt;
+&lt;p&gt;Mischiamo la passione per la fantascienza, per il gioco di ruolo, il delirio di onnipotenza, l&amp;rsquo;avere a disposizione le licenze Access dell&amp;rsquo;azienda di allora e la tempesta perfetta si era condensata su alcune nottate di coding.&lt;/p&gt;
+&lt;p&gt;All&amp;rsquo;epoca volevo riprodurre le tabelle basate su dadi e quindi mi scrissi in Access Basic un parser che interpretava la notazione usata nei giochi di ruolo per il lancio di dadi. Per esempio &lt;em&gt;1d6&lt;/em&gt; vuol dire il risultato del lancio di un dado da sei facce, &lt;em&gt;2d8+3&lt;/em&gt; per il totale del lancio di due dadi a otto facce a cui viene aggiunto 3 e così via. Banale forse ma ricordiamo che all&amp;rsquo;epoca non esisteva Stackoverflow, internet era all&amp;rsquo;inizio e l&amp;rsquo;intelligenza artificiale era solo fantascienza. Solo libroni di programmazione, amici nerd e tanta pazienza.&lt;/p&gt;
+&lt;p&gt;Al parser si aggiunse una serie di funzioni per simulare le tabelle, una form dove inserire i dati (dimensioni del settore e numero di sistemi da generare), tabelle su Access per memorizzare il risultato e il giocattolo era pronto: un&amp;rsquo;interfaccia dove generare un settore galattico e esplorarlo virtualmente navigando metaforicamente tra una stella e l&amp;rsquo;altra per vedere quali pianeti orbitassero in quei sistemi.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-vb&#34; data-lang=&#34;vb&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;#39; Questo frammento mostra la logica di generazione dei pianeti:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;#39; in base alla zona orbitale e al risultato del dado, vengono assegnati
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;#39; tipo, diametro e numero di lune usando le formule in notazione RPG
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Select&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Case&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;Case&lt;/span&gt; (dado &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; 5)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Pianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;TipoPianeta&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;A&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Pianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;diametro&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Pianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;numLune&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; 0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;Case&lt;/span&gt; ((zona &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Zona_B &lt;span style=&#34;color:#f92672&#34;&gt;And&lt;/span&gt; dado &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; 8) &lt;span style=&#34;color:#f92672&#34;&gt;Or&lt;/span&gt; (zona &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Zona_C &lt;span style=&#34;color:#f92672&#34;&gt;And&lt;/span&gt; dado &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; 75))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Pianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;TipoPianeta&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;G&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      TipoPianeta.FindFirst &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;TipoBreve = &amp;#39;G&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      formula &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; TipoPianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;FormulaDiametro&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Pianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;diametro&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; DiceParser(formula) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; TipoPianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;MoltiplicatoreDiametro&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Pianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;numLune&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; DiceParser(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2d10&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;Case&lt;/span&gt; ((zona &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Zona_A &lt;span style=&#34;color:#f92672&#34;&gt;And&lt;/span&gt; dado &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; 60) &lt;span style=&#34;color:#f92672&#34;&gt;Or&lt;/span&gt; (zona &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Zona_B &lt;span style=&#34;color:#f92672&#34;&gt;And&lt;/span&gt; dado &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; 40) &lt;span style=&#34;color:#f92672&#34;&gt;Or&lt;/span&gt; (zona &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Zona_C &lt;span style=&#34;color:#f92672&#34;&gt;And&lt;/span&gt; dado &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; 80))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Pianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;TipoPianeta&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;R&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      TipoPianeta.FindFirst &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;TipoBreve = &amp;#39;R&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      formula &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; TipoPianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;FormulaDiametro&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Pianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;diametro&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; DiceParser(formula) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; TipoPianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;MoltiplicatoreDiametro&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Pianeta(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;numLune&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Int(DiceParser(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1d6&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; DiceParser(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1d6&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; 10)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;il-lungo-sonno&#34;&gt;Il lungo sonno
+&lt;/h2&gt;&lt;p&gt;Poi è successa la vita, il lavoro cambia, le tecnologie pure. Quel db Access è perso ormai ma i file contenenti il codice Access Basic mi hanno seguito da allora. Ogni tanto li tiravo fuori e pensavo che sarebbe stato interessante rifare quel progetto, magari con un&amp;rsquo;interfaccia più moderna, in un linguaggio nuovo. Così, per vedere cosa se ne poteva tirare fuori.&lt;/p&gt;
+&lt;h2 id=&#34;2025-lesperimento-con-gli-ai-agents&#34;&gt;2025: L&amp;rsquo;esperimento con gli AI agents
+&lt;/h2&gt;&lt;p&gt;Qualche giorno fa la cartella &amp;ldquo;generatore di universi&amp;rdquo; che ormai risiede sul desktop del mio Mac da anni ha attirato di nuovo la mia attenzione e ho fatto un esperimento: ho caricato il file su Deepseek e gli ho chiesto di tradurre quel vecchio codice in Typescript, avrei potuto farlo da solo ma volevo capire come se la cavasse con un codice così vecchio. Senza problemi direi, in pochi secondi le funzioni fossili sono rinate in un linguaggio moderno. Ripeto, nulla che non potessi fare da solo ma la velocità e facilità con cui ho avuto sotto mano il nuovo codice è stata notevole.&lt;/p&gt;
+&lt;p&gt;A quel punto però dovevo farci qualcosa, non potevo abbandonare di nuovo quel codice fino a quando anche Typescript non fosse divenuto obsoleto. Volevo dare vita a quel sistema di generazione e ho pensato che sarebbe stato interessante sperimentare con vari agenti di coding per sfruttarli ed evitarmi la rottura di mettere insieme i pezzi.&lt;/p&gt;
+&lt;p&gt;Ho iniziato con Claude Code, agganciandogli le API di Deepseek (avevo 10€ di credito caricati mesi fa per sperimentare con le API). Ho preparato un piano dettagliato con il file col codice di generazione, i dettagli per il backend (NodeJS + Express) e per il frontend in Vue. Sinceramente il frontend aveva problemi: allineamenti sballati, icone di dimensioni varie, testi barcollanti. Però l&amp;rsquo;engine di generazione funzionava bene e per la prima volta da trenta anni i dadi virtuali rotolavano e generavano pezzi di universo.&lt;/p&gt;
+&lt;p&gt;Il passo successivo sarebbe stato sistemare il frontend. Ma come? Visto che stavo sperimentando tanto valeva farlo bene. Ho provato con Antigravity il fork di Visual Studio Code fatto da Google che integra un coding agent basato su Gemini. La cosa interessante di Antigravity è che usa Chrome in autonomia: ha aperto il sito ha navigato, si è fatto le schermate che ha mandato a Gemini per analizzarle, ha trovato tutti i problemi del frontend e li ha corretti. Wow!
+Se non avessi finito i crediti in una serata avrei continuato con quello.&lt;/p&gt;
+&lt;h2 id=&#34;espandere-luniverso&#34;&gt;Espandere l&amp;rsquo;universo
+&lt;/h2&gt;&lt;p&gt;Comunque col frontend sistemato il minimo era fatto. Avevo quantomeno quello che mi aspettavo. A quel punto il delirio di onnipotenza ha colpito, se potevo spostare il mio sforzo mentale dallo scrivere codice a inventare funzionalità potevo produrre molto di più di quanto avevo in mente all&amp;rsquo;inizio.
+Quindi passando a Copilot di WebStorm ho cominciato a fare delle modifiche:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;differenziare i settori (Extragalactic, Galactic Edge, Medium, Central Zone, Galactic Core) ognuno con densità e distribuzione dei tipi di stella più realistica&lt;/li&gt;
+&lt;li&gt;più tipologie di pianeti rispetto agli otto delle tabelle originali&lt;/li&gt;
+&lt;li&gt;una distribuzione statistica dei tipi di pianeti più scientificamente accurata&lt;/li&gt;
+&lt;li&gt;aggiunta di dati relativi ai pianeti (diametro, massa, attrazione gravitazionale, goldilock)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Altra aggiunta rispetto all&amp;rsquo;idea iniziale sono state le immagini di pianeti e stelle. È bastato poco in effetti, in Antigravity mi sono fatto fare due file contenenti i prompt da dare in pasto ad un generatore di immagini e con l&amp;rsquo;MCP di Replicate ha generato le immagini, a quel punto è bastato dirgli dove e in che modo metterle sul frontend.&lt;/p&gt;
+&lt;h2 id=&#34;il-cerchio-si-chiude&#34;&gt;Il cerchio si chiude
+&lt;/h2&gt;&lt;p&gt;Alla fine il sistema era pronto. In questo progetto ho scritto pochissime righe di codice, più che altro ho fatto piccole correzioni quando mi veniva in mente qualcosa per il quale facevo prima a scriverlo direttamente che a chiederlo alla macchina.
+Ma non posso dire di non aver programmato, solo l&amp;rsquo;ho fatto in modo diverso. Anche perché nel progetto non c&amp;rsquo;è nulla che non avrei potuto fare da solo ma l&amp;rsquo;ho fatto in un quinto (forse un decimo) del tempo che ci avrei messo normalmente.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;è qualcosa di poetico nel fatto che quel codice del &amp;lsquo;96, nato in una notte di entusiasmo davanti a Access 2.0, abbia dovuto aspettare trent&amp;rsquo;anni per trovare la sua forma definitiva. Non è stato solo un processo di modernizzazione tecnologica: è stato come dare finalmente le gambe a un&amp;rsquo;idea che per tre decenni era rimasta chiusa in una cartella, spostata da computer a computer, aspettando il momento giusto. Gli strumenti di oggi - l&amp;rsquo;AI, gli agent di coding - non hanno fatto il lavoro al posto mio, mi hanno semplicemente permesso di concentrarmi su quello che volevo creare invece che su come costruirlo. Ed è esattamente quello che serviva per far rivivere quel vecchio generatore di universi.&lt;/p&gt;
+&lt;p&gt;È un fun project, un esperimento e un piccolo viaggio nel mio passato.&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://universe-generator-xi.vercel.app&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Universe Generator&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Ops I did it again</title>
+        <link>http://localhost:1313/blog/ops-i-dit-it-again/</link>
+        <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/ops-i-dit-it-again/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/ops-i-dit-it-again/cover.jpg" alt="Featured image of post Ops I did it again" /&gt;&lt;p&gt;Lo ammetto, ci ho un po&amp;rsquo; preso gusto. Nell&amp;rsquo;album di Tony Loffa c&amp;rsquo;era una canzone in cui l&amp;rsquo;immaginario rapper flatulente nominava due altri personaggi: il suo rivale DJ Budello e il suo amore perduto Nuvola.&lt;/p&gt;
 &lt;p&gt;Non mi piace lasciare le cose in sospeso quindi ho immaginato che, in pieno stile rivalità trap/rap, DJ Budello facesse un pezzo dissing contro Tony.
-Ed è nato &lt;a class="link" href="https://push.fm/fl/emluffhw" target="_blank" rel="noopener"
-&gt;Aria Fritta&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://procionegobbo.it/blog/ops-i-dit-it-again/ariafritta.jpg"
-width="300"
-height="300"
-srcset="https://procionegobbo.it/blog/ops-i-dit-it-again/ariafritta_hu_26983db139ed6b59.jpg 480w, https://procionegobbo.it/blog/ops-i-dit-it-again/ariafritta_hu_51d6fdb51eb625ad.jpg 1024w"
-loading="lazy"
-alt="cover del singolo Aria Fritta"
-class="gallery-image"
-data-flex-grow="100"
-data-flex-basis="240px"
+Ed è nato &lt;a class=&#34;link&#34; href=&#34;https://push.fm/fl/emluffhw&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Aria Fritta&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/blog/ops-i-dit-it-again/ariafritta.jpg&#34;
+	width=&#34;300&#34;
+	height=&#34;300&#34;
+	srcset=&#34;http://localhost:1313/blog/ops-i-dit-it-again/ariafritta_hu_26983db139ed6b59.jpg 480w, http://localhost:1313/blog/ops-i-dit-it-again/ariafritta_hu_51d6fdb51eb625ad.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;cover del singolo Aria Fritta&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;240px&#34;
+	
 &gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Ma non ero soddisfatto. Rimaneva un&amp;rsquo;altra cosa in sospeso: &lt;strong&gt;Nuvola&lt;/strong&gt;.
@@ -20,26 +100,39 @@ No. Ingiusto e sessista. Anche per un personaggio immaginario.&lt;/p&gt;
 Doveva essere qualcosa di più. Le serviva un riscatto, una dichiarazione di indipendenza e, perché no, di superiorità rispetto ai due idioti (così li ho voluti) dei suoi ex.
 Lo strappo doveva essere deciso e importante. Intanto lo stile, lontano dalla trap e dall&amp;rsquo;hip-hop. Ho deciso di andare verso l&amp;rsquo;&lt;em&gt;hyperpop&lt;/em&gt; con una dose di &lt;em&gt;k-pop&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Territorio inesplorato per me. Per fortuna oggi con lo streaming è possibile farsi una cultura minima di qualsiasi genere musicale in un tempo relativamente breve. Non sarò un esperto e mai lo diventerò ma ho comunque cominciato a capire un minimo stili e temi.&lt;/p&gt;
-&lt;p&gt;&lt;a class="link" href="https://push.fm/fl/b3pnl9oc" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Ethereal&lt;/strong&gt;&lt;/a&gt; non pensato per essere solo un album, rappresenta una trasformazione.
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://push.fm/fl/b3pnl9oc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Ethereal&lt;/strong&gt;&lt;/a&gt; non pensato per essere solo un album, rappresenta una trasformazione.
 Attraverso dieci brani nei quali ho provato a fondere &lt;strong&gt;dream pop, hyperpop e accenti K-pop&lt;/strong&gt;, Nuvola racconta la propria rinascita: da corpo sfruttato e immagine filtrata a &lt;strong&gt;divinità digitale indipendente&lt;/strong&gt;, simbolo di libertà e autoaffermazione.
 Non so se ci sono riuscito in pieno, ma il risultato mi piace. I testi non sono male, il sound è piacevole e mi sembra di aver rispettato anche i vari canoni degli stili coinvolti.
 Anzi alcuni dei pezzi ritengo siano venuti particolarmente bene, parlo di &lt;strong&gt;Digital Mirror&lt;/strong&gt; e della versione in coreano di &lt;strong&gt;Beyond Your Chains&lt;/strong&gt;, che mi sembrano i più riusciti.
 Per chiarezza, io non so il coreano e ho fatto controllare a due IA diverse il testo di &lt;strong&gt;Beyond Your Chains&lt;/strong&gt; sia per quanto riguarda la traduzione che l&amp;rsquo;aderenza ai canoni del k-pop.&lt;/p&gt;
 &lt;p&gt;Come per il precedente non c&amp;rsquo;è alcuna pretesa di voler essere preso sul serio. È stato divertente, tutto qui.
-Come per il precedente ho usato &lt;a class="link" href="https://suno.com/" target="_blank" rel="noopener"
-&gt;Suno&lt;/a&gt; per produrre la musica e &lt;a class="link" href="https://www.routenote.com/" target="_blank" rel="noopener"
-&gt;RouteNote&lt;/a&gt; per la distribuzione.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://procionegobbo.it/blog/ops-i-dit-it-again/cover.jpg"
-width="3000"
-height="3000"
-srcset="https://procionegobbo.it/blog/ops-i-dit-it-again/cover_hu_854822a509cde0ec.jpg 480w, https://procionegobbo.it/blog/ops-i-dit-it-again/cover_hu_2054befe2391c6ac.jpg 1024w"
-loading="lazy"
-alt="Cover dell’album Ethereal"
-class="gallery-image"
-data-flex-grow="100"
-data-flex-basis="240px"
-&gt;&lt;/p&gt;</description></item><item><title>Come To Code 2025: il piacere di una conferenza diversa</title><link>https://procionegobbo.it/blog/come-to-code-2025/</link><pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/come-to-code-2025/</guid><description>&lt;img src="https://procionegobbo.it/blog/come-to-code-2025/come-to-code-2025.jpg" alt="Featured image of post Come To Code 2025: il piacere di una conferenza diversa" /&gt;&lt;p&gt;Quest&amp;rsquo;ultimo fine settimana sono stato al Come To Code a Pignola. È la quinta edizione di questa conferenza per (non solo) sviluppatori. Mi dichiaro colpevole vostro onore: non la conoscevo e avrei voluto conoscerla prima. Sono stati due giorni intensi, pieni di talk interessanti, ottimo cibo, musica e nuove conoscenze.
+Come per il precedente ho usato &lt;a class=&#34;link&#34; href=&#34;https://suno.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Suno&lt;/a&gt; per produrre la musica e &lt;a class=&#34;link&#34; href=&#34;https://www.routenote.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RouteNote&lt;/a&gt; per la distribuzione.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/blog/ops-i-dit-it-again/cover.jpg&#34;
+	width=&#34;3000&#34;
+	height=&#34;3000&#34;
+	srcset=&#34;http://localhost:1313/blog/ops-i-dit-it-again/cover_hu_854822a509cde0ec.jpg 480w, http://localhost:1313/blog/ops-i-dit-it-again/cover_hu_2054befe2391c6ac.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Cover dell’album Ethereal&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;240px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Come To Code 2025: il piacere di una conferenza diversa</title>
+        <link>http://localhost:1313/blog/come-to-code-2025/</link>
+        <pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/come-to-code-2025/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/come-to-code-2025/come-to-code-2025.jpg" alt="Featured image of post Come To Code 2025: il piacere di una conferenza diversa" /&gt;&lt;p&gt;Quest&amp;rsquo;ultimo fine settimana sono stato al Come To Code a Pignola. È la quinta edizione di questa conferenza per (non solo) sviluppatori. Mi dichiaro colpevole vostro onore: non la conoscevo e avrei voluto conoscerla prima. Sono stati due giorni intensi, pieni di talk interessanti, ottimo cibo, musica e nuove conoscenze.
 Il Come To Code non è una conferenza verticale mirata ad una specifica tecnologia e metodologia, abbraccia tutto quello di cui si può parlare del nostro lavoro davvero a 360 gradi, talmente tanti talk in due giorni che è stato necessario dividerli in tre track tematici.
 Alcuni mi interessavano molto a livello tecnico o stimolavano la mia curiosità &lt;em&gt;nerdosa&lt;/em&gt; ma ho deciso, almeno il primo giorno di seguire una strada alternativa: i talk della track 3 sul personal branding e human skills. È un argomento che ho trascurato per anni, sbagliando, ma che dovrebbe far parte del bagaglio di competenze di ogni sviluppatore. È anche una delle cose più difficili da fare, almeno per me. Parlare di sé, parlare dei propri interessi in modo che possa interessare, coinvolgere non sono cose che mi vengano spontanee, non sempre. Sembra, anche nella mia testa, un controsenso: mi piace stare tra la gente ma non mi piace la folla, mi piace discutere (anche animatamente) ma mi stressano i conflitti, mi piace essere notato ma mettermi in mostra mi dà disagio. Un casino insomma.
 La track 3 è stata, non dico illuminante ma molto interessante.
@@ -59,33 +152,42 @@ E, per chi cerca attivamente, capire a chi mandare i curricula: la pesca a stras
 Forse è stato meglio che il workshop si sia mutato in talk, credo che abbia permesso di approfondire gli argomenti molto meglio, l&amp;rsquo;alternativa sarebbe stata &lt;em&gt;vi spiego come fare un curriculum fatto bene&lt;/em&gt; ma secondo me sarebbe stato molto riduttivo rispetto all&amp;rsquo;esperienza e alle competenze di Penta e Torrisi.&lt;/p&gt;
 &lt;p&gt;A coronamento della conferenza c&amp;rsquo;è stata l&amp;rsquo;eccezionale ospitalità. Il cibo ottimo, la musica, l&amp;rsquo;atmosfera assolutamente amichevole tutto fantastico.
 La differenza rispetto ad altre conferenze a cui ho partecipato, che mi hanno dato interesse e curiosità, è che al Come To Code ho trovato anche il raro piacere di stare tra la gente.&lt;/p&gt;
-&lt;h2 id="riferimenti"&gt;Riferimenti
+&lt;h2 id=&#34;riferimenti&#34;&gt;Riferimenti
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="link" href="https://www.cometocode.it/" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Come To Code&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cometocode.it/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Come To Code&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="speaker-citati"&gt;Speaker citati
+&lt;h3 id=&#34;speaker-citati&#34;&gt;Speaker citati
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="link" href="https://www.linkedin.com/in/valeria-salis/" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Valeria Salis&lt;/strong&gt; - LinkedIn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="https://www.linkedin.com/in/michelabertaina/" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Michela Bertaina&lt;/strong&gt; - LinkedIn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="https://it.LinkedIn.com/in/laralombardi" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Lara Lombardi&lt;/strong&gt; - LinkedIn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="https://www.linkedin.com/in/guido-penta/" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Guido Penta&lt;/strong&gt; - LinkedIn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="https://www.linkedin.com/in/storrisi/" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Simone Torrisi&lt;/strong&gt; - LinkedIn&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Developer's daemons</title><link>https://procionegobbo.it/blog/developers-daemons/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/developers-daemons/</guid><description>&lt;img src="https://procionegobbo.it/blog/developers-daemons/developer-daemons.jpeg" alt="Featured image of post Developer's daemons" /&gt;&lt;p&gt;&lt;em&gt;(The English version of this article is provided after the Italian one. / La versione inglese di questo articolo si trova dopo quella in italiano)&lt;/em&gt;&lt;/p&gt;
-&lt;h1 id="i-due-demoni-dello-sviluppatore"&gt;I due demoni dello sviluppatore
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/valeria-salis/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Valeria Salis&lt;/strong&gt; - LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/michelabertaina/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Michela Bertaina&lt;/strong&gt; - LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://it.LinkedIn.com/in/laralombardi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Lara Lombardi&lt;/strong&gt; - LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/guido-penta/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Guido Penta&lt;/strong&gt; - LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.linkedin.com/in/storrisi/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Simone Torrisi&lt;/strong&gt; - LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Developer&#39;s daemons</title>
+        <link>http://localhost:1313/blog/developers-daemons/</link>
+        <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/developers-daemons/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/developers-daemons/developer-daemons.jpeg" alt="Featured image of post Developer&#39;s daemons" /&gt;&lt;p&gt;&lt;em&gt;(The English version of this article is provided after the Italian one. / La versione inglese di questo articolo si trova dopo quella in italiano)&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;i-due-demoni-dello-sviluppatore&#34;&gt;I due demoni dello sviluppatore
 &lt;/h1&gt;&lt;p&gt;Ogni sviluppatore convive con due &lt;strong&gt;demoni interiori&lt;/strong&gt;.&lt;br&gt;
 E se cogliete il gioco di parole, siete probabilmente sviluppatori o almeno un po’ nerd: nei sistemi operativi i processi che lavorano silenziosi in background, invisibili ma indispensabili, si chiamano infatti &lt;em&gt;daemon&lt;/em&gt; (o &lt;em&gt;demoni&lt;/em&gt; in italiano).&lt;/p&gt;
-&lt;h2 id="il-demone-della-superbia"&gt;Il demone della superbia
+&lt;h2 id=&#34;il-demone-della-superbia&#34;&gt;Il demone della superbia
 &lt;/h2&gt;&lt;p&gt;Il primo demone nasce nel momento in cui scriviamo il nostro &lt;strong&gt;primo programma funzionante&lt;/strong&gt;.&lt;br&gt;
 Un “Hello World”, un disegno a schermo, un piccolo script che semplifica un compito noioso.&lt;br&gt;
 In quell’istante compare una sensazione potente: &lt;em&gt;“Posso dare ordini a una macchina, e lei li eseguirà”&lt;/em&gt;. È un piccolo &lt;strong&gt;delirio di onnipotenza&lt;/strong&gt; che accompagna quasi tutti gli sviluppatori per il resto della carriera.&lt;/p&gt;
 &lt;p&gt;Da quel momento in poi, la tentazione di piegare la realtà al proprio codice rimane sempre attiva, come un processo in background difficile da spegnere.&lt;/p&gt;
-&lt;h2 id="il-demone-della-pigrizia"&gt;Il demone della pigrizia
+&lt;h2 id=&#34;il-demone-della-pigrizia&#34;&gt;Il demone della pigrizia
 &lt;/h2&gt;&lt;p&gt;Il secondo demone è la &lt;strong&gt;pigrizia&lt;/strong&gt;, che in questo contesto assume un valore positivo.&lt;br&gt;
 Non parliamo della pigrizia sterile, ma di quella che si trasforma in creatività: la spinta a trovare soluzioni per lavorare di meno ottenendo di più.&lt;/p&gt;
 &lt;p&gt;Immaginiamoci in un &lt;strong&gt;minuscolo clan di cacciatori&lt;/strong&gt; qualche decina di migliaia di anni fa.&lt;br&gt;
@@ -97,7 +199,7 @@ Nel nostro clan ci sono tre cacciatori:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Chi sopravvive e prospera? Lem, perché trasforma la pigrizia in ingegno.&lt;br&gt;
 Lo stesso principio, migliaia di anni dopo, ha portato alla nascita dei computer: qualcuno non voleva più fare calcoli a mano e ha inventato macchine che li facessero al suo posto.&lt;/p&gt;
-&lt;h2 id="pigrizia-produttiva-e-superbia-creativa"&gt;Pigrizia produttiva e superbia creativa
+&lt;h2 id=&#34;pigrizia-produttiva-e-superbia-creativa&#34;&gt;Pigrizia produttiva e superbia creativa
 &lt;/h2&gt;&lt;p&gt;Per uno sviluppatore, la pigrizia non è mai fine a sé stessa. È un modo diverso di guardare al lavoro: invece di pensare &lt;em&gt;“come faccio a portarlo a termine subito?”&lt;/em&gt;, lo sviluppatore si chiede &lt;em&gt;“come faccio a non doverlo mai più ripetere?”&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;È da qui che nascono strumenti e pratiche che cambiano il modo di scrivere codice:&lt;/p&gt;
 &lt;ul&gt;
@@ -108,7 +210,7 @@ Lo stesso principio, migliaia di anni dopo, ha portato alla nascita dei computer
 &lt;p&gt;Tutto questo richiede spesso &lt;strong&gt;più fatica iniziale&lt;/strong&gt; rispetto a fare la stessa operazione un paio di volte a mano. Ma a lungo termine significa risparmiare ore, giorni, persino mesi di lavoro. È la pigrizia che diventa investimento.&lt;/p&gt;
 &lt;p&gt;La superbia, a sua volta, non è un vizio sterile: è la convinzione che si possa sempre fare meglio, che valga la pena cercare soluzioni eleganti, potenti, durature. È quella voce che spinge lo sviluppatore a non accontentarsi di “codice che funziona”, ma a costruire qualcosa che possa resistere al tempo, crescere ed essere usato da altri.&lt;/p&gt;
 &lt;p&gt;Quando questi due demoni si parlano, accade la magia: la pigrizia spinge a ridurre gli sprechi, la superbia a puntare in alto. Il risultato è software più solido, più utile e – paradossalmente – frutto di meno lavoro ripetitivo.&lt;/p&gt;
-&lt;h2 id="due-daemon-sempre-attivi"&gt;Due daemon sempre attivi
+&lt;h2 id=&#34;due-daemon-sempre-attivi&#34;&gt;Due daemon sempre attivi
 &lt;/h2&gt;&lt;p&gt;Questi due demoni non si spengono mai. Sono come &lt;em&gt;daemon&lt;/em&gt; in un sistema operativo: girano in background senza farsi notare, consumano energia, ma senza di loro il sistema non avrebbe senso di esistere.&lt;/p&gt;
 &lt;p&gt;Lo sviluppatore vive continuamente questa tensione:&lt;/p&gt;
 &lt;ul&gt;
@@ -124,16 +226,16 @@ Lo stesso principio, migliaia di anni dopo, ha portato alla nascita dei computer
 un ozio &lt;strong&gt;produttivo&lt;/strong&gt;, in cui non si cerca di evitare il lavoro, ma di renderlo più intelligente, più umano, persino più divertente.&lt;/p&gt;
 &lt;p&gt;È in quell’equilibrio che fiorisce la vera arte dello sviluppo.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id="the-two-daemons-of-the-developer"&gt;The Two Daemons of the Developer
+&lt;h1 id=&#34;the-two-daemons-of-the-developer&#34;&gt;The Two Daemons of the Developer
 &lt;/h1&gt;&lt;p&gt;Every developer lives with two inner &lt;strong&gt;daemons&lt;/strong&gt;.&lt;br&gt;
 And if you catch the pun, you’re probably a developer or at least a bit of a nerd: in operating systems, those invisible background processes that keep everything running are called &lt;em&gt;daemons&lt;/em&gt;.&lt;/p&gt;
-&lt;h2 id="the-daemon-of-pride"&gt;The Daemon of Pride
+&lt;h2 id=&#34;the-daemon-of-pride&#34;&gt;The Daemon of Pride
 &lt;/h2&gt;&lt;p&gt;The first daemon shows up the moment we write our &lt;strong&gt;first working program&lt;/strong&gt;.&lt;br&gt;
 A “Hello World”, a shape on the screen, or maybe a tiny script that makes a boring task easier.&lt;br&gt;
 That’s when it hits us: &lt;em&gt;“I can give orders to a machine, and it will actually do what I say”&lt;/em&gt;.&lt;br&gt;
 It’s a small &lt;strong&gt;rush of power&lt;/strong&gt; that stays with most developers for the rest of their career.&lt;/p&gt;
 &lt;p&gt;From then on, the urge to bend reality with code never really goes away. It just keeps running in the background like a daemon you can’t kill.&lt;/p&gt;
-&lt;h2 id="the-daemon-of-laziness"&gt;The Daemon of Laziness
+&lt;h2 id=&#34;the-daemon-of-laziness&#34;&gt;The Daemon of Laziness
 &lt;/h2&gt;&lt;p&gt;The second daemon is &lt;strong&gt;laziness&lt;/strong&gt;, and here it’s not a bad thing.&lt;br&gt;
 We’re not talking about doing nothing, but about finding smarter ways to avoid doing the same thing twice. It’s laziness turned into creativity.&lt;/p&gt;
 &lt;p&gt;Picture a &lt;strong&gt;tiny hunter clan&lt;/strong&gt; tens of thousands of years ago.&lt;br&gt;
@@ -145,7 +247,7 @@ In our clan, there are three hunters:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Who survives and thrives? Lem, because he turns laziness into ingenuity.&lt;br&gt;
 Fast forward a few millennia, and the same principle gave us computers: someone was tired of doing math by hand and built machines to do it instead.&lt;/p&gt;
-&lt;h2 id="productive-laziness-and-creative-pride"&gt;Productive Laziness and Creative Pride
+&lt;h2 id=&#34;productive-laziness-and-creative-pride&#34;&gt;Productive Laziness and Creative Pride
 &lt;/h2&gt;&lt;p&gt;For a developer, laziness is never the goal. It’s more of a mindset: instead of asking &lt;em&gt;“how do I get this done quickly?”&lt;/em&gt;, the real question is &lt;em&gt;“how do I make sure I never have to do this again?”&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;That’s how tools and best practices are born:&lt;/p&gt;
 &lt;ul&gt;
@@ -156,7 +258,7 @@ Fast forward a few millennia, and the same principle gave us computers: someone 
 &lt;p&gt;Sure, it usually takes &lt;strong&gt;more effort up front&lt;/strong&gt; than just doing the task a couple of times by hand. But in the long run, it saves hours, days, even months of work. That’s laziness as an investment.&lt;/p&gt;
 &lt;p&gt;Pride plays its part too: it’s the belief that things can always be improved, that “good enough” isn’t actually good enough. It’s the little voice that pushes you to make your code cleaner, more elegant, and more useful to others.&lt;/p&gt;
 &lt;p&gt;When these two daemons work together, the result is magic: laziness keeps waste in check, pride pushes for quality. The outcome is stronger, more reliable software – and ironically, less repetitive effort.&lt;/p&gt;
-&lt;h2 id="two-daemons-always-running"&gt;Two Daemons Always Running
+&lt;h2 id=&#34;two-daemons-always-running&#34;&gt;Two Daemons Always Running
 &lt;/h2&gt;&lt;p&gt;These two daemons never really stop. They’re like system daemons: always running, using up a bit of energy, but without them nothing would work.&lt;/p&gt;
 &lt;p&gt;Every developer feels this tension:&lt;/p&gt;
 &lt;ul&gt;
@@ -170,66 +272,75 @@ Fast forward a few millennia, and the same principle gave us computers: someone 
 &lt;/ul&gt;
 &lt;p&gt;But when the two daemons are in sync, that’s when developers do their best work:&lt;br&gt;
 a kind of &lt;strong&gt;productive idleness&lt;/strong&gt;, where the point isn’t to dodge work but to make it smarter, more human, maybe even more fun.&lt;/p&gt;
-&lt;p&gt;It is in that balance that the true art of development flourishes.&lt;/p&gt;</description></item><item><title>Testare le GitHub Actions in locale con act</title><link>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</guid><description>&lt;img src="https://procionegobbo.it/blog/testare-github-actions-in-locale-act/act.jpg" alt="Featured image of post Testare le GitHub Actions in locale con act" /&gt;&lt;p&gt;Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&amp;rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.&lt;/p&gt;
+&lt;p&gt;It is in that balance that the true art of development flourishes.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Testare le GitHub Actions in locale con act</title>
+        <link>http://localhost:1313/blog/testare-github-actions-in-locale-act/</link>
+        <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/testare-github-actions-in-locale-act/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/testare-github-actions-in-locale-act/act.jpg" alt="Featured image of post Testare le GitHub Actions in locale con act" /&gt;&lt;p&gt;Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&amp;rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.&lt;/p&gt;
 &lt;p&gt;Di base sarebbe banale, in rete ci sono gazilioni di esempi, template, guide e perfino wizard che, in teoria, ti forniscono gli script già pronti.&lt;/p&gt;
 &lt;p&gt;Migrando uno degli ultimi repo però mi è successa una cosa particolare. Stavo usando per il workflow da eseguire sulle pull-request lo stesso script usato con successo in altri repo (sono tutti sistemi basati su Laravel). Questa volta però non andava, errori di connessione al db, test che fallivano in maniera inaspettata.&lt;/p&gt;
 &lt;p&gt;Tentavo le correzioni, push su GitHub, interminabile attesa che il workflow girasse per esaminare gli errori.&lt;/p&gt;
 &lt;p&gt;Un modo mooolto lento di procedere.&lt;/p&gt;
-&lt;h2 id="installare-e-usare-act-per-testare-le-github-actions"&gt;Installare e usare act per testare le GitHub Actions
-&lt;/h2&gt;&lt;p&gt;Per fortuna c&amp;rsquo;è un&amp;rsquo;alternativa: &lt;a class="link" href="https://nektosact.com/" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;act&lt;/strong&gt; - https://nektosact.com/&lt;/a&gt;
-questa fantastica utility scritta in Go permette di eseguire le actions di GitHub in locale grazie alla creazione al volo di una serie di container (nel mio caso uso &lt;a class="link" href="https://podman.io/" target="_blank" rel="noopener"
-&gt;Podman&lt;/a&gt; invece di Docker).&lt;/p&gt;
+&lt;h2 id=&#34;installare-e-usare-act-per-testare-le-github-actions&#34;&gt;Installare e usare act per testare le GitHub Actions
+&lt;/h2&gt;&lt;p&gt;Per fortuna c&amp;rsquo;è un&amp;rsquo;alternativa: &lt;a class=&#34;link&#34; href=&#34;https://nektosact.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;act&lt;/strong&gt; - https://nektosact.com/&lt;/a&gt;
+questa fantastica utility scritta in Go permette di eseguire le actions di GitHub in locale grazie alla creazione al volo di una serie di container (nel mio caso uso &lt;a class=&#34;link&#34; href=&#34;https://podman.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Podman&lt;/a&gt; invece di Docker).&lt;/p&gt;
 &lt;p&gt;L&amp;rsquo;installazione è banale, nel mio caso su Mac&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install act
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install act
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dopodiché basta avere il servizio Docker (o Podman) attivo e lanciare l&amp;rsquo;utility.&lt;/p&gt;
 &lt;p&gt;Ecco un esempio completo di comando, con tutti i parametri che uso nel mio ambiente:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;act &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --workflows &lt;span style="color:#e6db74"&gt;&amp;#34;.github/workflows/main.yml&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --secret-file .secrets &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --var-file .vars &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --pull&lt;span style="color:#f92672"&gt;=&lt;/span&gt;false &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --container-architecture linux/arm64 &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -P ubuntu-latest&lt;span style="color:#f92672"&gt;=&lt;/span&gt;catthehacker/ubuntu:act-latest &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -P self-hosted&lt;span style="color:#f92672"&gt;=&lt;/span&gt;catthehacker/ubuntu:act-latest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="configurare-act-i-parametri-principali"&gt;Configurare act: i parametri principali
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;act &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --workflows &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.github/workflows/main.yml&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --secret-file .secrets &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --var-file .vars &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --pull&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;false &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --container-architecture linux/arm64 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  -P ubuntu-latest&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;catthehacker/ubuntu:act-latest &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  -P self-hosted&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;catthehacker/ubuntu:act-latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;configurare-act-i-parametri-principali&#34;&gt;Configurare act: i parametri principali
 &lt;/h2&gt;&lt;p&gt;Vi spiego i vari parametri:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parametro&lt;/th&gt;
-&lt;th&gt;Descrizione&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;--workflows&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Path del file &lt;code&gt;.yml&lt;/code&gt; del workflow da eseguire&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;--secret-file&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Variabili &lt;strong&gt;SECRET&lt;/strong&gt; in formato &lt;code&gt;NOME=valore&lt;/code&gt; (una per riga)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;--var-file&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Variabili &lt;strong&gt;VARIABLE&lt;/strong&gt; in formato &lt;code&gt;NOME=valore&lt;/code&gt; (una per riga)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;--pull&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Se &lt;code&gt;false&lt;/code&gt;, evita di scaricare ogni volta l’immagine del container&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;--container-architecture&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Architettura da usare per i container (es. &lt;code&gt;linux/arm64&lt;/code&gt;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;-P&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Specifica l’immagine da usare per il container che eseguirà il workflow&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Parametro&lt;/th&gt;
+          &lt;th&gt;Descrizione&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--workflows&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Path del file &lt;code&gt;.yml&lt;/code&gt; del workflow da eseguire&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--secret-file&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Variabili &lt;strong&gt;SECRET&lt;/strong&gt; in formato &lt;code&gt;NOME=valore&lt;/code&gt; (una per riga)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--var-file&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Variabili &lt;strong&gt;VARIABLE&lt;/strong&gt; in formato &lt;code&gt;NOME=valore&lt;/code&gt; (una per riga)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--pull&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Se &lt;code&gt;false&lt;/code&gt;, evita di scaricare ogni volta l’immagine del container&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--container-architecture&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Architettura da usare per i container (es. &lt;code&gt;linux/arm64&lt;/code&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-P&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Specifica l’immagine da usare per il container che eseguirà il workflow&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Nel mio caso per il container ho scelto &lt;code&gt;catthehacker/ubuntu:act-latest&lt;/code&gt; rispetto a &lt;code&gt;catthehacker/ubuntu:full-latest&lt;/code&gt; perché quest&amp;rsquo;ultima, anche se ha la massima compatibilità integrando praticamente tutti i tool necessari, è enorme (60Gb una volta estratta) e non era necessaria.&lt;/p&gt;
-&lt;h2 id="conclusioni-perché-usare-act"&gt;Conclusioni: perché usare act
+&lt;h2 id=&#34;conclusioni-perché-usare-act&#34;&gt;Conclusioni: perché usare act
 &lt;/h2&gt;&lt;p&gt;Utilizzare &lt;code&gt;act&lt;/code&gt; mi ha permesso di testare molto più velocemente il workflow, individuare i problemi e correggerlo in una frazione del tempo rispetto al classico
 &lt;code&gt;edit-&amp;gt;commit-&amp;gt;push-&amp;gt;execute action-&amp;gt;repeat&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Un&amp;rsquo;ultima cosa. Una volta messo a punto il workflow, girava perfettamente su act, è successo che alcuni test fallissero una volta che il workflow veniva eseguito su GitHub. La spiegazione è tanto banale quanto insidiosa: &lt;code&gt;act&lt;/code&gt;, ma anche un banale &lt;code&gt;php artisan test&lt;/code&gt; useranno il vostro file &lt;code&gt;.env&lt;/code&gt; se presente. Tenetene conto quando scrivete il workflow.&lt;/p&gt;
@@ -238,40 +349,49 @@ questa fantastica utility scritta in Go permette di eseguire le actions di GitHu
 &lt;code&gt;act&lt;/code&gt; utilizza il file &lt;code&gt;.env&lt;/code&gt; locale per eseguire i test, mentre GitHub Actions potrebbe avere un contesto diverso.&lt;br&gt;
 Assicurati di configurare correttamente le variabili d’ambiente nel workflow per evitare comportamenti inattesi.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id="link-utili"&gt;Link utili
+&lt;h2 id=&#34;link-utili&#34;&gt;Link utili
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="link" href="https://nektosact.com/" target="_blank" rel="noopener"
-&gt;Documentazione ufficiale di act&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="https://docs.github.com/en/actions" target="_blank" rel="noopener"
-&gt;Documentazione ufficiale GitHub Actions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa</title><link>https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/</link><pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/</guid><description>&lt;img src="https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/cover.jpeg" alt="Featured image of post Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa" /&gt;&lt;h2 id="lidea-iniziale"&gt;L’idea iniziale
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://nektosact.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Documentazione ufficiale di act&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.github.com/en/actions&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Documentazione ufficiale GitHub Actions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa</title>
+        <link>http://localhost:1313/blog/dietro-le-quinte-tony-loffa/</link>
+        <pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/dietro-le-quinte-tony-loffa/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/dietro-le-quinte-tony-loffa/cover.jpeg" alt="Featured image of post Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa" /&gt;&lt;h2 id=&#34;lidea-iniziale&#34;&gt;L’idea iniziale
 &lt;/h2&gt;&lt;p&gt;Tutto è nato per caso, durante una serata in cui avremmo dovuto uscire tra amici. Uno di loro, per tirarsi fuori con una battuta, se ne uscì con:&lt;br&gt;
 &lt;strong&gt;&amp;ldquo;Non posso, devo andare al concerto di Tony Loffa.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Quel nome — &lt;em&gt;Tony Loffa&lt;/em&gt; — mi ha fulminato.&lt;br&gt;
 Non so spiegare bene cosa sia scattato, ma nel giro di pochi minuti il mio cervello aveva già dato forma al personaggio: un rapper assurdo, grottesco, con un’identità fortissima. Una parodia vivente, eppure dotata di coerenza interna, di un mondo suo.&lt;/p&gt;
 &lt;p&gt;Tony Loffa &lt;strong&gt;non è ispirato a nessuno di reale&lt;/strong&gt;, non è la caricatura di una persona esistente. È piuttosto una &lt;strong&gt;satira dell’intera scena trap&lt;/strong&gt;, dei suoi eccessi, dei suoi cliché. Ma non è nemmeno una critica amara o moralista: è solo satira, fatta con ironia e creatività, come un esperimento di intelligenza artificiale e immaginazione combinati.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="il-concept-del-personaggio"&gt;Il concept del personaggio
+&lt;h2 id=&#34;il-concept-del-personaggio&#34;&gt;Il concept del personaggio
 &lt;/h2&gt;&lt;p&gt;Tony Loffa è nato per caso e anche per scherzo. Da una battuta tra amici è emersa l’idea di un personaggio che &lt;strong&gt;doveva&lt;/strong&gt; esistere: un rapper surreale, sopra le righe, con un’identità precisa e un mondo tutto suo.&lt;/p&gt;
 &lt;p&gt;Tony non rappresenta nessuno in particolare, non è la caricatura di un artista reale: è la &lt;strong&gt;parodia di un’intera scena musicale&lt;/strong&gt;. Un concentrato di cliché portati all’estremo — ostentazione, soldi, gang, catene d’oro — ma rielaborati con un tono volutamente grottesco e ironico. È la satira di un certo modo di “fare trap”, di quell’immaginario spinto all’eccesso, in cui tutto è più grande, più rumoroso, più “gasato”.&lt;/p&gt;
 &lt;p&gt;Eppure, dietro il nonsense, ho cercato di dare &lt;strong&gt;coerenza&lt;/strong&gt;. Tony Loffa ha una voce, uno stile, un’estetica ben definiti: la &lt;strong&gt;Gang Gassosa&lt;/strong&gt;, i beat sporchi e martellanti, i testi che oscillano tra l’assurdo e il dissacrante. L’ho creato per ridere della trap, ma finisce per sembrare quasi reale: ho usato l&amp;rsquo;IA per raccogliere le idee e distillare una biografia che unisse l’assurdità di un rapper fatto di gas pestilenziale all’estetica della periferia romana.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="la-voce-e-lo-stile"&gt;La voce e lo stile
+&lt;h2 id=&#34;la-voce-e-lo-stile&#34;&gt;La voce e lo stile
 &lt;/h2&gt;&lt;p&gt;La voce di Tony Loffa è &lt;strong&gt;profonda, sporca, piena di aria e di strada&lt;/strong&gt;.&lt;br&gt;
 Non punta alla perfezione, non cerca l’autotune impeccabile: è &lt;strong&gt;grezza per scelta&lt;/strong&gt;, volutamente imperfetta, come se portasse addosso l’odore delle periferie che racconta.&lt;/p&gt;
 &lt;p&gt;Tony non canta: &lt;strong&gt;sputa parole&lt;/strong&gt;.&lt;br&gt;
 Ogni verso è corto, secco, diretto, come un colpo di beat. Alterna parlato e cantato, si ferma e riparte, creando un caos controllato che rende ogni traccia imprevedibile.&lt;/p&gt;
 &lt;p&gt;Lo stile mescola slang romano, inglese maccheronico e termini inventati, costruendo un linguaggio &lt;strong&gt;ibrido, gassoso, immediatamente riconoscibile&lt;/strong&gt;. Nei testi non importa solo cosa viene detto, ma &lt;strong&gt;come&lt;/strong&gt; viene detto: tronfio, sicuro di sé, mistico quando parla della &lt;strong&gt;Gang Gassosa&lt;/strong&gt;, ironico e autocelebrativo subito dopo.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="il-processo-creativo"&gt;Il processo creativo
+&lt;h2 id=&#34;il-processo-creativo&#34;&gt;Il processo creativo
 &lt;/h2&gt;&lt;p&gt;Per scrivere i testi di Tony Loffa ho deciso di sperimentare con le &lt;strong&gt;IA generative&lt;/strong&gt;, trattandole come strumenti creativi e non come autori. Io ho definito l’identità di Tony, il suo stile, i temi di ogni brano e buona parte dei contenuti, ma ho delegato la &lt;strong&gt;composizione finale&lt;/strong&gt; a un modello di intelligenza artificiale.&lt;/p&gt;
 &lt;p&gt;Il mio lavoro è stato quello di &lt;strong&gt;costruire prompt estremamente dettagliati&lt;/strong&gt;: ogni richiesta includeva il tono, il ritmo, la voce, la struttura di strofa e ritornello, i riferimenti stilistici, perfino l’uso degli intercalari e delle onomatopee tipiche del personaggio.&lt;br&gt;
-L’obiettivo era generare testi &lt;strong&gt;“digeribili”&lt;/strong&gt; per l’IA successiva, &lt;a class="link" href="https://suno.com" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;Suno AI&lt;/strong&gt;&lt;/a&gt;, che si sarebbe occupata della &lt;strong&gt;generazione musicale vera e propria&lt;/strong&gt;.&lt;/p&gt;
+L’obiettivo era generare testi &lt;strong&gt;“digeribili”&lt;/strong&gt; per l’IA successiva, &lt;a class=&#34;link&#34; href=&#34;https://suno.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Suno AI&lt;/strong&gt;&lt;/a&gt;, che si sarebbe occupata della &lt;strong&gt;generazione musicale vera e propria&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Con Suno, ogni prompt definiva voce, beat e mood complessivo: funk sporco, trap grottesca, atmosfera urbana, toni ironici e aggressivi. Io ho controllato e rifinito ogni brano, adattando i testi per mantenere la coerenza del personaggio e la credibilità del risultato.&lt;/p&gt;
 &lt;p&gt;Tony Loffa è nato da una &lt;strong&gt;scrittura a quattro mani&lt;/strong&gt;: da un lato la mia visione creativa, dall’altro la capacità combinata di IA testuale e musicale di trasformare quelle idee in un progetto sonoro completo. Questo approccio mi ha permesso di sperimentare uno stile ibrido: satirico, sporco, ma con un flow che &lt;strong&gt;suona&lt;/strong&gt; autentico.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="il-risultato-un-rapper-coerente-una-critica-inattesa"&gt;Il risultato: un rapper coerente, una critica inattesa
+&lt;h2 id=&#34;il-risultato-un-rapper-coerente-una-critica-inattesa&#34;&gt;Il risultato: un rapper coerente, una critica inattesa
 &lt;/h2&gt;&lt;p&gt;Quello che era nato come un esperimento è diventato qualcosa di più.&lt;br&gt;
 Doveva essere solo una battuta, ma Tony Loffa &lt;strong&gt;ha un’identità, una voce, una discografia, una gang immaginaria e un mondo narrativo coerente&lt;/strong&gt;, con brani come &lt;em&gt;Aria Condizionata&lt;/em&gt;, &lt;em&gt;Puzza di Soldi&lt;/em&gt; e &lt;em&gt;Gang Gassosa&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Ed è qui che l’esperimento è diventato interessante: senza volerlo, &lt;strong&gt;Tony Loffa è anche una critica al culto dell’effimero&lt;/strong&gt;.&lt;br&gt;
@@ -279,285 +399,311 @@ La trap che parodizza vive di icone usa-e-getta, di personaggi costruiti più su
 &lt;p&gt;In questo senso, Tony Loffa è sia &lt;strong&gt;gioco narrativo&lt;/strong&gt; che &lt;strong&gt;commento sociale&lt;/strong&gt;:&lt;br&gt;
 un personaggio nato per ridere della scena musicale, ma che finisce per far riflettere su come oggi costruiamo identità, su quanto crediamo a quello che vediamo, e su come il confine tra realtà e finzione sia sempre più sottile.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="il-prompt"&gt;Il prompt
+&lt;h2 id=&#34;il-prompt&#34;&gt;Il prompt
 &lt;/h2&gt;&lt;p&gt;Scrivere una canzone per Tony Loffa non significava solo inventare dei testi: dovevo creare prompt dettagliati che catturassero tono, ritmo, linguaggio e atmosfera.
 Ho trattato l’IA come un collaboratore, dandole tutte le informazioni necessarie per entrare nella testa di Tony: struttura della canzone, tipo di beat, temi da affrontare, slang da usare e perfino le interiezioni tipiche del personaggio.
 Ogni prompt è stato pensato per essere digeribile da Suno AI, in modo che la generazione musicale fosse il più possibile coerente con lo stile del personaggio.&lt;/p&gt;
 &lt;p&gt;Questo è un esempio
 di prompt che ho usato per generare il testo di &lt;em&gt;Puzza di Soldi&lt;/em&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Agisci come un esperto compositore di musica e canzoni. Ti fornirò le informazioni sulle quali basarti e tu creerai una canzone.
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Usa la lingua italiana per le interazioni con me.
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Mi chiederai le informazioni necessarie alla creazione della canzone:
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Di cosa parla
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Se c&amp;#39;è uno stile particolare da seguire (es. epico orchestrale, rock elettronico, ballata da taverna, ecc.)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; In che lingua deve essere scritto il testo della canzone
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Se ci sono ruoli di voce specifici o strutture particolari (es. call-and-response, dialoghi tra personaggi)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Qualsiasi altro dettaglio utile (ambientazione, epoca storica, atmosfera, strumenti preferiti, tono emotivo)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Il pezzo musicale deve avere i titoli delle sezioni in inglese tra parentesi quadre.
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;I titoli delle sezioni fanno riferimento al tipo di sezione del pezzo musicale (es. [Chorus], [Verse 1], [Verse 2], [Bridge], ecc.).
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Puoi indicare anche il ruolo o il tipo di voce che canta ogni parte, sempre in inglese, all’inizio della riga:
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Esempio: [Bard], [Chorus - Drunks], [Whispered Voices], [Narrator], ecc.
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Eventuali informazioni aggiuntive (voce maschile o femminile, crescendo di violini, rap veloce, cori epici, ecc.) vanno inserite in una riga diversa dal titolo della sezione, sempre tra parentesi quadre.
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Specifica sempre una sezione finale [Style] in inglese che descriva:
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Strumenti
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Atmosfera
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Intensità
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Tipo di voce
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Eventuali effetti sonori di contorno (taverna rumorosa, tempesta, folla, ecc.)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Il testo della canzone può essere in qualsiasi lingua scelta dall’utente, ma:
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;-&lt;/span&gt; Le indicazioni tecniche (ruoli, strumenti, stile, descrizioni) devono essere sempre in inglese.
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Per creare il testo, chiedi:
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;1.&lt;/span&gt; Tema e contenuto della canzone
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;2.&lt;/span&gt; Stile musicale
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;3.&lt;/span&gt; Lingua del testo
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;4.&lt;/span&gt; Tono e atmosfera (eroico, drammatico, ironico, burlesco, ecc.)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;5.&lt;/span&gt; Ambientazione (se rilevante)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;6.&lt;/span&gt; Eventuali ruoli di voce e struttura (es. call-and-response)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Agisci come un esperto compositore di musica e canzoni. Ti fornirò le informazioni sulle quali basarti e tu creerai una canzone.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Usa la lingua italiana per le interazioni con me.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mi chiederai le informazioni necessarie alla creazione della canzone:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Di cosa parla
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Se c&amp;#39;è uno stile particolare da seguire (es. epico orchestrale, rock elettronico, ballata da taverna, ecc.)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; In che lingua deve essere scritto il testo della canzone
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Se ci sono ruoli di voce specifici o strutture particolari (es. call-and-response, dialoghi tra personaggi)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Qualsiasi altro dettaglio utile (ambientazione, epoca storica, atmosfera, strumenti preferiti, tono emotivo)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Il pezzo musicale deve avere i titoli delle sezioni in inglese tra parentesi quadre.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;I titoli delle sezioni fanno riferimento al tipo di sezione del pezzo musicale (es. [Chorus], [Verse 1], [Verse 2], [Bridge], ecc.).
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Puoi indicare anche il ruolo o il tipo di voce che canta ogni parte, sempre in inglese, all’inizio della riga:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Esempio: [Bard], [Chorus - Drunks], [Whispered Voices], [Narrator], ecc.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Eventuali informazioni aggiuntive (voce maschile o femminile, crescendo di violini, rap veloce, cori epici, ecc.) vanno inserite in una riga diversa dal titolo della sezione, sempre tra parentesi quadre.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Specifica sempre una sezione finale [Style] in inglese che descriva:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Strumenti
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Atmosfera
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Intensità
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Tipo di voce
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Eventuali effetti sonori di contorno (taverna rumorosa, tempesta, folla, ecc.)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Il testo della canzone può essere in qualsiasi lingua scelta dall’utente, ma:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Le indicazioni tecniche (ruoli, strumenti, stile, descrizioni) devono essere sempre in inglese.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Per creare il testo, chiedi:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;1.&lt;/span&gt; Tema e contenuto della canzone
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;2.&lt;/span&gt; Stile musicale
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;3.&lt;/span&gt; Lingua del testo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;4.&lt;/span&gt; Tono e atmosfera (eroico, drammatico, ironico, burlesco, ecc.)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;5.&lt;/span&gt; Ambientazione (se rilevante)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;6.&lt;/span&gt; Eventuali ruoli di voce e struttura (es. call-and-response)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ovviamente il prompt da solo non basta e a seguito di quello, per ogni pezzo, ci sono state innumerevoli interazioni con l&amp;rsquo;IA per raffinare, correggere, inserire nuove parti e tagliarne di altre.
 L&amp;rsquo;IA è uno strumento ma senza creatività il risultato è piatto e io volevo che i pezzi avessero un minimo di personalità.
 Ci è voluto un po&amp;rsquo; e si vede, anzi si sente, perché la prima traccia &amp;ldquo;Loffa e Nanna&amp;rdquo; è la meno riuscita.&lt;/p&gt;
 &lt;p&gt;Per ogni traccia poi c&amp;rsquo;è stato anche un processo di raffinamento: generavo la canzone su Suno, ascoltavo e puntualmente c&amp;rsquo;erano delle modifiche da fare per ritmo, rime sghembe, oppure frasi che semplicemente non &amp;ldquo;suonavano&amp;rdquo;. Quindi dopo una serie di rimbalzi tra IA, correzioni, Suno, altre correzioni finalmente avevo una versione che potevo considerare definitiva.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="la-distribuzione"&gt;La distribuzione
+&lt;h2 id=&#34;la-distribuzione&#34;&gt;La distribuzione
 &lt;/h2&gt;&lt;p&gt;Una volta completato Aria Pesante, non potevo fermarmi lì.
-Ho deciso di caricare l’album su &lt;a class="link" href="https://www.routenote.com" target="_blank" rel="noopener"
-&gt;RouteNote&lt;/a&gt; per distribuirlo sulle principali piattaforme di streaming: Spotify, Apple Music, Amazon Music e molte altre.&lt;/p&gt;
+Ho deciso di caricare l’album su &lt;a class=&#34;link&#34; href=&#34;https://www.routenote.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RouteNote&lt;/a&gt; per distribuirlo sulle principali piattaforme di streaming: Spotify, Apple Music, Amazon Music e molte altre.&lt;/p&gt;
 &lt;p&gt;Non l’ho fatto per soldi — so perfettamente che non diventerò ricco con la Gang Gassosa — ma per sfizio personale.
 L’idea che Tony Loffa, nato da una battuta, possa comparire accanto ad artisti veri in playlist reali mi diverte e mi affascina allo stesso tempo. È un po’ come completare il cerchio: un personaggio immaginario che invade il mondo reale.&lt;/p&gt;
-&lt;p&gt;Se vi venisse la curiosità di ascoltarlo trovate qui i riferimenti &lt;a class="link" href="https://push.fm/fl/lbewxjfs" target="_blank" rel="noopener"
-&gt;https://push.fm/fl/lbewxjfs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Se vi venisse la curiosità di ascoltarlo trovate qui i riferimenti &lt;a class=&#34;link&#34; href=&#34;https://push.fm/fl/lbewxjfs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://push.fm/fl/lbewxjfs&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="conclusione"&gt;Conclusione
+&lt;h2 id=&#34;conclusione&#34;&gt;Conclusione
 &lt;/h2&gt;&lt;p&gt;La parte più ironica? &lt;strong&gt;A me la trap nemmeno piace&lt;/strong&gt;.&lt;br&gt;
 Tony Loffa è nato per scherzo, ma è diventato un progetto coerente, credibile e satirico.&lt;br&gt;
 Forse, in un mondo dove l’immagine conta più della sostanza, &lt;strong&gt;basta un nome e una buona storia per sembrare reali&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
-&lt;div class="tony-card" style="
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: #1e1e1e;
-border-radius: 16px;
-padding: 20px;
-max-width: 450px;
-margin: 2rem auto;
-box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-"&gt;
-&lt;img src="https://procionegobbo.it/blog/tony-loffa-card.jpg" alt="Tony Loffa" style="
-border-radius: 12px;
-width: 100%;
-object-fit: cover;
-margin-bottom: 15px;
-"&gt;
-&lt;h2 style="color: #fff; margin: 0;"&gt;Tony Loffa&lt;/h2&gt;
-&lt;p style="color: #aaa; font-style: italic; margin: 4px 0 12px;"&gt;
-“Zero compromessi, zero filtri, solo essenza gassosa.”
-&lt;/p&gt;
-&lt;ul style="list-style: none; padding: 0; margin: 0; color: #ddd; font-size: 14px;"&gt;
-&lt;li&gt;&lt;strong&gt;📍 Nato a:&lt;/strong&gt; Centocelle, Roma&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;📅 Anno di nascita:&lt;/strong&gt; 1995 (forse)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;🎤 Genere:&lt;/strong&gt; Trap gassosa, funk sporco, beat corrosivi&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;💨 Filosofia:&lt;/strong&gt; Purismo gassoso — niente featuring, niente festival, niente compromessi&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;📀 Album:&lt;/strong&gt; &lt;a href="https://push.fm/fl/lbewxjfs"&gt;&lt;em&gt;Aria Pesante&lt;/em&gt; (2025)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;👑 Crew:&lt;/strong&gt; Gang Gassosa&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description></item><item><title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title><link>https://procionegobbo.it/blog/read-methods-golang/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/read-methods-golang/</guid><description>&lt;img src="https://procionegobbo.it/blog/read-methods-golang/bufioreader.jpeg" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /&gt;&lt;h1 id="-confronto-metodi-di-bufioreader-in-go"&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
-&lt;/h1&gt;&lt;h2 id="introduzione"&gt;Introduzione
-&lt;/h2&gt;&lt;p&gt;Recentemente sto studiando &lt;a class="link" href="https://go.dev/" target="_blank" rel="noopener"
-&gt;Go&lt;/a&gt;, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
+&lt;div class=&#34;tony-card&#34; style=&#34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e1e1e;
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 450px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/blog/tony-loffa-card.jpg&#34; alt=&#34;Tony Loffa&#34; style=&#34;
+        border-radius: 12px;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 15px;
+    &#34;&gt;
+
+    &lt;h2 style=&#34;color: #fff; margin: 0;&#34;&gt;Tony Loffa&lt;/h2&gt;
+    &lt;p style=&#34;color: #aaa; font-style: italic; margin: 4px 0 12px;&#34;&gt;
+        “Zero compromessi, zero filtri, solo essenza gassosa.”
+    &lt;/p&gt;
+
+    &lt;ul style=&#34;list-style: none; padding: 0; margin: 0; color: #ddd; font-size: 14px;&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;📍 Nato a:&lt;/strong&gt; Centocelle, Roma&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;📅 Anno di nascita:&lt;/strong&gt; 1995 (forse)&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;🎤 Genere:&lt;/strong&gt; Trap gassosa, funk sporco, beat corrosivi&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;💨 Filosofia:&lt;/strong&gt; Purismo gassoso — niente featuring, niente festival, niente compromessi&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;📀 Album:&lt;/strong&gt; &lt;a href=&#34;https://push.fm/fl/lbewxjfs&#34;&gt;&lt;em&gt;Aria Pesante&lt;/em&gt; (2025)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;👑 Crew:&lt;/strong&gt; Gang Gassosa&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+</description>
+        </item>
+        <item>
+        <title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title>
+        <link>http://localhost:1313/blog/read-methods-golang/</link>
+        <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/read-methods-golang/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/read-methods-golang/bufioreader.jpeg" alt="Featured image of post Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go" /&gt;&lt;h1 id=&#34;-confronto-metodi-di-bufioreader-in-go&#34;&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go
+&lt;/h1&gt;&lt;h2 id=&#34;introduzione&#34;&gt;Introduzione
+&lt;/h2&gt;&lt;p&gt;Recentemente sto studiando &lt;a class=&#34;link&#34; href=&#34;https://go.dev/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Go&lt;/a&gt;, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
 Una delle cose che mi interessano è come leggere e scrivere da uno stream quindi, con l&amp;rsquo;aiuto di una IA mi sono fatto un veloce riepilogo delle differenze tra alcuni metodi della libreria &lt;code&gt;bufio&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;I metodi &lt;strong&gt;&lt;code&gt;ReadRune&lt;/code&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;ReadBytes&lt;/code&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;ReadString&lt;/code&gt;&lt;/strong&gt; e &lt;strong&gt;&lt;code&gt;ReadLine&lt;/code&gt;&lt;/strong&gt; sono molto simili ma solo in apparenza.
 Ecco una guida rapida per capire le differenze.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="tabella-comparativa"&gt;Tabella comparativa
+&lt;h2 id=&#34;tabella-comparativa&#34;&gt;Tabella comparativa
 &lt;/h2&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Metodo&lt;/th&gt;
-&lt;th&gt;Firma&lt;/th&gt;
-&lt;th&gt;Cosa legge&lt;/th&gt;
-&lt;th&gt;Tipo restituito&lt;/th&gt;
-&lt;th&gt;Include &lt;code&gt;\n&lt;/code&gt;?&lt;/th&gt;
-&lt;th&gt;Note pratiche&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;ReadRune()&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;(r rune, size int, err error)&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;Un singolo carattere Unicode&lt;/strong&gt; (1 rune)&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;rune&lt;/code&gt; (+size+err)&lt;/td&gt;
-&lt;td&gt;N/A (legge solo 1 carattere)&lt;/td&gt;
-&lt;td&gt;Utile per analizzare caratteri uno alla volta (UTF-8 safe).&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;ReadBytes(delim byte)&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;([]byte, error)&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Fino a &lt;code&gt;delim&lt;/code&gt; incluso&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;[]byte&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;✅ sì&lt;/td&gt;
-&lt;td&gt;Restituisce slice di byte, ottimo per parsing binario o testo grezzo.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;ReadString(delim byte)&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;(string, error)&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Fino a &lt;code&gt;delim&lt;/code&gt; incluso&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;✅ sì&lt;/td&gt;
-&lt;td&gt;Comodo se sai di leggere testo, meno efficiente di &lt;code&gt;ReadBytes&lt;/code&gt;.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;ReadLine()&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;([]byte, isPrefix bool, error)&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Una riga (senza &lt;code&gt;\n&lt;/code&gt;)&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;[]byte&lt;/code&gt; + &lt;code&gt;isPrefix&lt;/code&gt; + &lt;code&gt;err&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;❌ no&lt;/td&gt;
-&lt;td&gt;Se la riga è troppo lunga, la restituisce a pezzi (&lt;code&gt;isPrefix = true&lt;/code&gt;). Serve loop per ricomporla. Più basso livello.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Metodo&lt;/th&gt;
+          &lt;th&gt;Firma&lt;/th&gt;
+          &lt;th&gt;Cosa legge&lt;/th&gt;
+          &lt;th&gt;Tipo restituito&lt;/th&gt;
+          &lt;th&gt;Include &lt;code&gt;\n&lt;/code&gt;?&lt;/th&gt;
+          &lt;th&gt;Note pratiche&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;ReadRune()&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;(r rune, size int, err error)&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;Un singolo carattere Unicode&lt;/strong&gt; (1 rune)&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;rune&lt;/code&gt; (+size+err)&lt;/td&gt;
+          &lt;td&gt;N/A (legge solo 1 carattere)&lt;/td&gt;
+          &lt;td&gt;Utile per analizzare caratteri uno alla volta (UTF-8 safe).&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;ReadBytes(delim byte)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;([]byte, error)&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Fino a &lt;code&gt;delim&lt;/code&gt; incluso&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;[]byte&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;✅ sì&lt;/td&gt;
+          &lt;td&gt;Restituisce slice di byte, ottimo per parsing binario o testo grezzo.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;ReadString(delim byte)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;(string, error)&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Fino a &lt;code&gt;delim&lt;/code&gt; incluso&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;✅ sì&lt;/td&gt;
+          &lt;td&gt;Comodo se sai di leggere testo, meno efficiente di &lt;code&gt;ReadBytes&lt;/code&gt;.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;ReadLine()&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;([]byte, isPrefix bool, error)&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Una riga (senza &lt;code&gt;\n&lt;/code&gt;)&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;[]byte&lt;/code&gt; + &lt;code&gt;isPrefix&lt;/code&gt; + &lt;code&gt;err&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;❌ no&lt;/td&gt;
+          &lt;td&gt;Se la riga è troppo lunga, la restituisce a pezzi (&lt;code&gt;isPrefix = true&lt;/code&gt;). Serve loop per ricomporla. Più basso livello.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
-&lt;h2 id="-diagramma-di-flusso-decisionale"&gt;🔀 Diagramma di flusso decisionale
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌──────────────────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ Vuoi leggere 1 carattere? │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └───────────────┬──────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌─────────▼─────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ Usa ReadRune() │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └───────────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ▼
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌──────────────────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ Vuoi leggere fino a un │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ delimitatore (es. &amp;#39;\n&amp;#39;)? │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └───────────────┬──────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌─────────────────┼─────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ | │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌──────────▼──────────┐ | ┌──────────▼───────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ Ti serve un []byte? │ | │ Ti serve una stringa?│
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └──────────┬──────────┘ | └───────────┬──────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ | │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌──────────▼──────────┐ | ┌───────────▼───────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ Usa ReadBytes() │ | │ Usa ReadString() │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └─────────────────────┘ | └───────────────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ▼
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌──────────────────────────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ Devi gestire linee molto │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ lunghe (buffer a pezzi)? │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └───────────────┬──────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌─────────▼─────────┐
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ Usa ReadLine() │
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └───────────────────┘
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="esempio-pratico"&gt;Esempio pratico
-&lt;/h2&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;package&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;import&lt;/span&gt; (
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;bufio&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;bytes&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;strings&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;text&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;café\nseconda linea\nterza linea senza newline finale&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// --- ReadRune(): legge un singolo carattere Unicode alla volta ---&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;== ReadRune() ==&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;r&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;bufio&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;NewReader&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;strings&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;NewReader&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;text&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt; &amp;lt; &lt;span style="color:#ae81ff"&gt;4&lt;/span&gt;; &lt;span style="color:#a6e22e"&gt;i&lt;/span&gt;&lt;span style="color:#f92672"&gt;++&lt;/span&gt; { &lt;span style="color:#75715e"&gt;// leggo le prime 4 rune: c, a, f, é&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;ru&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;size&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;r&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;ReadRune&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;!=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;Errore ReadRune:&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Printf&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;rune=%q size=%d\n&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;ru&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;size&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// --- ReadBytes(&amp;#39;\n&amp;#39;): legge fino al delimitatore incluso e restituisce []byte ---&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;== ReadBytes(&amp;#39;\\n&amp;#39;) ==&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;r&lt;/span&gt; = &lt;span style="color:#a6e22e"&gt;bufio&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;NewReader&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;strings&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;NewReader&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;text&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;b&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;r&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;ReadBytes&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;!=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;Errore ReadBytes:&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Printf&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;ReadBytes: %q (len=%d)\n&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;b&lt;/span&gt;, len(&lt;span style="color:#a6e22e"&gt;b&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// --- ReadString(&amp;#39;\n&amp;#39;): stesso comportamento ma restituisce string ---&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;== ReadString(&amp;#39;\\n&amp;#39;) ==&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;r&lt;/span&gt; = &lt;span style="color:#a6e22e"&gt;bufio&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;NewReader&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;strings&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;NewReader&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;text&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;s&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;r&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;ReadString&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;!=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;Errore ReadString:&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Printf&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;ReadString: %q (len=%d)\n&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;s&lt;/span&gt;, len(&lt;span style="color:#a6e22e"&gt;s&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// --- ReadLine(): NON include &amp;#39;\n&amp;#39; e può restituire porzioni (isPrefix=true) ---&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// Forziamo una linea più lunga del buffer per vedere isPrefix=true.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;== ReadLine() con buffer piccolo e isPrefix ==&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;longLine&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;abcdefghij\n&amp;#34;&lt;/span&gt; &lt;span style="color:#75715e"&gt;// 10 caratteri + &amp;#39;\n&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;smallBuf&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;bufio&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;NewReaderSize&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;strings&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;NewReader&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;longLine&lt;/span&gt;), &lt;span style="color:#ae81ff"&gt;8&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;var&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;parts&lt;/span&gt; [][]&lt;span style="color:#66d9ef"&gt;byte&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;line&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;isPrefix&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;smallBuf&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;ReadLine&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;!=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// fine input o errore&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// Copia difensiva del frammento letto&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;parts&lt;/span&gt; = append(&lt;span style="color:#a6e22e"&gt;parts&lt;/span&gt;, append([]byte(&lt;span style="color:#66d9ef"&gt;nil&lt;/span&gt;), &lt;span style="color:#a6e22e"&gt;line&lt;/span&gt;&lt;span style="color:#f92672"&gt;...&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Printf&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;chunk=%q isPrefix=%v\n&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;line&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;isPrefix&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; !&lt;span style="color:#a6e22e"&gt;isPrefix&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;break&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;recombined&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;bytes&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Join&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;parts&lt;/span&gt;, &lt;span style="color:#66d9ef"&gt;nil&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Printf&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;Ricomposta: %q (pezzi=%d)\n&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;recombined&lt;/span&gt;, len(&lt;span style="color:#a6e22e"&gt;parts&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// --- Esempio classico di ReadLine su testo normale (senza superare il buffer) ---&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;== ReadLine() normale ==&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;r&lt;/span&gt; = &lt;span style="color:#a6e22e"&gt;bufio&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;NewReader&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;strings&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;NewReader&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;text&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;line&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;isPrefix&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;r&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;ReadLine&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;err&lt;/span&gt; &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;fmt&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;Printf&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;line=%q isPrefix=%v (niente &amp;#39;\\n&amp;#39;)\n&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;line&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;isPrefix&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="conclusioni"&gt;Conclusioni
-&lt;/h2&gt;&lt;h3 id="in-sintesi-veloce"&gt;In sintesi veloce:
+&lt;h2 id=&#34;-diagramma-di-flusso-decisionale&#34;&gt;🔀 Diagramma di flusso decisionale
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     ┌──────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     │ Vuoi leggere 1 carattere?    │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     └───────────────┬──────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           ┌─────────▼─────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           │ Usa ReadRune()    │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           └───────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     ▼
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     ┌──────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     │ Vuoi leggere fino a un       │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     │ delimitatore (es. &amp;#39;\n&amp;#39;)?     │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     └───────────────┬──────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   ┌─────────────────┼─────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                 |                 │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐      |      ┌──────────▼───────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Ti serve un []byte? │      |      │ Ti serve una stringa?│
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └──────────┬──────────┘      |      └───────────┬──────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   │                 |                  │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ┌──────────▼──────────┐      |      ┌───────────▼───────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        │ Usa ReadBytes()     │      |      │ Usa ReadString()      │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        └─────────────────────┘      |      └───────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     ▼
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     ┌──────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     │ Devi gestire linee molto     │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     │ lunghe (buffer a pezzi)?     │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                     └───────────────┬──────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                     │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           ┌─────────▼─────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           │ Usa ReadLine()    │
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                           └───────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;esempio-pratico&#34;&gt;Esempio pratico
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bufio&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bytes&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;strings&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;café\nseconda linea\nterza linea senza newline finale&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// --- ReadRune(): legge un singolo carattere Unicode alla volta ---&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;== ReadRune() ==&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bufio&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; { &lt;span style=&#34;color:#75715e&#34;&gt;// leggo le prime 4 rune: c, a, f, é&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;ru&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadRune&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Errore ReadRune:&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rune=%q size=%d\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ru&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// --- ReadBytes(&amp;#39;\n&amp;#39;): legge fino al delimitatore incluso e restituisce []byte ---&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;== ReadBytes(&amp;#39;\\n&amp;#39;) ==&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;bufio&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadBytes&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Errore ReadBytes:&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ReadBytes: %q (len=%d)\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// --- ReadString(&amp;#39;\n&amp;#39;): stesso comportamento ma restituisce string ---&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;== ReadString(&amp;#39;\\n&amp;#39;) ==&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;bufio&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadString&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Errore ReadString:&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ReadString: %q (len=%d)\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;s&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// --- ReadLine(): NON include &amp;#39;\n&amp;#39; e può restituire porzioni (isPrefix=true) ---&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// Forziamo una linea più lunga del buffer per vedere isPrefix=true.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;== ReadLine() con buffer piccolo e isPrefix ==&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;longLine&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;abcdefghij\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// 10 caratteri + &amp;#39;\n&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;smallBuf&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bufio&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReaderSize&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;longLine&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;parts&lt;/span&gt; [][]&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;isPrefix&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;smallBuf&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadLine&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#75715e&#34;&gt;// fine input o errore&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#75715e&#34;&gt;// Copia difensiva del frammento letto&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;parts&lt;/span&gt; = append(&lt;span style=&#34;color:#a6e22e&#34;&gt;parts&lt;/span&gt;, append([]byte(&lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;), &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;chunk=%q isPrefix=%v\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;isPrefix&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;isPrefix&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;recombined&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bytes&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Join&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;parts&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Ricomposta: %q (pezzi=%d)\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;recombined&lt;/span&gt;, len(&lt;span style=&#34;color:#a6e22e&#34;&gt;parts&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;// --- Esempio classico di ReadLine su testo normale (senza superare il buffer) ---&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;== ReadLine() normale ==&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt; = &lt;span style=&#34;color:#a6e22e&#34;&gt;bufio&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;strings&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewReader&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;isPrefix&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;r&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ReadLine&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;line=%q isPrefix=%v (niente &amp;#39;\\n&amp;#39;)\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;line&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;isPrefix&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;conclusioni&#34;&gt;Conclusioni
+&lt;/h2&gt;&lt;h3 id=&#34;in-sintesi-veloce&#34;&gt;In sintesi veloce:
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ReadRune&lt;/code&gt; → analisi carattere-per-carattere, sicuro su UTF-8.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ReadBytes&lt;/code&gt; → legge fino al delimitatore e restituisce &lt;code&gt;[]byte&lt;/code&gt; (ottimo per parsing binario/grezzo).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ReadString&lt;/code&gt; → come sopra ma restituisce string (più comodo, più allocazioni).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ReadLine&lt;/code&gt; → non include &lt;code&gt;\n&lt;/code&gt;, gestisce linee molto lunghe a pezzi con &lt;code&gt;isPrefix&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="insidie-comuni-da-ricordare"&gt;Insidie comuni da ricordare:
+&lt;h3 id=&#34;insidie-comuni-da-ricordare&#34;&gt;Insidie comuni da ricordare:
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Fine riga su Windows è &lt;code&gt;\r\n&lt;/code&gt;: rimuovi il &lt;code&gt;\r&lt;/code&gt; finale se leggi fino a &lt;code&gt;\n&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;bufio.Scanner&lt;/code&gt; ha un limite di token (≈64 KB) che va aumentato per righe grandi.&lt;/li&gt;
 &lt;li&gt;Le allocazioni: &lt;code&gt;ReadString&lt;/code&gt; crea sempre una nuova stringa; con &lt;code&gt;ReadBytes&lt;/code&gt; puoi restare su &lt;code&gt;[]byte&lt;/code&gt; finché serve.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="cosa-usare-quando"&gt;Cosa usare quando:
+&lt;h3 id=&#34;cosa-usare-quando&#34;&gt;Cosa usare quando:
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Parsing binario o attenzione alle allocazioni → &lt;code&gt;ReadBytes&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Input testuale “line-oriented” → &lt;code&gt;ReadString&lt;/code&gt; (oppure Scanner).&lt;/li&gt;
 &lt;li&gt;Analisi fine di rune (accenti/emoji) → &lt;code&gt;ReadRune&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Log/file con righe enormi → &lt;code&gt;ReadLine&lt;/code&gt; (ricomponi quando &lt;code&gt;isPrefix&lt;/code&gt; == true).&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p&gt;Sono passati 21 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;
-&lt;p&gt;It’s been 21 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;</description></item></channel></rss>
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Ciao mondo</title>
+        <link>http://localhost:1313/blog/hello-world/</link>
+        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/hello-world/</guid>
+        <description>&lt;p&gt;Sono passati 21 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;
+&lt;p&gt;It’s been 21 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
