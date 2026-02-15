@@ -1,13 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ita/Eng on Federico Maiorini</title><link>https://procionegobbo.it/categories/ita/eng/</link><description>Recent content in Ita/Eng on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/categories/ita/eng/index.xml" rel="self" type="application/rss+xml"/><item><title>Developer's daemons</title><link>https://procionegobbo.it/blog/developers-daemons/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/developers-daemons/</guid><description>&lt;img src="https://procionegobbo.it/blog/developers-daemons/developer-daemons.jpeg" alt="Featured image of post Developer's daemons" /&gt;&lt;p&gt;&lt;em&gt;(The English version of this article is provided after the Italian one. / La versione inglese di questo articolo si trova dopo quella in italiano)&lt;/em&gt;&lt;/p&gt;
-&lt;h1 id="i-due-demoni-dello-sviluppatore"&gt;I due demoni dello sviluppatore
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Ita/Eng on Federico Maiorini</title>
+        <link>http://localhost:1313/categories/ita/eng/</link>
+        <description>Recent content in Ita/Eng on Federico Maiorini</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>it-it</language>
+        <lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/ita/eng/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Developer&#39;s daemons</title>
+        <link>http://localhost:1313/blog/developers-daemons/</link>
+        <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/developers-daemons/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/developers-daemons/developer-daemons.jpeg" alt="Featured image of post Developer&#39;s daemons" /&gt;&lt;p&gt;&lt;em&gt;(The English version of this article is provided after the Italian one. / La versione inglese di questo articolo si trova dopo quella in italiano)&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;i-due-demoni-dello-sviluppatore&#34;&gt;I due demoni dello sviluppatore
 &lt;/h1&gt;&lt;p&gt;Ogni sviluppatore convive con due &lt;strong&gt;demoni interiori&lt;/strong&gt;.&lt;br&gt;
 E se cogliete il gioco di parole, siete probabilmente sviluppatori o almeno un po’ nerd: nei sistemi operativi i processi che lavorano silenziosi in background, invisibili ma indispensabili, si chiamano infatti &lt;em&gt;daemon&lt;/em&gt; (o &lt;em&gt;demoni&lt;/em&gt; in italiano).&lt;/p&gt;
-&lt;h2 id="il-demone-della-superbia"&gt;Il demone della superbia
+&lt;h2 id=&#34;il-demone-della-superbia&#34;&gt;Il demone della superbia
 &lt;/h2&gt;&lt;p&gt;Il primo demone nasce nel momento in cui scriviamo il nostro &lt;strong&gt;primo programma funzionante&lt;/strong&gt;.&lt;br&gt;
 Un “Hello World”, un disegno a schermo, un piccolo script che semplifica un compito noioso.&lt;br&gt;
 In quell’istante compare una sensazione potente: &lt;em&gt;“Posso dare ordini a una macchina, e lei li eseguirà”&lt;/em&gt;. È un piccolo &lt;strong&gt;delirio di onnipotenza&lt;/strong&gt; che accompagna quasi tutti gli sviluppatori per il resto della carriera.&lt;/p&gt;
 &lt;p&gt;Da quel momento in poi, la tentazione di piegare la realtà al proprio codice rimane sempre attiva, come un processo in background difficile da spegnere.&lt;/p&gt;
-&lt;h2 id="il-demone-della-pigrizia"&gt;Il demone della pigrizia
+&lt;h2 id=&#34;il-demone-della-pigrizia&#34;&gt;Il demone della pigrizia
 &lt;/h2&gt;&lt;p&gt;Il secondo demone è la &lt;strong&gt;pigrizia&lt;/strong&gt;, che in questo contesto assume un valore positivo.&lt;br&gt;
 Non parliamo della pigrizia sterile, ma di quella che si trasforma in creatività: la spinta a trovare soluzioni per lavorare di meno ottenendo di più.&lt;/p&gt;
 &lt;p&gt;Immaginiamoci in un &lt;strong&gt;minuscolo clan di cacciatori&lt;/strong&gt; qualche decina di migliaia di anni fa.&lt;br&gt;
@@ -19,7 +33,7 @@ Nel nostro clan ci sono tre cacciatori:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Chi sopravvive e prospera? Lem, perché trasforma la pigrizia in ingegno.&lt;br&gt;
 Lo stesso principio, migliaia di anni dopo, ha portato alla nascita dei computer: qualcuno non voleva più fare calcoli a mano e ha inventato macchine che li facessero al suo posto.&lt;/p&gt;
-&lt;h2 id="pigrizia-produttiva-e-superbia-creativa"&gt;Pigrizia produttiva e superbia creativa
+&lt;h2 id=&#34;pigrizia-produttiva-e-superbia-creativa&#34;&gt;Pigrizia produttiva e superbia creativa
 &lt;/h2&gt;&lt;p&gt;Per uno sviluppatore, la pigrizia non è mai fine a sé stessa. È un modo diverso di guardare al lavoro: invece di pensare &lt;em&gt;“come faccio a portarlo a termine subito?”&lt;/em&gt;, lo sviluppatore si chiede &lt;em&gt;“come faccio a non doverlo mai più ripetere?”&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;È da qui che nascono strumenti e pratiche che cambiano il modo di scrivere codice:&lt;/p&gt;
 &lt;ul&gt;
@@ -30,7 +44,7 @@ Lo stesso principio, migliaia di anni dopo, ha portato alla nascita dei computer
 &lt;p&gt;Tutto questo richiede spesso &lt;strong&gt;più fatica iniziale&lt;/strong&gt; rispetto a fare la stessa operazione un paio di volte a mano. Ma a lungo termine significa risparmiare ore, giorni, persino mesi di lavoro. È la pigrizia che diventa investimento.&lt;/p&gt;
 &lt;p&gt;La superbia, a sua volta, non è un vizio sterile: è la convinzione che si possa sempre fare meglio, che valga la pena cercare soluzioni eleganti, potenti, durature. È quella voce che spinge lo sviluppatore a non accontentarsi di “codice che funziona”, ma a costruire qualcosa che possa resistere al tempo, crescere ed essere usato da altri.&lt;/p&gt;
 &lt;p&gt;Quando questi due demoni si parlano, accade la magia: la pigrizia spinge a ridurre gli sprechi, la superbia a puntare in alto. Il risultato è software più solido, più utile e – paradossalmente – frutto di meno lavoro ripetitivo.&lt;/p&gt;
-&lt;h2 id="due-daemon-sempre-attivi"&gt;Due daemon sempre attivi
+&lt;h2 id=&#34;due-daemon-sempre-attivi&#34;&gt;Due daemon sempre attivi
 &lt;/h2&gt;&lt;p&gt;Questi due demoni non si spengono mai. Sono come &lt;em&gt;daemon&lt;/em&gt; in un sistema operativo: girano in background senza farsi notare, consumano energia, ma senza di loro il sistema non avrebbe senso di esistere.&lt;/p&gt;
 &lt;p&gt;Lo sviluppatore vive continuamente questa tensione:&lt;/p&gt;
 &lt;ul&gt;
@@ -46,16 +60,16 @@ Lo stesso principio, migliaia di anni dopo, ha portato alla nascita dei computer
 un ozio &lt;strong&gt;produttivo&lt;/strong&gt;, in cui non si cerca di evitare il lavoro, ma di renderlo più intelligente, più umano, persino più divertente.&lt;/p&gt;
 &lt;p&gt;È in quell’equilibrio che fiorisce la vera arte dello sviluppo.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id="the-two-daemons-of-the-developer"&gt;The Two Daemons of the Developer
+&lt;h1 id=&#34;the-two-daemons-of-the-developer&#34;&gt;The Two Daemons of the Developer
 &lt;/h1&gt;&lt;p&gt;Every developer lives with two inner &lt;strong&gt;daemons&lt;/strong&gt;.&lt;br&gt;
 And if you catch the pun, you’re probably a developer or at least a bit of a nerd: in operating systems, those invisible background processes that keep everything running are called &lt;em&gt;daemons&lt;/em&gt;.&lt;/p&gt;
-&lt;h2 id="the-daemon-of-pride"&gt;The Daemon of Pride
+&lt;h2 id=&#34;the-daemon-of-pride&#34;&gt;The Daemon of Pride
 &lt;/h2&gt;&lt;p&gt;The first daemon shows up the moment we write our &lt;strong&gt;first working program&lt;/strong&gt;.&lt;br&gt;
 A “Hello World”, a shape on the screen, or maybe a tiny script that makes a boring task easier.&lt;br&gt;
 That’s when it hits us: &lt;em&gt;“I can give orders to a machine, and it will actually do what I say”&lt;/em&gt;.&lt;br&gt;
 It’s a small &lt;strong&gt;rush of power&lt;/strong&gt; that stays with most developers for the rest of their career.&lt;/p&gt;
 &lt;p&gt;From then on, the urge to bend reality with code never really goes away. It just keeps running in the background like a daemon you can’t kill.&lt;/p&gt;
-&lt;h2 id="the-daemon-of-laziness"&gt;The Daemon of Laziness
+&lt;h2 id=&#34;the-daemon-of-laziness&#34;&gt;The Daemon of Laziness
 &lt;/h2&gt;&lt;p&gt;The second daemon is &lt;strong&gt;laziness&lt;/strong&gt;, and here it’s not a bad thing.&lt;br&gt;
 We’re not talking about doing nothing, but about finding smarter ways to avoid doing the same thing twice. It’s laziness turned into creativity.&lt;/p&gt;
 &lt;p&gt;Picture a &lt;strong&gt;tiny hunter clan&lt;/strong&gt; tens of thousands of years ago.&lt;br&gt;
@@ -67,7 +81,7 @@ In our clan, there are three hunters:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Who survives and thrives? Lem, because he turns laziness into ingenuity.&lt;br&gt;
 Fast forward a few millennia, and the same principle gave us computers: someone was tired of doing math by hand and built machines to do it instead.&lt;/p&gt;
-&lt;h2 id="productive-laziness-and-creative-pride"&gt;Productive Laziness and Creative Pride
+&lt;h2 id=&#34;productive-laziness-and-creative-pride&#34;&gt;Productive Laziness and Creative Pride
 &lt;/h2&gt;&lt;p&gt;For a developer, laziness is never the goal. It’s more of a mindset: instead of asking &lt;em&gt;“how do I get this done quickly?”&lt;/em&gt;, the real question is &lt;em&gt;“how do I make sure I never have to do this again?”&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;That’s how tools and best practices are born:&lt;/p&gt;
 &lt;ul&gt;
@@ -78,7 +92,7 @@ Fast forward a few millennia, and the same principle gave us computers: someone 
 &lt;p&gt;Sure, it usually takes &lt;strong&gt;more effort up front&lt;/strong&gt; than just doing the task a couple of times by hand. But in the long run, it saves hours, days, even months of work. That’s laziness as an investment.&lt;/p&gt;
 &lt;p&gt;Pride plays its part too: it’s the belief that things can always be improved, that “good enough” isn’t actually good enough. It’s the little voice that pushes you to make your code cleaner, more elegant, and more useful to others.&lt;/p&gt;
 &lt;p&gt;When these two daemons work together, the result is magic: laziness keeps waste in check, pride pushes for quality. The outcome is stronger, more reliable software – and ironically, less repetitive effort.&lt;/p&gt;
-&lt;h2 id="two-daemons-always-running"&gt;Two Daemons Always Running
+&lt;h2 id=&#34;two-daemons-always-running&#34;&gt;Two Daemons Always Running
 &lt;/h2&gt;&lt;p&gt;These two daemons never really stop. They’re like system daemons: always running, using up a bit of energy, but without them nothing would work.&lt;/p&gt;
 &lt;p&gt;Every developer feels this tension:&lt;/p&gt;
 &lt;ul&gt;
@@ -92,4 +106,9 @@ Fast forward a few millennia, and the same principle gave us computers: someone 
 &lt;/ul&gt;
 &lt;p&gt;But when the two daemons are in sync, that’s when developers do their best work:&lt;br&gt;
 a kind of &lt;strong&gt;productive idleness&lt;/strong&gt;, where the point isn’t to dodge work but to make it smarter, more human, maybe even more fun.&lt;/p&gt;
-&lt;p&gt;It is in that balance that the true art of development flourishes.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;It is in that balance that the true art of development flourishes.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

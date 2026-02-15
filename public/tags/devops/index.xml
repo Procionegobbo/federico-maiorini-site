@@ -1,63 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevOps on Federico Maiorini</title><link>https://procionegobbo.it/tags/devops/</link><description>Recent content in DevOps on Federico Maiorini</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>Testare le GitHub Actions in locale con act</title><link>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</guid><description>&lt;img src="https://procionegobbo.it/blog/testare-github-actions-in-locale-act/act.jpg" alt="Featured image of post Testare le GitHub Actions in locale con act" /&gt;&lt;p&gt;Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&amp;rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>DevOps on Federico Maiorini</title>
+        <link>http://localhost:1313/tags/devops/</link>
+        <description>Recent content in DevOps on Federico Maiorini</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>it-it</language>
+        <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/devops/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Testare le GitHub Actions in locale con act</title>
+        <link>http://localhost:1313/blog/testare-github-actions-in-locale-act/</link>
+        <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blog/testare-github-actions-in-locale-act/</guid>
+        <description>&lt;img src="http://localhost:1313/blog/testare-github-actions-in-locale-act/act.jpg" alt="Featured image of post Testare le GitHub Actions in locale con act" /&gt;&lt;p&gt;Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&amp;rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.&lt;/p&gt;
 &lt;p&gt;Di base sarebbe banale, in rete ci sono gazilioni di esempi, template, guide e perfino wizard che, in teoria, ti forniscono gli script già pronti.&lt;/p&gt;
 &lt;p&gt;Migrando uno degli ultimi repo però mi è successa una cosa particolare. Stavo usando per il workflow da eseguire sulle pull-request lo stesso script usato con successo in altri repo (sono tutti sistemi basati su Laravel). Questa volta però non andava, errori di connessione al db, test che fallivano in maniera inaspettata.&lt;/p&gt;
 &lt;p&gt;Tentavo le correzioni, push su GitHub, interminabile attesa che il workflow girasse per esaminare gli errori.&lt;/p&gt;
 &lt;p&gt;Un modo mooolto lento di procedere.&lt;/p&gt;
-&lt;h2 id="installare-e-usare-act-per-testare-le-github-actions"&gt;Installare e usare act per testare le GitHub Actions
-&lt;/h2&gt;&lt;p&gt;Per fortuna c&amp;rsquo;è un&amp;rsquo;alternativa: &lt;a class="link" href="https://nektosact.com/" target="_blank" rel="noopener"
-&gt;&lt;strong&gt;act&lt;/strong&gt; - https://nektosact.com/&lt;/a&gt;
-questa fantastica utility scritta in Go permette di eseguire le actions di GitHub in locale grazie alla creazione al volo di una serie di container (nel mio caso uso &lt;a class="link" href="https://podman.io/" target="_blank" rel="noopener"
-&gt;Podman&lt;/a&gt; invece di Docker).&lt;/p&gt;
+&lt;h2 id=&#34;installare-e-usare-act-per-testare-le-github-actions&#34;&gt;Installare e usare act per testare le GitHub Actions
+&lt;/h2&gt;&lt;p&gt;Per fortuna c&amp;rsquo;è un&amp;rsquo;alternativa: &lt;a class=&#34;link&#34; href=&#34;https://nektosact.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;act&lt;/strong&gt; - https://nektosact.com/&lt;/a&gt;
+questa fantastica utility scritta in Go permette di eseguire le actions di GitHub in locale grazie alla creazione al volo di una serie di container (nel mio caso uso &lt;a class=&#34;link&#34; href=&#34;https://podman.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Podman&lt;/a&gt; invece di Docker).&lt;/p&gt;
 &lt;p&gt;L&amp;rsquo;installazione è banale, nel mio caso su Mac&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install act
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install act
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dopodiché basta avere il servizio Docker (o Podman) attivo e lanciare l&amp;rsquo;utility.&lt;/p&gt;
 &lt;p&gt;Ecco un esempio completo di comando, con tutti i parametri che uso nel mio ambiente:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;act &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --workflows &lt;span style="color:#e6db74"&gt;&amp;#34;.github/workflows/main.yml&amp;#34;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --secret-file .secrets &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --var-file .vars &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --pull&lt;span style="color:#f92672"&gt;=&lt;/span&gt;false &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; --container-architecture linux/arm64 &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -P ubuntu-latest&lt;span style="color:#f92672"&gt;=&lt;/span&gt;catthehacker/ubuntu:act-latest &lt;span style="color:#ae81ff"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;&lt;/span&gt; -P self-hosted&lt;span style="color:#f92672"&gt;=&lt;/span&gt;catthehacker/ubuntu:act-latest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="configurare-act-i-parametri-principali"&gt;Configurare act: i parametri principali
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;act &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --workflows &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.github/workflows/main.yml&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --secret-file .secrets &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --var-file .vars &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --pull&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;false &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  --container-architecture linux/arm64 &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  -P ubuntu-latest&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;catthehacker/ubuntu:act-latest &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;  -P self-hosted&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;catthehacker/ubuntu:act-latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;configurare-act-i-parametri-principali&#34;&gt;Configurare act: i parametri principali
 &lt;/h2&gt;&lt;p&gt;Vi spiego i vari parametri:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Parametro&lt;/th&gt;
-&lt;th&gt;Descrizione&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;--workflows&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Path del file &lt;code&gt;.yml&lt;/code&gt; del workflow da eseguire&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;--secret-file&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Variabili &lt;strong&gt;SECRET&lt;/strong&gt; in formato &lt;code&gt;NOME=valore&lt;/code&gt; (una per riga)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;--var-file&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Variabili &lt;strong&gt;VARIABLE&lt;/strong&gt; in formato &lt;code&gt;NOME=valore&lt;/code&gt; (una per riga)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;--pull&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Se &lt;code&gt;false&lt;/code&gt;, evita di scaricare ogni volta l’immagine del container&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;--container-architecture&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Architettura da usare per i container (es. &lt;code&gt;linux/arm64&lt;/code&gt;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;-P&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Specifica l’immagine da usare per il container che eseguirà il workflow&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Parametro&lt;/th&gt;
+          &lt;th&gt;Descrizione&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--workflows&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Path del file &lt;code&gt;.yml&lt;/code&gt; del workflow da eseguire&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--secret-file&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Variabili &lt;strong&gt;SECRET&lt;/strong&gt; in formato &lt;code&gt;NOME=valore&lt;/code&gt; (una per riga)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--var-file&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Variabili &lt;strong&gt;VARIABLE&lt;/strong&gt; in formato &lt;code&gt;NOME=valore&lt;/code&gt; (una per riga)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--pull&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Se &lt;code&gt;false&lt;/code&gt;, evita di scaricare ogni volta l’immagine del container&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;--container-architecture&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Architettura da usare per i container (es. &lt;code&gt;linux/arm64&lt;/code&gt;)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;-P&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;Specifica l’immagine da usare per il container che eseguirà il workflow&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Nel mio caso per il container ho scelto &lt;code&gt;catthehacker/ubuntu:act-latest&lt;/code&gt; rispetto a &lt;code&gt;catthehacker/ubuntu:full-latest&lt;/code&gt; perché quest&amp;rsquo;ultima, anche se ha la massima compatibilità integrando praticamente tutti i tool necessari, è enorme (60Gb una volta estratta) e non era necessaria.&lt;/p&gt;
-&lt;h2 id="conclusioni-perché-usare-act"&gt;Conclusioni: perché usare act
+&lt;h2 id=&#34;conclusioni-perché-usare-act&#34;&gt;Conclusioni: perché usare act
 &lt;/h2&gt;&lt;p&gt;Utilizzare &lt;code&gt;act&lt;/code&gt; mi ha permesso di testare molto più velocemente il workflow, individuare i problemi e correggerlo in una frazione del tempo rispetto al classico
 &lt;code&gt;edit-&amp;gt;commit-&amp;gt;push-&amp;gt;execute action-&amp;gt;repeat&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Un&amp;rsquo;ultima cosa. Una volta messo a punto il workflow, girava perfettamente su act, è successo che alcuni test fallissero una volta che il workflow veniva eseguito su GitHub. La spiegazione è tanto banale quanto insidiosa: &lt;code&gt;act&lt;/code&gt;, ma anche un banale &lt;code&gt;php artisan test&lt;/code&gt; useranno il vostro file &lt;code&gt;.env&lt;/code&gt; se presente. Tenetene conto quando scrivete il workflow.&lt;/p&gt;
@@ -66,10 +80,15 @@ questa fantastica utility scritta in Go permette di eseguire le actions di GitHu
 &lt;code&gt;act&lt;/code&gt; utilizza il file &lt;code&gt;.env&lt;/code&gt; locale per eseguire i test, mentre GitHub Actions potrebbe avere un contesto diverso.&lt;br&gt;
 Assicurati di configurare correttamente le variabili d’ambiente nel workflow per evitare comportamenti inattesi.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id="link-utili"&gt;Link utili
+&lt;h2 id=&#34;link-utili&#34;&gt;Link utili
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class="link" href="https://nektosact.com/" target="_blank" rel="noopener"
-&gt;Documentazione ufficiale di act&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="link" href="https://docs.github.com/en/actions" target="_blank" rel="noopener"
-&gt;Documentazione ufficiale GitHub Actions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item></channel></rss>
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://nektosact.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Documentazione ufficiale di act&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.github.com/en/actions&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Documentazione ufficiale GitHub Actions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
