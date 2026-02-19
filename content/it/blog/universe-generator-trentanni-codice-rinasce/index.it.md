@@ -1,7 +1,7 @@
 ---
-title: "Universe Generator: trent'anni di codice che rinasce"
+title: "Universe Generator: codice che rinasce dopo trent'anni"
 date: 2026-02-15
-description: "La storia di un generatore di settori spaziali nato nel 1996 in Access Basic e rinato nel 2025 grazie agli AI coding agents. Un viaggio personale attraverso tre decenni di tecnologia, passione per i giochi di ruolo e coding."
+description: "La storia di un generatore di settori spaziali nato nel 1996 in Access Basic e rinato nel 2026 grazie agli AI coding agents. Un viaggio personale attraverso tre decenni di tecnologia, passione per i giochi di ruolo e coding."
 tags: ["blog", "AI", "CodingAgents", "AccessBasic", "TypeScript", "ClaudeCode", "Deepseek", "RetroComputing", "GiochiDiRuolo"]
 categories: ["programmazione", "AI", "progetti personali"]
 image: "universe-generator.jpg"
@@ -11,7 +11,7 @@ draft: false
 # Open Graph / LinkedIn / Twitter meta
 images: "universe-generator.jpg"
 ogTitle: "Universe Generator: quando il codice del '96 rinasce con l'AI"
-ogDescription: "Dal 1996 al 2025: come un generatore di universi scritto in Access Basic è rinato grazie a Claude Code, Deepseek e Gemini. Un esperimento su come l'AI cambia il modo di programmare."
+ogDescription: "Dal 1996 al 2026: come un generatore di universi scritto in Access Basic è rinato grazie a Claude Code, Deepseek e Gemini. Un esperimento su come l'AI cambia il modo di programmare."
 twitterTitle: "Universe Generator: trent'anni di codice che rinasce"
 twitterDescription: "La storia di un progetto del 1996 che aspettava gli strumenti giusti per rinascere. Access Basic, AI agents e la magia di creare universi virtuali."
 ---
@@ -57,7 +57,7 @@ Select Case True
 
 Poi è successa la vita, il lavoro cambia, le tecnologie pure. Quel db Access è perso ormai ma i file contenenti il codice Access Basic mi hanno seguito da allora. Ogni tanto li tiravo fuori e pensavo che sarebbe stato interessante rifare quel progetto, magari con un'interfaccia più moderna, in un linguaggio nuovo. Così, per vedere cosa se ne poteva tirare fuori.
 
-## 2025: L'esperimento con gli AI agents
+## 2026: L'esperimento con gli AI agents
 
 Qualche giorno fa la cartella "generatore di universi" che ormai risiede sul desktop del mio Mac da anni ha attirato di nuovo la mia attenzione e ho fatto un esperimento: ho caricato il file su Deepseek e gli ho chiesto di tradurre quel vecchio codice in Typescript, avrei potuto farlo da solo ma volevo capire come se la cavasse con un codice così vecchio. Senza problemi direi, in pochi secondi le funzioni fossili sono rinate in un linguaggio moderno. Ripeto, nulla che non potessi fare da solo ma la velocità e facilità con cui ho avuto sotto mano il nuovo codice è stata notevole.
 
