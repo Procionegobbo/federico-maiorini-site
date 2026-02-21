@@ -1,0 +1,19 @@
+<header class="article-header">
+    {{ with .Params.image }}
+      <div class="article-image">
+        <a href="{{ $.RelPermalink }}">
+          <img src="{{ $.RelPermalink }}{{ . }}" width="90%" loading="lazy" alt="Immagine di {{ $.Title }}" />
+        </a>
+      </div>
+    {{ end }}
+
+    <div class="article-details">
+      <h1>{{ .Title }}</h1>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time>
+      {{ with .Params.tags }}
+        <ul class="article-tags">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+      {{ end }}
+    </div>
+</header>

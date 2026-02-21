@@ -1,6 +1,7 @@
 ---
 title: "Chi sono"
 description: "Federico Maiorini – Senior Backend Developer & Narratore"
+featured_image: "/images/cnbnwjst3drmy0cwg2gbx47nf4.png"
 ---
 
 Ciao, mi chiamo **Federico Maiorini** e sono uno sviluppatore backend con oltre 20 anni di esperienza nel mondo dello sviluppo web e software. In rete mi trovi spesso con il nickname **Procionegobbo** — una lunga storia che risale ai tempi del mio Master in Videogame Design.

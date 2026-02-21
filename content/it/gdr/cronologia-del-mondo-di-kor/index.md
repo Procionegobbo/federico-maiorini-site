@@ -3,6 +3,7 @@ title: "Cronologia del mondo di Kor"
 description: "Una cronologia dettagliata degli eventi storici del mondo fantasy di Kor"
 date: 2025-08-15T16:52:18+02:00
 image: pf6k3n5xmhrma0crns48ta5e3w.jpg
+featured_image: pf6k3n5xmhrma0crns48ta5e3w.jpg
 math: 
 license: 
 hidden: false

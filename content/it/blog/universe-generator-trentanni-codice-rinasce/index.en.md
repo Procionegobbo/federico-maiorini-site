@@ -13,6 +13,7 @@ tags:
   - RolePlaying
 categories: ["programming", "AI", "personal projects"]
 image: "universe-generator.jpg"
+featured_image: "universe-generator.jpg"
 slug: "universe-generator-thirty-years-code-reborn"
 toc: true
 draft: false

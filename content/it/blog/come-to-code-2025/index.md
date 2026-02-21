@@ -11,6 +11,7 @@ tags:
   - HumanSkills
   - DeveloperLife
 image: "come-to-code-2025.jpg"
+featured_image: "come-to-code-2025.jpg"
 slug: "come-to-code-2025"
 draft: false
 toc: true

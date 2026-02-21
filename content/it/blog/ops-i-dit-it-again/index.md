@@ -6,6 +6,7 @@ categories: ["blog"]
 description: "Una storia immaginaria di riscatto musicale"
 slug: "ops-i-dit-it-again"
 image: "cover.jpg"
+featured_image: "cover.jpg"
 draft: false
 toc: true
 ---

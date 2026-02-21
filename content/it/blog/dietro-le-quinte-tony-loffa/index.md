@@ -6,6 +6,7 @@ categories: ["blog"]
 description: "Come è nato Tony Loffa e perché"
 slug: "dietro-le-quinte-tony-loffa"
 image: "cover.jpeg"
+featured_image: "cover.jpeg"
 draft: false
 toc: true
 ---

@@ -4,6 +4,7 @@ date: 2025-08-25T00:00:00+02:00
 draft: false
 tags: ["scrittura-creativa","racconto"]
 image: alpinista.jpg
+featured_image: alpinista.jpg
 ---
 
 
