@@ -9,6 +9,7 @@ categories: ["scrittura"]
 description: "Un racconto agrodolce su un amore adolescenziale non corrisposto, ambientato in un freddo inverno di provincia degli anni '80."
 slug: "cioccolata-calda"
 image: cioccolata-calda.jpg
+featured_image: cioccolata-calda.jpg
 toc: false
 
 # Open Graph / LinkedIn

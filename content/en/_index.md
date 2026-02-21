@@ -1,6 +1,7 @@
 ---
 title: "Federico Maiorini"
 description: "Senior PHP Developer & world-builder since 1985"
+featured_image: "/images/cnbnwjst3drmy0cwg2gbx47nf4.png"
 ---
 
 👋 Hi!  

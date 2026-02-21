@@ -1,6 +1,7 @@
 ---
 title: "About me"
 description: "Federico Maiorini – Senior Backend Developer & Storyteller"
+featured_image: "/images/cnbnwjst3drmy0cwg2gbx47nf4.png"
 ---
 
 Hi, I'm **Federico Maiorini**, a backend developer with over 20 years of experience in web and software development. Online, you’ll often find me under the nickname **Procionegobbo** — a long story that goes back to my Master’s degree in Videogame Design.

@@ -10,6 +10,7 @@ tags:
   - Automation
 categories: ["programmazione", "devops"]
 image: "act.jpg"
+featured_image: "act.jpg"
 slug: "testare-github-actions-in-locale-act"
 toc: true
 draft: false

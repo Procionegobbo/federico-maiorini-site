@@ -12,6 +12,7 @@ categories: ["programmazione", "riflessioni","ita/eng"]
 description: "Ogni sviluppatore convive con due demoni interiori: la superbia e la pigrizia. Le due forze che secondo me alimentano la vera arte dello sviluppo."
 draft: false
 image: "developer-daemons.jpeg"
+featured_image: "developer-daemons.jpeg"
 slug: "developers-daemons"
 
 # Open Graph / LinkedIn / Mastodon meta

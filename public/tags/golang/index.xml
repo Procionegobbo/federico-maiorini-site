@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Golang on Federico Maiorini</title>
-    <link>http://localhost:1315/tags/golang/</link>
-    <description>Recent content in Golang on Federico Maiorini</description>
-    <generator>Hugo</generator>
-    <language>it-it</language>
-    <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1315/tags/golang/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title>
-      <link>http://localhost:1315/blog/read-methods-golang/</link>
-      <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1315/blog/read-methods-golang/</guid>
-      <description>&lt;h1 id=&#34;-confronto-metodi-di-bufioreader-in-go&#34;&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go&lt;/h1&gt;&#xA;&lt;h2 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h2&gt;&#xA;&lt;p&gt;Recentemente sto studiando &lt;a href=&#34;https://go.dev/&#34;&gt;Go&lt;/a&gt;, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.&#xA;Una delle cose che mi interessano è come leggere e scrivere da uno stream quindi, con l&amp;rsquo;aiuto di una IA mi sono fatto un veloce riepilogo delle differenze tra alcuni metodi della libreria &lt;code&gt;bufio&lt;/code&gt;.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on Federico Maiorini</title><link>https://procionegobbo.it/tags/golang/</link><description>Recent content in Golang on Federico Maiorini</description><generator>Hugo</generator><language>it-it</language><lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Confronto tra ReadRune, ReadBytes, ReadString e ReadLine in Go</title><link>https://procionegobbo.it/blog/read-methods-golang/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/read-methods-golang/</guid><description>&lt;h1 id="-confronto-metodi-di-bufioreader-in-go"&gt;📚 Confronto metodi di &lt;code&gt;bufio.Reader&lt;/code&gt; in Go&lt;/h1&gt;
+&lt;h2 id="introduzione"&gt;Introduzione&lt;/h2&gt;
+&lt;p&gt;Recentemente sto studiando &lt;a href="https://go.dev/"&gt;Go&lt;/a&gt;, linguaggio interessante e per me è un ritorno (ho iniziato a programmare col C) ad un tipo di programmazione profondamente diversa da quella che ho praticato negli ultimi anni specializzandomi su PHP/Laravel.
+Una delle cose che mi interessano è come leggere e scrivere da uno stream quindi, con l&amp;rsquo;aiuto di una IA mi sono fatto un veloce riepilogo delle differenze tra alcuni metodi della libreria &lt;code&gt;bufio&lt;/code&gt;.&lt;/p&gt;</description></item></channel></rss>

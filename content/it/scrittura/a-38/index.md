@@ -11,6 +11,7 @@ description: "Un racconto surreale e satirico sulla burocrazia, tra sportelli in
 slug: "a-38"
 draft: false
 image: "a-38.jpg"
+featured_image: "a-38.jpg"
 toc: false
 
 # Open Graph / LinkedIn

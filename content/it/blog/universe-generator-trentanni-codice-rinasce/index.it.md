@@ -5,6 +5,7 @@ description: "La storia di un generatore di settori spaziali nato nel 1996 in Ac
 tags: ["blog", "AI", "CodingAgents", "AccessBasic", "TypeScript", "ClaudeCode", "Deepseek", "RetroComputing", "GiochiDiRuolo"]
 categories: ["programmazione", "AI", "progetti personali"]
 image: "universe-generator.jpg"
+featured_image: "universe-generator.jpg"
 slug: "universe-generator-trentanni-codice-rinasce"
 toc: true
 draft: false
