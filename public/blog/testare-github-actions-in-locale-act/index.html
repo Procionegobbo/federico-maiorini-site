@@ -1,285 +1,140 @@
 <!DOCTYPE html>
-<html lang="it-it" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Come testare le GitHub Actions in locale utilizzando act per velocizzare il debugging dei workflow, ottimizzare il ciclo di sviluppo e ridurre i tempi di attesa.">
-<title>Testare le GitHub Actions in locale con act</title>
+<html lang="it-it">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1315&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Testare le GitHub Actions in locale con act | Federico Maiorini</title>
+        <meta name="viewport" content="width=device-width,minimum-scale=1">
+        <meta name="description" content="Come testare le GitHub Actions in locale utilizzando act per velocizzare il debugging dei workflow, ottimizzare il ciclo di sviluppo e ridurre i tempi di attesa.">
+        <meta name="generator" content="Hugo 0.156.0">
+        
+        
+        
+            <meta name="robots" content="noindex, nofollow">
+        
+        
 
-<link rel='canonical' href='http://localhost:1313/blog/testare-github-actions-in-locale-act/'>
+        
+<link rel="stylesheet" href="http://localhost:1315/ananke/css/main.min.css" >
 
-<link rel="stylesheet" href="http://localhost:1313/scss/style.min.6a692fd055deae459f2a9767f57f3855ba80cafd5041317f24f7360f6ca47cdf.css"><meta property='og:title' content="Testare le GitHub Actions in locale con act">
-<meta property='og:description' content="Come testare le GitHub Actions in locale utilizzando act per velocizzare il debugging dei workflow, ottimizzare il ciclo di sviluppo e ridurre i tempi di attesa.">
-<meta property='og:url' content='http://localhost:1313/blog/testare-github-actions-in-locale-act/'>
-<meta property='og:site_name' content='Federico Maiorini'>
-<meta property='og:type' content='article'><meta property='article:section' content='Blog' /><meta property='article:tag' content='GitHubActions' /><meta property='article:tag' content='ACT' /><meta property='article:tag' content='CI/CD' /><meta property='article:tag' content='DevOps' /><meta property='article:tag' content='Automation' /><meta property='article:published_time' content='2025-08-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-28T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/blog/testare-github-actions-in-locale-act/act.jpg' />
-<meta name="twitter:title" content="Testare le GitHub Actions in locale con act">
-<meta name="twitter:description" content="Come testare le GitHub Actions in locale utilizzando act per velocizzare il debugging dei workflow, ottimizzare il ciclo di sviluppo e ridurre i tempi di attesa."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/blog/testare-github-actions-in-locale-act/act.jpg' />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7T0LHSKHVD"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-7T0LHSKHVD');
-        }
-      </script><link rel="icon" type="image/png" href="http://localhost:1313/favicon.png">
-<script type="text/javascript" src="https://embeds.iubenda.com/widgets/75ee47ef-6db6-11ee-8bfc-5ad8d8c564c0.js"></script>
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+
+
+        
+
+
+        
+            
+<link rel="shortcut icon" href="http://localhost:1315/favicon.png" type="image/x-icon" />
+
+
+        
+
+        
+
+        
+
+        
     </head>
-    <body class="
-    article-page
-    ">
-    <script>
-        (function() {
-            const colorSchemeKey = 'StackColorScheme';
-            localStorage.setItem(colorSchemeKey, "light");
-        })();
-    </script><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+    <body>
+        
+   
+  
 
-        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-            
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="http://localhost:1315/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        <img src="http://localhost:1315/images/ProcionegobboSmall.png" class="w100 mw5-ns" alt="Federico Maiorini" />
+      
+    </a>
+    <div class="flex-l items-center">
+      
 
-            document.documentElement.dataset.scheme = 'dark';
-        } else {
-            document.documentElement.dataset.scheme = 'light';
-        }
-    })();
-</script>
-<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
-
-    <header>
-        
-            
-            <figure class="site-avatar">
-                <a href="http://localhost:1313/">
-                
-                    <img src="http://localhost:1313/images/ProcionegobboSmall.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
-                
-                </a>
-                
-            </figure>
-            
-        
-        
-        <div class="site-meta">
-            <h1 class="site-name"><a href="http://localhost:1313/">Federico Maiorini</a></h1>
-            <h2 class="site-description"></h2>
-        </div>
-    </header><ol class="menu" id="main-menu">
-        
-        
-        
-        <li >
-            <a href='http://localhost:1313/blog/' >
-                
-                
-                
-                <span>Blog</span>
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="http://localhost:1315/blog/" title="Blog pagina">
+              Blog
             </a>
-        </li>
-        
-        
-        <li >
-            <a href='http://localhost:1313/gdr/' >
-                
-                
-                
-                <span>GDR</span>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="http://localhost:1315/gdr/" title="GDR pagina">
+              GDR
             </a>
-        </li>
-        
-        
-        <li >
-            <a href='http://localhost:1313/scrittura/' >
-                
-                
-                
-                <span>Scrittura</span>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="http://localhost:1315/scrittura/" title="Scrittura pagina">
+              Scrittura
             </a>
-        </li>
-        
-        
-        <li >
-            <a href='http://localhost:1313/chi-sono/' >
-                
-                
-                
-                <span>Chi sono</span>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="http://localhost:1315/chi-sono/" title="Chi sono pagina">
+              Chi sono
             </a>
-        </li>
-        
-        <li>
-<aside class="sidebar left-sidebar custom-sidebar">
-    
-<div class="badge-base LI-profile-badge" data-locale="it_IT" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="federicomaiorini" data-version="v1">
-    <a class="badge-base__link LI-simple-link" href="https://it.linkedin.com/in/federicomaiorini?trk=profile-badge"></a>
-</div>
-              
-</aside>
-</li>
-        <li class="menu-bottom-section">
-            <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 5h7" />
-  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
-  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
-  <path d="M12 20l4 -9l4 9" />
-  <path d="M19.1 18h-6.2" />
-</svg>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
 
-
-
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
-                                
-                                    <option value="http://localhost:1313/" selected>Italiano</option>
-                                
-                                    <option value="http://localhost:1313/en/" >English</option>
-                                
-                            </select>
-                        </li>
-                    
-                
-
-                
-            </ol>
-        </li>
-    </ol>
-</aside>
-
-    
-
-            
-            <main class="main full-width">
-    <article class="has-image main-article">
-    <header class="article-header">
-        <div class="article-image">
-            <a href="http://localhost:1313/blog/testare-github-actions-in-locale-act/">
-                <img src="http://localhost:1313/blog/testare-github-actions-in-locale-act/act_hu_75a25d24be6abc86.jpg"
-                        srcset="http://localhost:1313/blog/testare-github-actions-in-locale-act/act_hu_75a25d24be6abc86.jpg 800w, http://localhost:1313/blog/testare-github-actions-in-locale-act/act_hu_f53febc9a51e08ed.jpg 1600w"
-                        width="90%" 
-                        
-                        loading="lazy"
-                        alt="Featured image of post Testare le GitHub Actions in locale con act" />
-                
-            </a>
-        </div>
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="http://localhost:1313/categories/programmazione/" >
-                Programmazione
-            </a>
-        
-            <a href="http://localhost:1313/categories/devops/" >
-                Devops
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="http://localhost:1313/blog/testare-github-actions-in-locale-act/">Testare le GitHub Actions in locale con act</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            Come testare le GitHub Actions in locale utilizzando act per velocizzare il debugging dei workflow, ottimizzare il ciclo di sviluppo e ridurre i tempi di attesa.
-        </h3>
-        
     </div>
+  </div>
+</nav>
 
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">ago 28, 2025</time>
-            </div>
-        
+    </div>
+  </header>
+
+
 
         
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
+  
 
+  <article class="page-testare-github-actions-in-locale-act flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Blogs
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Testare le GitHub Actions in locale con act</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-08-28T00:00:00Z">agosto 28, 2025</time>
+      
 
-
-                <time class="article-time--reading">
-                    3 min per leggere
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-
-    <section class="article-content">
-    
-    
-    <p>Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.</p>
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.</p>
 <p>Di base sarebbe banale, in rete ci sono gazilioni di esempi, template, guide e perfino wizard che, in teoria, ti forniscono gli script già pronti.</p>
 <p>Migrando uno degli ultimi repo però mi è successa una cosa particolare. Stavo usando per il workflow da eseguire sulle pull-request lo stesso script usato con successo in altri repo (sono tutti sistemi basati su Laravel). Questa volta però non andava, errori di connessione al db, test che fallivano in maniera inaspettata.</p>
 <p>Tentavo le correzioni, push su GitHub, interminabile attesa che il workflow girasse per esaminare gli errori.</p>
 <p>Un modo mooolto lento di procedere.</p>
-<h2 id="installare-e-usare-act-per-testare-le-github-actions">Installare e usare act per testare le GitHub Actions
-</h2><p>Per fortuna c&rsquo;è un&rsquo;alternativa: <a class="link" href="https://nektosact.com/"  target="_blank" rel="noopener"
-    ><strong>act</strong> - https://nektosact.com/</a>
-questa fantastica utility scritta in Go permette di eseguire le actions di GitHub in locale grazie alla creazione al volo di una serie di container (nel mio caso uso <a class="link" href="https://podman.io/"  target="_blank" rel="noopener"
-    >Podman</a> invece di Docker).</p>
+<h2 id="installare-e-usare-act-per-testare-le-github-actions">Installare e usare act per testare le GitHub Actions</h2>
+<p>Per fortuna c&rsquo;è un&rsquo;alternativa: <a href="https://nektosact.com/"><strong>act</strong> - https://nektosact.com/</a>
+questa fantastica utility scritta in Go permette di eseguire le actions di GitHub in locale grazie alla creazione al volo di una serie di container (nel mio caso uso <a href="https://podman.io/">Podman</a> invece di Docker).</p>
 <p>L&rsquo;installazione è banale, nel mio caso su Mac</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew install act
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew install act
 </span></span></code></pre></div><p>Dopodiché basta avere il servizio Docker (o Podman) attivo e lanciare l&rsquo;utility.</p>
 <p>Ecco un esempio completo di comando, con tutti i parametri che uso nel mio ambiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>act <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --workflows <span style="color:#e6db74">&#34;.github/workflows/main.yml&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --secret-file .secrets <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --var-file .vars <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --pull<span style="color:#f92672">=</span>false <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --container-architecture linux/arm64 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -P ubuntu-latest<span style="color:#f92672">=</span>catthehacker/ubuntu:act-latest <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -P self-hosted<span style="color:#f92672">=</span>catthehacker/ubuntu:act-latest
-</span></span></code></pre></div><h2 id="configurare-act-i-parametri-principali">Configurare act: i parametri principali
-</h2><p>Vi spiego i vari parametri:</p>
-<div class="table-wrapper"><table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>act <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --workflows <span style="color:#e6db74">&#34;.github/workflows/main.yml&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --secret-file .secrets <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --var-file .vars <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --pull<span style="color:#f92672">=</span>false <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  --container-architecture linux/arm64 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P ubuntu-latest<span style="color:#f92672">=</span>catthehacker/ubuntu:act-latest <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>  -P self-hosted<span style="color:#f92672">=</span>catthehacker/ubuntu:act-latest
+</span></span></code></pre></div><h2 id="configurare-act-i-parametri-principali">Configurare act: i parametri principali</h2>
+<p>Vi spiego i vari parametri:</p>
+<table>
   <thead>
       <tr>
           <th>Parametro</th>
@@ -312,10 +167,10 @@ questa fantastica utility scritta in Go permette di eseguire le actions di GitHu
           <td>Specifica l’immagine da usare per il container che eseguirà il workflow</td>
       </tr>
   </tbody>
-</table></div>
+</table>
 <p>Nel mio caso per il container ho scelto <code>catthehacker/ubuntu:act-latest</code> rispetto a <code>catthehacker/ubuntu:full-latest</code> perché quest&rsquo;ultima, anche se ha la massima compatibilità integrando praticamente tutti i tool necessari, è enorme (60Gb una volta estratta) e non era necessaria.</p>
-<h2 id="conclusioni-perché-usare-act">Conclusioni: perché usare act
-</h2><p>Utilizzare <code>act</code> mi ha permesso di testare molto più velocemente il workflow, individuare i problemi e correggerlo in una frazione del tempo rispetto al classico
+<h2 id="conclusioni-perché-usare-act">Conclusioni: perché usare act</h2>
+<p>Utilizzare <code>act</code> mi ha permesso di testare molto più velocemente il workflow, individuare i problemi e correggerlo in una frazione del tempo rispetto al classico
 <code>edit-&gt;commit-&gt;push-&gt;execute action-&gt;repeat</code></p>
 <p>Un&rsquo;ultima cosa. Una volta messo a punto il workflow, girava perfettamente su act, è successo che alcuni test fallissero una volta che il workflow veniva eseguito su GitHub. La spiegazione è tanto banale quanto insidiosa: <code>act</code>, ma anche un banale <code>php artisan test</code> useranno il vostro file <code>.env</code> se presente. Tenetene conto quando scrivete il workflow.</p>
 <blockquote>
@@ -323,163 +178,53 @@ questa fantastica utility scritta in Go permette di eseguire le actions di GitHu
 <code>act</code> utilizza il file <code>.env</code> locale per eseguire i test, mentre GitHub Actions potrebbe avere un contesto diverso.<br>
 Assicurati di configurare correttamente le variabili d’ambiente nel workflow per evitare comportamenti inattesi.</p>
 </blockquote>
-<h2 id="link-utili">Link utili
-</h2><ul>
-<li><a class="link" href="https://nektosact.com/"  target="_blank" rel="noopener"
-    >Documentazione ufficiale di act</a></li>
-<li><a class="link" href="https://docs.github.com/en/actions"  target="_blank" rel="noopener"
-    >Documentazione ufficiale GitHub Actions</a></li>
+<h2 id="link-utili">Link utili</h2>
+<ul>
+<li><a href="https://nektosact.com/">Documentazione ufficiale di act</a></li>
+<li><a href="https://docs.github.com/en/actions">Documentazione ufficiale GitHub Actions</a></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="http://localhost:1315/tags/githubactions/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">GitHubActions</a>
+   </li>
+  
+   <li class="list di">
+     <a href="http://localhost:1315/tags/act/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">ACT</a>
+   </li>
+  
+   <li class="list di">
+     <a href="http://localhost:1315/tags/ci/cd/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">CI/CD</a>
+   </li>
+  
+   <li class="list di">
+     <a href="http://localhost:1315/tags/devops/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">DevOps</a>
+   </li>
+  
+   <li class="list di">
+     <a href="http://localhost:1315/tags/automation/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Automation</a>
+   </li>
+  
 </ul>
 
-</section>
+      
+    </div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Cosa c&#39;è in blog</p>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#installare-e-usare-act-per-testare-le-github-actions">Installare e usare act per testare le GitHub Actions</a></li>
+    <li><a href="#configurare-act-i-parametri-principali">Configurare act: i parametri principali</a></li>
+    <li><a href="#conclusioni-perché-usare-act">Conclusioni: perché usare act</a></li>
+    <li><a href="#link-utili">Link utili</a></li>
+  </ul>
+</nav>
+  </div>
 
 
-    <footer class="article-footer">
-    
-    <section class="article-tags">
-        
-            <a href="http://localhost:1313/tags/githubactions/">GitHubActions</a>
-        
-            <a href="http://localhost:1313/tags/act/">ACT</a>
-        
-            <a href="http://localhost:1313/tags/ci/cd/">CI/CD</a>
-        
-            <a href="http://localhost:1313/tags/devops/">DevOps</a>
-        
-            <a href="http://localhost:1313/tags/automation/">Automation</a>
-        
-    </section>
 
 
-    </footer>
-
-
-    
-</article>
-
-    
-
-    
-
-     
-    
-        
-    
-
-    <footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        
-            2025 - 
-        
-        2026 Federico Maiorini
-    </section>
-    
-    <section class="powerby">
-        
-            Federico Maiorini <br/>
-        Realizzato con <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Tema <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.31.0">Stack</a></b> realizzato da <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
-    </section>
-</footer>
-
-
-    
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    
-    <div class="pswp__bg"></div>
-
-    
-    <div class="pswp__scroll-wrap">
+</aside></article>
 
         
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer
-                >
-            </script><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
-            ><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
-            >
-
-            </main>
-        </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="http://localhost:1313/ts/main.b7ce6e3d37755f7b58f7b0e0ad5d598e86e7847ab247902c0609b27353afb17b.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
-
     </body>
 </html>

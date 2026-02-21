@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Personal on Federico Maiorini</title>
-        <link>http://localhost:1313/tags/personal/</link>
-        <description>Recent content in Personal on Federico Maiorini</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>it-it</language>
-        <lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/personal/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Ciao mondo</title>
-        <link>http://localhost:1313/blog/hello-world/</link>
-        <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/blog/hello-world/</guid>
-        <description>&lt;p&gt;Sono passati 21 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;
-&lt;p&gt;It’s been 21 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Personal on Federico Maiorini</title>
+    <link>http://localhost:1315/tags/personal/</link>
+    <description>Recent content in Personal on Federico Maiorini</description>
+    <generator>Hugo</generator>
+    <language>it-it</language>
+    <lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1315/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ciao mondo</title>
+      <link>http://localhost:1315/blog/hello-world/</link>
+      <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1315/blog/hello-world/</guid>
+      <description>&lt;p&gt;Sono passati 21 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;&#xA;&lt;p&gt;It’s been 21 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

@@ -9,7 +9,7 @@ slug: "universe-generator-trentanni-codice-rinasce"
 toc: true
 draft: false
 # Open Graph / LinkedIn / Twitter meta
-images: "universe-generator.jpg"
+images: ["universe-generator.jpg"]
 ogTitle: "Universe Generator: quando il codice del '96 rinasce con l'AI"
 ogDescription: "Dal 1996 al 2026: come un generatore di universi scritto in Access Basic è rinato grazie a Claude Code, Deepseek e Gemini. Un esperimento su come l'AI cambia il modo di programmare."
 twitterTitle: "Universe Generator: trent'anni di codice che rinasce"

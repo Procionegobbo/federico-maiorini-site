@@ -1,0 +1,10 @@
+{{ define "main" }}
+<main>
+  <article>
+    {{ partial "article/components/header.html" . }}
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </article>
+</main>
+{{ end }}

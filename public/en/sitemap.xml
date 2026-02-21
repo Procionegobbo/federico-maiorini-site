@@ -2,232 +2,171 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/en/tags/accessbasic/</loc>
+    <loc>http://localhost:1315/en/tags/accessbasic/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/accessbasic/"
+                href="http://localhost:1315/tags/accessbasic/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/accessbasic/"
+                href="http://localhost:1315/en/tags/accessbasic/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/categories/ai/</loc>
+    <loc>http://localhost:1315/en/categories/ai/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/categories/ai/"
+                href="http://localhost:1315/categories/ai/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/categories/ai/"
+                href="http://localhost:1315/en/categories/ai/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/ai/</loc>
+    <loc>http://localhost:1315/en/tags/ai/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/ai/"
+                href="http://localhost:1315/tags/ai/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/ai/"
+                href="http://localhost:1315/en/tags/ai/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/blog/</loc>
+    <loc>http://localhost:1315/en/categories/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/blog/"
+                href="http://localhost:1315/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/blog/"
+                href="http://localhost:1315/en/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/categories/</loc>
+    <loc>http://localhost:1315/en/tags/claudecode/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/categories/"
+                href="http://localhost:1315/tags/claudecode/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/categories/"
+                href="http://localhost:1315/en/tags/claudecode/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/claudecode/</loc>
+    <loc>http://localhost:1315/en/tags/codingagents/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/claudecode/"
+                href="http://localhost:1315/tags/codingagents/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/claudecode/"
+                href="http://localhost:1315/en/tags/codingagents/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/codingagents/</loc>
+    <loc>http://localhost:1315/en/tags/deepseek/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/codingagents/"
+                href="http://localhost:1315/tags/deepseek/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/codingagents/"
+                href="http://localhost:1315/en/tags/deepseek/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/deepseek/</loc>
+    <loc>http://localhost:1315/en/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/deepseek/"
+                href="http://localhost:1315/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/deepseek/"
+                href="http://localhost:1315/en/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/</loc>
+    <loc>http://localhost:1315/en/categories/personal-projects/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1315/en/categories/programming/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1315/en/tags/retrocomputing/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/"
+                href="http://localhost:1315/tags/retrocomputing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/"
+                href="http://localhost:1315/en/tags/retrocomputing/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/categories/personal-projects/</loc>
+    <loc>http://localhost:1315/en/tags/roleplaying/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/categories/programming/</loc>
-    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/tags/retrocomputing/</loc>
+    <loc>http://localhost:1315/en/tags/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/retrocomputing/"
+                href="http://localhost:1315/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/retrocomputing/"
+                href="http://localhost:1315/en/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/roleplaying/</loc>
-    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/tags/</loc>
+    <loc>http://localhost:1315/en/tags/typescript/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/"
+                href="http://localhost:1315/tags/typescript/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/"
+                href="http://localhost:1315/en/tags/typescript/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/typescript/</loc>
+    <loc>http://localhost:1315/en/blog/universe-generator-thirty-years-code-reborn/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/typescript/"
+                href="http://localhost:1315/blog/universe-generator-trentanni-codice-rinasce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/typescript/"
+                href="http://localhost:1315/en/blog/universe-generator-thirty-years-code-reborn/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/blog/universe-generator-thirty-years-code-reborn/</loc>
-    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="http://localhost:1313/blog/universe-generator-trentanni-codice-rinasce/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/blog/universe-generator-thirty-years-code-reborn/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/about/</loc>
-  </url><url>
-    <loc>http://localhost:1313/en/tags/blog/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="http://localhost:1313/tags/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/tags/blog/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/tags/giochidiruolo/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="http://localhost:1313/tags/giochidiruolo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/tags/giochidiruolo/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/categories/progetti-personali/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="http://localhost:1313/categories/progetti-personali/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/categories/progetti-personali/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/categories/programmazione/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="http://localhost:1313/categories/programmazione/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/categories/programmazione/"
-                />
+    <loc>http://localhost:1315/en/about/</loc>
   </url>
 </urlset>

@@ -2,7 +2,7 @@ baseURL = "https://procionegobbo.it/"
 canonifyURLs = true
 relativeURLs = false
 
-theme = "hugo-theme-stack"
+theme = "ananke"
 defaultContentLanguage = "it"
 defaultContentLanguageInSubdir = false
 
@@ -11,13 +11,10 @@ defaultContentLanguageInSubdir = false
   toc = true
   # Abilita callout shortcode
   enableCallout = true
-
-
-[params.sidebar.avatar]
-enabled = true
-local = false
-src = "/images/ProcionegobboSmall.png"
-
+  
+  # Ananke specific parameters
+  site_logo = "/images/ProcionegobboSmall.png"
+  favicon = "/favicon.png"
 
 [languages]
 
@@ -80,8 +77,7 @@ src = "/images/ProcionegobboSmall.png"
   url = "/chi-sono/"
   weight = 4
 
-# 🔽 RIMUOVI QUESTA RIGA (causa del problema)
-# [languages.en.menu.main]
+## Multilingua: menu e mainSections ottimizzati
 
 [[languages.en.menu.main]]
   identifier = "blog"

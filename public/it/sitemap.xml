@@ -2,422 +2,372 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/accessbasic/</loc>
+    <loc>http://localhost:1315/tags/accessbasic/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/accessbasic/"
+                href="http://localhost:1315/en/tags/accessbasic/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/accessbasic/"
+                href="http://localhost:1315/tags/accessbasic/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/ai/</loc>
+    <loc>http://localhost:1315/categories/ai/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/categories/ai/"
+                href="http://localhost:1315/en/categories/ai/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/categories/ai/"
+                href="http://localhost:1315/categories/ai/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/ai/</loc>
+    <loc>http://localhost:1315/tags/ai/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/ai/"
+                href="http://localhost:1315/en/tags/ai/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/ai/"
+                href="http://localhost:1315/tags/ai/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/blog/</loc>
+    <loc>http://localhost:1315/tags/blog/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1315/blog/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1315/categories/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/blog/"
+                href="http://localhost:1315/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/blog/"
+                href="http://localhost:1315/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>http://localhost:1315/tags/claudecode/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/blog/"
+                href="http://localhost:1315/en/tags/claudecode/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/blog/"
+                href="http://localhost:1315/tags/claudecode/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1315/tags/codingagents/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/categories/"
+                href="http://localhost:1315/en/tags/codingagents/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/categories/"
+                href="http://localhost:1315/tags/codingagents/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/claudecode/</loc>
+    <loc>http://localhost:1315/tags/deepseek/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/claudecode/"
+                href="http://localhost:1315/en/tags/deepseek/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/claudecode/"
+                href="http://localhost:1315/tags/deepseek/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/codingagents/</loc>
+    <loc>http://localhost:1315/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/codingagents/"
+                href="http://localhost:1315/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/codingagents/"
+                href="http://localhost:1315/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/deepseek/</loc>
+    <loc>http://localhost:1315/tags/giochidiruolo/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1315/categories/progetti-personali/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1315/categories/programmazione/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1315/tags/retrocomputing/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/deepseek/"
+                href="http://localhost:1315/en/tags/retrocomputing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/deepseek/"
+                href="http://localhost:1315/tags/retrocomputing/"
                 />
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1315/tags/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/"
+                href="http://localhost:1315/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/"
+                href="http://localhost:1315/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/giochidiruolo/</loc>
+    <loc>http://localhost:1315/tags/typescript/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/giochidiruolo/"
+                href="http://localhost:1315/en/tags/typescript/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/tags/giochidiruolo/"
+                href="http://localhost:1315/tags/typescript/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/progetti-personali/</loc>
+    <loc>http://localhost:1315/blog/universe-generator-trentanni-codice-rinasce/</loc>
     <lastmod>2026-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/categories/progetti-personali/"
+                href="http://localhost:1315/en/blog/universe-generator-thirty-years-code-reborn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="http://localhost:1313/categories/progetti-personali/"
+                href="http://localhost:1315/blog/universe-generator-trentanni-codice-rinasce/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/programmazione/</loc>
-    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/categories/programmazione/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="http://localhost:1313/categories/programmazione/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/retrocomputing/</loc>
-    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/tags/retrocomputing/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="http://localhost:1313/tags/retrocomputing/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="http://localhost:1313/tags/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/typescript/</loc>
-    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/tags/typescript/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="http://localhost:1313/tags/typescript/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/blog/universe-generator-trentanni-codice-rinasce/</loc>
-    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/blog/universe-generator-thirty-years-code-reborn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="http://localhost:1313/blog/universe-generator-trentanni-codice-rinasce/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/scrittura/cioccolata-calda/</loc>
+    <loc>http://localhost:1315/scrittura/cioccolata-calda/</loc>
     <lastmod>2025-12-29T00:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/racconto/</loc>
+    <loc>http://localhost:1315/tags/racconto/</loc>
     <lastmod>2025-12-29T00:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/scrittura/</loc>
+    <loc>http://localhost:1315/categories/scrittura/</loc>
     <lastmod>2025-12-29T00:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/scrittura/</loc>
+    <loc>http://localhost:1315/scrittura/</loc>
     <lastmod>2025-12-29T00:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/scrittura-creativa/</loc>
+    <loc>http://localhost:1315/tags/scrittura-creativa/</loc>
     <lastmod>2025-12-29T00:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/blog/</loc>
+    <loc>http://localhost:1315/categories/blog/</loc>
     <lastmod>2025-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ita/</loc>
+    <loc>http://localhost:1315/tags/ita/</loc>
     <lastmod>2025-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/musica/</loc>
+    <loc>http://localhost:1315/tags/musica/</loc>
     <lastmod>2025-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/nuvola/</loc>
+    <loc>http://localhost:1315/tags/nuvola/</loc>
     <lastmod>2025-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/ops-i-dit-it-again/</loc>
+    <loc>http://localhost:1315/blog/ops-i-dit-it-again/</loc>
     <lastmod>2025-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/storytelling/</loc>
+    <loc>http://localhost:1315/tags/storytelling/</loc>
     <lastmod>2025-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tony-loffa/</loc>
+    <loc>http://localhost:1315/tags/tony-loffa/</loc>
     <lastmod>2025-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/come-to-code-2025/</loc>
+    <loc>http://localhost:1315/blog/come-to-code-2025/</loc>
     <lastmod>2025-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cometocode/</loc>
+    <loc>http://localhost:1315/tags/cometocode/</loc>
     <lastmod>2025-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/community/</loc>
+    <loc>http://localhost:1315/categories/community/</loc>
     <lastmod>2025-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/community/</loc>
+    <loc>http://localhost:1315/tags/community/</loc>
     <lastmod>2025-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/conferenze/</loc>
+    <loc>http://localhost:1315/categories/conferenze/</loc>
     <lastmod>2025-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/conferenze/</loc>
+    <loc>http://localhost:1315/tags/conferenze/</loc>
     <lastmod>2025-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/developerlife/</loc>
+    <loc>http://localhost:1315/tags/developerlife/</loc>
     <lastmod>2025-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/esperienze/</loc>
+    <loc>http://localhost:1315/categories/esperienze/</loc>
     <lastmod>2025-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/humanskills/</loc>
+    <loc>http://localhost:1315/tags/humanskills/</loc>
     <lastmod>2025-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/personalbranding/</loc>
+    <loc>http://localhost:1315/tags/personalbranding/</loc>
     <lastmod>2025-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/scrittura/a-38/</loc>
+    <loc>http://localhost:1315/scrittura/a-38/</loc>
     <lastmod>2025-09-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/burocrazia/</loc>
+    <loc>http://localhost:1315/tags/burocrazia/</loc>
     <lastmod>2025-09-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/satira/</loc>
+    <loc>http://localhost:1315/tags/satira/</loc>
     <lastmod>2025-09-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/surreale/</loc>
+    <loc>http://localhost:1315/tags/surreale/</loc>
     <lastmod>2025-09-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/code-philosophy/</loc>
+    <loc>http://localhost:1315/tags/code-philosophy/</loc>
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/developers-daemons/</loc>
+    <loc>http://localhost:1315/blog/developers-daemons/</loc>
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/development/</loc>
+    <loc>http://localhost:1315/tags/development/</loc>
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/eng/</loc>
+    <loc>http://localhost:1315/tags/eng/</loc>
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/filosofia-del-codice/</loc>
+    <loc>http://localhost:1315/tags/filosofia-del-codice/</loc>
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/ita/eng/</loc>
+    <loc>http://localhost:1315/categories/ita/eng/</loc>
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/riflessioni/</loc>
+    <loc>http://localhost:1315/categories/riflessioni/</loc>
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sviluppo/</loc>
+    <loc>http://localhost:1315/tags/sviluppo/</loc>
     <lastmod>2025-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/act/</loc>
+    <loc>http://localhost:1315/tags/act/</loc>
     <lastmod>2025-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/automation/</loc>
+    <loc>http://localhost:1315/tags/automation/</loc>
     <lastmod>2025-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ci/cd/</loc>
+    <loc>http://localhost:1315/tags/ci/cd/</loc>
     <lastmod>2025-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/devops/</loc>
+    <loc>http://localhost:1315/categories/devops/</loc>
     <lastmod>2025-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/devops/</loc>
+    <loc>http://localhost:1315/tags/devops/</loc>
     <lastmod>2025-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/githubactions/</loc>
+    <loc>http://localhost:1315/tags/githubactions/</loc>
     <lastmod>2025-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/testare-github-actions-in-locale-act/</loc>
+    <loc>http://localhost:1315/blog/testare-github-actions-in-locale-act/</loc>
     <lastmod>2025-08-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/scrittura/l-alpinista/</loc>
+    <loc>http://localhost:1315/scrittura/l-alpinista/</loc>
     <lastmod>2025-08-25T00:00:00+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/dietro-le-quinte-tony-loffa/</loc>
+    <loc>http://localhost:1315/blog/dietro-le-quinte-tony-loffa/</loc>
     <lastmod>2025-08-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/musica-brutta/</loc>
+    <loc>http://localhost:1315/tags/musica-brutta/</loc>
     <lastmod>2025-08-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bufio/</loc>
+    <loc>http://localhost:1315/tags/bufio/</loc>
     <lastmod>2025-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/read-methods-golang/</loc>
+    <loc>http://localhost:1315/blog/read-methods-golang/</loc>
     <lastmod>2025-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/golang/</loc>
+    <loc>http://localhost:1315/categories/golang/</loc>
     <lastmod>2025-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/golang/</loc>
+    <loc>http://localhost:1315/tags/golang/</loc>
     <lastmod>2025-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/guide-tecniche/</loc>
+    <loc>http://localhost:1315/tags/guide-tecniche/</loc>
     <lastmod>2025-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/io/</loc>
+    <loc>http://localhost:1315/tags/io/</loc>
     <lastmod>2025-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cronologia/</loc>
+    <loc>http://localhost:1315/tags/cronologia/</loc>
     <lastmod>2025-08-15T16:52:18+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/gdr/cronologia-del-mondo-di-kor/</loc>
+    <loc>http://localhost:1315/gdr/cronologia-del-mondo-di-kor/</loc>
     <lastmod>2025-08-15T16:52:18+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/fantasy/</loc>
+    <loc>http://localhost:1315/tags/fantasy/</loc>
     <lastmod>2025-08-15T16:52:18+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/gdr/</loc>
+    <loc>http://localhost:1315/categories/gdr/</loc>
     <lastmod>2025-08-15T16:52:18+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/gdr/</loc>
+    <loc>http://localhost:1315/gdr/</loc>
     <lastmod>2025-08-15T16:52:18+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kor/</loc>
+    <loc>http://localhost:1315/tags/kor/</loc>
     <lastmod>2025-08-15T16:52:18+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/worldbuilding/</loc>
+    <loc>http://localhost:1315/categories/worldbuilding/</loc>
     <lastmod>2025-08-15T16:52:18+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gdr/</loc>
+    <loc>http://localhost:1315/tags/gdr/</loc>
     <lastmod>2025-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/horror/</loc>
+    <loc>http://localhost:1315/tags/horror/</loc>
     <lastmod>2025-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/portanus/</loc>
+    <loc>http://localhost:1315/tags/portanus/</loc>
     <lastmod>2025-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/gdr/portanus/</loc>
+    <loc>http://localhost:1315/gdr/portanus/</loc>
     <lastmod>2025-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/hello-world/</loc>
+    <loc>http://localhost:1315/blog/hello-world/</loc>
     <lastmod>2025-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ghainar/</loc>
+    <loc>http://localhost:1315/tags/ghainar/</loc>
     <lastmod>2025-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/personal/</loc>
+    <loc>http://localhost:1315/tags/personal/</loc>
     <lastmod>2025-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/scrittura/ghainar/</loc>
+    <loc>http://localhost:1315/scrittura/ghainar/</loc>
     <lastmod>2025-08-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/chi-sono/</loc>
+    <loc>http://localhost:1315/chi-sono/</loc>
   </url>
 </urlset>
