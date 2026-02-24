@@ -106,3 +106,5 @@ defaultContentLanguageInSubdir = false
 [services]
   [services.googleAnalytics]
     ID = 'G-7T0LHSKHVD'
+  [services.disqus]
+    shortname = 'procionegobbo-it'
