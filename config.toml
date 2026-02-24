@@ -108,3 +108,8 @@ defaultContentLanguageInSubdir = false
     ID = 'G-7T0LHSKHVD'
   [services.disqus]
     shortname = 'procionegobbo-it'
+
+[privacy]
+  [privacy.googleAnalytics]
+    disable = false
+    respectDoNotTrack = true
