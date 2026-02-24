@@ -1,14 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scrittura on Federico Maiorini</title><link>https://procionegobbo.it/categories/scrittura/</link><description>Recent content in Scrittura on Federico Maiorini</description><generator>Hugo</generator><language>it-it</language><lastBuildDate>Tue, 24 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/categories/scrittura/index.xml" rel="self" type="application/rss+xml"/><item><title>Il diario clandestino di Alessandro Urbani</title><link>https://procionegobbo.it/scrittura/il-diario-clandestino/</link><pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/scrittura/il-diario-clandestino/</guid><description>&lt;p&gt;Trascrizione del diario clandestino di Alessandro Urbani, restauratore edilizio.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;4 gennaio&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Sto restaurando una serie di appartamenti sul litorale,&lt;/p&gt;
-&lt;p&gt;risalgono a prima del salvataggio dei Gloop.&lt;/p&gt;
-&lt;p&gt;Oggi ho trovato una matita. Ho scritto la parola &amp;ldquo;matita&amp;rdquo; su una mattonella prima di sbriciolarla.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;6 gennaio&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Oggi ho scritto un&amp;rsquo;altra parola.&lt;/p&gt;
-&lt;p&gt;Non mi sembra che la mia mente vada in pezzi.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;7 gennaio&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Forse Mario aveva ragione: i Gloop nascondono qualcosa.&lt;/p&gt;
-&lt;p&gt;Ho trovato uno strano libro in un&amp;rsquo;intercapedine, è come i libri dei Gloop ma le pagine sono quasi bianche, hanno solo degli esili quadretti grigi.&lt;/p&gt;</description></item><item><title>Cioccolata calda</title><link>https://procionegobbo.it/scrittura/cioccolata-calda/</link><pubDate>Mon, 29 Dec 2025 00:00:00 +0200</pubDate><guid>https://procionegobbo.it/scrittura/cioccolata-calda/</guid><description>&lt;p&gt;Aveva deciso. Le avrebbe confessato il suo amore. Si alzò dalla panchina e attraversò la piazza senza guardare, tanto in paese non c’erano macchine. Il basso muretto di mattoni separava la piazza dal panorama delle montagne intorno e l’aveva riparato dal vento fintanto che era rimasto sulla panchina. Spense il walkman mentre la cassetta suonava il finale di The Wild Boys, il suo regalo di natale ’84.&lt;/p&gt;
-&lt;p&gt;Appena in piedi gli si gelarono le orecchie tanto che dovette ripararsele con le mani. Il cappello di lana era nella tasca dei pantaloni, suo padre glielo aveva detto quante volte di metterlo? Un miliardo? Ma si sentiva ridicolo e poi nessuno dei ragazzi più grandi portava un cappello di lana. Del resto era anche l’unico con un cappotto invece che un piumino.&lt;/p&gt;</description></item><item><title>A-38</title><link>https://procionegobbo.it/scrittura/a-38/</link><pubDate>Sun, 14 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/scrittura/a-38/</guid><description>&lt;p&gt;Guardai il numeretto che avevo in mano: sportello 15334 numero 12.&lt;/p&gt;
-&lt;p&gt;Arrivare al Ministero delle Certificazioni all&amp;rsquo;alba non era servito, davanti a me c&amp;rsquo;era un vecchio col cappello da alpino e una cartellina gonfia fino a scoppiare di fogli, documenti, certificati. Curvo sul bastone si stava avvicinando allo sportello. Se non aveva portato l&amp;rsquo;autocertificazione c&amp;rsquo;era il rischio che rimanesse allo sportello per chissà quanto.&lt;/p&gt;
-&lt;p&gt;Osservai la cartellina che aveva sottobraccio, allungai la mano e col dito spinsi appena al centro dei fogli. Bastò. Si riversarono fuori svolazzando davanti al vecchio. Mentre si chinava svicolai in avanti e mi piazzai allo sportello. Scoprii che avevo guadagnato ben poco tempo.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scrittura on Federico Maiorini</title>
+    <link>http://localhost:1313/categories/scrittura/</link>
+    <description>Recent content in Scrittura on Federico Maiorini</description>
+    <generator>Hugo</generator>
+    <language>it-it</language>
+    <lastBuildDate>Tue, 24 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/scrittura/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Il diario clandestino di Alessandro Urbani</title>
+      <link>http://localhost:1313/scrittura/il-diario-clandestino/</link>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/scrittura/il-diario-clandestino/</guid>
+      <description>&lt;p&gt;Trascrizione del diario clandestino di Alessandro Urbani, restauratore edilizio.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;4 gennaio&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sto restaurando una serie di appartamenti sul litorale,&#xA;risalgono a prima del salvataggio dei Gloop.&#xA;Oggi ho trovato una matita. Ho scritto la parola &amp;ldquo;matita&amp;rdquo; su una mattonella prima di sbriciolarla.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;6 gennaio&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Oggi ho scritto un&amp;rsquo;altra parola.&lt;/p&gt;&#xA;&lt;p&gt;Non mi sembra che la mia mente vada in pezzi.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;7 gennaio&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Forse Mario aveva ragione: i Gloop nascondono qualcosa.&lt;/p&gt;&#xA;&lt;p&gt;Ho trovato uno strano libro in un&amp;rsquo;intercapedine, è come i libri dei Gloop ma le pagine sono quasi bianche, hanno solo degli esili quadretti grigi.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cioccolata calda</title>
+      <link>http://localhost:1313/scrittura/cioccolata-calda/</link>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/scrittura/cioccolata-calda/</guid>
+      <description>&lt;p&gt;Aveva deciso. Le avrebbe confessato il suo amore. Si alzò dalla panchina e attraversò la piazza senza guardare, tanto in paese non c’erano macchine. Il basso muretto di mattoni separava la piazza dal panorama delle montagne intorno e l’aveva riparato dal vento fintanto che era rimasto sulla panchina. Spense il walkman mentre la cassetta suonava il finale di The Wild Boys, il suo regalo di natale ’84.&lt;/p&gt;&#xA;&lt;p&gt;Appena in piedi gli si gelarono le orecchie tanto che dovette ripararsele con le mani. Il cappello di lana era nella tasca dei pantaloni, suo padre glielo aveva detto quante volte di metterlo? Un miliardo? Ma si sentiva ridicolo e poi nessuno dei ragazzi più grandi portava un cappello di lana. Del resto era anche l’unico con un cappotto invece che un piumino.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A-38</title>
+      <link>http://localhost:1313/scrittura/a-38/</link>
+      <pubDate>Sun, 14 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/scrittura/a-38/</guid>
+      <description>&lt;p&gt;Guardai il numeretto che avevo in mano: sportello 15334 numero 12.&lt;/p&gt;&#xA;&lt;p&gt;Arrivare al Ministero delle Certificazioni all&amp;rsquo;alba non era servito, davanti a me c&amp;rsquo;era un vecchio col cappello da alpino e una cartellina gonfia fino a scoppiare di fogli, documenti, certificati. Curvo sul bastone si stava avvicinando allo sportello. Se non aveva portato l&amp;rsquo;autocertificazione c&amp;rsquo;era il rischio che rimanesse allo sportello per chissà quanto.&lt;/p&gt;&#xA;&lt;p&gt;Osservai la cartellina che aveva sottobraccio, allungai la mano e col dito spinsi appena al centro dei fogli. Bastò. Si riversarono fuori svolazzando davanti al vecchio. Mentre si chinava svicolai in avanti e mi piazzai allo sportello. Scoprii che avevo guadagnato ben poco tempo.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

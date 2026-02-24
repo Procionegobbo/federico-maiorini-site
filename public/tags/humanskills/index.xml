@@ -1,5 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HumanSkills on Federico Maiorini</title><link>https://procionegobbo.it/tags/humanskills/</link><description>Recent content in HumanSkills on Federico Maiorini</description><generator>Hugo</generator><language>it-it</language><lastBuildDate>Sun, 28 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/humanskills/index.xml" rel="self" type="application/rss+xml"/><item><title>Come To Code 2025: il piacere di una conferenza diversa</title><link>https://procionegobbo.it/blog/come-to-code-2025/</link><pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/come-to-code-2025/</guid><description>&lt;p&gt;Quest&amp;rsquo;ultimo fine settimana sono stato al Come To Code a Pignola. È la quinta edizione di questa conferenza per (non solo) sviluppatori. Mi dichiaro colpevole vostro onore: non la conoscevo e avrei voluto conoscerla prima. Sono stati due giorni intensi, pieni di talk interessanti, ottimo cibo, musica e nuove conoscenze.
-Il Come To Code non è una conferenza verticale mirata ad una specifica tecnologia e metodologia, abbraccia tutto quello di cui si può parlare del nostro lavoro davvero a 360 gradi, talmente tanti talk in due giorni che è stato necessario dividerli in tre track tematici.
-Alcuni mi interessavano molto a livello tecnico o stimolavano la mia curiosità &lt;em&gt;nerdosa&lt;/em&gt; ma ho deciso, almeno il primo giorno di seguire una strada alternativa: i talk della track 3 sul personal branding e human skills. È un argomento che ho trascurato per anni, sbagliando, ma che dovrebbe far parte del bagaglio di competenze di ogni sviluppatore. È anche una delle cose più difficili da fare, almeno per me. Parlare di sé, parlare dei propri interessi in modo che possa interessare, coinvolgere non sono cose che mi vengano spontanee, non sempre. Sembra, anche nella mia testa, un controsenso: mi piace stare tra la gente ma non mi piace la folla, mi piace discutere (anche animatamente) ma mi stressano i conflitti, mi piace essere notato ma mettermi in mostra mi dà disagio. Un casino insomma.
-La track 3 è stata, non dico illuminante ma molto interessante.
-Questi sono i talk che mi hanno interessato di più.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HumanSkills on Federico Maiorini</title>
+    <link>http://localhost:1313/tags/humanskills/</link>
+    <description>Recent content in HumanSkills on Federico Maiorini</description>
+    <generator>Hugo</generator>
+    <language>it-it</language>
+    <lastBuildDate>Sun, 28 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/humanskills/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Come To Code 2025: il piacere di una conferenza diversa</title>
+      <link>http://localhost:1313/blog/come-to-code-2025/</link>
+      <pubDate>Sun, 28 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/come-to-code-2025/</guid>
+      <description>&lt;p&gt;Quest&amp;rsquo;ultimo fine settimana sono stato al Come To Code a Pignola. È la quinta edizione di questa conferenza per (non solo) sviluppatori. Mi dichiaro colpevole vostro onore: non la conoscevo e avrei voluto conoscerla prima. Sono stati due giorni intensi, pieni di talk interessanti, ottimo cibo, musica e nuove conoscenze.&#xA;Il Come To Code non è una conferenza verticale mirata ad una specifica tecnologia e metodologia, abbraccia tutto quello di cui si può parlare del nostro lavoro davvero a 360 gradi, talmente tanti talk in due giorni che è stato necessario dividerli in tre track tematici.&#xA;Alcuni mi interessavano molto a livello tecnico o stimolavano la mia curiosità &lt;em&gt;nerdosa&lt;/em&gt; ma ho deciso, almeno il primo giorno di seguire una strada alternativa: i talk della track 3 sul personal branding e human skills. È un argomento che ho trascurato per anni, sbagliando, ma che dovrebbe far parte del bagaglio di competenze di ogni sviluppatore. È anche una delle cose più difficili da fare, almeno per me. Parlare di sé, parlare dei propri interessi in modo che possa interessare, coinvolgere non sono cose che mi vengano spontanee, non sempre. Sembra, anche nella mia testa, un controsenso: mi piace stare tra la gente ma non mi piace la folla, mi piace discutere (anche animatamente) ma mi stressano i conflitti, mi piace essere notato ma mettermi in mostra mi dà disagio. Un casino insomma.&#xA;La track 3 è stata, non dico illuminante ma molto interessante.&#xA;Questi sono i talk che mi hanno interessato di più.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

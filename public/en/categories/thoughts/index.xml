@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Thoughts on Federico Maiorini</title><link>https://procionegobbo.it/en/categories/thoughts/</link><description>Recent content in Thoughts on Federico Maiorini</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/en/categories/thoughts/index.xml" rel="self" type="application/rss+xml"/><item><title>Developer's daemons</title><link>https://procionegobbo.it/en/blog/developers-daemons/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/en/blog/developers-daemons/</guid><description>&lt;p&gt;&lt;em&gt;(This post is also available in Italian, change the language in the top-right corner to read it / Questo post è disponibile anche in Italiano, cambia la lingua in alto a destra per leggerlo)&lt;/em&gt;&lt;/p&gt;
-&lt;h1 id="the-two-daemons-of-the-developer"&gt;The Two Daemons of the Developer&lt;/h1&gt;
-&lt;p&gt;Every developer lives with two inner &lt;strong&gt;daemons&lt;/strong&gt;.&lt;br&gt;
-And if you catch the pun, you’re probably a developer or at least a bit of a nerd: in operating systems, those invisible background processes that keep everything running are called &lt;em&gt;daemons&lt;/em&gt;.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thoughts on Federico Maiorini</title>
+    <link>http://localhost:1313/en/categories/thoughts/</link>
+    <description>Recent content in Thoughts on Federico Maiorini</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/categories/thoughts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Developer&#39;s daemons</title>
+      <link>http://localhost:1313/en/blog/developers-daemons/</link>
+      <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/blog/developers-daemons/</guid>
+      <description>&lt;p&gt;&lt;em&gt;(This post is also available in Italian, change the language in the top-right corner to read it / Questo post è disponibile anche in Italiano, cambia la lingua in alto a destra per leggerlo)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-two-daemons-of-the-developer&#34;&gt;The Two Daemons of the Developer&lt;/h1&gt;&#xA;&lt;p&gt;Every developer lives with two inner &lt;strong&gt;daemons&lt;/strong&gt;.&lt;br&gt;&#xA;And if you catch the pun, you’re probably a developer or at least a bit of a nerd: in operating systems, those invisible background processes that keep everything running are called &lt;em&gt;daemons&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -32,9 +32,7 @@ Trascrizione del diario clandestino di Alessandro Urbani, restauratore edilizio.
 **4 gennaio**
 
 Sto restaurando una serie di appartamenti sul litorale,
-
 risalgono a prima del salvataggio dei Gloop.
-
 Oggi ho trovato una matita. Ho scritto la parola "matita" su una mattonella prima di sbriciolarla.
 
 **6 gennaio**

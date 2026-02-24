@@ -1,5 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Personal Projects on Federico Maiorini</title><link>https://procionegobbo.it/en/categories/personal-projects/</link><description>Recent content in Personal Projects on Federico Maiorini</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 15 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/en/categories/personal-projects/index.xml" rel="self" type="application/rss+xml"/><item><title>Universe Generator: Thirty Years of Code Reborn</title><link>https://procionegobbo.it/en/blog/universe-generator-thirty-years-code-reborn/</link><pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/en/blog/universe-generator-thirty-years-code-reborn/</guid><description>&lt;h1 id="universe-generator"&gt;Universe Generator&lt;/h1&gt;
-&lt;h2 id="1996-access-basic-and-virtual-dice"&gt;1996: Access Basic and Virtual Dice&lt;/h2&gt;
-&lt;p&gt;There&amp;rsquo;s a piece of code I&amp;rsquo;ve been carrying around for thirty years. Yes, thirty years. Since 1996.
-It was part of a personal project related to role-playing games, built on Microsoft Access 2.0, prehistoric stuff. In Access Basic, the scripting language that preceded VBA. For its time, it was incredibly advanced.&lt;/p&gt;
-&lt;p&gt;The system was a simple generator of space sectors based on probability tables. I found the tables on the internet, designed as aids for space-themed role-playing games. Using d6 and d100 dice, it could create star systems, their stars, and their planets. It was very simple, without many details (stellar class, planet type, diameter, and number of moons) and no pretense of realism. It was enough for me to let my imagination soar through outer space.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal Projects on Federico Maiorini</title>
+    <link>http://localhost:1313/en/categories/personal-projects/</link>
+    <description>Recent content in Personal Projects on Federico Maiorini</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/categories/personal-projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Universe Generator: Thirty Years of Code Reborn</title>
+      <link>http://localhost:1313/en/blog/universe-generator-thirty-years-code-reborn/</link>
+      <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/blog/universe-generator-thirty-years-code-reborn/</guid>
+      <description>&lt;h1 id=&#34;universe-generator&#34;&gt;Universe Generator&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1996-access-basic-and-virtual-dice&#34;&gt;1996: Access Basic and Virtual Dice&lt;/h2&gt;&#xA;&lt;p&gt;There&amp;rsquo;s a piece of code I&amp;rsquo;ve been carrying around for thirty years. Yes, thirty years. Since 1996.&#xA;It was part of a personal project related to role-playing games, built on Microsoft Access 2.0, prehistoric stuff. In Access Basic, the scripting language that preceded VBA. For its time, it was incredibly advanced.&lt;/p&gt;&#xA;&lt;p&gt;The system was a simple generator of space sectors based on probability tables. I found the tables on the internet, designed as aids for space-themed role-playing games. Using d6 and d100 dice, it could create star systems, their stars, and their planets. It was very simple, without many details (stellar class, planet type, diameter, and number of moons) and no pretense of realism. It was enough for me to let my imagination soar through outer space.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
