@@ -1,19 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>DevOps on Federico Maiorini</title>
-    <link>http://localhost:1313/tags/devops/</link>
-    <description>Recent content in DevOps on Federico Maiorini</description>
-    <generator>Hugo</generator>
-    <language>it-it</language>
-    <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/devops/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Testare le GitHub Actions in locale con act</title>
-      <link>http://localhost:1313/blog/testare-github-actions-in-locale-act/</link>
-      <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/testare-github-actions-in-locale-act/</guid>
-      <description>&lt;p&gt;Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&amp;rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.&lt;/p&gt;&#xA;&lt;p&gt;Di base sarebbe banale, in rete ci sono gazilioni di esempi, template, guide e perfino wizard che, in teoria, ti forniscono gli script già pronti.&lt;/p&gt;&#xA;&lt;p&gt;Migrando uno degli ultimi repo però mi è successa una cosa particolare. Stavo usando per il workflow da eseguire sulle pull-request lo stesso script usato con successo in altri repo (sono tutti sistemi basati su Laravel). Questa volta però non andava, errori di connessione al db, test che fallivano in maniera inaspettata.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevOps on Federico Maiorini</title><link>https://procionegobbo.it/tags/devops/</link><description>Recent content in DevOps on Federico Maiorini</description><generator>Hugo</generator><language>it-it</language><lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>Testare le GitHub Actions in locale con act</title><link>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/testare-github-actions-in-locale-act/</guid><description>&lt;p&gt;Chi usa GitHub prima o poi si scontra con i workflow. Di recente stiamo affrontando una sfida solo all&amp;rsquo;apparenza banale: migrare alcuni dei nostri repo su Github e implementare le actions necessarie alle necessità di CI/CD.&lt;/p&gt;
+&lt;p&gt;Di base sarebbe banale, in rete ci sono gazilioni di esempi, template, guide e perfino wizard che, in teoria, ti forniscono gli script già pronti.&lt;/p&gt;
+&lt;p&gt;Migrando uno degli ultimi repo però mi è successa una cosa particolare. Stavo usando per il workflow da eseguire sulle pull-request lo stesso script usato con successo in altri repo (sono tutti sistemi basati su Laravel). Questa volta però non andava, errori di connessione al db, test che fallivano in maniera inaspettata.&lt;/p&gt;</description></item></channel></rss>

@@ -1,54 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ita on Federico Maiorini</title>
-    <link>http://localhost:1313/tags/ita/</link>
-    <description>Recent content in Ita on Federico Maiorini</description>
-    <generator>Hugo</generator>
-    <language>it-it</language>
-    <lastBuildDate>Fri, 14 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ita/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Ops I did it again</title>
-      <link>http://localhost:1313/blog/ops-i-dit-it-again/</link>
-      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/ops-i-dit-it-again/</guid>
-      <description>&lt;p&gt;Lo ammetto, ci ho un po&amp;rsquo; preso gusto. Nell&amp;rsquo;album di Tony Loffa c&amp;rsquo;era una canzone in cui l&amp;rsquo;immaginario rapper flatulente nominava due altri personaggi: il suo rivale DJ Budello e il suo amore perduto Nuvola.&lt;/p&gt;&#xA;&lt;p&gt;Non mi piace lasciare le cose in sospeso quindi ho immaginato che, in pieno stile rivalità trap/rap, DJ Budello facesse un pezzo dissing contro Tony.&#xA;Ed è nato &lt;a href=&#34;https://push.fm/fl/emluffhw&#34;&gt;Aria Fritta&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/blog/ops-i-dit-it-again/ariafritta.jpg&#34; alt=&#34;cover del singolo Aria Fritta&#34;&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Ma non ero soddisfatto. Rimaneva un&amp;rsquo;altra cosa in sospeso: &lt;strong&gt;Nuvola&lt;/strong&gt;.&#xA;Possibile relegarla a ornamento di Tony? &lt;em&gt;Una scema che gira&lt;/em&gt;, come dice Budello nel suo pezzo?&#xA;No. Ingiusto e sessista. Anche per un personaggio immaginario.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Developer&#39;s daemons</title>
-      <link>http://localhost:1313/blog/developers-daemons/</link>
-      <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/developers-daemons/</guid>
-      <description>&lt;p&gt;&lt;em&gt;(This post is also available in English, change the language in the top-right corner to read it / Questo post è disponibile anche in Inglese, cambia la lingua in alto a destra per leggerlo)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;i-due-demoni-dello-sviluppatore&#34;&gt;I due demoni dello sviluppatore&lt;/h1&gt;&#xA;&lt;p&gt;Ogni sviluppatore convive con due &lt;strong&gt;demoni interiori&lt;/strong&gt;.&lt;br&gt;&#xA;E se cogliete il gioco di parole, siete probabilmente sviluppatori o almeno un po’ nerd: nei sistemi operativi i processi che lavorano silenziosi in background, invisibili ma indispensabili, si chiamano infatti &lt;em&gt;daemon&lt;/em&gt; (o &lt;em&gt;demoni&lt;/em&gt; in italiano).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa</title>
-      <link>http://localhost:1313/blog/dietro-le-quinte-tony-loffa/</link>
-      <pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/dietro-le-quinte-tony-loffa/</guid>
-      <description>&lt;h2 id=&#34;lidea-iniziale&#34;&gt;L’idea iniziale&lt;/h2&gt;&#xA;&lt;p&gt;Tutto è nato per caso, durante una serata in cui avremmo dovuto uscire tra amici. Uno di loro, per tirarsi fuori con una battuta, se ne uscì con:&lt;br&gt;&#xA;&lt;strong&gt;&amp;ldquo;Non posso, devo andare al concerto di Tony Loffa.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Quel nome — &lt;em&gt;Tony Loffa&lt;/em&gt; — mi ha fulminato.&lt;br&gt;&#xA;Non so spiegare bene cosa sia scattato, ma nel giro di pochi minuti il mio cervello aveva già dato forma al personaggio: un rapper assurdo, grottesco, con un’identità fortissima. Una parodia vivente, eppure dotata di coerenza interna, di un mondo suo.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Portanus: Signore delle Porte</title>
-      <link>http://localhost:1313/gdr/portanus/</link>
-      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/gdr/portanus/</guid>
-      <description>&lt;h3 id=&#34;portanus-il-signore-delle-porte&#34;&gt;Portanus (Il Signore delle Porte)&lt;/h3&gt;&#xA;&lt;p&gt;&lt;em&gt;Divinità pre-romana delle soglie e dei portali&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Nome Proto-Indoeuropeo:&lt;/strong&gt; &lt;em&gt;Prtónos&lt;/em&gt; (ricostruito da &lt;em&gt;prtu-&lt;/em&gt; &amp;ldquo;passaggio, guado&amp;rdquo; e il suffisso divino &lt;em&gt;-nos&lt;/em&gt;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Titoli:&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Il Custode delle Soglie&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Signore dei Guadi e delle Porte&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;L’Oscuro Viandante&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Colui che Sta tra i Mondi&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc.jpg&#34; alt=&#34;Portanus in veste di divinità celtica&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Portanus&lt;/strong&gt; è una figura mitologica appartenente al pantheon delle divinità pre-romane, venerata come il &lt;em&gt;Signore delle Porte&lt;/em&gt; e dei passaggi tra i mondi. Considerato una delle entità più enigmatiche del periodo italico arcaico, Portanus rappresenta il dominio delle soglie fisiche e metafisiche, fungendo da guardiano tra il mondo dei vivi e quello dei morti, tra il terreno e il divino, e tra dimensioni parallele.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Ciao mondo</title>
-      <link>http://localhost:1313/blog/hello-world/</link>
-      <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/hello-world/</guid>
-      <description>&lt;p&gt;Sono passati 21 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;&#xA;&lt;p&gt;It’s been 21 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Storie di Ghainar - Incipit</title>
-      <link>http://localhost:1313/scrittura/ghainar/</link>
-      <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/scrittura/ghainar/</guid>
-      <description>&lt;p&gt;Il vento portava sabbia e segreti, e la città di Ghainar non dormiva da tre notti&amp;hellip;&#xA;e qui si materializzerà la nuova incarnazione di Storie di Ghainar, una raccolta dei miei racconti.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ita on Federico Maiorini</title><link>https://procionegobbo.it/tags/ita/</link><description>Recent content in Ita on Federico Maiorini</description><generator>Hugo</generator><language>it-it</language><lastBuildDate>Fri, 14 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://procionegobbo.it/tags/ita/index.xml" rel="self" type="application/rss+xml"/><item><title>Ops I did it again</title><link>https://procionegobbo.it/blog/ops-i-dit-it-again/</link><pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/ops-i-dit-it-again/</guid><description>&lt;p&gt;Lo ammetto, ci ho un po&amp;rsquo; preso gusto. Nell&amp;rsquo;album di Tony Loffa c&amp;rsquo;era una canzone in cui l&amp;rsquo;immaginario rapper flatulente nominava due altri personaggi: il suo rivale DJ Budello e il suo amore perduto Nuvola.&lt;/p&gt;
+&lt;p&gt;Non mi piace lasciare le cose in sospeso quindi ho immaginato che, in pieno stile rivalità trap/rap, DJ Budello facesse un pezzo dissing contro Tony.
+Ed è nato &lt;a href="https://push.fm/fl/emluffhw"&gt;Aria Fritta&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://procionegobbo.it/blog/ops-i-dit-it-again/ariafritta.jpg" alt="cover del singolo Aria Fritta"&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Ma non ero soddisfatto. Rimaneva un&amp;rsquo;altra cosa in sospeso: &lt;strong&gt;Nuvola&lt;/strong&gt;.
+Possibile relegarla a ornamento di Tony? &lt;em&gt;Una scema che gira&lt;/em&gt;, come dice Budello nel suo pezzo?
+No. Ingiusto e sessista. Anche per un personaggio immaginario.&lt;/p&gt;</description></item><item><title>Developer's daemons</title><link>https://procionegobbo.it/blog/developers-daemons/</link><pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/developers-daemons/</guid><description>&lt;p&gt;&lt;em&gt;(This post is also available in English, change the language in the top-right corner to read it / Questo post è disponibile anche in Inglese, cambia la lingua in alto a destra per leggerlo)&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id="i-due-demoni-dello-sviluppatore"&gt;I due demoni dello sviluppatore&lt;/h1&gt;
+&lt;p&gt;Ogni sviluppatore convive con due &lt;strong&gt;demoni interiori&lt;/strong&gt;.&lt;br&gt;
+E se cogliete il gioco di parole, siete probabilmente sviluppatori o almeno un po’ nerd: nei sistemi operativi i processi che lavorano silenziosi in background, invisibili ma indispensabili, si chiamano infatti &lt;em&gt;daemon&lt;/em&gt; (o &lt;em&gt;demoni&lt;/em&gt; in italiano).&lt;/p&gt;</description></item><item><title>Come nasce un rapper fatto di gas: dietro le quinte di Tony Loffa</title><link>https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/</link><pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/dietro-le-quinte-tony-loffa/</guid><description>&lt;h2 id="lidea-iniziale"&gt;L’idea iniziale&lt;/h2&gt;
+&lt;p&gt;Tutto è nato per caso, durante una serata in cui avremmo dovuto uscire tra amici. Uno di loro, per tirarsi fuori con una battuta, se ne uscì con:&lt;br&gt;
+&lt;strong&gt;&amp;ldquo;Non posso, devo andare al concerto di Tony Loffa.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Quel nome — &lt;em&gt;Tony Loffa&lt;/em&gt; — mi ha fulminato.&lt;br&gt;
+Non so spiegare bene cosa sia scattato, ma nel giro di pochi minuti il mio cervello aveva già dato forma al personaggio: un rapper assurdo, grottesco, con un’identità fortissima. Una parodia vivente, eppure dotata di coerenza interna, di un mondo suo.&lt;/p&gt;</description></item><item><title>Portanus: Signore delle Porte</title><link>https://procionegobbo.it/gdr/portanus/</link><pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/gdr/portanus/</guid><description>&lt;h3 id="portanus-il-signore-delle-porte"&gt;Portanus (Il Signore delle Porte)&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Divinità pre-romana delle soglie e dei portali&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nome Proto-Indoeuropeo:&lt;/strong&gt; &lt;em&gt;Prtónos&lt;/em&gt; (ricostruito da &lt;em&gt;prtu-&lt;/em&gt; &amp;ldquo;passaggio, guado&amp;rdquo; e il suffisso divino &lt;em&gt;-nos&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Titoli:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Il Custode delle Soglie&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Signore dei Guadi e delle Porte&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;L’Oscuro Viandante&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Colui che Sta tra i Mondi&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://procionegobbo.it/gdr/portanus/88b42hf4y5rma0cnk9msvvkanc.jpg" alt="Portanus in veste di divinità celtica"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Portanus&lt;/strong&gt; è una figura mitologica appartenente al pantheon delle divinità pre-romane, venerata come il &lt;em&gt;Signore delle Porte&lt;/em&gt; e dei passaggi tra i mondi. Considerato una delle entità più enigmatiche del periodo italico arcaico, Portanus rappresenta il dominio delle soglie fisiche e metafisiche, fungendo da guardiano tra il mondo dei vivi e quello dei morti, tra il terreno e il divino, e tra dimensioni parallele.&lt;/p&gt;</description></item><item><title>Ciao mondo</title><link>https://procionegobbo.it/blog/hello-world/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/blog/hello-world/</guid><description>&lt;p&gt;Sono passati 21 anni dal mio primo blog, il mondo è cambiato, internet è cambiato e io anche.&lt;/p&gt;
+&lt;p&gt;It’s been 21 years since my first blog — the world has changed, the internet has changed, and so have I.&lt;/p&gt;</description></item><item><title>Storie di Ghainar - Incipit</title><link>https://procionegobbo.it/scrittura/ghainar/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://procionegobbo.it/scrittura/ghainar/</guid><description>&lt;p&gt;Il vento portava sabbia e segreti, e la città di Ghainar non dormiva da tre notti&amp;hellip;
+e qui si materializzerà la nuova incarnazione di Storie di Ghainar, una raccolta dei miei racconti.&lt;/p&gt;</description></item></channel></rss>
