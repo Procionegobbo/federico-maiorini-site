@@ -46,7 +46,12 @@ This is a multilingual Hugo static site for Federico Maiorini's personal website
 - **Theme submodule**: `themes/ananke/` (Git submodule). Do not edit theme files directly; override in `layouts/`.
 - To update the Ananke theme: `git submodule update --remote themes/ananke`
 - Custom shortcodes in `layouts/shortcodes/` extend Ananke's built-in shortcodes
-- The `_default/` directory exists but base templates are inherited directly from the theme
+- `layouts/partials/func/GetFeaturedImage.html` — resolves the hero image for a page: checks `featured_image` front matter first, then falls back to page resources named "feature" or "cover"; auto-converts local images to 1600px WebP via Hugo's resource pipeline
+- `_default/` and `layouts_old/` are legacy/archived directories — do not use them; templates inherit from Ananke
+
+### Content Front Matter Conventions
+- `featured_image` is the canonical field for hero images. The `image` field is legacy from the previous Stack theme.
+- The optional `meta` object overrides OG/social card metadata: `meta.title`, `meta.description`, `meta.image`, `meta.author`, `meta.type`.
 
 ### Static Assets
 - Static files in `static/`:
@@ -54,6 +59,10 @@ This is a multilingual Hugo static site for Federico Maiorini's personal website
   - Favicon: `/favicon.png`
   - Other images and resources
 - Hugo's resource pipeline caches processed assets in `resources/` directory
+
+## Linting
+
+- `.markdownlint.json` configures markdown linting rules for content files.
 
 ## CI/CD
 
@@ -64,6 +73,10 @@ The GitHub Actions workflow (`.github/workflows/gh-pages.yml`):
 4. Runs `hugo --minify` to build and minify the site
 5. Deploys `public/` directory to GitHub Pages using `peaceiris/actions-gh-pages`
 
+CodeRabbit AI code review is configured via `.coderabbit.yaml`.
+
+`.github/agents/` and `.github/prompts/` contain Speckit agent/prompt definitions (analyze, checklist, clarify, implement, plan, specify, tasks, etc.) for structured feature planning workflows.
+
 ## Important Notes
 
 - The `public/` directory contains the built site and is tracked in git (unusual for Hugo sites; typically this directory is ignored).
@@ -72,4 +85,4 @@ The GitHub Actions workflow (`.github/workflows/gh-pages.yml`):
 - The site uses goldmark renderer with `unsafe = true` to allow raw HTML in markdown content (enables shortcodes and custom HTML).
 - Colors in light mode are configurable via `params.colorScheme` in `config.toml` (currently: light mode, toggle disabled).
 - Copyright notice is in footer: "Federico Maiorini" with custom footer text.
-- The site has been recently migrated from Stack theme to Ananke theme, maintaining all URLs and content.
+- The site was migrated from the Stack theme to Ananke; all URLs and content were preserved during migration.
