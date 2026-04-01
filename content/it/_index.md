@@ -1,11 +1,11 @@
 ---
 title: "Federico Maiorini"
-description: "Senior PHP Developer & Narratore di mondi immaginari"
+description: "Senior Backend Developer & Narratore di mondi immaginari"
 featured_image: "cover.png"
 ---
 
 👋 Ciao!  
-Mi chiamo **Federico Maiorini** e sono uno sviluppatore backend con oltre 15 anni di esperienza, specializzato in **Laravel**, **PHP** e soluzioni su misura per piattaforme complesse. Attualmente lavoro come **Senior Developer presso [Fitprime Labs](https://labs.fitprime.com/)** e mi occupo di architetture robuste, API REST, autenticazione OAuth2 e performance ottimizzate.
+Mi chiamo **Federico Maiorini** e sono uno sviluppatore backend con oltre 30 anni di esperienza, specializzato in **Laravel**, **PHP** e soluzioni su misura per piattaforme complesse. Lavoro come **Senior Backend Developer in [Wellhub](https://wellhub.com/)** e sto progressivamente migrando il mio stack verso **Go**.
 
 Nel tempo libero sono anche un **game master dal 1985**, scrittore dilettante e world-builder ossessivo. Porto avanti progetti narrativi come *Storie di Ghainar* e campagne GDR basate su mitologie oscure e mondi originali.
 

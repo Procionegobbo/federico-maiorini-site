@@ -1,11 +1,11 @@
 ---
 title: "Federico Maiorini"
-description: "Senior PHP Developer & world-builder since 1985"
+description: "Senior Backend Developer & world-builder since 1985"
 featured_image: "cover.png"
 ---
 
 👋 Hi!  
-I'm **Federico Maiorini**, a backend developer with over 15 years of experience, specialized in **Laravel**, **PHP**, and custom solutions for complex platforms. I currently work as a **Senior Developer at [Fitprime Labs](https://labs.fitprime.com/)**, focusing on robust architectures, REST APIs, OAuth2 authentication, and backend performance.
+I'm **Federico Maiorini**, a backend developer with over 30 years of experience, specialized in **Laravel**, **PHP**, and custom solutions for complex platforms. I work as a **Senior Backend Developer at [Wellhub](https://wellhub.com/)** and I'm progressively migrating my stack towards **Go**.
 
 In my spare time, I’m also a **game master since 1985**, amateur writer, and obsessive world-builder. I create and explore narrative projects like *Storie di Ghainar* and RPG campaigns rooted in dark mythologies and mysterious settings.
 
