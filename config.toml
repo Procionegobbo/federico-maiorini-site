@@ -15,6 +15,10 @@ defaultContentLanguageInSubdir = false
   # Ananke specific parameters
   site_logo = "/images/ProcionegobboSmall.png"
   favicon = "/favicon.png"
+  post_content_classes = "avenir"
+
+[params.ananke]
+  custom_css = ["/css/custom.css"]
 
 [languages]
 
