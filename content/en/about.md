@@ -6,7 +6,7 @@ featured_image: "/images/cnbnwjst3drmy0cwg2gbx47nf4.png"
 
 Hi, I'm **Federico Maiorini**, a backend developer with over 20 years of experience in web and software development. Online, you’ll often find me under the nickname **Procionegobbo** — a long story that goes back to my Master’s degree in Videogame Design.
 
-I currently work as a **Senior PHP Developer at [Fitprime Labs](https://labs.fitprime.com/)**, where I design and build services and microservices in **Laravel**, focusing on performance, scalable architectures, and integration with third-party systems (SSO, REST APIs, Stripe, Auth0).
+I currently work as a **Senior Backend Developer at [Wellhub](https://wellhub.com/)**, where I design and build services and microservices, focusing on performance and scalable architectures. I'm progressively migrating my stack towards **Go**.
 
 Over the years, I have:
 - introduced Laravel as a framework in companies like Mind the Head, raising code quality and standards  
@@ -18,7 +18,7 @@ Over the years, I have:
 ### 🛠 Core competencies
 
 - **Framework:** Laravel  
-- **Languages:** PHP 8+, SQL, JavaScript  
+- **Languages:** PHP 8+, Go, SQL, JavaScript  
 - **Databases:** MySQL, PostgreSQL, Oracle, SQL Server  
 - **DevOps:** TDD, GitHub Actions, caching systems (Redis)  
 - **Integration:** SSO SAML, OAuth2, external APIs (Stripe, Google, Auth0)  
@@ -40,7 +40,8 @@ Over the years, I have:
 
 - **Design patterns** applied to modern Laravel and PHP  
 - Exploring **event-driven architecture** (Laravel events & queues)  
-- **Golang**, as a fast and lightweight backend alternative  
+- **Go**, as the primary backend language in my stack migration  
+- **Agentic coding and spec-driven development**, exploring how to extract maximum value from tools like Claude Code  
 - **Creative writing and worldbuilding** for personal storytelling projects  
 
 ---

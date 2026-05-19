@@ -6,7 +6,7 @@ featured_image: "/images/cnbnwjst3drmy0cwg2gbx47nf4.png"
 
 Ciao, mi chiamo **Federico Maiorini** e sono uno sviluppatore backend con oltre 20 anni di esperienza nel mondo dello sviluppo web e software. In rete mi trovi spesso con il nickname **Procionegobbo** — una lunga storia che risale ai tempi del mio Master in Videogame Design.
 
-Attualmente lavoro come **Senior PHP Developer presso [Fitprime Labs](https://labs.fitprime.com/)**, dove mi occupo di progettazione e sviluppo di servizi e microservizi in **Laravel**, con particolare attenzione a performance, architetture scalabili e integrazione di sistemi complessi (SSO, RESTful APIs, sistemi di terze parti come Stripe e Auth0).
+Attualmente lavoro come **Senior Backend Developer in [Wellhub](https://wellhub.com/)**, dove mi occupo di progettazione e sviluppo di servizi e microservizi con particolare attenzione a performance e architetture scalabili. Sto progressivamente migrando il mio stack verso **Go**.
 
 Nel corso della mia carriera ho:
 - introdotto Laravel in aziende come Mind the Head, migliorando standard e qualità del codice
@@ -18,7 +18,7 @@ Nel corso della mia carriera ho:
 ### 🛠 Competenze principali
 
 - **Framework:** Laravel  
-- **Linguaggi:** PHP 8+, SQL, JavaScript  
+- **Linguaggi:** PHP 8+, Go, SQL, JavaScript  
 - **Basi dati:** MySQL, PostgreSQL, Oracle, SQL Server  
 - **DevOps:** TDD, GitHub Actions, sistemi di caching (Redis)  
 - **Integrazione:** SSO SAML, OAuth2, API esterne (Stripe, Google, Auth0)  
@@ -40,7 +40,8 @@ Nel corso della mia carriera ho:
 
 - **Design patterns** applicati a Laravel e PHP moderno  
 - Introduzione al mondo **event-driven** (Laravel events & queues)  
-- **Golang**, come alternativa backend moderna e performante  
+- **Go**, come linguaggio backend principale nella migrazione del mio stack  
+- **Agentic coding e spec-driven development**, cercando di estrarre il massimo valore da strumenti come Claude Code  
 - **Scrittura narrativa e worldbuilding** per i miei progetti personali  
 
 ---

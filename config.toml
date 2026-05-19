@@ -19,21 +19,21 @@ defaultContentLanguageInSubdir = false
 [languages]
 
 [languages.it]
-  languageName = "Italiano"
+  label = "Italiano"
   weight = 1
   title = "Federico Maiorini"
   contentDir = "content/it"
-  languageCode = "it-it"
+  locale = "it-it"
 
   [languages.it.params]
   mainSections = ["blog", "gdr", "scrittura"]
 
 [languages.en]
-  languageName = "English"
+  label = "English"
   weight = 2
   title = "Federico Maiorini"
   contentDir = "content/en"
-  languageCode = "en-us"
+  locale = "en-us"
 
   [languages.en.params]
   mainSections = ["blog"]
