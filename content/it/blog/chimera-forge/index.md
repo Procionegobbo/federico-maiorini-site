@@ -69,3 +69,8 @@ Il sistema non è professionale, è gratuito, nasce per passione e per chi gioca
 Al momento le iscrizioni sono su invito. Se volete provarlo c'è un form sul sito per richiedere il codice, lo mando non appena leggo la mail.
 
 C'è ancora del lavoro da fare, soprattutto sulla parte meno divertente: se avete consigli su come scrivere meglio la privacy policy e i termini e condizioni sono molto graditi.
+
+---
+
+### [Prova Chimera Forge su chimera-forge.it](https://chimera-forge.it)
+
