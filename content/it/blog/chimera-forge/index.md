@@ -62,7 +62,7 @@ Poi il fork, preso pari pari dal mondo open source: se qualcuno crea un personag
 
 Da lì è venuta naturale una pagina di esplorazione con i contenuti pubblici più recenti e i like. E quando apri al pubblico devi prevedere la moderazione, sempre: ho aggiunto la segnalazione per contenuti inappropriati e un meccanismo per proporre un'immagine generata alla galleria sulla homepage, che un amministratore valuta prima di pubblicare.
 
-![Placeholder: screenshot della pagina di esplorazione pubblica](placeholder-esplorazione.png)
+![Placeholder: screenshot della galleria pubblica](placeholder-esplorazione.png)
 
 Il sistema non è professionale, è gratuito, nasce per passione e per chi gioca di ruolo. Ho intenzione di tenerlo così. L'LLM che genera i prompt usa uno dei tier gratuiti disponibili su OpenRouter. Per le scene c'è anche la possibilità di generare una preview, 256x256, bassa qualità, giusto per avere un'idea di quello che il prompt tirerà fuori. Non raccoglie dati personali, il captcha è un sistema open source che gira direttamente sul mio server senza librerie esterne, l'invio delle mail lo sposterò presto anch'esso in casa.
 
