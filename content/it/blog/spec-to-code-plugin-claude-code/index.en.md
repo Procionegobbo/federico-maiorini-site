@@ -53,7 +53,7 @@ Versioned, updatable with `/plugin update`, usable in any project without touchi
 
 This is the part worth telling in full. I had the plan reviewed by a second Anthropic model (Fable), which flagged that the agents' YAML frontmatter looked risky. The first check, a strict Python YAML parser, seemed to disagree, and for a moment I dismissed it with a "the runtime is probably more permissive".
 
-Then I ran `claude plugin validate`, the official tool, and the verdict was clear: the `description` field was an unquoted YAML scalar containing `": "` sequences, which doesn't parse and silently drops the entire frontmatter at load time: name, model, everything. The bug was latent and affected all four agents. I fixed it by quoting the descriptions properly.
+Then I ran `claude plugin validate`, the official tool, and the verdict was clear: the `description` field was an unquoted YAML scalar containing `": "` sequences, which doesn't parse and silently fails to load the entire frontmatter: name, model, everything. The bug was latent and affected all four agents. I fixed it by quoting the descriptions properly.
 
 My fault: I had assumed the IDE's warning about the invalid frontmatter was down to the fact that I was editing an agent file and the IDE didn't quite recognize the syntax. The review flagged the problem and the official validator proved it.
 
