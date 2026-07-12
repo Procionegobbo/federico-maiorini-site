@@ -52,7 +52,7 @@ Questa è la parte che vale la pena raccontare per intero. Ho fatto revisionare 
 
 Poi ho lanciato `claude plugin validate`, lo strumento ufficiale, e il verdetto è stato chiaro: il campo `description` era uno scalare YAML non quotato che conteneva sequenze `": "`, che non fa il parsing e fa cadere silenziosamente tutto il frontmatter al momento del caricamento: nome, modello, tutto. Il bug era latente e riguardava tutti e quattro gli agenti. L'ho risolto quotando correttamente le descrizioni.
 
-La lezione è semplice: un "probabilmente funziona" plausibile ha battuto un controllo vero per esattamente un passaggio di troppo. La revisione ha segnalato il problema, il validatore ufficiale lo ha dimostrato.
+Colpa mia, avevo dato per scontato che la segnalazione dell'IDE sul frontmatter invalido dipendesse dal fatto che stavo editando il file di un agent e l'IDE non riconoscesse bene la sintassi. La revisione ha segnalato il problema e il validatore ufficiale lo ha dimostrato.
 
 ## Il test che ha trovato quello che i controlli statici non vedono
 

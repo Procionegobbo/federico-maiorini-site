@@ -23,6 +23,8 @@ meta:
   type: "article"
 ---
 
+*This post was translated from Italian with the help of Claude.*
+
 For a few months now I've been using a pipeline of four Claude Code agents to take a feature from idea to implemented code: `stories-init` creates the workspace, `spec-builder` expands a rough idea into a complete spec, `story-creator` slices it into INVEST user stories, `laravel-feature-builder` implements a story in Laravel. It's not a weekend experiment: I built [Chimera Forge](https://chimera-forge.it) with it, a playful kobold-generating API ([kaas.procionegobbo.it](https://kaas.procionegobbo.it)) and a Discord bot ([kichand.procionegobbo.it](https://kichand.procionegobbo.it)). It's tested, it works, and right now it fully fits my way of doing agentic coding.
 
 It had two practical limits, though. Adding support for a new stack (Go, Python, whatever was needed) was a manual copy-paste-adapt job. And installing the pipeline into another repo meant copying files by hand into `.claude/`. In one work session I solved both problems, found and fixed a latent bug, and tested the whole thing on a real Go project. Here's the write-up, including the parts that didn't work on the first try.
@@ -52,7 +54,7 @@ This is the part worth telling in full. I had the plan reviewed by a second Anth
 
 Then I ran `claude plugin validate`, the official tool, and the verdict was clear: the `description` field was an unquoted YAML scalar containing `": "` sequences, which doesn't parse and silently drops the entire frontmatter at load time: name, model, everything. The bug was latent and affected all four agents. I fixed it by quoting the descriptions properly.
 
-The lesson is simple: a plausible "probably works" beat a real check by exactly one step too many. The review flagged the problem, the official validator proved it.
+My fault: I had assumed the IDE's warning about the invalid frontmatter was down to the fact that I was editing an agent file and the IDE didn't quite recognize the syntax. The review flagged the problem and the official validator proved it.
 
 ## The test that found what static checks don't see
 
