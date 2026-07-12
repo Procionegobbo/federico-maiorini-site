@@ -8,7 +8,6 @@ tags:
   - AI
   - CodingAgents
   - Plugin
-  - Go
   - SpecToCode
 featured_image: "spec-to-code.jpg"
 slug: "spec-to-code-plugin-claude-code"
