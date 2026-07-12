@@ -9,6 +9,8 @@ tags:
   - CodingAgents
   - Plugin
   - SpecToCode
+  - Automation
+  - PromptEngineering
 featured_image: "spec-to-code.jpg"
 slug: "spec-to-code-plugin-claude-code"
 draft: false
