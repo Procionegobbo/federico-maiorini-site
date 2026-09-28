@@ -47,6 +47,7 @@ Thanks to all the Come To Code staff, see you next year.
 ## References
 
 - [**Come To Code**](https://www.cometocode.it/)
+- [**NeuronAI**](https://neuron-ai.dev)
 
 ### Speakers mentioned
 

@@ -46,6 +46,7 @@ Grazie a tutto lo staff del Come To Code, ci vediamo il prossimo anno.
 ## Riferimenti
 
 - [**Come To Code**](https://www.cometocode.it/)
+- [**NeuronAI**](https://neuron-ai.dev)
 
 ### Speaker citati
 
